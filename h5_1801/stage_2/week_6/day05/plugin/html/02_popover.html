@@ -7,12 +7,19 @@
     <script type="text/javascript" src = "../lib/popover/popover.js"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded',()=>{
-          new Popover({width:800,height:300,content:'我的世界我做主！'})
-          .setPosition(500,400);
-        });
+          let btnAction = document.querySelector('#btnAction');
+        //   new Popover({width:800,height:300,content:'我的世界我做主！'})
+        //   .setPosition(500,400);
+        //   new Confirm();
+
+        btnAction.onclick = function(){
+          // 子类的继承
+          new Confirm({width:400,overlay:0.7}).setPosition(30,400);
+        }
+      });
     </script>
   </head>
   <body>
-
+    <button type="button" name="button" id="btnAction">弹出</button>
   </body>
 </html>

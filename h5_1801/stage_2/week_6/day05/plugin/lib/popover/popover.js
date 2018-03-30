@@ -1,6 +1,7 @@
 /**
  * 弹窗插件
  */
+ // 父类构造函数
  function Popover(options){
    // 默认属性
    var defaults = {
@@ -10,7 +11,7 @@
      title:'弹窗标题',
      content:'',
      draggable:true,
-     overlay:0.3
+     overlay:false
    }
    // 扩展默认参数:将形参对象和默认对象进行拼接
    var opt = Object.assign({},defaults,options);//返回opt对象；
@@ -144,6 +145,104 @@
      }
      return this;
    }
-
-
  }
+
+// 继承父类构造函数
+function Confirm(options){
+  // 默认属性
+  var defaults = {
+    width:300,
+    title:'这是标题',
+    content:'你确定要执行这个操作吗？',
+    overlay:false,
+    cancel:function(){
+      console.log('已关闭');
+    },
+    confirm:function(){
+      console.log('已经执行');
+    }
+  }
+  var opt = Object.assign({},defaults,options);
+  Popover.call(this,opt);
+}
+
+// 继承父类的方法
+Confirm.prototype = Object.create(Popover.prototype);
+
+// 添加/重置方法：
+Confirm.prototype.init = function(opt){
+  // 创建弹窗div
+	this.ele = document.createElement('div');
+	this.ele.className = 'popover';
+
+	// 弹窗宽高
+	this.ele.style.width = opt.width + 'px';
+	if(typeof opt.height === 'number'){
+		this.ele.style.height = opt.height + 'px';
+	}
+
+  // 内容部分
+  var content = document.createElement('div');
+	content.className = 'content';
+	content.innerHTML = opt.content;
+	this.ele.appendChild(content);
+
+  if(opt.overlay !=false){//使用遮罩效果
+    // 创建遮罩层
+     this.bg = document.createElement('div');
+     this.bg.className = 'overlay';
+     this.bg.style.opacity = opt.overlay;
+     document.body.appendChild(this.bg);
+  }
+  // 弹出写入页面
+  document.body.appendChild(this.ele);
+
+	// 关闭按钮
+	var btnClose = document.createElement('span');
+	btnClose.className = 'btn-close';
+	btnClose.innerHTML = '&times;';
+	this.ele.appendChild(btnClose);
+
+	// 关闭按钮事件
+	btnClose.onclick = function(){
+		this.close();
+	}.bind(this);
+
+
+  // 重置父类的属性或方法
+  // 添加确认取消按钮
+	this.confirmBtn = document.createElement('button');
+	this.confirmBtn.className = 'btn-confirm';
+	this.confirmBtn.innerText = '确认';
+  // 添加取消按钮
+	this.cancelBtn = document.createElement('button');
+	this.cancelBtn.className = 'btn-cancel';
+	this.cancelBtn.innerText = '取消';
+  // 写入界面
+	this.ele.appendChild(this.confirmBtn);
+	this.ele.appendChild(this.cancelBtn);
+
+  // 确认按钮事件
+  this.confirmBtn.onclick = ()=>{
+    opt.confirm();
+    this.close();
+  }
+  // 取消按钮事件
+  this.cancelBtn.onclick = ()=>{
+    opt.cancel();
+    this.close();
+  }
+
+	// 弹窗写入页面
+	// 并显示弹窗
+	document.body.appendChild(this.ele);
+	this.show();
+
+	// 拖拽
+	if(opt.draggable){
+		this.drag();
+	}
+
+	return this;
+
+}
