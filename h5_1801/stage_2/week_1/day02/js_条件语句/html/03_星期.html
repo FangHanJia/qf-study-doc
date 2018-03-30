@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <h3>查询星期几</h3>
+    <input type="text" id="week"/>
+    <span id="days">星期：</span>
+    <script type="text/javascript">
+        var week = document.getElementById("week");
+        var days = document.getElementById("days");
+        week.oninput = function(){
+            var text =  week.value*1;
+            switch(text){
+                case 1:
+                    days.innerHTML = "星期一";
+                break;
+                case 2:
+                    days.innerHTML = "星期二";
+                break;
+                case 3:
+                    days.innerHTML = "星期三";
+                break;
+                case 4:
+                    days.innerHTML = "星期四";
+                break;
+                case 5:
+                    days.innerHTML = "星期五";
+                break;
+                case 6:
+                    days.innerHTML = "星期六";
+                break;
+                case 7:
+                    days.innerHTML = "星期天";
+                break;
+                default:
+                    days.innerHTML = "输入有误！"
+            }
+        }
+    </script>
+</body>
+</html>

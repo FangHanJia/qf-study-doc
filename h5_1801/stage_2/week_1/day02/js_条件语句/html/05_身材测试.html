@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>身材测试</h1>
+    <input type="text"  id="height" placeholder="请输入您的身高（厘米）"/>
+    <input type="text"  id="weight" placeholder="请输入您的体重（斤）"/>
+    <button id="test" onclick="test()">测试</button>
+    <div id="res"></div>
+    <script type="text/javascript">
+        var height= document.getElementById("height");
+        var weight= document.getElementById("weight");
+        var res= document.getElementById("res");
+
+        function test(){
+            //获取输入的值
+            var _h = height.value*1;
+            var _w = weight.value*1;
+            var _res = (_h-108)*2;
+            console.log(_res);
+            //_res与输入的体重进行比较:_w<=_res+10;_w>=_res-10;
+            switch(true){
+                case _w < =_res+10 && _w >= _res-10:
+                    res.innerHTML = "刚刚好";
+                break;
+                case _w > _res+10:
+                    res.innerHTML = "该减肥了";
+                break;
+                case _w < _res-10:
+                    res.innerHTML = "你可以尝试多吃点肉！";
+                break;
+                default:
+                    res.innerHTML = "输入有误！";
+
+            }
+        }
+    </script>
+</body>
+</html>

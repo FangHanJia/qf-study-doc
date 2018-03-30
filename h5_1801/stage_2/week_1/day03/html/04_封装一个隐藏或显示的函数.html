@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript" src = "../../common.js"></script>
+</head>
+<body>
+    <h1>封装一个隐藏或者显示的函数</h1>
+    <div id="imgBox">
+        <img src="../images/g3.jpg" />
+    </div>
+    <button id="btn">显示/隐藏</button>
+    <script type="text/javascript">
+        var imgBox = document.getElementById('imgBox');
+        var btn    = document.getElementById('btn');
+        
+        function display(ele){
+            imgBox.style.display = ele ;
+        }
+        btn.onclick = function(){
+            if(imgBox.style.display=='none'){
+                display('block');
+            }else{
+                display('none');
+            }
+        }
+    </script>
+</body>
+</html>

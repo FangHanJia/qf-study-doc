@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+       
+        table{
+            width:500px;
+            height:300px;
+            border-collapse:collapse;
+            margin:20px auto;
+        }
+        table caption{
+           font-size:34px;
+           line-height:40px;
+           color:#000;
+        }
+        table th{
+            padding:5px;
+            background-color:#ccc;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+     <script type="text/javascript">
+        var res_box = document.getElementById("res_box");
+        document.write("<table>");
+        document.write("<caption>"+"九九乘法表"+"</caption>")
+            for(var i=1;i<10;i++){
+                document.write("<tr>");
+                for(var j=1;j<=i;j++){
+                    document.write("<th>"+i+"*"+j+"="+i*j+"</th>") ;
+                }
+                document.write("</tr>");
+
+            }
+        document.write("</table>");
+        document.close();
+    </script>
+</body>
+</html>

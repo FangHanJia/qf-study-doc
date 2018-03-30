@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>编写一个函数，计算三个数字的大小，按从小到大顺序输出</title>
+    <style type="text/css">
+        span{
+            font-size:24px;
+            color:red;
+        }
+    </style>
+    <script type="text/javascript" src="../../common.js"></script>
+</head>
+<body>
+    <h1>计算三个数字的大小，按从小到大顺序输出</h1>
+    <label for="num1">第一个数：</label>
+    <input type="text" id='num1' /> <br />
+    <label for="num1">第二个数：</label>
+    <input type="text" id='num2' /> <br />
+    <label for="num1">第三个数：</label>
+    <input type="text" id='num3' /> <br />
+    <button id="btn">排序</button>
+    <div id="output"></div>
+    <script type="text/javascript">
+        //获取元素
+        var num1 = document.getElementById('num1');
+        var num2 = document.getElementById('num2');
+        var num3 = document.getElementById('num3');
+        var btn = document.getElementById('btn');
+        var output = document.getElementById('output');
+
+        btn.onclick = function(){
+            //获得输入的值
+            var _num1 = num1.value*1;
+            var _num2 = num2.value*1;
+            var _num3 = num3.value*1;
+            if(num1.value==''||num2.value==''||num3.value==''){
+                console.log("输入值为空！");
+                output.innerHTML = '<span>输入值为空！</span>';
+            }else{
+                 //组成数组
+                var arr = [_num1,_num2,_num3];
+                //调用冒泡排序
+                bubbleSort(arr);
+                for(var k=0;k<arr.length;k++){
+                    console.log(arr);
+                    output.innerHTML = '按从小到大顺序为：'+arr;
+                } 
+                //div的样式。
+                output.style.fontSize = '30px';
+                output.style.color = 'blue';
+            }
+           
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>成绩查询</h1>
+    <input type="text" id="grade"/>
+    <button id="btn" onclick="query()">查询</button> 
+    <span id="show">你的成绩为：</span>
+    <script type="text/javascript">
+        var grade = document.getElementById("grade");
+        var btn = document.getElementById("btn");
+        var show = document.getElementById("show");
+
+        function query(){
+            //获取输入的值
+            var gradeValue = grade.value*1;
+            //判断成绩的等级
+            
+            // if判断语句
+            // if(gradeValue<60 && gradeValue >= 0){
+            //     show.innerHTML = "你的成绩为："+gradeValue+",不及格！"
+            // }else if(gradeValue>=60 && gradeValue < 75){
+            //     show.innerHTML = "你的成绩为："+gradeValue+",及格"
+            // }else if(gradeValue>=75 && gradeValue < 85){
+            //     show.innerHTML = "你的成绩为："+gradeValue+",良好"
+            // }else if(gradeValue>=85 && gradeValue <=100){
+            //     show.innerHTML = "你的成绩为："+gradeValue+",优秀"
+
+            // }else{
+            //     show.innerHTML = "输入有误!"
+
+            // }
+
+            //switch语句
+            switch(true){
+                case gradeValue<60 :
+                    show.innerHTML = "你的成绩为："+gradeValue+"分,不及格！"
+                break;
+                case gradeValue>=60 && gradeValue < 75 :
+                    show.innerHTML = "你的成绩为："+gradeValue+"分,及格"
+                break;
+                case gradeValue>=75 && gradeValue < 85:
+                    show.innerHTML = "你的成绩为："+gradeValue+"分,良好"
+                break;
+                case gradeValue>=85 && gradeValue <=100 :
+                    show.innerHTML = "你的成绩为："+gradeValue+"分,优秀"
+                break;
+                default:
+                    show.innerHTML = "输入有误!";
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

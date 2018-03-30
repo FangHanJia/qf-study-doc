@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>用户验证码登陆</title>
+    <script type="text/javascript" src="../../common.js"></script>
+</head>
+<body>
+    <h1>登录</h1>
+    <label for="userName">用户名：</label>
+    <input type="text" id="userName"/> <br />
+    <label for="psw">用户名：</label>
+    <input type="text" id="psw"/> <br />
+    <label for="vCode">验证码：</label>
+    <input type="text" id="vCode"/> 
+    <span id="code"></span> <br />
+    <button id="btnLogin">登陆</button>
+    <script type="text/javascript">
+        // 获取元素
+        var userName = document.getElementById('userName');
+        var psw      = document.getElementById('psw');
+        var code     = document.getElementById('code');
+        var btnLogin = document.getElementById('btnLogin');
+        var vCode = document.getElementById('vCode');
+
+        //生成验证码
+        function createCode(){
+            code.innerHTML = randomNumber(1000,9999);
+        }
+        //首次生成验证码。
+        createCode();
+
+        btnLogin.onclick = function(){
+            //获取验证码的值
+            var codeValue  =   code.innerHTML;
+            //获取输入的值
+            var _vCode = vCode.value;
+            // 判断验证码的正确与否
+            if(codeValue != _vCode){
+                alert('验证码不正确！');
+                createCode();
+            }else{
+                location.href = "04_封装一个隐藏或显示的函数.html";
+            }
+        }
+        //验证码自刷新
+        code.onmouseover = createCode;
+
+    </script>
+</body>
+</html>

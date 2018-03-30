@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>02_找出小于10的元素并组成一个新的数组</title>
+    <script type="text/javascript">
+        //拿到起始的数组
+        var arr=[23,23,2,2,34,23,5,7,89,9];
+        //新建一个数组用于存储小于10的元素
+        var arrNew = [];
+        //对arr数组进行遍历
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]<10){
+                //调用push();追加方法
+                arrNew.push(arr[i]);
+            }
+        }
+        console.log(arrNew);
+    </script>
+</head>
+<body>
+    <h1>02_找出小于10的元素并组成一个新的数组</h1>
+    <p>数组为：var arr=[23,23,2,2,34,23,5,7,89,9]</p>
+</body>
+</html>

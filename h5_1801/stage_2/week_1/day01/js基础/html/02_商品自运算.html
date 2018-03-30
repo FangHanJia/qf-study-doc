@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        input{
+            border:0 none;
+             font-size: 16px;
+            line-height: 32px;
+            margin-left: 10px;
+        }
+        #box{
+            width: 560px;
+            height: 524px;
+            margin:20px auto;
+            border:1px solid gray;
+            padding: 0 20px;
+        }
+        #box .cont{
+            width:170px;
+            height: 350px;
+            background: url("../images/iphone6.png") no-repeat;
+            margin:30px auto;
+        }
+        #box>input{
+            width: 56px;
+            height: 20px;
+            border:1px solid gray;
+        }
+        #box span{
+            font-size: 14px;
+            color:red;
+            padding-left: 8px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="cont"></div>
+        价格:<span id="price">￥4998.00</span> <br />
+        <label for="count">数量:</label><input type="number" id="count" value="2"/> <br />
+        总价:<span id="total"><!-- ￥9996.00 --></span> <br />
+    </div>
+</body>
+    <script type="text/javascript">
+        var price = document.getElementById("price");
+        var count = document.getElementById("count");
+        var total = document.getElementById("total");
+        // 实时获取输入框的值。
+        // count.addEventListener("input", add, false);
+        
+        count.oninput =  function (){
+            console.log(count.value=="");
+            if(count.value==""||parseInt(count.value)<=0){
+                count.value="";
+                total.innerHTML = "￥0000"+".00";
+                // alert("请输入大于0的数值！");
+            }else{
+                total.innerHTML = "￥"+(4998 * parseInt(count.value))+".00";   
+            }
+        }
+        // add();
+
+
+    </script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>水仙花数字</title>
+    <script type="text/javascript">
+        for(var i = 100;i<1000;i++){
+            //提取个，十，百的数字
+            var g,b,s;
+            g = i%10;
+            s = parseInt(i/10)%10;
+            b = parseInt(i/100)%10;
+            console.log(g,s,b);
+            if(i==g*g*g + s*s*s + b*b*b){
+                document.write(i+',');
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>找出所有的水仙花数，三位数，各位立方和等于该数本身</h1>
+</body>
+</html>

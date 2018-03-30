@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        // 有参函数
+        function print(n){
+            //第一层控制打印的次数
+            for(var i = 0;i<n;i++){
+                //第二层控制每一行打印的星星
+                for(var j = 0;j<=i;j++){
+                    document.write("*");
+                }
+                document.write("<br />");
+            }
+        }
+        // 调用函数，实参给形参赋值
+        print(8);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

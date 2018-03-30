@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>封装生成表格函数，根据输入的行或列得到一个表格</title>
+    <script type="text/javascript" src="../../common.js"></script>
+    <style type="text/css">
+        table{
+            border-collapse:collapse;
+            width: 100%;
+        }
+        table tr{
+            border:1px solid #555;
+            padding:5px;
+        }
+        table td{
+            border:1px solid #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>封装生成表格函数，根据输入的行或列得到一个表格</h1>
+    <label for="row">行数：</label>
+    <input type="text" id="row"/>
+    <label for="col">列数：</label>
+    <input type="text" id="col"/>
+    <button id="btn">生成表格</button>
+    <div id="output"></div>
+    <script type="text/javascript">
+        //获取元素
+        var row = document.getElementById('row');
+        var col = document.getElementById('col');
+        var btn = document.getElementById('btn');
+        var output = document.getElementById('output');
+
+        btn.onclick = function(){
+
+            //获取输入的值
+            var _row = row.value*1;
+            var _col = col.value*1;
+            createTable(_row,_col);
+
+        }
+
+        function createTable(row,col){
+            var html = '';
+            html  += '<table><tbody>';
+            for(var i=0;i<row;i++){
+                html += '<tr style="background:'+randomColor()+'">';
+                for(var j = 0;j<col;j++){
+                    html += '<td>'+i*j+'</td>';
+                }
+                html += '</tr>';
+            }
+            output.innerHTML  =html;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>封装一个判断是否为闰年的函数</title>
+    <script type="text/javascript" src="../../common.js"></script>
+</head>
+<body>
+    <h1>封装一个判断是否为闰年的函数</h1>
+    <input type="text" id="num" />
+    <button id="btn">查询</button>
+    <div id="output"></div>
+    <script type="text/javascript">
+        //获取元素
+        var num = document.getElementById('num');
+        var btn = document.getElementById('btn');
+        var output = document.getElementById('output');
+
+        btn.onclick = function(){
+            //获取输入的值
+            var _num = num.value*1;
+            if(String(num.value) ===''|| _num<0||isNan(_num)){
+                output.innerHTML = '请输入年份！';
+                output.style.color = 'red';
+                output.style.fontSize = '30px';
+            }else if(leapYear(_num)){
+                output.innerHTML = _num+'是闰年！'
+                output.style.color = 'blue';
+            }else if(!leapYear(_num)){
+                output.innerHTML = _num+'不是闰年！'
+            }
+        }
+       
+    </script>
+</body>
+</html>

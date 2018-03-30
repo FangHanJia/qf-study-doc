@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>成年人的BMI数值</h1>
+    <input type="text" id="weight"  placeholder="请输入您的体重（kg）"/>
+    <input type="text" id="height"  placeholder="请输入您的身高（CM）"/>
+    <button id="btn" onclick="query()">查询</button>
+    <div id="show"></div>
+    <script type="text/javascript">
+    var weight = document.getElementById("weight");
+    var height = document.getElementById("height");
+    var show  = document.getElementById("show");
+
+    function query(){
+        // 获取输入的值
+        var _w = weight.value*1;
+        var _h = height.value*1/100;
+        var bmi = _w/(_h*_h);
+        console.log(bmi);
+        if(bmi < 18.5){
+            show.innerHTML = "你太轻了！"
+        }else if(bmi>=18.5 && bmi<24.99){
+            show.innerHTML = "正常"
+        }else if(bmi>=25 && bmi<28){
+            show.innerHTML = "太重"
+        }else if(bmi>=28 && bmi<32){
+            show.innerHTML = "肥胖"
+        }else {
+            show.innerHTML = "太胖了"
+        }
+    }
+
+    </script>
+</body>
+</html>

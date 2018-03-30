@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>篮球高度</title>
+    <style type="text/css">
+        span{
+            color:red;
+            font-size:24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>篮球的高度</h1>
+    <p>篮球从5米高的地方掉下来，每次弹起的高度是原来的30%，经过几次弹起，篮球弹起的最终高度小于0.1米</p>
+    <div id="output"></div>
+    <script type="text/javascript">
+        var height = 5;
+        var count = 0;
+        var output = document.getElementById('output');
+        //不固定的循环用while循环。
+        while(true){
+            height = height*0.3;
+            count++;
+            if(height<0.1){
+                console.log(count);
+                output.innerHTML = '<span > 解：</span>'+'经过'+'<span >'+count+'</span>'+'次弹起，篮球弹起的最终高度小于0.1米';
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

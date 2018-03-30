@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>任意两个数字的加减乘除</title>
+</head>
+<body>
+    <h1>封装一个函数，计算任意两个数字的加减乘除</h1>
+    <input type="text" id="num1"/>
+    <select name="symbol" id="symbol">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="num2"/>
+    <button id="btn">等于</button>
+    <input type="text" id="result"/>
+    <script type="text/javascript">
+        //获取元素
+        var num1 = document.getElementById('num1');
+        var num2 = document.getElementById('num2');
+        var symbol = document.getElementById('symbol');
+        var btn = document.getElementById('btn');
+        var result = document.getElementById('result');
+
+        //监听符号的改变
+        function calculate(i , j){
+            var res;
+            var _symbol = symbol.value;
+            console.log(_symbol);
+            console.log(i,j);
+            if(i=== ''|| j==='' ){
+                 result.value = '请输入值进行计算！';
+            }else if(_symbol=="+"){
+                res = i+j;
+            }else if(_symbol=="-"){
+                res = i-j;
+            }else if(_symbol=="*"){
+                res = i*j;
+                
+            }else if(_symbol=="/"){
+                res = i/j;
+                
+            }else if(_symbol=="%"){
+                res = i%j;
+                
+            }
+            
+            
+            return res;
+        }
+        btn.onclick = function(){
+                //获取输入的值
+                var _num1 = num1.value*1;
+                var _num2 = num2.value*1;
+                //调用计算的函数
+                result.value = calculate(_num1,_num2);
+            }
+
+    </script>
+</body>
+</html>

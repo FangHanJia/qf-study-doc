@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+     <!-- <script type="text/javascript">
+         window.onload =function(){
+
+         }
+    </script> -->
+</head>
+<body>
+    <h3>猜数字拿大奖</h3>
+    <input type="text" id="count"/>
+    <button id="btn" onclick="run()">确定 </button>
+</body>
+    <script type="text/javascript">
+        // 获取元素
+        var count= document.getElementById("count");
+        var random = parseInt(Math.random()*100)+1;
+        var btn = document.getElementById("btn");
+
+        
+        function run(){
+            var count_num = parseInt(count.value);
+            console.log(count_num+","+random);
+            if(count_num>random){
+                alert("大了");
+            }
+             
+            if(count_num<random){
+                alert("小了");
+            }
+            if(count_num==random){
+                alert("恭喜您获取大奖！");
+            }
+        }
+
+    </script>
+</html>

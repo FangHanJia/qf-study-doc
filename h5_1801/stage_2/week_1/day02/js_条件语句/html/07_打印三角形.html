@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        //第一层循环决定了打印了几次
+        // for(var i =0;i<5;i++){
+        //     //第二层决定了一行打印的星星数，对应行和打印的星是一致的
+        //     for(var j = 0 ;j<=i;j++){
+        //         document.write("*");
+        //     }
+        //     document.write("<br />");
+        // }
+        
+        //第一层循环决定了打印了几次
+            // for(var i =0;i<5;i++){
+            //     //第二层决定了一行打印的星星数，对应行和打印的星是一致的
+            //     for(var k=0;k<=5-i-1;k++){
+            //         document.write("&ensp;");
+            //     }
+            //     for(var j = 0 ;j<=i;j++){
+            //         document.write("*");
+            //     }
+            //     document.write("<br />");
+            // } 
+
+            for(var i =0;i<5;i++){
+                //第二层决定了一行打印的星星数，对应行和打印的星是一致的
+                for(var j = 0 ;j<5-i;j++){
+                    document.write("*");
+                }
+                document.write("<br />");
+            }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

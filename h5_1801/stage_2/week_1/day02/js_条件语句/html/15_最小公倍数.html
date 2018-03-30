@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        span{
+            color:red;
+            font-size:24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>两个数的最小公倍数</h1>
+    <input type="text" id="num1"/>
+    <input type="text" id="num2"/>
+    <button id="btn">查找</button>
+    <div id="output"></div>
+    <script type="text/javascript">
+        var num1 = document.getElementById('num1');
+        var num2 = document.getElementById('num2');
+        var btn = document.getElementById('btn');
+        var output = document.getElementById('output');
+
+        btn.onclick = function(){
+            //获取输入的值
+            var _num1 = num1.value*1;
+            var _num2 = num2.value*1;
+            if(_num1==0 || _num2==0){
+                output.innerHTML = '<span>你是不是傻!</span>';
+            }else if(_num1<0 || _num2<0 ){
+                _num1 = -_num1;
+                _num2 = -_num2;
+            }else if(_num2<0){
+                _num2 = -_num2;
+            }else if(_num1<_num2){
+                _num1 = -_num1;
+            }
+            //先找出两个数中的最大数
+            //最大数++，找出能整除两个数的数(退出循环)
+            //判断大小可用 三元运算符
+            for(var i=Math.max(_num1,_num2);i>1;i++){
+                if(i%_num1===0 && i%_num2==0){
+                    output.innerHTML = '两个数的最小公倍数:<span>'+i+'</span>';
+                    console.log(i);
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

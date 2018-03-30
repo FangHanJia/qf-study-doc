@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>求n,a的值</title>
+    <style type="text/css">
+        span{
+            color:red;
+            font-size:24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>求n,a的值</h1>
+    <label for="num1">输入n的值：</label>
+    <input type="text" id="num1"/>
+    <label for="num2">输入a的值：</label>
+    <input type="text" id="num2"/>
+    <button id="btn">计算</button>
+    <div id="output"></div>
+    <script type="text/javascript">
+        var num1 = document.getElementById('num1');
+        var num2 = document.getElementById('num2');
+        var btn  = document.getElementById('btn');
+        var output = document.getElementById('output');
+
+        btn.onclick = function(){
+            //获取输入的值
+            var n = num1.value*1;
+            var a = num2.value*1;
+            var sum = 0;
+            var temp = a;
+            console.log(temp);
+
+            for(var i = 1;i<n;i++){
+                temp=temp*10+a;
+                sum = sum+temp;
+                console.log(temp);
+            }
+            sum = a+sum;
+            console.log(sum);
+            output.innerHTML = '结果为'+'<span>  '+sum+'  </span>';
+        }
+
+    </script>
+</body>
+</html

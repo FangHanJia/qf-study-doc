@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>随机改变背景色颜色</title>
+    <script type="text/javascript" src="../../common.js"></script>
+</head>
+<body>
+    <h1 id="title">随机改变背景色颜色</h1>
+    <button id="btn">改变背景颜色</button>
+    <script type="text/javascript">
+        //获取元素
+        var btn  =document.getElementById('btn');
+        var title  =document.getElementById('title');
+        //首次刷新的背景颜色。
+        bgColor();
+        //按钮点击的背景颜色
+        btn.onclick = bgColor;
+        function bgColor(){
+            //获取文档的body,并调用外部函数进行背景变色
+            document.body.style.backgroundColor = randomColor();
+            //标题变色
+            title.style.color = randomColor();
+
+        }
+    </script>
+</body>
+</html>

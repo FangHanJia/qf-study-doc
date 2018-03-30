@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>03_随机点名程序(简易版).html</title>
+    <script type="text/javascript" src="../../../common.js"></script>
+</head>
+<body>
+    <h1>03_随机点名程序(简易版).html</h1>
+    <input type="text" id="stuName"/>
+    <button id="btn">点名</button>
+    <script type="text/javascript">
+        //获取元素
+        var stuName = document.getElementById('stuName');
+        var btn = document.getElementById('btn');
+
+        //随机名单的数组
+       var nameList = ["潘培基", "张忠", "胡歆国", "黄开展", "罗术坤", "杨镇钟", "吴志鹏", "林朵连", "孙晨", "厉康银", "陈俊斌", "邹倩莹", "杨俊琦", "陈香棋", "王清霞", "黎子聪", "邱启宏", "陈志坚", "陈方庆", "罗洁颖", "刘盼", "伍萃琪", "张京港", "黄飞恒", "温婷婷", "陈东林", "杨有国", "曾一帆", "叶靖", "陈洪亮", "杨钰琼", "李锦沛", "彭俊威", "曹伟政", "方汉佳", "萧文杰", "谭宏钊", "陈世坯", "何灿新", "叶锡良", "陈铭思", "熊凡一", "李帅帅", "林颂明"];
+        //首次刷新
+        getName();
+        //按钮绑定事件
+        btn.onclick = function(){
+            getName();
+        }
+        function getName(){
+            //将随机获取的值返回给输入框
+            stuName.value = nameList[randomNumber(0,nameList.length-1)];
+        }
+
+    </script>
+</body>
+</html>

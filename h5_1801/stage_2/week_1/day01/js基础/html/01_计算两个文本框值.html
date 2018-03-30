@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+   
+   
+</head>
+<body>
+    <h2>计算两个文本的值</h2>
+    <input type="text" id="num1"/>
+    <select name="symbol" id="symbol">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="num2"/>
+    <button id="btn">等于</button>
+    <input type="text" id="res" />
+    <!-- <div id="res"></div> -->
+</body>
+     <script type="text/javascript">
+     /*
+        var   mySelect = document.getElementById(”testSelect”);//定位id(获取select)
+        var   index =mySelect.selectedIndex;// 选中索引(选取select中option选中的第几个)
+        var   text =mySelect.options[index].text; // 选中文本
+        var   value =mySelect.options[index].value; // 选中值
+        mySelect.options[index].selected // 判断select中的某个option是否选中   true为选中   false 为未选中
+
+      */
+        
+            // 获取元素
+            var num1  = document.getElementById("num1");
+            var num2  = document.getElementById("num2");
+            var res   = document.getElementById("res");
+            var btn = document.getElementById("btn");
+            var symbol = document.getElementById("symbol");
+            // var index = symbol.selectedIndex;
+            // var value = symbol.options[index].value;
+            
+            symbol.onclick=function(){
+                var focus = this.options[this.options.selectedIndex].value;
+                   if(focus=="+"){
+                        console.log(focus);
+                        btn.onclick=add;
+                   }
+                   if(focus=="-"){
+                        console.log(focus);
+                       
+                        btn.onclick=minus;
+                   }
+                   if(focus=="*"){
+                        console.log(focus);
+                       
+                        btn.onclick=multiple;
+                   }
+                   if(focus=="/"){
+                        console.log(focus);
+                        
+                        btn.onclick=divide;
+                   } 
+                   if(focus=="%"){
+                        console.log(focus);
+                        
+                        btn.onclick=mod;
+                   }
+
+
+           }
+           
+              
+            
+
+            function add(){
+                // 获取元素的值
+                var _num1 = num1.value*1;
+                var _num2 = num2.value*1;
+                res.value = parseInt(_num1+_num2);
+            }
+             
+            function minus(){
+                // 获取元素的值
+                var _num1 = num1.value*1;
+                var _num2 = num2.value*1;
+                res.value = parseInt(_num1-_num2);
+            }
+            function multiple(){
+                // 获取元素的值
+                var _num1 = num1.value*1;
+                var _num2 = num2.value*1;
+                res.value = parseInt(_num1*_num2);
+            }
+            function divide(){
+                // 获取元素的值
+                var _num1 = num1.value*1;
+                var _num2 = num2.value*1;
+                res.value = parseInt(_num1/_num2);
+            }
+             function mod(){
+                    // 获取元素的值
+                    var _num1 = num1.value*1;
+                    var _num2 = num2.value*1;
+                    res.value = parseInt(_num1%_num2);
+                }
+        
+    </script>
+</html>

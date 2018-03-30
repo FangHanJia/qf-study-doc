@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        //先算7的倍数
+        for(var i=1;i<=100;i++){
+            //提取个位数
+            var unit = i%10;
+            //提取十位数
+            var ten = parseInt(i/10)%10;
+            if( i%7===0||unit===7||ten===7){
+                document.write(i+",");
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

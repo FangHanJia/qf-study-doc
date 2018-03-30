@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #output span{
+            display:inline-block;
+            padding:5px;
+            margin:5px;
+            background:#eee;
+        }
+        #output span:hover{
+            background:#555;
+        }
+    </style>
+</head>
+<body>
+    <h1>99乘法表</h1>
+    <div id="output"></div>
+    <script type="text/javascript">
+        var output = document.getElementById('output');
+
+        // html标签的拼接
+        var html = '';
+        // 打印99乘法表
+        for(var i = 1;i<=9;i++){
+            for(var j = 1 ;j<=i;j++){
+                html +='<span>'+j+'x'+i+'='+i*j+'</span>';
+            }
+            html +='<br />';
+        }
+        output.innerHTML = html;
+    </script>
+</body>
+</html>

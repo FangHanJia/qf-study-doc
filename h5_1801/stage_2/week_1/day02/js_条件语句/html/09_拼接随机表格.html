@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+        table tr{
+            /*padding:5px;*/
+            border:1px solid #555;
+            }
+        table td{
+            padding:5px;
+            /*border:1px solid #555;*/
+            }
+    </style>
+</head>
+<body>
+    <label for="row">行数</label>
+    <input type="text" id="row"/>
+    <label for="col">列数</label>
+    <input type="text" id="col"/>
+    <button id="btn" onclick='createTable()'>生成表格</button>
+    <div id="output"></div>
+    <script type="text/javascript">
+        var row = document.getElementById('row');
+        var col = document.getElementById('col');
+        var output = document.getElementById('output');
+
+        //声明随机颜色的变量
+        var r,g,b;
+        //生成表格的函数
+        function createTable(){
+            var html = '<table><tbody>';
+            //获取输入的值
+            var _row = row.value;
+            var _col = col.value;
+            // 外层控制行
+            for(var i = 0;i<_row;i++){
+                html +='<tr>';
+                r = parseInt(Math.random()*256);
+                g = parseInt(Math.random()*256);
+                b = parseInt(Math.random()*256);
+                console.log(r,g,b);
+                //内层控制列
+                for(var j = 0; j<_col;j++){
+                    // 以内联样式拼接：注意单双引号的拼接
+                    html +='<td style="background:rgb('+ r +',' + g +',' + b +');">'+i+j+'</td>';
+                }
+                html +='</tr>';
+            }
+            html +='</tbody></table>';
+            output.innerHTML = html;
+
+        }
+
+
+    </script>
+</body>
+</html>

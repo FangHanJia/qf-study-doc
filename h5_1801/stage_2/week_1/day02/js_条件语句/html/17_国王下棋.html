@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>国王下棋</title>
+    <style type="text/css">
+        span{
+            color:red;
+            font-size:24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>国王下棋</h1>
+    <p>计算小麦的重量（我国小麦千粒生一般为25-40克）</p>
+    <div id="output"></div>
+     <script type="text/javascript">
+        var number = 1;
+        var total = 0;
+        var output = document.getElementById('output');
+        for(var i = 1;i<=64;i++){
+            number = number*2;
+            total = total+number;
+            console.log(total);
+        }
+        output.innerHTML = '小麦的重量:'+'<span>'+(total*40/1000000) +'千克!';
+
+    </script>
+</body>
+</html>
