@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>动画函数的封装</title>
+    <style type="text/css">
+        .box{width:200px;height:100px;background:#58bc58;}
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            //动画函数的封装:单个属性的动画
+            function animate(ele,attr,target){
+                //执行前先清除定时器
+                clearInterval(ele.timer);
+                ele.timer = setInterval(function(){
+                    //获取当前值
+                    let current = getComputedStyle(ele)[attr];
+
+                    //获取单位
+                    let unit = current.match(/[a-z]+$/);
+                    unit = unit ? unit[0]:'';
+
+                    //提取值
+                    current = parseFloat(current);
+
+                    //计算速度,且避免速度为0；
+                    let speed = (target - current)/10;
+                    current += speed;
+                    speed = speed > 0?Math.ceil(speed):Math.floor(speed);
+
+                    // 针对opacity属性计算速度
+                    if(attr === 'opacity'){
+                        speed = speed > 0?0.01 : -0.01;
+                    }
+
+                    // 到达目标值后，清除定时器
+                    if(current === target || speed ===0){
+                        //清除定时器
+                        clearInterval(ele.timer);
+                        //重置目标值
+                        current = target;
+                    }
+
+                    ele.style[attr] = current + unit;
+                },30);
+            }
+            //获取元素
+            let box = document.querySelector('.box');
+            //鼠标进入事件
+            box.onmouseover = function(){
+                animate(box,'width',1200);
+            }
+            //鼠标移除事件
+            box.onmouseout = function(){
+                animate(box,'width',50);
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="box"></div> 
+</body>
+</html>

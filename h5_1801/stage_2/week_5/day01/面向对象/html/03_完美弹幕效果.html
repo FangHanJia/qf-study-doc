@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>完美弹幕效果</title>
+    <style>
+        .container{width:800px;margin:0 auto;padding-bottom:10px;background-color:#dfdfdf;}
+        #barrage{position:relative;height:520px;margin-bottom:10px;background-color:#000;overflow:hidden;}
+        #barrage .bar-item{position:absolute;left:100%;white-space:nowrap;}
+        #msg{margin-left:10px;width:400px;height:30px;border:1px solid #999;border-right:none;box-sizing:border-box;vertical-align:middle;}
+        #msg+button{padding:0 10px;height:30px;vertical-align:middle;}
+    </style>
+    <script type="text/javascript" src="../../../common.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            /*
+                找对象：
+                    1、页面
+                    2、弹幕文字
+            */
+           // 1、页面对象
+           let page = {
+                ele:'#barrage',
+                msg:'#msg',
+                // 初始化
+                init(){
+                    // 创建/获取元素
+                    this.ele = document.querySelector(this.ele); 
+                    this.msg = document.querySelector(this.msg); 
+                    this.btn = this.msg.nextElementSibling;
+                    this.btn.onclick = ()=>{
+                        // 发送
+                        this.send();
+                    }
+                },
+                send(){
+                    // 获取输入的值
+                    let _text = this.msg.value;console.log(_text);
+                    // 产生新实例
+                    new Barrage(_text);
+                }
+           }
+           // 2、弹幕文字对象的构造函数
+           function Barrage(text){
+                // 接收属性
+                this.text = text;
+                // 颜色
+                this.color = randomColor();
+                // 运动速度
+                this.speed = randomNumber(-20,-5);
+                // 文字大小
+                this.size = randomNumber(12,48);
+                // 位置
+                this.top = randomNumber(10,page.ele.clientHeight - this.size -10);
+                // 初始化
+                this.init();
+           }
+           Barrage.prototype.init = function(){
+                // 创建/获取元素
+                this.ele = document.createElement('span');
+                // 添加类名
+                this.ele.className = 'bar-item';
+                this.ele.style.color = this.color;
+                this.ele.innerHTML = this.text;
+                this.ele.style.top  = this.top + 'px';
+                // 添加到界面
+                page.ele.appendChild(this.ele);
+
+                // 文字运动
+                this.move();
+           }
+           Barrage.prototype.move = function(){
+                this.timer = setInterval(()=>{
+                    //获取当前值
+                    let left = this.ele.offsetLeft;
+                    left += this.speed;
+                    if(left < - this.ele.offsetWidth){
+                        clearInterval(this.timer);
+                    }
+
+                    this.ele.style.left = left + 'px';
+                },50);
+           }
+           // 操作对象
+           page.init();
+           // 回车键发送弹幕
+           document.onkeydown = function(e){
+                // 兼容
+                e = e || window.event;
+                var target = e.target || e.srcElement;
+                if(e.keyCode == 13 && target.tagName.toLowerCase() == 'input'){
+                    // console.log(666);
+                    page.send();
+                }
+           }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="barrage"></div>
+        <input type="text" id="msg"><button>发送</button>
+    </div>
+</body>
+</html>

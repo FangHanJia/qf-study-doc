@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>星级评分</title>
+    <style type="text/css">
+        #star {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 300px;
+        height: 28px;
+        }
+        
+        #star li {
+            float: left;
+            background: url('../images/star.gif') no-repeat 0 0;
+            width: 27px;
+            height: 28px;
+        }
+        
+        #star .active{background-position:0 -29px;}
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            'usr strict';
+            // 获取元素
+            let starBox = document.querySelector('#star');
+            let infoBox = document.querySelector('#info');
+            let starList = star.querySelectorAll('li');
+            // 星星数量对应的评分等级
+            let grades = '差评，一般，良好，优秀，强力推荐'.split('，');
+            // 记录点击星星的数量
+            let currentStar = 0;
+            // 鼠标滑过点亮星星
+            for(let i=0;i<starList.length;i++){
+                // 初始化
+                starList[0].className = 'active';
+                info.innerHTML = grades[0];
+                starList[i].onmouseenter = function(e){
+                    //兼容
+                    let target = e.target || e.srcElement;
+                    let currentIdx; 
+                    let currentLi;
+                    // 获取当前行
+                    if(target.tagName.toLowerCase() === 'li'){
+                        currentLi = target;
+                        
+                    }
+                    //获取当前索引值
+                    for(let i=0;i<starList.length;i++){
+                        if(starList[i] == currentLi){
+                            currentIdx = i;
+                            break;
+                        }
+                    }
+                    //点亮星星:大于当前索引值的就清除类名
+                    for(let j =0;j<starList.length;j++){
+                        if(j<=currentIdx){
+                            starList[j].className = 'active';
+                        }else{
+                            starList[j].className = '';
+                        }
+                    }   
+                    
+                }
+            }
+
+            //点击星星显示星星数量对应的等级
+            starBox.onclick = function(e){
+                if(e.target.tagName.toLowerCase() =='li'){
+                    for(let i=0;i<starList.length;i++){
+                        if(e.target ==starList[i]){
+                            console.log(555);
+                            info.inerHTML = '';
+                            info.innerHTML = grades[i];
+                            currentStar = i;
+                            break;
+                        }
+                    }
+                }
+            }
+            //鼠标离开清除星星背景
+            starBox.onmouseout = function(e){
+                for(let i=0;i<starList.length;i++){
+                    // 大于当前星星数的清除类名
+                    if(i > currentStar ){
+                        starList[i].classList.remove('active');
+                    }else{
+                        starList[i].classList.add('active');
+                    }
+                }
+               
+            }
+            
+        });
+    </script>
+</head>
+<body>
+    <h1>星级评分</h1>
+    <ul id="star">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div id="info"></div>
+</body>
+</html>

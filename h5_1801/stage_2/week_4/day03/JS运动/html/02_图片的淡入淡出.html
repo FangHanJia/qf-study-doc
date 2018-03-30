@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>02_图片的淡入淡出</title>
+    <style type="text/css">
+        .box{
+            width:320px;
+        }
+        .box .girl{
+            display:block;
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            'use strict';
+            //获取元素
+            let box = document.querySelector('.box');
+            //元素的初始值
+            box.style.opacity = 0.5;
+            let timer;
+            //鼠标移入的事件
+            box.onmouseover = function(){
+                clearInterval(timer);
+                timer = setInterval(function(){
+                    //目标值
+                    let target = 10;
+                    //获取当前值
+                    let current = getComputedStyle(box).opacity*10;
+                    // console.log(current);
+                    // 计算速度
+                    let speed = (current/10);
+                    current += speed;
+                    // console.log(current);
+                    if(current>=target || speed === 0){
+                        clearInterval(timer);
+                    }
+                    box.style.opacity = current/10;
+                },30);
+            }
+            //鼠标移入的事件
+            box.onmouseout = function(){
+                clearInterval(timer);
+                timer = setInterval(function(){
+                    //目标值
+                    let target = 0.5;
+                    //获取当前值
+                    let current = getComputedStyle(box).opacity;
+                    // console.log(current);
+                    // 计算速度
+                    let speed = (current/10);
+                    current -= speed;
+                    
+                    if(current<=target || speed === 0){
+                        clearInterval(timer);
+                    }
+                    box.style.opacity = current.toFixed(1);
+                    console.log(current.toFixed(1));
+                },60);
+            }
+
+        });
+    </script>
+</head>
+<body>
+    <div class="box">
+        <img src="../images/g3.jpg" height="320" width="320" alt="" class="girl" />
+    </div>
+</body>
+</html>

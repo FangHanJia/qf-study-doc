@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            background:#000;
+            margin:0;
+            padding:0;
+            overflow:hidden;
+        }
+        .ball{
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            background:green;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        .wall{
+            width:250px;
+            height:50px;
+            border-radius:10px;
+            background:#eee;
+            position:absolute;
+            bottom:130px;
+            left:200px;
+        }
+
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            //获取元素
+            let ball = document.querySelector('.ball');
+            let wall = document.querySelector('.wall');
+            //设置纵横的速度
+            let xspeed = 15; 
+            let yspeed = 20; 
+            setInterval(function(){
+                //小球的当前top
+                let yball = ball.offsetTop;
+                let hball = ball.offsetHeight;
+                let y = window.innerHeight;
+                //垂直边界的判断
+                if(yball <0 || y - yball <= hball){
+                    yspeed *= -1;
+                }
+                // 水平边界的判断
+                if(ball.offsetLeft < 0|| window.innerWidth - ball.offsetLeft <= ball.offsetWidth){
+                    xspeed *= -1; 
+                }
+                //与挡板的碰撞
+                // if(){
+
+                // }
+                ball.style.top = ball.offsetTop + yspeed + 'px';
+                ball.style.left = ball.offsetLeft + xspeed + 'px';
+            },30);
+            //挡板的移动
+            let wallSpeed = 15;
+            document.onkeydown = function(e){
+                e = e || window.event;
+                wallSpeed++;
+                //左方向
+                if(e.keyCode == 37){
+                    wall.style.left = wall.offsetLeft - wallSpeed + 'px';
+                    if(wall.offsetLeft <=0){
+                        wall.style.left = 0 + 'px';
+                    }
+                }else if(e.keyCode == 39){
+                    wall.style.left = wall.offsetLeft + wallSpeed + 'px';
+                    //边界处理
+                    if(window.innerWidth - wall.offsetLeft <= wall.offsetWidth){
+                         wall.style.left = window.innerWidth - wall.offsetLeft+'px';
+                    }
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="ball"></div>
+    <div class="wall"></div>
+</body>
+</html>

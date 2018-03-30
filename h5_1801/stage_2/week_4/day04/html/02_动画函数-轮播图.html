@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        ul{list-style:none;}
+        .box{width:320px;height:320px;margin:0 auto;position:relative;overflow:hidden;}
+        .box ul{width:320px;margin:0 auto;position:absolute;top:0;left:0;}
+        .box ul img{display:block;}
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            //动画函数：对象及回调函数的参数
+            /**
+             * 动画函数的封装
+             * @param  {element} ele      [元素]
+             * @param  {object} opt      [属性对象]
+             * @param  {function} callBack [一个函数的调用]
+             */
+            function animate(ele,opt,callBack){
+                var index =0;
+                //遍历对象
+                for(let attr in opt){
+                    index++;
+                    //调用动画函数
+                    autoPlay(attr);
+                }
+                //动画函数
+                function autoPlay(attr){console.log(66);
+                   
+                    //定时器的名字
+                    let timerName = attr + 'timer';
+                    let target = opt[attr];
+                    clearInterval(ele[timerName]);
+                    ele[timerName] = setInterval(function(){
+                       
+                        //获取当前值
+                        let current = getComputedStyle(ele)[attr];
+                        //提取单位,返回一个数组
+                        let unit = current.match(/[a-z]+$/);
+                        unit = unit ? unit[0]:'';
+                        //提取值
+                        current = parseFloat(current);
+                        //计算速度
+                        let speed = (target - current)/10;
+                        
+                        speed = speed>0?Math.ceil(speed):Math.floor(speed);
+
+                        //针对opacity计算速度
+                        if(attr === 'opacity'){
+                            speed = speed>0?0.01:-0.01;
+                        }
+                        current += speed;
+                        //达到目标值清除定时器
+                        if(current === target || speed === 0){
+                            clearInterval(ele[timerName]);
+                            index--;
+                            if(index===0 && typeof callBack === 'function'){
+                                callBack();
+                            }
+                        }
+                        ele.style[attr] = current + unit;
+                    },30);
+                }
+                
+            } 
+            //自动轮播
+            let box = document.querySelector('.box');
+            let ul = document.querySelector('ul');
+            let index = 0;
+            let timer = setInterval(play,2000);
+            //鼠标移入事件
+            box.onmouseenter = function(){
+                clearInterval(timer);
+            }
+            //鼠标移出事件
+            box.onmouseout = function(){
+                timer = setInterval(play,2000);
+            }
+            //播放函数
+            function play(){
+                index++;
+                let len = -index*320;
+                if(index>=4){
+                    index = 0;
+                }
+                animate(ul,{top:len},function(){
+                    document.body.style.background = 'red';
+                });
+            }
+        });
+        
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><img src="../images/g1.jpg" alt="" /></li>
+            <li><img src="../images/g2.jpg" alt="" /></li>
+            <li><img src="../images/g3.jpg" alt="" /></li>
+            <li><img src="../images/g4.jpg" alt="" /></li>
+            <li><img src="../images/g5.jpg" alt="" /></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>水平无缝轮播图</title>
+   <style>
+        ul{list-style: none;padding:0;margin:0;}
+        .focus img{display: block;}
+        .focus{position:relative;width:810px;height:320px;overflow:hidden;}
+        .focus ul{position:absolute;overflow:hidden;}
+        .focus ul li{float:left;}
+        .focus .page{position:absolute;right:0;bottom:0;padding:10px;}
+        .focus .page span{display:inline-block;margin:0 5px;width:30px;height:30px;line-height:30px;background-color:rgba(0,0,0,.6);text-align:center;color:#fff;border-radius: 50%;box-shadow:0 0 10px rgba(0,0,0,.5);cursor:pointer;}
+        .focus .page span.active{background-color: rgba(255,0,0,.8);}
+        .focus a{display:none;width:30px;height:40px;text-decoration:none;font-size:24px;line-height:40px;text-align:center;position:absolute;top:50%;margin-top:-30px;background:#eee;opacity:0.5;color:black;}
+        .focus #prev{left:20px;}
+        .focus #next{right:20px;}
+        .focus:hover a{display:block;}
+        .focus a:hover{opacity:1;}
+    </style>
+    <script type="text/javascript" src="../../common.js"></script>
+    <script type="text/javascript">
+        /*
+        1）设置ul宽度，达到水平排列的效果
+        2）水平轮播效果
+        3）移入移出，清除轮播效果
+        4）添加分页效果
+            * 点击分页切换
+        5）无缝滚动
+            * 把第一张复制到最后
+            * 当滚动到复制那张图片时，瞬间重置回初始状态，并把index改成1
+
+        6）添加前后按钮，实现上一张、下一张的效果（待完成...）
+        */
+        document.addEventListener('DOMContentLoaded',()=>{
+            'use strict';
+            //获取元素
+            let focus = document.querySelector('.focus');
+            let ul = focus.children[0];
+            
+            //计算图片的数量,被克隆的元素.cloneNode(true);
+            ul.appendChild(ul.children[0].cloneNode(true));
+            let len = ul.children.length;console.log(len);
+            let imgWidth =0;
+            //获取图片宽度
+            ul.querySelector('img').onload = function(){
+                imgWidth = this.offsetWidth; console.log(imgWidth);
+                //设置ul宽度，达到水平排列的效果
+                ul.style.width = imgWidth * len + 'px';
+            }
+
+            // 动态生成分页
+            let page = document.createElement('div');
+            // 添加类名
+            page.className = 'page';
+            // 生成数字
+            for(let i=1;i<len;i++){
+                let span = document.createElement('span');
+                span.innerText = i;
+                // 初始化背景颜色
+                if(i==1){
+                    span.className = 'active';
+                }
+                // 添加到分页中
+                page.appendChild(span);
+            }
+            // 将分页添加到容器上
+            focus.appendChild(page);
+
+
+            //水平轮播
+            let index = 0;
+            let timer = setInterval(autoPlay ,2000);
+            //鼠标移入清除定时器
+            focus.onmouseenter = function(){
+                clearInterval(timer);
+            }
+            //封一个鼠标移出继续轮播函数
+            focus.onmouseleave = function(){
+                timer = setInterval(autoPlay ,2000);
+            }
+            //分页点击委托事件
+            page.onclick = function(e){
+                e = e || window.event;
+                let target = e.target || e.srcElement;
+                //获取分页的索引值
+                index = target.innerHTML-1;
+                show();
+            }
+            //封一个自动轮播的函数
+            function autoPlay(){
+                index++;
+                show();
+                
+            }
+            // 封一个动画函数
+            function show(){
+                if(index>=len){
+                    ul.style.left = 0;
+                    index = 1;
+                }
+                //调用动画封装函数
+                animate(ul,{left:-index*imgWidth});
+                //排他
+                for(let i=0;i<len-1;i++){
+                    page.children[i].className = '';
+                }
+                // 分页背景颜色
+                if(index === len - 1){
+                    page.children[0].className = 'active';
+                }else{
+                    page.children[index].className = 'active';
+                }
+           
+            }
+            // 获取箭头按钮
+            let prev = document.querySelector('#prev');
+            let next = document.querySelector('#next');
+            // 箭头按钮绑定事件
+            next.onclick = function(){
+                autoPlay();
+            }
+            prev.onclick = function(){
+                if(index === 0){
+                    index = len-1;
+                    ul.style.left = -imgWidth*index +'px';
+                }
+                index--;
+                show();
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="focus">
+        <ul>
+            <li><img src="../images/001.jpg" alt="" /></li>
+            <li><img src="../images/002.jpg" alt="" /></li>
+            <li><img src="../images/003.jpg" alt="" /></li>
+            <li><img src="../images/003.jpg" alt="" /></li>
+            <li><img src="../images/004.jpg" alt="" /></li>
+        </ul>
+        <a href="javascript:;" id="prev">&lt;</a>
+        <a href="javascript:;" id="next">&gt;</a>
+    </div> 
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>01_返回顶部效果（缓冲运动）</title>
+    <style type="text/css">
+        .toTop{
+            width:50px;
+            height:50px;
+            background:#58bc58;
+            position:fixed;
+            right:20px;
+            bottom:40px;
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            //严格
+            'use strict';
+            for(let i =0; i<500;i++){
+                document.body.innerHTML += '<p>我是段落标签'+i+'</p>';
+            }
+            //点击回到顶部
+            let toTop = document.querySelector('.toTop');
+            let timer;
+            toTop.onclick = function(){
+                clearInterval(timer);
+                //目标值：
+                let target = 0;
+                timer = setInterval(function(){
+                    // 获取当前值
+                    let currentY = window.scrollY;
+                    //计算速度
+                    let  speed = parseInt(currentY/10);
+                    currentY -= speed;
+                    if(speed <=target || speed === 0){
+                        clearInterval(timer);
+                        currentY = target;
+                    }
+                    scrollBy(0,-speed); 
+                },30);
+            }
+            
+            
+        });
+    </script>
+</head>
+<body>
+   <div class="toTop"></div>
+</body>
+</html>

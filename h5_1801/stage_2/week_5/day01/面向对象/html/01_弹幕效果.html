@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>弹幕效果</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        #box{
+            width:620px;
+            height:500px;
+            margin:0 auto;
+        }
+        #box .container{
+            width:620px;
+            height:400px;
+            background:#000;
+            position:relative;
+            overflow:hidden;
+        } 
+        #box .container span{
+            padding:2px;
+            position:absolute;
+            left:620px;
+        }
+        #box #content{
+            width:350px;
+            height:50px;
+            outline:none;
+            padding:0 10px;
+        }
+       
+        #box #btnSend{
+            outline:none;
+            border:0 none;
+            width:80px;
+            height:54px;
+        }
+    </style>
+    <script type="text/javascript" src="../../../common.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+           // 获取元素
+            let container = document.querySelector('.container');
+            let content = document.querySelector('#content');
+            let btnSend = document.querySelector('#btnSend');
+
+            // 封一个弹幕文字对象的构造函数
+            function Barrage(){
+            }
+            // 提取全局变量
+            let _content;
+            // 封一个发送信息的函数
+            Barrage.prototype.sendMsg = function(){
+                // 获取输入框的值
+                _content = content.value;
+
+            } 
+            // 封一个动态生成span标签的函数
+            Barrage.prototype.createSpan = function(){
+                // 创建一个span标签
+                let text = document.createElement('span');
+                text.innerHTML = _content;
+                // 获取随机top值
+                text.style.top = Math.random()*380 + 'px';
+                // 随机颜色
+                text.style.color = randomColor(); 
+
+                // 随机文字大小
+                text.style.fontSize = Math.random()*100 + 'px'
+
+                // 添加到容器中
+                container.appendChild(text);
+                
+                // 运动速度
+                animate(text,{'left':0},function(){
+                    setTimeout(function(){
+                        // 清除弹幕
+                        text.remove();
+                    },1000);
+                });
+               
+            }
+            // 发送按钮绑定事件
+            btnSend.onclick = function(e){
+                // 兼容
+                e = e || window.event;
+                var target = e.target || e.srcElement;
+
+                // 创建文本对象
+                let myText = new Barrage();
+                myText.sendMsg();
+                myText.createSpan();
+                // content.value = '';
+            }
+
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div class="container"></div>
+        <input type="text" id = "content" placeholder="弹幕走一波！"/>
+        <button id = "btnSend">发送</button>
+    </div>
+</body>
+</html>

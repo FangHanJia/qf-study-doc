@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        html,body{overflow:hidden;height:100%;}
+        body,div,p{margin:0;padding:0;}
+        body{background:#000;font:12px/1.5 arial;color:#7A7A7A;}
+        a{text-decoration:none;outline:none;}
+        #tips,#copyright{position:absolute;width:100%;height:50px;text-align:center;background:#171717;border:2px solid #484848;}
+        #tips{top:0;border-width:0 0 2px;}
+        #tips a{font:14px/30px arial;color:#FFF;background:#F06;display:inline-block;margin:10px 5px 0;padding:0 15px;border-radius:15px;}
+        #tips a.active{background:#FE0000;}
+        #copyright{bottom:0;line-height:50px;border-width:2px 0 0;}
+        #copyright a{color:#FFF;background:#7A7A7A;padding:2px 5px;border-radius:10px;}
+        #copyright a:hover{background:#F90;}
+        p{position:absolute;top:55px;width:100%;text-align:center;}
+        .fire {
+            width: 3px;
+            height: 30px;
+            background: white;
+            position: absolute;top:100%;
+        } 
+        .spark {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+       }
+    </style>
+    <script type="text/javascript" src="../../../common.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 找对象：
+            // 1、页面
+            // 2、烟花
+            // 3、烟火
+            
+            /*
+                1、页面对象
+            */
+            let page = {
+                // 元素属性
+                ele:'body',
+                btn:'#auto',
+                
+                
+                // 初始化方法：创建/获取元素
+                init(){
+                    this.ele = document.querySelector(this.ele);
+                    this.btn = document.querySelector(this.btn);console.log(this.btn)
+                    this.btn.onclick = ()=>{
+                        this.timer = setInterval(()=>{
+                                        this.send();
+                                    },1000);
+                    }
+                    // 给按钮绑定事件
+                    document.onclick = function(e){
+                        // 兼容
+                        e = e || window.event;
+                        if(this.timer){
+                            clearInterval(this.timer);
+                        }else {
+                            new FireWork(e.pageX,e.pageY);
+                        }
+                    }
+                    
+                },
+                send(){
+                    let x =randomNumber(1,window.innerWidth);
+                    let y =randomNumber(1,window.innerHeight);
+                    new FireWork(x,y);
+                }
+
+            }
+            /*
+                2、烟花对象的构造函数
+             */
+            function FireWork(x,y){
+                // x,y接收按钮事件传过来的参数
+                this.left = x;
+                this.top = y;
+
+                // 烟花数量
+                this.qty = randomNumber(20,30);
+
+                // 烟花的爆炸半径
+                this.r = randomNumber(50,200);
+                // 调用初始化函数
+                this.init();
+            }
+            // 封一个烟花初始化的函数
+            FireWork.prototype.init = function(){
+                // 创建元素
+                this.ele = document.createElement('span');
+                // 添加类名
+                this.ele.className = 'fire';
+                this.ele.style.left = this.left + 'px';
+
+                page.ele.appendChild(this.ele);
+                // 让元素运动起来
+                this.move();
+                
+            }
+            FireWork.prototype.move = function(){
+                animate(this.ele,{top:this.top,height:this.ele.offsetWidth},()=>{
+                    this.boom();
+                    this.remove();
+                });
+            }
+            // 封一个烟花爆炸函数
+            FireWork.prototype.boom = function(){
+                // 生成烟火实例
+                for(let i=0;i<this.qty;i++){
+                    // 计算烟火的角度
+                    let deg = 360/this.qty*i;
+                    new Spark(this.left,this.top,this.r,deg);
+                }
+            }
+            FireWork.prototype.remove = function(){
+                // console.log(this.ele.parentNode);
+                this.ele.parentNode.removeChild(this.ele);
+            }
+            /*
+                3、烟火对象的构造函数
+             */
+            function Spark(x,y,r,deg){
+                // x,y,r,deg接收boom函数传过来的参数
+                this.r = r;
+                this.rad = deg*Math.PI/180;
+                this.color = randomColor();
+                // 初始化
+                this.init(x,y);console.log(888);
+            }
+            Spark.prototype.init = function(x,y){
+                // 初始化函数：创建/获取元素
+                this.ele = document.createElement('span');
+                // 添加类名
+                this.ele.className = 'spark';
+
+                // 设置初始位置
+                this.ele.style.left = x + 'px';
+                this.ele.style.top = y +'px';
+                // 颜色
+                this.ele.style.backgroundColor = this.color;
+                // 添加到页面中
+                page.ele.appendChild(this.ele);
+                // 移动
+                this.move(x,y);
+            }
+            Spark.prototype.move = function(x,y){
+
+                let a = this.r * Math.cos(this.rad);
+                let b = this.r * Math.sin(this.rad);
+                let left = parseInt(x + a) ;
+                let top = parseInt(y + b) ;
+                animate(this.ele,{left,top,opacity:0.4},()=>{
+                    this.remove();console.log(666);
+                });
+
+            }
+            Spark.prototype.remove = function(){
+                this.ele.parentNode.removeChild(this.ele);
+             }
+
+            // 操作对象
+            page.init();
+            // 
+            // page.btn.onclick = function(){
+            //     setInterval(,100);
+            // }
+        });
+    </script>
+</head>
+<body>
+    <div id="tips"><a id="auto" href="javascript:;" class="">自动放烟花</a></div>
+</body>
+</html>
