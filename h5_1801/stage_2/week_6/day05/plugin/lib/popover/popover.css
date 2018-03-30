@@ -1,0 +1,8 @@
+.popover{display:none;position:absolute;left:200px;top:100px;width:300px;height:200px;border:1px solid #ccc;background-color:#fff;}
+.popover .title{height:50px;line-height:50px;padding:0 10px;background:linear-gradient(#fff, #efefef 5%, #ddd);}
+.popover .content{padding:15px;}
+.popover .footer{position:absolute;left:0;bottom:0;right:0;padding:20px;text-align:center;}
+.footer button{display:inline-block;margin:0 5px;padding:5px 15px;border:1px solid #ddd;background:linear-gradient(#efefef, #cfcfcf);}
+.popover .btn-close{position:absolute;right:0;top:0;padding:0 10px;line-height:50px;cursor:default;}
+.popover .btn-close:hover{color:#f00;}
+.overlay{position:fixed;top:0;left:0;right:0;bottom:0;background-color: rgba(0,0,0,.3)}
