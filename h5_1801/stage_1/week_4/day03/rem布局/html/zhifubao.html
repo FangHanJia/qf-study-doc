@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" id="vp"/>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/zhifubao.css" />
+    <script type="text/javascript">
+    // 把尺寸放大N倍（N是window.devicePixelRatio）
+    var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
+    //物理像素*设备像素比=真实像素
+    document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
+    // 把屏幕的倍率缩小到N分之一（N是window.devicePixelRatio）
+    var scale = 1/window.devicePixelRatio;
+    var mstr = 'initial-scale='+ scale +', maximum-scale='+ scale +', minimum-scale='+ scale +', user-scalable=no';
+    document.getElementById("vp").content = mstr;
+</script>
+
+</head>
+<body>
+    <div id="zhifubao">
+        <header id="z_header">
+            <ul>
+                <li>
+                    <i class=" icon_football icon_caidan"></i>
+                    <span >账单</span>
+                </li>
+                <li>
+                    <i class="icon_football icon_shouye"></i>
+                    <i class="icon_football icon_shouye"></i>
+                    <i class="icon_football icon_shouye"></i>
+                </li>
+            </ul>
+        </header>
+        <nav id="z_nav">
+            <ul>
+                <li><i class="icon_football icon_shouye"></i><span>扫一扫</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>扫一扫</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>扫一扫</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>扫一扫</span></li>
+            </ul>
+        </nav>
+        <main id="z_main">
+            <ul>
+                <li><i class="icon_football icon_shouye"></i><span>转账</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>转账</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>转账</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>转账</span></li><li><i class="icon_football icon_shouye"></i><span>转账</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>转账</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>转账</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>转账</span></li><li><i class="icon_football icon_shouye"></i><span>转账</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>转账</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>转账</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>转账</span></li>
+            </ul>
+            <div class="loop"></div>
+            <ul class="main_3">
+                <li><i class="icon_football icon_fangdajing"></i><span>飞机票</span></li>
+                <li><i class="icon_football icon_fangdajing"></i><span>飞机票</span></li>
+                <li><i class="icon_football icon_fangdajing"></i><span>飞机票</span></li>
+                <li><i class="icon_football icon_fangdajing"></i><span>飞机票</span></li>
+            </ul>
+             <ul class="main_3">
+                <li><i class="icon_football icon_fangdajing"></i><span>飞机票</span></li>
+                <li><i class="icon_football icon_fangdajing"></i><span>飞机票</span></li>
+                <li><i class="icon_football icon_fangdajing"></i><span>飞机票</span></li>
+                <li><i class="icon_football icon_fangdajing"></i><span>飞机票</span></li>
+            </ul>
+        </main>
+        <footer id="z_footer">
+            <ul>
+                <li>
+                    <i class="icon_football icon_my"></i> 
+                    <sapn>支付宝</sapn>
+                </li>
+                <li>
+                    <i class="icon_football icon_my"></i>
+                    <sapn>支付宝</sapn>
+                </li>
+                <li>
+                    <i class="icon_football icon_my"></i>
+                    <sapn>支付宝</sapn>
+                </li>
+                <li>
+                    <i class="icon_football icon_my"></i>
+                    <sapn>支付宝</sapn>
+                </li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>

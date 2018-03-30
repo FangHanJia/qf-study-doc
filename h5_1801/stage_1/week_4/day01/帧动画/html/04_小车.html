@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        body{
+            height: 100%;
+        }
+        .box{
+            width: 200px;
+            height: 120px;
+            position: absolute;
+            bottom:0;
+            left:0;
+            transform:translate(100px,0);
+            animation:run 1s linear forwards;
+        }
+        .box img{
+            width: 200px;
+            height: 120px;
+            
+        }
+        @-webkit-keyframes run{
+                   0%{}
+                   20%{transform:translate(0, 0) skewX(30deg);}
+                   90%{transform:translate(800px, 0) skewX(-20deg);}
+                   100%{transform:translate(800px, 0) skewX(0deg);}
+                   
+                }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../images/car.jpg" />
+    </div>
+</body>
+</html>

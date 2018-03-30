@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul>li>a{
+            display: block;
+            padding:10px 30px;
+            height: 30px;
+            font-size: 14px;
+            line-height: 30px;
+        }
+        ul li a[value$="doc"]{
+            background: url("../images/w.gif") no-repeat left center;
+        }
+         ul li a[value$="txt"]{
+            background: url("../images/text.gif") no-repeat left center;
+        }
+         ul li a[value$="ppt"]{
+            background: url("../images/ppt.gif") no-repeat left center;
+        } 
+        ul li a[value$="swf"]{
+            background: url("../images/swf.gif") no-repeat left center;
+        } 
+        ul li a[value$="ecl"]{
+            background: url("../images/x.gif") no-repeat left center;
+            
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#" value="doc">演讲稿.doc</a></li>
+        <li><a href="#" value="txt">演讲稿.txt</a></li>
+        <li><a href="#" value="ppt">演讲稿.ppt</a></li>
+        <li><a href="#" value="swf">演讲稿.swf</a></li>
+        <li><a href="#" value="ecl">演讲稿.ecl</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,55 @@
+一、浏览器的前缀
+    1、浏览器           内核          私有前缀
+        Chrome          Webkit          -webkit-
+        Ie              Trident         -ms-
+        Firefox         Gecko           -moz-
+        Opera           presto          -o-         
+二、边框圆角
+    1、边框
+        （1）、边框阴影：box-shadow：x-offset y-offset blur（透明度） spread color inset(向内延伸);(六个属性)。
+        （2）、边框图片：border-image：
+            [1]、边框图片资源:border-image-source:url();-引入以后，图片会默认放在边框的四个角。
+            [2]、边框图片切割:border-image-slice;-取值遵循上右下左（缺省找反义词），[不带单位]。
+            [3]、边框图片宽度:border-image-width:;-若是想要完全放在边框内，则该值小于等于border的宽度。
+            [4]、边框图片的向外延伸:border-image-ouset:;-不能取负值。
+            [5]、边框图片的重复:border-image-repeat:stretch;-默认值stretch;重复repeat;缩放后的重复round。
+    2、边框圆角：border-radius：水平方向半径/垂直方向半径。（遵循上右下左）;
+        [1]、分属性=>border-垂直(top bottom )-水平(left right)-radius:水平 垂直;
+三、渐变
+    1、线性渐变：
+     [1]、background:-webkit-gradient(linear,起点，终点，from(red),to(blue));
+     [2]、background:-webkit-gradient(linear,起点，终点，color-stop(0,red),color-stop(0.6,green));
+     [3]、background:-webkit-linear-gradient(方向||角度，颜色 渐变开始的位置);
+                    例子：-webkit-linear-gradient(top,red 15%，blue 50%,green 80%);
+                            线性渐变：方向|角度
+     [4]、老版本+新版本=90；
+    2、径向渐变：
+     [1]、background:-webkit-radial-gradient(圆心，red 15%,blue 80%,green 100%)
+     [2]、background:-webkit-radial-gradient(圆心，形状，red 15%,blue 80%,green 100%);
+        形状：circle-圆，ellipse椭圆形。
+        大小：closest-side最近角;farthest-corner；最远角。
+    3、重复渐变：
+     [1]、background:-webkit-repeating-radial-gradient(圆心，red 0%,red 5%,black 5% ,black 10%);
+    4、字体渐变：
+        background:-webkit-linear-gradient(left,red 40%, purple 50%, #009B85 54%); 
+        /* 规定背景的划分区域 */
+        -webkit-background-clip: text; 
+         /* 防止字体颜色覆盖 */      
+        -webkit-text-fill-color: transparent;  
+四、过度
+    1、transition-写在选择器上。
+        [1]、需要过度的属性:transtion-property;
+        [2]、过度的时间:transition-duration
+        [3]、过度的形式:transition-timing-fuction：linear（线性），ease-in（慢速进入）。
+        [4]、过度的延迟；transition-delay:时间s;
+        [5]总属性:多个属性可用逗号隔开，all代表所有的属性。
+五、2D变换
+    1、transform-变换(本身没有动画效果)
+        [1]、移动变换:transiform:translate(x,y);
+        [2]、盒模型中，写了百分比的话，意思就是父级元素尺寸的的百分比。
+        [3]、缩放变换:transform:scale(x,y);-取值代表倍数、变换的基准点在元素中间。
+        [4]、翻转变换:transform:rotate(x,y);-取值代表角度，可取负值、变换的基准点在元素中间。
+        [5]、扭曲变换:transform:skew(x,y);-x轴偏移以逆时针为正，y轴偏移以顺时针为正。
+    2、变换基准点:transform-origin：x y;
+        [1]、数值，百分比
+        [2]、方位

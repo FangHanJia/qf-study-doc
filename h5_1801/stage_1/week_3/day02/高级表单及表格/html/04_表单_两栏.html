@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{
+            list-style: none;
+        } 
+        a{
+            text-decoration: none;
+        }
+        .table_l{
+            width: 198px;
+            height: 520px;
+            background-color: #417EC8;
+            float: left;
+            margin-right: 20px;
+        }
+        .table_r{
+            height: 520px;
+            /*background-color: pink;*/
+            overflow:hidden;
+        } 
+        .table_r .container_text{
+            height: 30px;
+            width: 100%;
+            background-color: white;
+            border-bottom: 1px solid #E3E3E3;
+        }
+        .table_r .container_text ul li{
+            float:left;
+        }
+         .table_r .container_text ul li a{
+            font-size: 12px;
+            line-height: 30px;
+            color:#636363;
+        }
+        .table_r .container_research{
+           height: 40px;
+           width: 100%;
+           background-color: white;
+           /*vertical-align: middle;*/
+           padding-top: 10px;
+           border-bottom: 1px solid gray;
+        }
+        .table_r .container_delect{
+            height: 34px;
+            width: 100%;
+        }
+        .table_r .container_delect ul{
+           float:right;
+        }
+        .table_r .container_delect ul li{
+           float:left;
+        }
+         .table_r .container_delect ul li a{
+            float:left;
+           height: 25px;
+           font-size: 16px;
+           line-height: 34px;
+            padding-top: 9px;
+        }
+        .table_r .container_delect ul li a span{
+           float:left;
+           border-right: 2px solid black;
+           line-height: 16px;
+           padding:0 20px;
+           /*background:url("../images/sprits.png") no-repeat 0 0;*/
+        } 
+        .table_r .container_delect ul li a::before{
+          display: block;
+          width:20px;
+          height: 20px;
+           background:url("../images/sprits.png") no-repeat 0 0;
+        }
+        .table_r .container_cont{
+           height: 378px;
+           width: 100%;
+           /*background-color: darkcyan;*/
+        }
+        .table_r .container_cont thead tr th{
+           font-size: 14px;
+           line-height: 30px;
+           text-align: center;
+        }
+        .table_r .container_cont tbody tr td{
+           font-size: 14px;
+           line-height: 30px;
+           text-align: center;
+        }
+        .table_r .container_cont tr:nth-child(2n+1){
+           background-color: #F1F1F1;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="table_l"></div>
+    <div class="table_r">
+        <div class="container_text">
+            <ul>
+                <li><a href="#">当前位置>></a></li>
+                <li><a href="#">当前位置>></a></li>
+                <li><a href="#">当前位置>></a></li>
+                <li><a href="#">当前位置</a></li>
+            </ul>
+        </div>
+        <form class="container_research">
+            <a href="#"><span></span>搜索</a>
+            <label for="name">设备名称：</label><input type="text" name="" id="name">   
+            <label for="type">设备名称：</label><input type="text" name="" id="type"value="-请选择-"> 
+            <select name="type" id="" >
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+            </select> 
+            <input type="button" value="查询" />
+        </form>
+        <div class="container_delect">
+            <ul>
+                <li><a href="#"><span>增加</span></a></li>
+                <li><a href="#"><span>删除</span></a></li>
+            </ul>
+        </div>
+        <table class="container_cont" rules="none">
+            <thead>
+                <tr class="first" style="background-color:white;">
+                    <th> <label for="select_all"><input type="checkbox" id="select_all"/>全选</label></th>
+                    <th>设备类型</th>
+                    <th>设备类型</th>
+                    <th>设备类型</th>
+                    <th>设备类型</th>
+                    <th>设备类型</th>
+                    <th>设备类型</th>
+                    <th>设备类型</th>
+                </tr>
+            </thead>
+           <tbody>
+               <tr>
+                   <td>
+                     <input type="checkbox" id="select"/>
+                   </td>
+                   <td>网络摄像头</td>
+                   <td>Camera001</td>
+                   <td>2131313</td>
+                   <td>2018/01/23</td>
+                   <td>1</td>
+                   <td>2</td>
+                   <td>3</td>
+               </tr>
+               <tr>
+                   <td>
+                     <input type="checkbox" id="select"/>
+                   </td>
+                   <td>网络摄像头</td>
+                   <td>Camera001</td>
+                   <td>2131313</td>
+                   <td>2018/01/23</td>
+                   <td>1</td>
+                   <td>2</td>
+                   <td>3</td>
+               </tr>
+              <tr>
+                   <td>
+                     <input type="checkbox" id="select"/>
+                   </td>
+                   <td>网络摄像头</td>
+                   <td>Camera001</td>
+                   <td>2131313</td>
+                   <td>2018/01/23</td>
+                   <td>1</td>
+                   <td>2</td>
+                   <td>3</td>
+               </tr>
+               <tr>
+                   <td>
+                     <input type="checkbox" id="select"/>
+                   </td>
+                   <td>网络摄像头</td>
+                   <td>Camera001</td>
+                   <td>2131313</td>
+                   <td>2018/01/23</td>
+                   <td>1</td>
+                   <td>2</td>
+                   <td>3</td>
+               </tr>
+               <tr>
+                   <td>
+                     <input type="checkbox" id="select"/>
+                   </td>
+                   <td>网络摄像头</td>
+                   <td>Camera001</td>
+                   <td>2131313</td>
+                   <td>2018/01/23</td>
+                   <td>1</td>
+                   <td>2</td>
+                   <td>3</td>
+               </tr>
+               <tr>
+                   <td>
+                     <input type="checkbox" id="select"/>
+                   </td>
+                   <td>网络摄像头</td>
+                   <td>Camera001</td>
+                   <td>2131313</td>
+                   <td>2018/01/23</td>
+                   <td>1</td>
+                   <td>2</td>
+                   <td>3</td>
+               </tr>
+               <tr>
+                   <td>
+                     <input type="checkbox" id="select"/>
+                   </td>
+                   <td>网络摄像头</td>
+                   <td>Camera001</td>
+                   <td>2131313</td>
+                   <td>2018/01/23</td>
+                   <td>1</td>
+                   <td>2</td>
+                   <td>3</td>
+               </tr>
+               <tr>
+                   <td>
+                     <input type="checkbox" id="select"/>
+                   </td>
+                   <td>网络摄像头</td>
+                   <td>Camera001</td>
+                   <td>2131313</td>
+                   <td>2018/01/23</td>
+                   <td>1</td>
+                   <td>2</td>
+                   <td>3</td>
+               </tr>
+               <tr>
+                   <td>
+                     <input type="checkbox" id="select"/>
+                   </td>
+                   <td>网络摄像头</td>
+                   <td>Camera001</td>
+                   <td>2131313</td>
+                   <td>2018/01/23</td>
+                   <td>1</td>
+                   <td>2</td>
+                   <td>3</td>
+               </tr>
+               <tr>
+                   <td>
+                     <input type="checkbox" id="select"/>
+                   </td>
+                   <td>网络摄像头</td>
+                   <td>Camera001</td>
+                   <td>2131313</td>
+                   <td>2018/01/23</td>
+                   <td>1</td>
+                   <td>2</td>
+                   <td>3</td>
+               </tr>
+               <tr>
+                   <td>
+                     <input type="checkbox" id="select"/>
+                   </td>
+                   <td>网络摄像头</td>
+                   <td>Camera001</td>
+                   <td>2131313</td>
+                   <td>2018/01/23</td>
+                   <td>1</td>
+                   <td>2</td>
+                   <td>3</td>
+               </tr>
+           </tbody>
+        </table>
+    </div>
+</body>
+</html>

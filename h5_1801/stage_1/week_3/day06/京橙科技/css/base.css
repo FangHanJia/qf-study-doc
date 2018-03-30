@@ -1,0 +1,559 @@
+/*菜单-设置文件编码-utf-8*/
+@charset "UTF-8";
+/*1.清除默认样式*/
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img,input{ margin:0; padding:0; }
+
+fieldset, img,input,button { border:0 none; padding:0;margin:0;outline-style:none; }   /*去掉input等聚焦时的蓝色边框*/
+ul, ol { list-style:none; }
+select, input { vertical-align:middle;}
+textarea { resize:none; } /*防止拖动*/
+img{border:0; vertical-align:middle; display:block;}  
+/*  去掉图片低测默认的3像素空白缝隙，或者用display：block也可以*/
+table { border-collapse:collapse; }
+
+
+/*2.添加公共样式*/
+.clearfix:after{
+    content:"";
+    display:block;
+    height: 0;
+    overflow:hidden;
+    clear:both;
+    visibility: hidden;
+    zoom:1;
+}
+a {color:#666; text-decoration:none; }
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:1em;}  /*设置h标签的大小，设置跟父亲一样大的字体font-size:100%;*/
+s,i,em{font-style:normal;text-decoration:none;}
+
+
+/*公共类*/
+.container {  /*版心 提取 */
+    width: 1120px;
+    margin:0 auto;
+}
+.fl {
+    float:left;
+}
+.fr {
+    float:right;
+}
+.al {
+    text-align:left;
+}
+.ac {
+    text-align:center;
+}
+.ar {
+    text-align:right;
+}
+.hide {
+    display:none;
+}
+.font12{ font-size: 12px;}
+.font14{ font-size: 14px;}
+.font16{ font-size: 16px;}
+
+
+#jingcheng{min-width:1120px;}
+#j_header {
+    height:100px;
+    width:100%;
+    background-color: #fff;
+}
+#j_header .container{
+    height:100px;
+    /*width:100%;*/
+    /*background-color: #fff;*/
+}
+#j_header h1{
+    text-indent: -2000px;
+    height:100px;
+    width:200px;
+    background:url("../images/logo.png") no-repeat;
+}
+#j_header .header_r li{
+    float:left;
+    text-align: center;
+   margin-right: 5px;
+
+}
+#j_header .header_r li:nth-child(1)>a{
+    background-color: #EB6514;
+    color:white;
+}
+#j_header .header_r li:nth-child(1) span{
+    color:white;
+}
+#j_header .header_r li:hover a{
+    background-color: #EB6514;
+    color:white;
+}
+#j_header .header_r li:hover span{
+    color:white;
+}
+#j_header .header_r li a{
+   display:block;
+   height: 60px;
+   padding:40px 40px 0 40px;
+   font-size: 16px;
+   line-height: 20px;
+}
+#j_header .header_r li:last-child{
+   
+   margin-right: 0px;
+}
+#j_header .header_r li a span{
+   display:block;
+    font-size: 12px;
+   line-height: 18px;
+   color:gray;
+}
+#j_banner{
+    height: 530px;
+    width:100%;
+    background:url("../images/b1.jpg") no-repeat;
+
+}
+#j_banner .container{
+    height: 530px;
+    /*width:100%;*/
+    position: relative;
+
+}
+#j_banner .banner_l{
+    height: 394px;
+    width:550px;
+    background:url("../images/mac.png") no-repeat;
+    position:absolute;
+    top: 70px;
+    left:0;
+}
+#j_banner .banner_r{
+    height: 260px;
+    width:500px;
+    position:absolute;
+    top: 100px;
+    right:0;
+}
+#j_banner .banner_r h2{
+    font-size: 55px;
+    line-height: 70px;
+    font-weight: bold;
+    color:white;
+}
+#j_banner .banner_r p{
+    font-size: 18px;
+    line-height: 32px;
+    color:white;
+}
+#j_banner .banner_r .p2{
+    font-size: 14px;
+    line-height: 32px;
+    color:white;
+}
+#j_banner .tel{
+    width:150px;
+    height: 25px;
+    background:#EB6514 url("../images/tel.png") no-repeat left top;
+    position:absolute;
+    top: 0;
+    right:0;
+    padding-left: 45px;
+
+}
+#j_banner .tel>a{
+    font-size: 14px;
+    line-height: 25px;
+    color:white;
+}
+#j_banner .online{
+    width:80px;
+    height: 60px;
+    background:#EB6514 url("../images/online.png") no-repeat left center; 
+    padding-left: 60px;
+    position:fixed;
+    top: 300px;
+    right:0;
+    z-index: 2;
+}
+#j_banner .online>a{
+    font-size: 18px;
+    line-height: 60px;
+    color:white;
+
+}
+/*#j_service .container{
+    height: 300px;
+
+}*/
+#j_service .service_t,#j_wors .service_t,
+#j_about .service_t,#j_new .service_t,
+#j_us .service_t{
+    height: 286px;
+    background-color: white;
+    text-align: center;
+}
+#j_service .service_t h3,#j_wors .service_t h3,
+#j_about .service_t h3,#j_new .service_t h3,
+#j_us .service_t h3{
+    height: 110px;
+    width: 330px;
+    margin:0 auto;
+    /*background-color: darkcyan;*/
+    font-size: 36px;
+    line-height: 100px;
+    border-bottom: 1px solid black;
+    position: relative;
+    margin-bottom: 20px;
+}
+#j_service .service_t h3::before,#j_wors .service_t h3::before,
+#j_about .service_t h3::before,#j_new .service_t h3::before,
+#j_us .service_t h3::before{
+    display:block;
+    content:"";
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    position:absolute;
+    bottom:-10px;
+    left:50%;
+    margin-left: -10px;
+}
+#j_service .service_t h3::after,#j_wors .service_t h3::after,
+#j_about .service_t h3::after,#j_new .service_t h3::after,
+#j_us .service_t h3::after{
+    display:block;
+    content:".";
+    height: 20px;
+    width: 20px;
+    font-size: 16px;
+    position:absolute;
+    bottom:34px;
+    left:50%;
+    margin-left: -10px;
+    color:black;
+}
+#j_service .service_b{
+    height: 314px;
+    width:100%;
+    border-top: 1px solid black;
+
+}
+
+#j_service .service_b>ul{
+    width:1000px;
+    margin:0 auto;
+}
+#j_service .service_b>ul>li{
+    height: 314px;
+    background-color: white;
+   width:240px;
+   position: relative;
+   float:left;
+}
+#j_service .service_b>ul>li>.box{
+    float:left;
+    height: 90px;
+    width:90px;
+    background-color: white;
+    position:absolute;
+    top: -45px;
+    left:50%;
+    transform:translate(-50%, 0);
+    border-radius: 45px;
+    border:1px solid gray;
+    transition: all 2s;
+}
+#j_service .service_b>ul>li>.box:hover{
+    height: 130px;
+    width:130px;
+    position:absolute;
+    top: -65px;
+    left:50%;
+    transform:translate(-50%, 0);
+    border-radius: 65px;
+    background-color: white;
+    border:1px solid #EB6514;
+    
+}
+#j_service .service_b>ul>li>.box>a{
+    display:block;
+    height: 35px;
+    width:35px;
+    background:url("../images/se_1.png") no-repeat;
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+#j_service .service_b>ul>li>.box2{
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+#j_service .service_b>ul>li>.box2 a{
+    font-size: 16px;
+    line-height: 32px;
+}
+#j_service .service_b>ul>li>.box2 a:hover{
+    color: #EB6514;
+}
+#j_wors .wors_ani{
+    height: 190px;
+    perspective:2100px;
+    
+    
+}
+#j_wors .wors_ani>li{
+    float:left;
+    height: 176px;
+    width: 266px;
+    background-color: white;
+    position: relative;
+    overflow:hidden;
+    margin-right: 18px;
+    transform-style: preserve-3d;
+}
+#j_wors .wors_ani>li:last-child{
+    
+    margin-right: 0px;
+}
+#j_wors .wors_ani>li>a{
+     display:block;
+    height: 176px;
+    width: 266px;
+    background:url("../images/ani_pic1.png") no-repeat;
+    position: relative;
+    transition:all 1s;
+    /*transform-origin: 176px 176px;*/
+}
+#j_wors .ul_t>li>.dis{
+    /*display:none;*/
+    height: 176px;
+    width: 266px;
+    background-color: #ccc;
+    position:absolute;
+    top: 0px;
+    left:0;
+   transform:translateY(176px);
+    transition:all 1s;
+}
+#j_wors .ul_b>li>.dis{
+    /*display:none;*/
+    height: 176px;
+    width: 266px;
+    background-color: #ccc;
+    position:absolute;
+    top: 0px;
+    left:0;
+    opacity: 0;
+    transition:all 1s;
+    
+}
+
+#j_wors .ul_t>li:hover>.dis{
+    /*display:none;*/
+   transform:translateY(0);
+}
+#j_wors .ul_b>li:hover>.dis{
+    /*隐藏显示可以使用透明度来做出效果*/
+    opacity:1;
+    /*display:block;*/
+}
+
+#j_wors .ul_t>li:hover>a{
+    /*display:none;*/
+   transform:translateY(-50%) translateZ(-88px) rotateX(90deg);
+}
+#j_wors .ul_b>li:hover>a{
+   transform:scale(3);
+}
+#j_wors .more,#j_new .more,
+#j_client .more{
+    height: 50px;
+    width: 300px;
+    margin:0 auto;
+    padding: 40px 0 10px 0;
+    text-align: center;
+}
+#j_wors .more h3,#j_new .more h3,
+#j_client .more h3{
+    height: 50px;
+    width:180px;
+    border:2px solid black;
+    margin:0 auto;
+    transition:all 1s;
+}
+#j_wors .more h3 a,#j_new .more h3 a,
+#j_client .more h3 a{
+    font-size: 18px;
+    line-height: 50px;
+    color:gray;
+}
+#j_wors .more:hover h3,#j_new .more:hover h3,
+#j_client .more:hover h3{
+    width:240px;
+    border:2px solid #EB6514;
+
+}
+#j_wors .more:hover h3 a,#j_new .more:hover h3 a,
+#j_client .more:hover h3 a{
+    
+    color:#EB6514;
+}
+#j_about{
+}
+#j_about .container{
+    height: 620px;
+    /*background-color: red;*/
+}
+#j_about .jc{
+    font-size: 20px;
+    line-height: 50px;
+    color:#EB6514;
+    text-align: center;
+
+}
+#j_about p{
+    text-indent:2em;
+    font-size: 16px;
+    line-height: 40px;
+    color:#ccc;
+}
+#j_new .container{
+   height: 900px;
+   /*background-color: #ccc;*/
+}
+#j_new .new_cont{
+   height: 494px;
+   background-color: white;
+}
+#j_new .new_cont>ul>li{
+   float:left;
+   height: 260px;
+   width:330px;
+   /*background-color: darkcyan;*/
+   margin-right: 65px;
+}
+#j_new .new_cont>ul>li:nth-child(3),
+#j_new .new_cont>ul>li:nth-child(6){
+   
+   margin-right: 0px;
+}
+#j_new .new_cont>ul>li>h3{
+   font-size: 20px;
+   line-height: 35px;
+}
+#j_new .new_cont>ul>li>ul{
+   height:220px;
+   width:330px;
+   border-top: 1px solid gray;
+   padding-top: 10px;
+}
+#j_new .new_cont>ul>li>ul>li:first-child{
+   font-size: 16px;
+   line-height: 20px;
+}
+#j_new .new_cont>ul>li>ul>li:nth-child(2){
+   display:block;
+   height:30px;
+   width:80px;
+   font-size: 16px;
+   line-height: 30px;
+   border:1px solid gray;
+   text-align: center;
+   border-radius: 5px;
+   margin-top: 50px;
+
+}
+#j_new .new_cont>ul>li>ul>li:nth-child(2):hover {
+  
+   border:1px solid orangered;
+   
+}
+#j_new .new_cont>ul>li>ul>li:nth-child(3)>h3{
+   
+   margin-top: 50px;
+   font-size: 20px;
+   line-height: 50px;
+}
+#j_client {
+    height: 260px;
+    width:100%;
+    background:url("../images/adbg3.jpg") no-repeat;
+    text-align: center;
+    padding-top: 100px;
+}
+#j_client h3{
+   font-size: 50px;
+   line-height: 25px;
+   color:white;
+}
+#j_us{
+    height: 720px;
+    width:100%;
+    background:url("../images/map.png") no-repeat center bottom;
+    
+}
+#j_us .service_t{
+    height: 160px;
+    
+}
+#j_tel .container{
+    height: 350px;
+    
+}
+#j_tel  .tel_l{
+    height: 300px;
+    width: 260px;
+    background: url("../images/tel_png.png") no-repeat left center;
+    padding-left: 100px;
+    padding-top: 50px;
+}
+#j_tel  .tel_l li{
+    font-size: 16px;
+    line-height: 30px;
+}
+
+#j_tel  .tel_r{
+    height: 300px;
+    width: 670px;
+    /*background-color: #ccc;*/
+    padding-top: 50px;
+    position: relative;
+}
+#j_tel  .tel_r li input{
+    height:34px;
+    width:260px;
+    border:1px solid gray;
+    margin-bottom: 20px;
+}
+#j_tel  .tel_r #form_t{
+    height:130px;
+    width:390px;
+    position:absolute;
+    top:50px;
+    right:0px;
+}
+#j_tel  .tel_r #sub{
+    height:30px;
+    width:90px;
+    position:absolute;
+    top:260px;
+    right:300px;
+    background-color: #C11E2B;
+    color:white;
+}
+#j_footer{
+    height: 88px;
+    background-color: black;
+    text-align: center;
+    padding-top: 40px;
+}
+#j_footer p{
+    font-size: 16px;
+    line-height: 32px;
+    color:white;
+}

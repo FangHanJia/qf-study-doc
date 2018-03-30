@@ -1,0 +1,72 @@
+一、HTML5
+  1、ie9以上才支持HTML5新标签。
+  2、特点：
+      （1）语义特性
+      （2）网页多媒体特性
+      （3）三维、图形特效特性
+      （4）css3特性。
+  3、DOCTYPE html声明文档类型为HTML5
+  4、版本类型：
+      （1）HTML：4s-声明文档类型为HTML4.01的严格版本
+二、HTML5新增标签
+    1、布局标签：header，nav,main,article,section,aside,footer，hgroups.
+        (1)、header-头部标签，一般用在页面的头部或者某一个内容的头部（标题部分），里面一般存放导航条或者标题。（header和footer互不嵌套。）
+        eg：<header>
+            <h1></h1>
+            <nav></nav>
+           </header> 
+       （2）、nav-导航条标签，对于残障人士的友好性更高。
+       （3）、main-页面的主题部分标签。一般只使用一次（用于外层）。
+       （4）、article-文章独立的内容块。article可以嵌套，内层的article对外层的article标签有隶属关系。（可以嵌套section）
+       （5）、section-章节、区块。表示一段专题性的内容，通常由内容及其标题组成。（可以嵌套article）
+       （6）、aside-侧边栏。
+       （7）、footer-尾部，copyright-版权信息。
+        (8)、hgroup对标题标签进行组合。
+    2、其他标签：
+      （1）figure：对图片及文字进行组合>figcaption对内容进行描述。(figure自带40px的margin，一般使用时得去掉。)
+          [1]figcaption-子属性。
+      （2）time：用来表现时间或日期(常用于移动端)
+          [1]datetimes-封装具体的日期。
+      （3）details[open属性-内容默认可见]：细节。（chrome和safari）
+          [1]summary:details的标题。
+      （4）mark：标记重要信息。
+      （5）progress：进度条。
+          [1]、max-最大值,values-当前值。
+          [2]progress>span{xx}%.
+      （6）meter:度量尺。
+          [1]min-最小值
+          [2]max-最大值。
+          [3]low-60;
+          [4]height-90;
+          [5]optium-59;较佳的值。
+
+
+          [若该值大于较高的值，这说明越高越好，若该值小于较低的值，则说明越低越好。]
+      （7）ruby-拼音。
+          [1]ruby{文字}>rt{拼音}
+          [2]兼容：ruby>rp（）
+      （8）video-视频标签
+          [1]src-引入视频的路径
+          [2]autoplay-自动播放
+          [3]controls-控制
+          [4]poster-加载等待出现的图片
+          [5]loop-循环播放。
+三、表单新标签
+  1、datalist-数据列表
+    [1]、datalist>option[values],需要与输入框的[list属性]链接使用
+  2、output-标记定义一些输出类型，计算表单结果配合表单的[oninput事件].
+  3、input>type[color]-拾色器.
+  4、input>type[email]邮箱，包含正则表达时（要提前看）.
+  5、input>type[number]数值输入框。
+  6、input>type[tel]移动端会弹出一个键盘。
+  7、input>type[url]网址，包含正则。
+  8、input>type[search],配合results=n;使用。
+  9、input>type[range],特定范围内的数值选择器，
+  10、input>type[date]日期
+  11、input>type[month]月份
+  12、input>type[week]星期
+  13、input>type[time]时间
+  14、placehold-占位符。
+  15、autofocus-自动对焦。
+  16、required-必填项。
+  17、pattern-正则。

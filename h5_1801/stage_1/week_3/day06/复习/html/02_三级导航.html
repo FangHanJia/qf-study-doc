@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        a{text-decoration: none;}
+        nav{
+            height:40px;
+            width:100%;
+            background-color: black;
+        }
+        nav .tab{
+            height:40px;
+            width:960px;
+            margin:0 auto;
+            /*background-color: black;*/
+        } 
+        nav .tab>li{
+           float:left;
+           position: relative;
+        }
+        nav .tab>li>a{
+           display:block;
+           height:27px;
+           font-size: 14px;
+           line-height: 40px;
+           padding-top: 13px;
+        }
+        nav .tab>li>a>span{
+           display:block;
+          padding:0 15px;
+           line-height: 14px;
+           border-right: 1px solid white;
+        }
+        nav .tab>li:hover>a{
+           background-color: orangered;
+           /*左边框*/
+           border-left: 1px solid orangered;
+           margin-left: -1px;
+        }
+        nav .tab>li:hover span{
+           border-right: 1px solid orangered;
+           
+        }
+        nav .tab li>.tab2{
+            width:200px;
+            height: 300px;
+            background-color: black;
+            position: absolute;
+            top: 40px;
+            left:0;
+            display:none;
+            /*overflow: hidden;*/
+        }
+        nav .tab li>.tab2>li{
+            position: relative;
+        }
+        nav .tab li>.tab2>li>a{
+            display:block;
+            padding:10px 20px;
+            color: green;
+           transition: padding 1s;
+        } 
+        nav .tab li>.tab2>li:hover>a{
+            padding-left: 40px;
+            background-color: green;
+            color:black;
+           
+        }
+        nav .tab li:hover>.tab2{
+           
+            display:block;
+            
+        }
+        nav .tab .tab2>li>.tab3{
+            width: 200px;
+            height: 300px;
+            background-color: black;
+            position: absolute;
+            top:0;
+            left:210px;
+            display:none;
+        }
+        nav .tab .tab2>li:hover>.tab3{
+          
+            display:block;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="tab">
+            <li><a href="#"><span>首页</span></a>
+                <ul class="tab2">
+                    <li><a href="" herf="#">二级导航</a>
+                        <ul class="tab3">
+                            <li><a href="" herf="#">二级导航</a></li>
+                            <li><a href="" herf="#">二级导航</a></li>
+                            <li><a href="" herf="#">二级导航</a></li>
+                            <li><a href="" herf="#">二级导航</a></li>
+                            <li><a href="" herf="#">二级导航</a></li>
+                            <li><a href="" herf="#">二级导航</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" herf="#">二级导航</a></li>
+                    <li><a href="" herf="#">二级导航</a></li>
+                    <li><a href="" herf="#">二级导航</a></li>
+                    <li><a href="" herf="#">二级导航</a></li>
+                    <li><a href="" herf="#">二级导航</a></li>
+                   
+                </ul>
+            </li>
+            <li><a href="#"><span>首页</span></a></li>
+            <li><a href="#"><span>首页</span></a></li>
+            <li><a href="#"><span>首页</span></a></li>
+            <li><a href="#"><span>首页</span></a></li>
+            <li><a href="#"><span>首页</span></a></li>
+            <li><a href="#"><span>首页</span></a></li>
+            <li><a href="#"><span>首页</span></a></li>
+        </ul>
+    </nav>
+</body>
+</html>

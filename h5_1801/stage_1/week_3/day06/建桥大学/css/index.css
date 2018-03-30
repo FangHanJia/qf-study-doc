@@ -1,0 +1,159 @@
+#j_main{
+    /*height: 588px;*/
+    background-color: white;
+}
+#j_main .container{
+    height: 588px;
+    border-bottom: 2px solid #FF9C00;
+    position: relative;
+}
+#j_main .container::after{
+    display:block;
+    content:"";
+    height:20px;
+    width: 60px;
+    background:url("../images/delta.jpg") no-repeat;
+    position: absolute;
+    bottom:-20px;
+    left:50%;
+    transform:translateX(-50%);
+}
+#j_main .main_l{
+    height: 588px;
+    width: 730px;
+    background-color: #fff;
+}
+#j_main .main_l div{
+    height: 232px;
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+#j_main .main_l .main0 h3{
+    font-size: 18px;
+    line-height: 45px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 20px;
+}
+#j_main .main_l .fl{
+    width: 270px;
+}
+#j_main .main_l .fl img{
+    width: 270px;
+    transition: all 1s;
+}
+#j_main .main_l .main_f:hover img{
+    transform:scale(0.7);
+}
+#j_main .main_l .main_f>figcaption{
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+}
+#j_main .main_l .main_f_2{
+    height: 62px;
+    width:420px;
+    margin-top: 20px;
+}
+#j_main .main_l .main_f_2>img{
+    height: 60px;
+    width: 60px;
+}
+#j_main .main_l .main_3>ul>li>a{
+    display:block;
+}
+#j_main .main_l .main_3>ul>li:hover>a{
+  color: #C8141F;
+   
+}
+#j_main .main_l .main_3>ul>li>a>span{
+    font-size: 16px ;
+    line-height: 30px;
+}
+#j_main .main_l .main_3>ul>li>a>span:nth-child(1){
+    /*文本溢出：
+      一不换行，二隐藏。三宽度，四省略。
+    */
+        
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space: nowrap;
+    width: 200px;
+}
+#j_main .main_l .main_3>ul>li>a>span:nth-child(2){
+    
+    width: 50px;
+}
+
+#j_main .main_l .fr{
+    width: 420px;
+}
+#j_main .main_l .main_4 .ul_4>li>a{
+   display:block;
+   height: 30px;
+}
+#j_main .main_l .main_4 .ul_4>li:hover>a{
+  color: #C8141F;
+}
+#j_main .main_l .main_4 .ul_4>li>a>p{
+    float:left;
+}
+#j_main .main_l .main_4 .ul_4>li>a>span{
+    float:right;
+}
+
+#j_main .main_r{
+    height: 548px;
+    width: 240px;
+    padding-top: 40px;
+}
+#j_main .main_r .aside_t{
+    height: 274px;
+    width: 240px;
+    background:url("../images/r_pic.jpg") no-repeat;
+}
+#j_main .main_r .aside_b h3{
+    font-size: 18px;
+    line-height: 40px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 30px;
+
+}
+#j_main .main_r .aside_b>input{
+   height: 28px;
+   width: 216px;
+   border: 1px solid gray;
+    margin-bottom: 10px;
+    
+}
+#j_main .main_r .aside_b>#btn_login{
+   height: 24px;
+   width: 80px;
+   border: 1px solid gray;
+    float:left;
+}
+#j_main .main_r .aside_b>#pws_lost{
+  font-size: 14px;
+  line-height: 30px;
+    float:left;
+    margin-left: 40px;
+    
+}
+#j_links{
+    background-color: #D4D4D4;
+    margin-top: 30px;
+}
+
+#j_links .container li{
+    float:left;
+    margin:0 70px;
+
+}
+#j_links .container li>a{
+    display:block;
+    font-size: 14px;
+    line-height: 44px;
+    height:44px;
+}
+#j_links .container li:hover>a{
+    color:#C8141F;
+}

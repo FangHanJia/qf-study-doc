@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        html,body{
+            height: 100%;
+        }
+        /*end:每一步都以上一步的状态停留，会保留上一步的状态*/
+        /*.box{
+            height: 300px;
+            width: 180px;
+            border:1px solid #555;
+            margin:100px auto;
+            background:url("../images/charector.png") no-repeat 0px 0;
+            animation:run 2s steps(7) infinite;
+        }
+        @-webkit-keyframes run{
+                   0%{}
+                   100%{
+                    background-position: -1260px 0;
+                   }
+                }*/
+        /*直接下一步的状态（提前知道了）*/
+        .box{
+            height: 300px;
+            width: 180px;
+            border:1px solid #555;
+            margin:100px auto;
+            background:url("../images/charector.png") no-repeat 180px 0;
+            animation:run 2s steps(7 ,start) infinite;
+        }
+        @-webkit-keyframes run{
+                   0%{}
+                   100%{
+                    background-position: -1080px 0;
+                   }
+                }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

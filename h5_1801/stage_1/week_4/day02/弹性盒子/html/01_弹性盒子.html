@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        html,body{
+            height:100%;
+        }
+        #container{
+            height: 300px;
+            width: 1000px;
+            margin:100px auto;
+            display:flex;
+            flex-direction: column;
+            border:1px solid #ccc;
+            justify-content: space-around;
+            padding:0 10px;
+            box-sizing: border-box;
+        }
+        #container .box{
+            height: 40px;
+            display:flex;
+            justify-content: space-between;
+            
+        }
+       
+        
+        #container .box1 .first{
+            height:40px;
+            flex:1;
+           
+        }
+
+       
+        #container .box2 .second{
+            height:40px;
+            flex:1;
+            margin-right: 10px;
+        } 
+
+        #container .box3 .third{
+            height:40px;
+            flex:1;
+        } 
+        
+        #container .box4 .four{
+            height:40px;
+        } 
+        #container .box4 .four_l{
+            width:50%;
+        } 
+        #container .box4 .four_r{
+            
+            flex:auto;
+        }
+        
+       
+        #container .box5 .five{
+            height:40px;
+        } 
+        #container .box5 .five_l{
+           flex:auto;
+       }
+       #container .box5 .five_r{
+        width:33.3%;
+       }
+        #container .box6 .six{
+            height:40px;
+        } 
+        #container .box6 .six_l{
+            width:25%;
+       }
+       #container .box6 .six_c{
+            flex:auto;
+       } 
+       #container .box6 .six_r{
+            width:33.3%;
+       }
+        #container .box>div:last-child{
+            margin-right: 0px;
+        }
+         #container .box>div{
+            background-color: #ccc;
+            margin-right:10px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 40px;
+            color:gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <dvi class="box box1">
+            <div class="box1_l first ">1/2</div>
+            <div class="box1_r first ">1/2</div>
+        </dvi>
+        <dvi class="box box2">
+            <div class="seconde_l second">1/3</div> 
+            <div class="seconde_c second">1/3</div> 
+            <div class="seconde_r second ">1/3</div> 
+        </dvi>
+        <dvi class="box box3">
+            <div class="third">1/4</div>
+            <div class="third">1/4</div>
+            <div class="third">1/4</div>
+            <div class="third">14</div>
+        </dvi>
+        <dvi class="box box4">
+            <div class="four four_l">1/2</div>
+            <div class="four four_r">auto</div>
+            <div class="four four_r">auto</div>
+        </dvi>
+        <dvi class="box box5">
+            <div class="five five_l">auto</div>
+            <div class="five five_r">1/3</div>
+        </dvi>
+        <dvi class="box box6">
+            <div class="six six_l">1/4</div>
+            <div class="six six_c">auto</div>
+            <div class="six six_r">1/3</div>
+        </dvi>
+    </div>
+</body>
+</html>

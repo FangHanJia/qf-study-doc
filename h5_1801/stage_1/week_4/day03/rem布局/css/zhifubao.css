@@ -1,0 +1,128 @@
+html,body{
+    height: 100%;
+}
+#zhifubao{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#z_header ul{
+    height:1.066667rem;
+    background-color: #3F454F;
+    display:flex;
+    justify-content: space-between;
+}
+
+#z_header ul li:nth-child(1){
+    height:1.066667rem;
+    width:2.133333rem;
+    display:flex;
+    align-items: center;
+    color:white;
+    font-size: 0.533333rem;
+}
+#z_header ul li:nth-child(1) i{
+    flex:1;
+    font-size: 0.426667rem;
+    text-align: center;
+
+}
+#z_header ul li:nth-child(1) span{
+    flex:1;
+    align-self: center;
+}
+#z_header ul li:nth-child(2){
+    height:1.066667rem;
+    width:3.733333rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+    font-size: 0.533333rem;
+    
+}
+#z_header ul li:nth-child(2) i{
+    flex:1;
+    text-align: center;
+}
+
+#z_nav ul{
+    height:3.12rem;
+    background-color: #3F454F;
+    display:flex;
+    justify-content: space-around;
+}
+#z_nav ul li{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+#z_nav ul li i{
+    color:white;
+    font-size: 0.48rem;
+}
+#z_nav ul li span{
+    color:white;
+    font-size: 0.48rem;
+}
+
+
+#z_main{
+    flex:1;
+    overflow-x: hidden;
+    background-color: #F5F5F9;
+}
+#z_main ul{
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: white;
+    margin-bottom: 0.4rem;
+}
+#z_main ul li{
+    flex:25%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 2.4rem;
+    text-align: center;
+    font-size: 0.533333rem;
+}
+#z_main .loop{
+    height: 2.24rem;
+    background:url("../images/banner_pic.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 0.4rem;
+}
+#z_main .main_3{
+    height: 2.4rem;
+    display:flex;
+    justify-content: space-around;
+    margin-bottom: 0.4rem;
+}
+#z_main .main_3 li{
+    
+    display:flex;
+    flex-direction: column;
+
+}
+
+
+#z_footer ul{
+    height: 1.333333rem;
+    background-color: white;
+    border-top: 0.013333rem solid gray;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#z_footer ul li{
+    flex:1;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    font-size: 0.4rem;
+    align-items: center;
+}

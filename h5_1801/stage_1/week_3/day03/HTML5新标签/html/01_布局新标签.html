@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{
+            list-style: none;
+        } 
+        article, aside, canvas, details, figcaption, figure,main,
+        footer, header, hgroup, menu, nav, section, summary
+        { 
+            display: block;
+         }
+        #n_header ,#n_footer{
+            width: 100%;
+            height: 40px;
+            background-color: #ccc;
+        } 
+        #n_nav{
+            width: 100%;
+            height: 40px;
+            background-color: #000;
+        }
+         #n_main{
+            width: 100%;
+            height: 400px;
+        }
+         #n_main .main_l{
+            width: 59%;
+            height: 400px;
+            background-color: darkcyan;
+            float: left;
+            margin-right: 1%;
+        }
+        #n_main .main_l .main_cont{
+            width: 100%;
+            height: 200px;
+            background-color: red;
+            margin-top: 200px;
+        }
+        #n_main .main_r{
+            width: 40%;
+            height: 400px;
+            background-color: pink;
+            float:right;
+            overflow: hidden;
+        }
+    /*<!--[if lt IE 9]--> */
+    /*<!--[endif]-->*/
+
+
+    </style>
+        <!-- 兼容ie8 -->
+        <script src="../js/ie8.js" type="text/javascript" ></script>
+</head>
+<body>
+    <header id="n_header"></header>
+    <nav id="n_nav"></nav>
+    <main id="n_main">
+        <article class="main_l">
+            <section class="main_cont"></section>
+        </article>
+        <aside class=main_r></aside>
+    </main>
+    <footer id="n_footer"></footer>
+</body>
+</html>

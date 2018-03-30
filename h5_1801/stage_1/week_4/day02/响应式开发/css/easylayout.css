@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border:0;
+}
+ol, ul ,li{list-style: none;} 
+html,body{
+    height: 100%;
+    
+}
+a{text-decoration: none;}
+/*原始大小*/
+#box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#b_footer,#b_header{
+    height: 10%;
+    background-color: #555;
+}
+#b_header h1{
+    float: left;
+    height:80%;
+    width:10%;
+    background:url("../images/pic_4.jpg") no-repeat ;
+    background-size: contain;
+    background-position: center;
+
+}
+#b_header .top_nav{
+    float: right;
+    height:80%;
+    width:40%;
+
+}
+
+#b_main{
+    flex:1;
+    background-color: #eee;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow-y:scroll;
+}
+#b_main .picbox{
+    width:20%;
+    height:50%;
+    background:url("../images/01.jpg") no-repeat center;
+    border:1px solid #ccc;
+    box-sizing: border-box;
+}
+/*从大到小*/
+@media screen  and (max-width:1200px){
+    
+   #b_main .picbox{
+    width:25%;
+
+   }
+}
+@media screen  and (max-width:992px){
+  
+   #b_main .picbox{
+    width:30%;
+   }
+}
+@media screen  and (max-width:768px){
+   #b_main .picbox{
+    width:50%;
+   }
+}
+@media screen  and (max-width:320px){
+   #b_main .picbox{
+    width:100%;
+   }
+}

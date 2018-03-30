@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        .box{
+            width: 500px;
+            height: 500px;
+            margin:100px auto;
+            border:20px solid white;
+            /*边框图片的路径*/
+            border-image-source: url("../images/border_image.png") ;
+            /*边框图片的切割，不带单位*/
+            border-image-slice: 110;
+            /*边框图片的重复：默认stretch（拉伸），repeat（重复），round（环绕）*/
+            border-image-repeat: round;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

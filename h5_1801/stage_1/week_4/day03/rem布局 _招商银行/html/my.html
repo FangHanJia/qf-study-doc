@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" id="vp"/>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/my.css" />
+     <script type="text/javascript">
+    // 把尺寸放大N倍（N是window.devicePixelRatio）
+    var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
+    //物理像素*设备像素比=真实像素
+    document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
+    // 把屏幕的倍率缩小到N分之一（N是window.devicePixelRatio）
+    var scale = 1/window.devicePixelRatio;
+    var mstr = 'initial-scale='+ scale +', maximum-scale='+ scale +', minimum-scale='+ scale +', user-scalable=no';
+    document.getElementById("vp").content = mstr;
+</script>
+</head>
+<body>
+    <div id="my">
+        <header id="m_header">
+            <ul>
+                <li></li>
+                <li><span>我的</span> </li>
+                <li><i class=" icon_football icon_my"></i> </li>
+            </ul>
+        </header>
+        <main id="m_main">
+            <ul class="main_cont">
+                <li class="li_cont">
+                    <ul class="tab1">
+                        <li>
+                            <ul class="tab2">
+                                <li > <i class="icon_football icon_caidan"></i> </li>
+                                <li><span>账户</span><span>资产资产资产资产</span> </li>
+                                <li>&gt;</li>
+                            </ul>
+                        </li>
+                        <li>
+                               <ul class="tab2">
+                                <li > <i class="icon_football icon_caidan"></i> </li>
+                                <li><span>账户</span><span>资产资产资产资产</span> </li>
+                                <li>&gt;</li>
+                            </ul>
+                        </li>
+                        <li>
+                               <ul class="tab2">
+                                <li > <i class="icon_football icon_caidan"></i> </li>
+                                <li><span>账户</span><span>资产资产资产资产</span> </li>
+                                <li>&gt;</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="li_cont">
+                     <ul class="tab1">
+                        <li class="li_first">
+                            <ul class="tab2 tab2_first">
+                                <li > <i class="icon_football icon_caidan"></i> </li>
+                                <li><span>账户</span><span>资产资产资产资产</span> </li>
+                                <li>&gt;</li>
+                            </ul>
+                        </li>
+                        <li>
+                               <ul class="tab2">
+                                <li > <i class="icon_football icon_caidan"></i> </li>
+                                <li><span>账户</span><span>资产资产资产资产</span> </li>
+                                <li>&gt;</li>
+                            </ul>
+                        </li>
+                        <li>
+                               <ul class="tab2">
+                                <li > <i class="icon_football icon_caidan"></i> </li>
+                                <li><span>账户</span><span>资产资产资产资产</span> </li>
+                                <li>&gt;</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="li_cont">
+                     <ul class="tab1">
+                        <li>
+                            <ul class="tab2">
+                                <li > <i class="icon_football icon_caidan"></i> </li>
+                                <li><span>账户</span><span>资产资产资产资产</span> </li>
+                                <li>&gt;</li>
+                            </ul>
+                        </li>
+                       <!--  <li>
+                               <ul class="tab2">
+                                <li > <i class="icon_football icon_caidan"></i> </li>
+                                <li><span>账户</span><span>资产资产资产资产</span> </li>
+                                <li>&gt;</li>
+                            </ul>
+                        </li> -->
+                        <!-- <li>
+                               <ul class="tab2">
+                                <li > <i class="icon_football icon_caidan"></i> </li>
+                                <li><span>账户</span><span>资产资产资产资产</span> </li>
+                                <li>&gt;</li>
+                            </ul>
+                        </li> -->
+                    </ul>
+                </li>
+            </ul>
+        </main>
+        <footer id="m_footer">
+            <ul>
+                <li><i class="icon_football icon_my" ></i><span>我的</span></li>
+                <li><i class="icon_football icon_my"></i><span>我的</span></li>
+                <li><i class="icon_football icon_my"></i><span>我的</span></li>
+                <li><i class="icon_football icon_my"></i><span>我的</span></li>
+                <li class="active"><i class="icon_football icon_my"></i><span>我的</span></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>

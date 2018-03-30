@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{
+            list-style: none;
+        } 
+        a{
+            text-decoration: none;
+        }
+        #student{
+            width: 644px;
+            /*height: 634px;*/
+            margin: 0 auto;
+        }
+        #student .set{
+            /*width: 506px;*/
+            /*height: 614px;*/
+            padding:10px 24px;
+        } 
+        #student .set span{
+            display: block;
+            font-size: 16px;
+            line-height: 38px;
+            font-weight: 600;
+        }
+        #student .set input,meter{
+           height:24px;
+           width: 100%;
+        }
+        #student .set #sub{
+            height:24px;
+           width: 600px;
+
+           margin-top: 10px;
+           background-color: #DDDDDD;
+           border:0 none;
+           outline: none;
+        }
+    </style>
+</head>
+<body>
+    
+    
+        <form action="#" id="student">
+            <fieldset class="set">
+                <legend>学生档案</legend>
+                <span>姓名：</span>
+                <input type="text" name="" value="" placeholder="请输入姓名"> <br />
+                <span>手机号码：</span>
+                <input type="number" name="" value="" placeholder=""> <br />
+                <span>邮箱地址：</span>
+                <input type="email" name="" value="" placeholder=""> <br />
+                <span>所属学院：</span>
+                <datalist id="collge">
+                    <option value="江门职业技术学院"></option>
+                    <option value="江门职业技术学院"></option>
+                    <option value="江门职业技术学院"></option>
+                </datalist>
+                <input type="text" name="" value="" placeholder="请选择" list="collge"> <br />
+                <span>入学成绩：</span>
+                <input type="text" name="" value="" placeholder="700"> <br />
+                <span>基础水平：</span>
+                <meter min="300" max="750" low="450" height="600" value="700">600</meter> <br />
+                <span>入学时间：</span>
+                <input type="date" name="" value="" placeholder=""> <br />
+                <span>毕业时间：</span>
+                <input type="date" name="" value="" placeholder=""> <br />
+                <input type="submit" name="" value="提交" id="sub">
+
+            </fieldset>
+
+        </form>
+    
+</body>
+</html>

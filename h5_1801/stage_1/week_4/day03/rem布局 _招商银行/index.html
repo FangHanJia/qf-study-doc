@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" id="vp"/>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+     <script type="text/javascript">
+    // 把尺寸放大N倍（N是window.devicePixelRatio）
+    var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
+    //物理像素*设备像素比=真实像素
+    document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
+    // 把屏幕的倍率缩小到N分之一（N是window.devicePixelRatio）
+    var scale = 1/window.devicePixelRatio;
+    var mstr = 'initial-scale='+ scale +', maximum-scale='+ scale +', minimum-scale='+ scale +', user-scalable=no';
+    document.getElementById("vp").content = mstr;
+</script>
+</head>
+<body>
+    <div id="bank">
+        <header id="b_header">
+            <ul>
+                <li><i></i></li>
+                <li><i></i></li>
+                <li><i class="icon_football icon_shouye"></i></li>
+            </ul>
+        </header>
+        <div id="b_banner"></div>
+        <main id="b_main">
+            <section class="main_t main_cont">
+                <ul>
+                    <li><i class="icon_football icon_my"></i><span>账户</span></li>
+                    <li><i class="icon_football icon_my"></i><span>账户</span></li>
+                    <li><i class="icon_football icon_my"></i><span>账户</span></li>
+                    <li><i class="icon_football icon_my"></i><span>账户</span></li>
+                    <li><i class="icon_football icon_my"></i><span>账户</span></li>
+                    <li><i class="icon_football icon_my"></i><span>账户</span></li>
+                    <li><i class="icon_football icon_my"></i><span>账户</span></li>
+                    <li><i class="icon_football icon_my"></i><span>账户</span></li>
+                </ul>
+            </section>
+            <section class="main_b main_cont">
+                <ul class="b_more">
+                    <li>更多</li>
+                        <li>更多</li>    
+                    </ul>
+                <ul class="b_text">
+                    <li> <span>2.88%</span><span>上日年化</span> </li>
+                    <li>
+                        <span>炒金</span>
+                        <ul class="text">
+                            <li>非</li>
+                            <li>无</li>
+                        </ul>
+                        <span>首次</span>
+                    </li>
+                    <li>&gt;</li>
+                </ul>
+                <div class="b_start">
+                    <div class="start_text">招商银行</div>
+                </div>
+            </section>
+        </main>
+        <footer id="b_footer">
+            <ul>
+                <li><i class="icon_football icon_shouye"></i><span>首页</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>首页</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>首页</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>首页</span></li>
+                <li><i class="icon_football icon_shouye"></i><span>首页</span></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>

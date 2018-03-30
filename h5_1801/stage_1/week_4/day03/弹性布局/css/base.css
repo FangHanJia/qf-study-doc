@@ -1,0 +1,55 @@
+﻿/*重置样式表*/
+/*==========样式重置===========*/
+body,h1,h2,h3,h4,p,a,input,img,ul,li,ol,dl,dt,dd{
+	padding:0;
+	margin:0;}
+ul,ol{
+	list-style:none;}
+img{
+	display:block;
+	border:0;}
+input{
+    /*去掉高亮*/
+	outline:none;}
+header,footer,section,main,nav{
+	display:block;}
+body{
+	font-size:24px;
+	font-family:"微软雅黑";
+	color:#3e3e3e;}
+a{
+	text-decoration:none;
+	color:#0dc441;}
+a:hover{
+	text-decoration:underline;}
+i{font-style:normal;}
+*{box-sizing:border-box;}
+/*存放字体图标*/
+
+@font-face {font-family: "football";
+  src: url('../font/iconfont.eot?t=1484793044531'); /* IE9*/
+  src: url('../font/iconfont.eot?t=1484793044531#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/iconfont.woff?t=1484793044531') format('woff'), /* chrome, firefox */
+  url('../font/iconfont.ttf?t=1484793044531') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../font/iconfont.svg?t=1484793044531#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"football" !important;
+  
+}
+
+.icon_caidan:before { content: "\f000d"; }
+
+.icon_erweima:before { content: "\f0050"; }
+
+.icon_tuichu:before { content: "\e796"; }
+
+.icon_my:before { content: "\e607"; }
+
+.icon_fangdajing:before { content: "\e653"; }
+
+.icon_shouye:before { content: "\e600"; }
+
+.icon_camera:before { content: "\e501"; }
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{
+            list-style: none;
+        } 
+        a{
+            text-decoration: none;
+        }
+        .box{
+            width:492px;
+            /*height: 534px;*/
+            margin:0 auto;
+        }
+        fieldset{
+            padding: 8px 20px;
+            font-size: 14px;       
+        }
+        fieldset h3{
+            font-size: 16px;
+            line-height: 40px;
+            font-weight: 600;     
+            color:black;
+        }
+        legend{
+            border:1px solid gainsboro;
+            padding:10px;
+            font-size: 14px;
+            color:#447176;
+            font-weight: 600;
+        }
+        label{
+            display: inline-block;
+            width: 150px;
+            height: 35px;
+            vertical-align: baseline;
+            text-align: right;   
+            padding-right: 6px; 
+            color:#686868; 
+        }
+        .form_top #re_me{
+            text-decoration: underline;
+            color:black;
+        } 
+        .form_top #login{
+            width: 64px;
+            height: 22px;
+            line-height: 22px;
+            background-color: #D0F0FD;
+            outline: none;
+            border:1px solid black;
+        } 
+        .form_top  a{
+            color:#547874;
+        }
+        .form_bottom p{
+            color:#537881;
+            font-size: 12px;
+            line-height: 20px;
+            font-weight: 800;
+        } 
+        .form_bottom .p1 span{
+            color:#447079;
+            font-weight: normal;
+        } 
+        .form_bottom a{
+            color:#5088A9;
+            font-weight: normal;
+        } 
+        .form_bottom .box2{
+            width:146px;
+            /*height: 24px;*/
+            margin: 5px auto;
+            /*overflow: hidden;*/
+        }
+        .form_bottom .box2 input{
+            width:64px;
+            height: 24px;
+            margin-right: 5px;
+            border:1px solid black;
+            background-color: #D0F0FD;
+            color:black;
+            line-height: 24px;
+        }
+        .form_bottom span{
+            font-size: 12px;
+            color:gray;
+        }
+        .form_bottom #agreen{
+            height:20px;
+            padding-right: 10px;
+        }
+           
+
+    </style>
+</head>
+<body>
+    <!-- 表单新标签 -->
+    <fieldset class="box">
+        <h3>已注册的用户</h3>
+        <form action="#" class="form_top">
+            <fieldset>
+            <legend >用户登录</legend>
+            <label for="user">用户名</label><input type="text" id="user">  <br /> 
+            <label for="psw">密码</label><input type="password" id="psw" >   <br/>
+            <label id="re_me"><input type="checkbox" name="hobby" >记住我</label>
+            <input type="submit" value="登陆" id="login"> <br />
+            <a href="#">您忘记密码？</a>
+            </fieldset>
+        </form>
+        <h3>没注册的用户</h3>
+        <form action="#" class="form_bottom">
+            <fieldset >
+            <legend >用户注册</legend>
+            <p class="p1">您的电子邮箱不会被公布出去，但是请您必须填写。<span>在你注册之前请认真阅读服务条款</span></p>
+            <label for="user2">用户名</label><input type="password" id="user2" > <span>*(最多20个字符)   </span><br/>
+            <label for="e-mail">电子邮箱</label><input type="text" id="e-mail" > <span>*</span> <br/>
+            <label for="psw2">密码</label><input type="password" id="psw2" > <span>*(最多15个字符) </span> <br/>
+            <label for="psw_copy">重复密码</label><input type="password" id="psw_copy" > <span>*</span>   <br/>
+            <label id="agreen">同意服务条款<input type="checkbox" name="article" ></label><a href="#">先看看条款？*</a><br />
+            <div class="box2">
+            <input type="submit" value="登陆">
+            <input type="reset" value="重置">
+            </div>
+            <p class="p2">*在提交您的注册信息时，我们认为您已经同意了我们的条款服务.<br />
+               *这些条款可能在未经过您同意的时候进行修改。
+             </p>
+        </fieldset>
+        </form>
+       
+    </fieldset>  
+</body>
+</html>

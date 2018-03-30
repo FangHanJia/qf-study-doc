@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        #bigbox{
+            height: 300px;
+            width: 800px;
+            margin:100px auto;
+            padding:0 30px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #bigbox>div{
+            height: 100px;
+            width: 100px;
+            background-color: #E7E7E7;
+            display:flex;
+            padding:6px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            box-shadow: 0 -6px 0 0 #BBBBBB inset, 0 6px 0 0 #fff inset,6px 0 0 0 #D7D7D7 inset,-6px 0 0 0 #D7D7D7 inset ;
+        }
+         #bigbox .box span{
+            display:block;
+            height: 26px;
+            width: 26px;
+            background-color: #333333;
+            border-radius:13px ;
+            box-shadow: 0 -4px 0 0 #555 inset;
+        }
+        #bigbox .shaizi1{
+            /*主轴对齐方式*/
+            justify-content: center;
+            /*侧轴对齐方式*/
+            align-items: center;
+        } 
+        #bigbox .secnod{
+            justify-content: space-between;
+        }
+        #bigbox .secnod span:last-child{
+            /*子项目自身对齐方式*/
+            align-self: flex-end;
+        }
+        #bigbox .shaizi3 span:nth-child(2){
+            /*子项目自身对齐方式*/
+            align-self: center;
+        }
+        #bigbox  .shaizi4{
+            justify-content: space-between;
+        }
+       #bigbox .smallbox{
+            /*height: 96px;*/
+            width: 26px;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-between;
+       }
+       #bigbox .shaizi5{
+
+            justify-content: space-between;
+       }
+        #bigbox .shaizi5 .smallbox:nth-child(2) {
+            justify-content: center;
+       }
+       #bigbox .shaizi6{
+            justify-content: space-between;
+       }
+    </style>
+</head>
+<body>
+    <div id="bigbox">
+        <div class="shaizi1 box">
+            <span></span>
+        </div>
+        <div class="shaizi2 box secnod ">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="shaizi3 box secnod">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="shaizi4 box">
+            <div class="smallbox">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="smallbox">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="shaizi5 box">
+            <div class="smallbox">
+                <span></span><span></span>
+            </div>
+            <div class="smallbox">
+                <span></span>
+            </div>
+            <div class="smallbox">
+                <span></span><span></span>
+                
+            </div>
+        </div>
+        <div class="shaizi6 box">
+            <div class="smallbox">
+                <span></span><span></span><span></span>
+            </div>
+           
+            <div class="smallbox">
+                <span></span><span></span><span></span>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

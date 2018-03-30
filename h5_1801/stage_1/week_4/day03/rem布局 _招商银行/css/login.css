@@ -1,0 +1,126 @@
+html,body{
+    height: 100%;
+}
+#login{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+}
+#b_header ul{
+    height:5.6rem;
+    background-color: #E5E5E5;
+    display: flex;
+    justify-content: space-between;
+}
+#b_header  li:nth-child(1),#b_header  li:nth-child(3){
+    height:0.933333rem;
+    width: 2.186667rem;
+    text-align: center;
+}
+/*span用行高和text-align来设置，li不必设置弹性盒子*/
+#b_header  li:nth-child(1) span{
+    font-size: 0.453333rem;
+    line-height: 0.933333rem;
+    color:#0074E1;
+
+}
+
+
+#b_header ul li:nth-child(2){
+    height:0.933333rem;
+    width:3.6rem;
+    background-color: pink;
+    align-self: center;
+    background: url("../images/login.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+
+/*那里显示不出来 就在那里附近找*/
+#b_main{
+    flex:1;
+    background-color: #E5E5E5;
+}
+#b_main .cont{
+    height:10.32rem;
+   display:flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+#b_main .main_t{
+    height:5.52rem;
+    display:flex;
+    flex-direction: column;
+}
+#b_main .main_t>input{
+    height:1.133333rem;
+    background-color: white;
+    border:0 none;
+    font-size: 0.426667rem;
+}
+#b_main .main_t>input:nth-child(1),
+#b_main .main_t>input:nth-child(2){
+    padding-left: 1.386667rem;
+}
+#b_main .main_t>input:first-child{
+    
+    border-bottom: 0.013333rem solid gray;
+}
+#b_main .main_t>input:nth-child(3){
+    width:8.986667rem;
+    background-color: #0A5BD9;
+    border-radius: 0.266667rem;
+    align-self: center;
+    margin-top: 0.506667rem;
+    color:white;
+}
+#b_main .main_t .psd{
+    font-size: 0.453333rem;
+    line-height: 1.466667rem;
+    align-self: flex-end;
+    margin-right: 0.506667rem;
+    color:#0074E1;
+}
+#b_main .main_b{
+   height:1.066667rem;
+   width:8.986667rem;
+   background-color: white;
+   border-radius: 0.266667rem;
+    align-self: center;
+    border:0.026667rem solid #0074E1;
+    outline:none;
+    font-size: 0.426667rem;
+    line-height: 1.066667rem;
+    text-align: center;
+    color:#0074E1;
+}
+
+
+#b_footer ul{
+    height:1.28rem;
+    background-color: white;
+    border-top: 0.013333rem solid gray;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#b_footer ul li{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    color:#929292;
+
+}
+#b_footer ul li i{
+    font-size: 0.666667rem;
+}
+#b_footer ul li span{
+    font-size: 0.266667rem;
+}
+#b_footer .active{
+    color:#0074E1;
+}

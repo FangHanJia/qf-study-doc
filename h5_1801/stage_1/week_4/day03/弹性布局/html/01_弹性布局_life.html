@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" id="vp"/>
+    <script type="text/javascript">
+        // 把屏幕的倍率缩小到N分之一（N是window.devicePixelRatio）
+        var scale = 1/window.devicePixelRatio;
+        var mstr = 'initial-scale='+ scale +', maximum-scale='+ scale +', minimum-scale='+ scale +', user-scalable=no';
+        document.getElementById("vp").content = mstr;
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/life.css" />
+</head>
+<body>
+    <div id="football">
+        <header id="f_header">
+            <ul>
+                <li> <i class="iconfont icon_caidan"></i> </li>
+                <li>
+                    <span>热点</span><span class="active">生活</span>
+                </li>
+                <li> <i class="iconfont icon_erweima"></i> </li>
+            </ul>
+        </header>
+        <nav id="f_nav">
+            <ul>
+                <li>足球现场</li>
+                <li class="active">足球生活</li>
+                <li>足球美女</li>
+            </ul>
+        </nav>
+        <main id="f_main">
+            <ul>
+                <li><img src="../images/img1.jpg" alt="" />
+                    <p>足球足球足球足球足球足球</p>
+                </li>
+                <li><img src="../images/img1.jpg" alt="" />
+                    <p>足球足球足球足球足球足球</p>
+                </li>
+                <li><img src="../images/img1.jpg" alt="" />
+                    <p>足球足球足球足球足球足球</p>
+                </li>
+                <li><img src="../images/img1.jpg" alt="" />
+                    <p>足球足球足球足球足球足球</p>
+                </li>
+                <li><img src="../images/img1.jpg" alt="" />
+                    <p>足球足球足球足球足球足球</p>
+                </li>
+                <li><img src="../images/img1.jpg" alt="" />
+                    <p>足球足球足球足球足球足球</p>
+                </li>
+                <li><img src="../images/img1.jpg" alt="" />
+                    <p>足球足球足球足球足球足球</p>
+                </li>
+
+                
+            </ul>
+        </main>
+        <footer id="f_footer">
+            <ul>
+                <li class="active"> <i class=" iconfont icon_shouye "></i> <span>首页</span>  </li>
+                <li> <i class=" iconfont icon_fangdajing"></i> <span>发现</span>  </li>
+                <li> <i class=" iconfont icon_camera"></i>   </li>
+                <li> <i  class="iconfont icon_my"></i> <span>我的</span>  </li>
+                <li> <i class=" iconfont icon_tuichu"></i> <span>退出</span>  </li>
+               
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>

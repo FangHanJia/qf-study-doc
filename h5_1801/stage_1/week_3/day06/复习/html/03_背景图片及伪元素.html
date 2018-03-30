@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        a{text-decoration: none;}
+        nav {
+            height: 24px;
+            width:100%;
+            background-color: #EEEEEE;
+        }
+        nav .tab {
+            float:right;
+        }
+          nav .tab li{
+            float:left;
+        }
+        nav .tab li a{
+            /*浮动可以代替display:block;并且可以清除字的line-height*/
+            float:left;
+            height:24px;
+            font-size: 12px;
+            line-height: 24px;
+            color:gray;
+        } 
+        nav .tab li a span{
+            padding:0 15px;
+            border-right: 1px solid gray;
+        }
+        nav .tab li:nth-child(1)>a>span:first-child{
+           
+            border-right: 0 none;
+        } 
+        nav .tab li:nth-child(2)>a>span{
+            padding-right: 35px;
+            position: relative;
+        }
+        nav .tab li:nth-child(3)>a>span{
+            padding: 0 35px;
+            position: relative;
+        }
+        nav .tab li:nth-child(5)>a>span{
+            padding-left:35px;
+            position: relative;
+        } 
+        nav .tab li:nth-child(6)>a>span{
+            padding-left:35px;
+            position: relative;
+        }
+        nav .tab li:nth-child(2)>a>span::after{
+           display:block;
+           content:"";
+           height: 30px;
+           width: 30px;
+           background:url("../images/sprits.png") no-repeat 0 0;
+           position: absolute;
+           top: -2px;
+           right:-6px;
+        }
+        nav .tab li:nth-child(3)>a>span::before{
+           display:block;
+           content:"";
+           height: 30px;
+           width: 30px;
+           background:url("../images/sprits.png") no-repeat -40px 0;
+           position: absolute;
+           top: -5px;
+           left:10px;
+        }
+        nav .tab li:nth-child(3)>a>span::after{
+           display:block;
+           content:"";
+           height: 30px;
+           width: 30px;
+           background:url("../images/sprits.png") no-repeat 0 0;
+           position: absolute;
+           top: -5px;
+           right:-2px;
+        }
+        nav .tab li:nth-child(5)>a>span::before{
+           display:block;
+           content:"";
+           height: 30px;
+           width: 30px;
+           background:url("../images/sprits.png") no-repeat -80px 0;
+           position: absolute;
+           top: -5px;
+           left:9px;
+        }
+        nav .tab li:nth-child(6)>a>span::before{
+           display:block;
+           content:"";
+           height: 30px;
+           width: 30px;
+           background:url("../images/sprits.png") no-repeat -120px 0;
+           position: absolute;
+           top: -5px;
+           left:5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="tab">
+            <li><a href="#"><span>登陆</span><span>登陆</span></a></li>
+            <li><a href="#"><span>登陆</span></a></li>
+            <li><a href="#"><span>登陆</span></a></li>
+            <li><a href="#"><span>登陆</span></a></li>
+            <li><a href="#"><span>登陆</span></a></li>
+            <li><a href="#"><span>登陆</span></a></li>
+        </ul>
+    </nav>
+</body>
+</html>

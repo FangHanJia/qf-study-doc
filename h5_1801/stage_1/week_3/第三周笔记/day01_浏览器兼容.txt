@@ -1,0 +1,66 @@
+一、浏览器的兼容
+    1、主流浏览器
+        （1）、[IE.Safari,Firefox,Google,Opera,]百度，360，搜狗，遨游。
+         (2)、最早的浏览器：网景浏览器-简称（NN）。
+    2、五大浏览器内核代表
+        （1）、Trident：IE、腾讯(不开源的window平台)。
+        （2）、Gecko：Firefox-跨平台。
+        （3）、Webkit： Safari,chrome.（一个开源项目）
+         (4)、Presto：欧朋-公认的渲染速度最快的引擎。
+        （5）、Blink：Google和Opera 开发的排版引擎。
+    3、浏览器兼容：
+        （1）、CSS Bug-各个浏览器解析不一致
+        （2）、CSS Hack-兼容CSS在不同浏览器正确显示的技巧方法。成为补丁（patch）
+         (3)、Filter.一种用来过滤不同浏览器的Hack类型。
+    4、常见的浏览器Bug:
+        (1)、有图片边框（ie8以下）。
+            [1]去掉边框样式:img[border:0 none;]
+        (2)、图片间隙与父元素有间隙：
+            [1]图片设置成块级元素:display:block;
+            [2]父元素设置font-size=0;
+        (3)、双向浮动（只有ie6出现）：
+            [1]给浮动元素添加声明：display：inline；（让元素在同一行上）
+       （4）默认高度（ie7，ie8）：
+            [1]给元素添加声明：font-size：0；
+            [2]给元素添加声明：overflow：hidden；
+        (5)表单元素行高对齐不一致：
+            [1]给表单元素添加浮动：float：left；
+            [2]给表单添加声明：vertical-align:middle;
+        (6)按钮元素默认大小不一：
+            [1]、在input外边套一个标签，在这个标签里写按钮的样式，把input的边框去掉，默认padding也要去掉
+        （7）百分比Bug
+            [1]、给右边的浮动元素添加声明：
+                clear:right;-清除右浮动
+                clear:left;-清除左浮动
+        （8）同一某元素鼠标指针形状为手型
+            [1]、应添加声明：cursor：pointer
+                            cursor:         ;
+                                    auto默认
+                                    crosshair加号
+                                    text文本
+                                    wait等待
+                                    help帮助
+                                    progress过程
+                                    inherit继承
+                                    move移动
+                                    ne-resize向上或向右移动
+                                    pointer手形
+
+         (9)、透明属性
+            兼容其他浏览器写法：opacity:values(取值范围：0-1)，ie浏览器写法：[filter：alpha（opacity=values）]-取值范围为:0-100（整数）
+        （10）、margin塌陷
+            原因：给子元素加margin-top会错误地渲染在父元素上。
+                [1]、给父元素添加-overflow:hidden（推荐使用）
+                [2]、给父元素或者子元素添加浮动-flaot
+                [3]、给父元素加上border
+                [4]、把margin-top变成父元素的padding-top
+        （11）margin合并Bug
+            [1]当两个上下排列的元素，上元素有margin-bottom:xx;下面元素有margin-top：xx;他们中间的距离不会叠加，而是会设置为较大的值。
+       补充：
+            （1）记得给整个页面加最小宽度，当窗口小于最小宽度时，按照最小宽度进行显示，当页面显示宽度大于最小宽度时，按照页面宽度显示。（最小宽度为版心容器）
+            （2）.ie8只支持单冒号写法
+            （3）.总属性（border、background）的多个属性值之间要用空格隔开
+            （4）.ul>li(float)>a(宽高)（float-->ie6）
+                    ul>li(float)>a(高度)（float-->ie6）>span(padding)(假如span也设置成了display:block;也要float)
+            (5).页面最外层设置最小宽度（版心容器宽度）
+                兼容ie6：_width:expression(document.body.clientWidth < 1190 ? "1190px" : "auto");

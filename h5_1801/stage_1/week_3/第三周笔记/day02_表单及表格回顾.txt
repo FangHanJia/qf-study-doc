@@ -1,0 +1,71 @@
+一、表单<form></form>
+    1、属性
+        [1]action-提交到后台的地址
+        [1]method="get/post"-提交的方法
+        [1]name="id"-控件相关的名字(用于提交内容)
+二、表单新标签
+    1、fieldset:表单字段集
+        （1）对我们的表单中的元素或其他文本进行分组。
+        （2）页面中呈现为一个方框。
+        （3）fieldset可以嵌套
+        （4）disabled-定义整个空间禁止使用
+    2、legend:可以在fieldset对象绘制的方框内插入一个默认左上角的标签，legend必须是fieldset里的第一个子元素。
+        （1）align：center。（使legend居中）
+    3、label:提示信息标签
+        （1）label[for="id"]写在input标签的前面，并绑定input的id（一般用于文本、密码框）。
+        （2）<label>input</label>:用于单选框或多选框一般都用label直接将其包起来。
+    4、type的新类型：
+        (1)type="file";-提交一个文件
+       （2）multiple-上传多个文件
+       （3）type="image" src=".../"-提交图像
+三、表格新属性
+    1、table[rules]-表示添加分割线
+        （1）cols-添加列与列之间的分割线
+        （2）rows-添加行与行之间的分割线
+        （3）all-添加行与行、列与列之间的分割线
+        （4）none-默认没有
+        （5）group-组
+    2、thead-表头
+        thead>tr>th
+    3、tbody-表体
+        tbody>tr>td
+    4、tfoot-表尾
+        tfoot>tr>td
+    5、书写的次序应该是thead,tfoot,tbody.
+        -这样浏览器可以在获取所有数据前先呈现表尾了。
+    6、列分组 colgroup[span代表的是该组的列数]
+    7、标题 caption-放在table的第一个子元素的位置上。
+    8、CSS新增属性：
+        （1）单元格间距：
+            [1]border-spaceing:0;
+            [2]用于table上，不可取负值。
+        （2）合并单元格边框：
+            [1]border-collapse
+            [2]属性值：separate-分离（默认），collapse-合并。
+        （3）无内容时，单元格的设置
+            [1]empty-cells
+            [2]属性值：show(显示),hide(隐藏)
+            [3]若是单元格边框合并了，设置empty-cells:hide,没效果
+        (4)表格标题
+            [1]caption-标题
+            [2]caption的位置-side:top,bottom。
+                            left,right-火狐识别
+            [3]-[table的高度不包括caption]
+四、BFC
+    1、概念：直译“块级格式化上下文”，是一个独立的渲染区域，规定了内部的块如何布局，并且与这个区域外部毫不相干。
+    2、布局格式：
+        （1）内部的块会在垂直方向，一个接一个地放。
+        （2）属于同一个BFC的块元素会发生margin合并（同级元素属于同一个BFC）
+         (3)
+         (4)两栏应用bfc的区域（不能设置宽度）不会与浮动块重叠（清除浮动）
+        （5）BFC就是页面上的一个独立的隔离的独立容器
+        （6）计算BFC的高度时，浮动元素也参与计算.（overflow：hidden）
+    3、那些元素能触发BFC
+        (1)根元素HTML
+        (2)float属性不为none
+        (3)position为absolute（）
+        (4)diasplay:inline-block
+        (5)overflow不为visible。
+五、自适应两栏布局
+    1、某一边定宽切浮动,另外一栏不设置宽设置overflow:hidden.
+    2、防止margin合并:若想两个垂直排放的元素不发生margin合并,则会把其中的与一个元素的样式设置给他的子元素,,同时该元素还要设置成独立的bfc区域(overflow:hidden)

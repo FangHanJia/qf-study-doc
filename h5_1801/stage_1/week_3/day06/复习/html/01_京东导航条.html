@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        a{text-decoration: none;}
+        .tab{
+            float:right;
+            height: 34px;
+            /*width: 400px;*/
+            border-top: 1px solid gray;
+            border-bottom:  1px solid red;
+        }
+        .tab>li{
+            float:left;
+        }
+        .tab>li>a{
+            display: block;
+            height: 24px;
+            padding-top: 10px;
+        }
+        .tab>li>a>span{
+            display: block;
+            /*height: 34px;*/
+            font-size: 14px;
+            line-height: 14px;
+            border-right: 1px solid gray;
+            padding:0 15px;
+        }
+         .tab>li:hover>a{
+            /*border:1px solid red;
+            border-bottom: 1px solid white;
+            border-top:  3px solid red;
+            margin-left: -1px;
+            margin-top: -1px;
+            padding-top: 8px;*/
+            /*逐步分析法*/
+            /*右边框*/
+            border-right: 1px solid red;
+            /*左边框*/
+            border-left: 1px solid red;
+            margin-left: -1px;
+            /*上边框*/
+            border-top: 3px solid red;
+            margin-top: -1px;
+            padding-top: 8px;
+            /*下边框*/
+            border-bottom: 1px solid white;
+
+        }
+        .tab>li:hover span{
+            border:0 red;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="tab">
+        <li><a href="#"><span>热门</span></a></li>
+        <li><a href="#"><span>热门</span></a></li>
+        <li><a href="#"><span>热门</span></a></li>
+        <li><a href="#"><span>热门</span></a></li>
+        <li><a href="#"><span>热门</span></a></li>
+        <li><a href="#"><span>热门</span></a></li>
+        <li><a href="#"><span>热门</span></a></li>
+        <li><a href="#"><span>热门</span></a></li>
+        <li><a href="#"><span>热门</span></a></li>
+    </ul>
+</body>
+</html>

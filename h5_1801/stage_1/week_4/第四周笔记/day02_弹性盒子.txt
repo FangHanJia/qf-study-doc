@@ -1,0 +1,69 @@
+一、弹性盒子
+    1、组成：弹性容器+弹性子项目。
+    2、设置在父元素上：
+        --用于主轴上：
+        [1]display:flex;设置成弹性盒子，其子项目默认会在主轴方向向一行按比例排列（flex）默认不换行，侧轴方向会默认拉伸。
+        [2]flex-direction；设置主轴方向。
+            （1）row-默认主轴方向是水平向右。
+            （2）column-设置主轴垂直向下。
+            （3）row-reverse:反转。
+            （4）colume-reverse:反转。
+        [3]flex-wrap:;设置拉伸换行
+            （1）nowrap:默认不换行。
+            （2）wrap:换行。
+        [4]flex-flow：flex-direction||flex-wrap;[2]+[3].
+            （1）同时设置主轴方向及是否换行。
+        [5]justify-content；设置子元素在主轴方向的对齐方式。
+            （1）flex-start：从主轴起点开始排列。
+            （2）flex-end：从主轴终点开始排列。
+            （3）center：从主轴中间开始排列。
+            （4）space-between：将空白的区域平均地排放。
+            （5）space-around：子元素的margin平均排放。
+        --用于侧轴上：
+        [1]align-item;设置（单侧行）子项目在侧轴上的对齐方式。
+            （1）stretch：若是子项目在侧轴没设置大小，则默认被拉伸。
+            （2）flex-start：若是子项目在侧轴方向设置了大小，则在当行的起点位置开始摆放。
+            （3）flex-end：在当行的终点开始摆放
+            （4）center：在当前行的中间位置开始摆放。
+            （5）baseline：在当前行以基线对齐
+        [2]align-content;设置（多侧行）子项目在侧轴上的对齐方式。
+            （1）flex-start|flex-end|center|space-between|space-around|
+            （2）stretch（默认设置一定的margin值）;
+                    各行将会伸展以占用剩余的空间。如果剩余的空间是负数，该值等效于'flex-start'。在其它情况下，剩余空间被所有行平分，以扩大它们的侧轴尺寸。
+    3、设置在子元素上：
+        [1]flex:1;-设置子项目在主轴方向上的比分。
+        [2]align-self;-设置子项目自身在侧轴上的对齐方式。
+        [3]order:数值小的排在前面。可取负数。（没设值的最小，排在最前面）
+二、多列布局/分栏布局
+    1、columns-写在父元素上。
+        [1]column-width：列宽，每一列的最小宽度
+        [2]column-count：列数，最多的列数。
+        [3]column-rule：列间隔线。
+        [4]column-gap：列间距。
+    2、写在子元素上
+        [5]column-span：none all。
+三、响应式开发
+    1、自适应：百分比布局，弹性盒布局，分栏布局。
+    2、响应式:[自适应+媒体查询即可实现]
+        [1]同一面在不同大小设备（窗口）可能呈现不一样的页面效果，（应用:相对简单，内容较少的页面）
+四、媒体查询
+    1、viewport-布局视口。(980px)
+        [1]分界点：
+            （1）超小屏幕xs （移动设备）768px以下
+            （1）小屏屏幕sm （移动设备）768px-992px
+            （1）中等屏幕md （移动设备）992px-1200px
+            （1）宽屏设备lg  (移动设备）1200px以上
+    2、添加标签：
+        [移动端布局必添加的标签]-将布局适口的宽度设置成屏幕宽度，保证正常显示。
+       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+        }
+    3、媒体查询：
+        [1]语法@media screen and(条件){css语法}
+            （1）@media screen and (min-width){}-窗口宽度按照从小到大写
+            （2）@media screen and(max-width{})-窗口宽度按照从大到小写
+        [2]媒体查询调用不同的外部样式（单个的样式）
+            （1）通过<Link rel="styelsheet" media="screen and(max-width:xxpx)" href="xx.css"/>
+    4、rem
+        [1]根元素的字体大小font-size代表1rem
+        [2]其他元素的属性若是rem为单位，则相当于html字体大小的多少倍。
+        [3]响应式开发时，可以通过改变根元素大小的字体大小从而改变其他元素属性的值。

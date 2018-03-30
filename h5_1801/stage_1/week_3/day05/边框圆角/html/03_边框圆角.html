@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{
+            list-style: none;
+        }
+        #android{
+            width: 280px;
+            height: 420px;
+            border:1px solid red;
+            margin:20px auto;
+            padding:20px 110px 60px 110px;
+        }  
+        #android .container{
+            width: 280px;
+            height: 420px;
+            border:1px solid green;
+            margin:0px auto;
+            position: relative;
+        }  
+         #android .container .header{
+            width: 80px;
+            height: 20px;
+            background-color: #51A251;
+            margin:0 auto;
+            /*垂直，水平==>水平，垂直*/
+            border-top-left-radius: 100px 100px ;
+            border-top-right-radius: 100px 100px ;
+            padding:50px 60px 30px 60px;
+        }
+        #android .container .header .eyes{
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            
+            /*垂直，水平==>水平，垂直*/
+            border-radius: 10px;
+            float: left;
+            margin-right: 40px;
+        } 
+        #android .container .header .eyes:last-child{
+           
+            margin-right: 0px;
+        } 
+        /*body*/
+        #android .container .body{
+            width:280px;
+            height: 232px;
+            background-color: #ccc;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="android">
+        <div class="container">
+            <div class="header">
+                <div class="eyes"></div>
+                <div class="eyes"></div>
+            </div>
+            <div class="body"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        html,body{
+            background-color: black;
+        }
+        .tab{
+            height: 400px;
+            width: 400px;
+            margin:100px auto;
+            /*background-color: #eee;*/
+            position: relative;
+        }
+        .tab li{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0);
+            width:40px;
+            height: 40px;
+            border:1px solid gray;
+            border-radius: 50%;
+            animation: run 3s linear infinite;
+        } 
+         .tab li span{
+            position: absolute;
+            top:0;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0);
+            display: block;
+            width:20px;
+            height: 20px;
+            border:1px solid gray;
+            border-radius: 50%;
+            background-color: yellow;
+            animation:run 2s linear infinite;
+
+        }
+        .tab li:nth-child(3) span::before{
+            display:block;
+            content:"";
+            position: absolute;
+            top:-15px;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0);
+            width:10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        @-webkit-keyframes run{
+            0%{}
+            100%{
+            transform: translate(-50%, -50%) rotate(360deg);
+
+            }
+        }
+         .tab li:nth-child(1){
+           border:0 none;
+           background-color: purple;
+        } 
+        .tab li:nth-child(2){
+           
+            width:120px;
+            height: 120px;
+            border:1px solid gray;
+            animation-duration: 12s;
+        } 
+        .tab li:nth-child(3){
+           
+            width:180px;
+            height: 180px;
+            border:1px solid gray;
+            animation-duration: 5s;
+            
+
+        }
+         .tab li:nth-child(4){
+           
+            width:240px;
+            height: 240px;
+            border:1px solid gray;
+            animation-duration: 3s;
+            
+
+        }
+        .tab li:nth-child(5){
+           
+            width:300px;
+            height: 300px;
+            border:1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <ul class="tab">
+        <li></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+    </ul>
+</body>
+</html>

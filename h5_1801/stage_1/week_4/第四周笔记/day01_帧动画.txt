@@ -1,0 +1,43 @@
+一、新增颜色模型
+    1、rgba()-css3属性值：
+        [red0-255,green0-255,blue0-255,alpha不透明度];
+    2、hsla()：
+        [色调0-360,饱和度0-100%，亮度0-1005,alpha不透明度0-1];
+    3、transparent：完全透明
+        [1]多用于边框的颜色。
+二、盒模型
+    1、盒模型=content+padding+border+margin（四部分）
+    2、标准盒模型：width、height指的是内容content的宽高。（content-box）
+    3、怪异盒模型：width、height指的是content+padding+border的大小。(border-box)
+        box-sizing:border-box;
+三、3D变换
+    1、transform：translate3d(x,y,z);
+    2、transform：左手定则（大拇指指向正方向，四指指向选择方向）。
+        [1]rotateX(角度);
+        [2]rotate3d(X,Y,Z，角度 );默认0不旋转，1旋转。（使用空格隔开）
+    3、transform-style：preserve-3d|flat(默认不保持);
+        [1]开启3D效果。
+        [2]放在其父元素上。
+    4、perspective：100px;
+        [1]景深-放在其父元素上或者放在舞台上。
+        [2]配合perspective-origin；透视位置使用。
+    5、perspective-origin：透视点位置，和透视点一起使用。
+    [注意-旋转时所在的轴也会跟着旋转的！]
+四、动画
+    1、设置步骤
+        （1）通过@keyframes自定义动画
+        （2）通过百分比将动画序列分割成多个节点
+        （3）在各个节点定义属性
+        （4）属性应用：animation
+    2、animation
+        （1）animation-name:动画的名字
+        （2）animation-duration:动画的时间
+        （3）animation-timing-function:动画形式
+            [linear]
+        （4）animation-delay：动画延迟
+         (5)animation-iteration-count:播放的次数。
+        （6）animation-direction：alternate（默认）|reverse（反转）|alternate-reverse（反向轮流）;动画是否轮流反向播放。
+        （7）animation-fill-mode:forward（保持在最后一个状态）；动画完成模式
+        （8）steps：将动画每一帧分成n步。end-可省略，代表每一步都以上一步的状态停留。
+                                         start不可省略，代表每一步都以下一步的状态停留。
+        （9）animation-play-status:paused;动画暂停。
