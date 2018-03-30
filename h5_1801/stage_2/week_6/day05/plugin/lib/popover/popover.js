@@ -37,7 +37,7 @@
      // 创建标题
      if(opt.title){
        var title = document.createElement('div');
-       title.calssName = 'title';
+       title.className = 'title';
        title.innerHTML = opt.title;
 
        this.ele.appendChild(title);
