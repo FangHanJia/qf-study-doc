@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>原型链继承</title>
+    <style type="text/css">
+        h3{color:green;}
+    </style>
+    <script type="text/javascript">
+        // 原型链继承:
+        //      拿父类的实例来充当子类的原型对象;
+        
+        // 父类
+        function Person(name,age,gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+        Person.prototype = {
+            say(){
+                console.log(`我叫${this.name},来交朋友!`);
+            },
+            eat(){
+                console.log('吃货一个');
+            }
+        }
+        // 父类实例
+        let jiajia = new Person('jiajia',18,'男');
+
+        // 原型链继承:拿父类的实例来充当子类的原型对象;
+        
+        // 子类
+        function Man(){}
+        Man.prototype = new Person();
+        // 子类实例
+        let fhj = new Man();
+        // 原型链继承继承了父类的方法:
+        fhj.say();
+    </script>
+</head>
+<body>
+    <h1>原型链继承</h1>
+    <h3>核心:拿父类的实例来充当子类的原型对象</h3>
+</body>
+</html>

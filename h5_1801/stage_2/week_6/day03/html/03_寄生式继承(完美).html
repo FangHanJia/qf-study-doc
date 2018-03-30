@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>完美的继承:寄生式继承</title>
+    <style type="text/css">
+        dl dt{font-size:30px;color:green;}
+        dl dd{font-size:24px;color:red;}
+    </style>
+    <script type="text/javascript">
+        // 寄生式继承:
+        //     1、借用构造函数：借用父类的构造函数来增强子类，相当于把父类实例的属性赋值一份给子类实例（属性）
+        //     2、原型式继承：创建中间空构造函数来桥接；
+        function Person(name,age,gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+        Person.prototype = {
+            say(){
+                console.log(`我叫${this.name}`);
+            },
+            eat(){console.log()}
+        }
+        Object.defineProperty(Person.prototype,'constructor',{
+            configurable:true,
+            // enumerable:true,
+            writable:true,
+            value:Person
+        });
+
+        // 构造函数：继承属性；
+        function Man(name,age,gender){
+            Person.call(this,name,age,gender);
+        }
+
+        // 原型式继承：获取方法
+        function object(obj){
+
+            // 空构造函数-桥接
+            function F(){};
+            F.prototype = obj;//为了不共享同一个原型对象；
+            return new F();
+        }
+        // 将父类的原型赋值给中间空构造函数
+        Man.prototype = object(Person.prototype);
+        
+        let fhj = new Man('fhj',18,'男');
+
+    </script>
+</head>
+<body>
+    <h1>寄生式继承</h1>
+    <dl>
+        <dt>核心:</dt>
+        <dd>继承属性:借用构造函数</dd>
+        <dd>继承方法:原型式继承</dd>
+    </dl>
+</body>
+</html>

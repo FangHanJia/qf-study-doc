@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>借用构造函数</title>
+    <script type="text/javascript">
+        // 借用构造函数
+        //      核心:借用父类的构造函数增强子类实例,相当于复制父类的实例属性一份给子类实例;
+        //      
+        // 父类构造函数
+        function Person(name,age,gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+        // 父类原型对象
+        Person.prototype ={
+            say(){
+                console.log(`我叫${this.name}`);
+            },
+            eat(){
+                console.log('吃货')
+            }
+        }
+        // 覆盖构造属性:
+        Object.defineProperty(Person.prototype,'constructor',{
+            configurable:true,
+            writable:true,
+            value:Person
+        });
+        // 父类实例
+        let jiajia = new Person('jiajia',18,'男');
+
+        // 继承:借用父类构造函数来增强子类实例,相当于把父类实例的属性复制一个给子类实例;
+        
+        // 子类构造函数:
+        function Man(){
+            Person.call(this,name,age,gender);
+        }
+        // 子类实例
+        let fhj = new Man('fhj',18,'男');
+    </script>
+</head>
+<body>
+    <h1>借用构造函数</h1>
+</body>
+</html>

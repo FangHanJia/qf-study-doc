@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>ES6继承</title>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 父类
+            class Person{
+                constructor(name,age){
+                    this.name = name;
+                    this.age = age;
+                }
+                say(){
+                    console.log(`我叫${this.name}`);
+                };
+                static eat(){console.log(`我${this.age}`);}
+            }
+
+            // 子类
+            class Man extends Person{
+                constructor(name,age,gender){
+                    super(name,age);
+                    this.gender = gender;
+                }
+            }
+            let fhj  = new Man('fhj',19,'男');
+            console.log(fhj.say(),Man.eat());
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
