@@ -16,5 +16,13 @@
        }
        return this;
      }
+     // 选择器
+     try {
+        this.ele = document.querySelector(selector);
+     } catch (err) {
+        this.ele = [];
+        var res = document.getElementByTagName('');
+
+     }
    }
  }
