@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        #container{
+            width:500px;
+            margin:0 auto;
+        }
+        #container #newsCont{
+            width:460px;
+            height:160px;
+            padding:20px;
+            border:1px solid red;
+            margin-bottom:20px;
+            overflow-x:hidden;
+        } 
+        #container #news{
+            width:400px;
+            height:50px;
+            padding-left:10px;
+        }
+        #container #btnAdd{
+            width:80px;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>显示最新的消息</h1>
+        <ul id="newsCont"></ul>
+        <input type="text" id="news" />
+        <button id="btnAdd">添加</button>
+    </div>
+    <script type="text/javascript">
+        var newsCont = document.getElementById('newsCont');
+        var news = document.getElementById('news');
+        var btnAdd = document.getElementById('btnAdd');
+
+        var data = ['01随机生成一个五位数.html','02计算数组的最大值、最小值和平均值.html','03显示最新的消息.html'];
+        //首次刷新界面UI
+        render();
+        //拼接数据的函数
+        function render(){
+            newsCont.innerHTML = data.map(function(item){
+                return '<li><a href = "#">'+item+'</a></li>';
+            }).join('');
+        }
+        
+        btnAdd.onclick = function(){
+            //获取输入的值
+            var _news = news.value;
+            // 更新数组
+            data.unshift(_news);
+            //刷新UI界面
+            render();
+            news.value = '';
+            news.focus();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        a{text-decoration:none;color:#333;}
+        #main{
+            width:100%;
+            background:#fff;
+        } 
+        #main .cont{
+            width:982px;
+            margin:0 auto;
+            /*background:#fff;*/
+            overflow:hidden;
+        }
+        #main .main_content{
+            width:770px;
+            float:right;
+            height:3000px;
+            background:#ccc;
+        } 
+        #main .main_content>li{
+            float:left;
+            width:174px;
+            height:286px;
+            font-size:12px;
+            margin-right:24px;
+            /*background:green;*/
+        } 
+        #main .main_content>li:nth-child(4n){
+            margin-right:0px;
+        } 
+        #main .main_content>li>img{
+            display:block;
+            width:174px;
+            height:170px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            //获取元素
+            var main_content = document.getElementById('main_content');
+            
+
+            //数据源
+            var data = [{
+                        imgUrl:'../images/g3.jpg',
+                        text:'Up DownOpenCowhide LeatherCasewithCrocodile...',
+                        listPrice:219,
+                        ourPrice:189,
+                        save:30
+                        },{
+                        imgUrl:'../images/g2.jpg',
+                        text:'Up DownOpenCowhide LeatherCasewithCrocodile...',
+                        listPrice:229,
+                        ourPrice:199,
+                        save:30
+                        }];
+            console.log(render());
+            main_content.innerHTML = render();
+            //生成到界面中的函数
+            function render(){
+                return data.map(function(item){
+                    return '<li><img src="'+item.imgUrl+'"><p>'+item.text+'</p><p><span class="lPrice">listPrice:'+item.listPrice+'</span></p><p><span class="lPrice">ourPrice:'+item.ourPrice+'</span></p><span class="save"></span></li>';
+
+                        }).join(''); //转化为字符串
+            }
+
+            //加码数据
+            var params ='';
+            console.log(params);
+            var lis = document.getElementsByTagName('li');
+            console.log(lis);
+            for(var i = 0;i<lis.length;i++){
+                lis[i].id = i;
+                lis[i].onclick = function(){
+                   for(var key in data[this.id]){
+                    console.log(key,data[this.id][key]);
+                    params += key + '='+encodeURI(data[this.id][key])+'&';
+                   } 
+                   params=params.slice(0,-1);
+                    console.log(params);
+                    // location.href = '01_商品详情页面.html?'+params;
+                    location.href = '01_商品详情页面.html?'+params;
+                }
+            }
+
+
+            
+            
+        }
+    </script>
+</head>
+<body>
+    <main id="main">
+        <div class="cont">
+            <ul class="main_content" id="main_content">
+                
+            </ul>
+        </div> 
+    </main>
+</body>
+</html>

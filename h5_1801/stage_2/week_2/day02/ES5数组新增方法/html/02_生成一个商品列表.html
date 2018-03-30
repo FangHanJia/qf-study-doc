@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        #goodsList{
+            width:900px;
+            margin:0 auto;
+        }
+        #goodsList li{
+            float:left;
+            text-align:center;
+        }
+        #goodsList li img{
+            width:300px;
+            height:300px;
+        }  
+        #goodsList li span{
+            color:red;
+        } 
+        #goodsList li p{
+            line-height:30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="goodsList"></div>
+    <script type="text/javascript">
+        var data = [{
+                        id:'001',
+                        name:'iphone7 plugs',
+                        imgurl:'../images/iphone7.jpg',
+                        price:5899.00,
+                        sale:5888.00,
+                        color:'中国红'
+                    },{
+                        id:'002',
+                        name:'note7',
+                        imgurl:'../images/note7.jpg',
+                        price:3899.00,
+                        sale:998.00,
+                        color:'土豪金'
+                    },{
+                        id:'003',
+                        name:'honor7',
+                        imgurl:'../images/honor7.jpg',
+                        price:1999.00,
+                        sale:1899.00,
+                        color:'黑色'
+                    }];
+        var goodsList = document.getElementById('goodsList');           
+        var res = data.map(function(goods){
+            return '<li data-id="'+goods.id+'"><img src="'+goods.imgurl+'"/><p>商品名：'+goods.name+'</p><p class="price"> 原价：<del>'+goods.price+'</del></p><p class="sale_price"><span>现价：'+goods.sale+'</span></p><p class="color">颜色：'+goods.color+'</p><button class="buy">加入购物车</button></li>'
+        }).join('');
+        console.log(res);
+        goodsList.innerHTML = res;
+    </script>
+</body>
+</html>

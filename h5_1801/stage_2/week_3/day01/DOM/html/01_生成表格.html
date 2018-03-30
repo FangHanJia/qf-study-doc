@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+       table{border:1px solid #ddd;border-collapse: collapse;width:100%;}
+       td{border:1px solid #ddd;padding:5px 10px;}
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            //获取元素
+            var output = document.getElementById('output');
+            var row    = document.getElementById('row');
+            var col    = document.getElementById('col');
+            var btn    = document.getElementById('btn');
+            //给生成按钮绑定事件
+            btn.onclick = function(){
+                //获取输入的值
+                var r     = row.value;
+                var c     = col.value;
+                var table = createTable(r,c);
+                //清空后再显示再界面上
+                output.innerHTML = '';
+                output.appendChild(table);
+                /*
+                    删除行数的操作
+                 */
+                //获取删除按钮
+                var  btnDels = table.getElementsByClassName('btnDel');
+                //遍历并加上绑定事件
+                for(var i =0;i<btnDels.length;i++){
+                    btnDels[i].onclick = function(){
+                        //要删除的tr
+                        var currentTr = this.parentNode.parentNode;
+                        //要删除的tr.parent.removeChild();
+                        currentTr.parentNode.removeChild(currentTr);
+                    }
+                }
+                /*
+                    复制行数的操作
+                 */
+                //获取生成的复制按钮
+                var  btnCopies = table.getElementsByClassName('btnCopy');
+                //遍历并给每个按钮绑定事件
+                for(var j = 0;j<btnCopies.length;j++){
+                    btnCopies[j].onclick = function(){
+                        //ele.cloneNode
+                        //获取当前行数
+                        var currentTr = this.parentNode.parentNode;
+                        //复制的行数
+                        var copyTr = currentTr.cloneNode(true);
+                        //添加到表格末尾,复制的行数没有事件的操作。
+                        table.getElementsByTagName('tbody')[0].appendChild(copyTr);
+                    }
+                }
+            }
+            //生成表格的函数
+            function createTable(r,c){
+                //生成标签(元素节点)
+                var table = document.createElement('table');
+                var tbody = document.createElement('tbody');
+                //遍历生成单元行
+                for(var i = 0;i<r;i++){
+                    //生成tr标签
+                    var tr = document.createElement('tr');
+                    //添加行号
+                    var trIdx = document.createElement('td');
+                    trIdx.innerHTML = '第'+(i+1)+'行';
+                    tr.appendChild(trIdx);
+                    for(var j = 0 ;j<c;j++){
+                        //生成td标签
+                        var td = document.createElement('td');
+                        td.innerHTML = '单元格'+i+j;
+                        tr.appendChild(td);
+                    }
+                    
+                    tbody.appendChild(tr);
+                    //添加删除按钮并添加类名
+                    var td = document.createElement('td');
+                    var btnDel = document.createElement('button');
+                    btnDel.innerHTML = '删除';
+                    btnDel.className = 'btnDel';
+                    td.appendChild(btnDel);
+                    tr.appendChild(td);
+
+                    //添加复制按钮并添加类名
+                    var td = document.createElement('td');
+                    var btnCopy = document.createElement('button');
+                    btnCopy.className = 'btnCopy';
+                    btnCopy.innerHTML = '复制';
+                    td.appendChild(btnCopy);
+                    tr.appendChild(td);
+
+                }
+                table.appendChild(tbody);
+                return table;
+            }
+        }
+    </script>
+</head>
+<body>
+    行：<input type="text" id="row"/>
+    列：<input type="text" id="col"/>
+    <button id="btn">生成表格</button>
+    <div id="output"></div>
+</body>
+</html>

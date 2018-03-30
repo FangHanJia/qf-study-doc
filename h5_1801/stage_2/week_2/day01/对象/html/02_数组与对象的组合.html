@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        #output{
+            width:800px;
+            height:400px;
+        } 
+        div img{
+            width:200px;
+            height:300px;
+            vertical-align:middle;
+        }
+        div span{
+            vertical-align:middle;
+            line-height:30px;
+            padding:0 20px;
+        }
+    </style>
+<body>
+    <button id="climao">价格由低到高</button>
+    <div id="output"></div>
+    <div id="output2"></div>
+    
+    <script type="text/javascript">
+        var output = document.getElementById('output');
+        var climao = document.getElementById('climao');
+        var arr = [{
+            id:'001',
+            name:'iphone7 plugs',
+            imgurl:'../images/iphone7.jpg',
+            price:5899.00,
+            sale:5888.00,
+            color:'中国红'
+        },{
+            id:'002',
+            name:'note7',
+            imgurl:'../images/note7.jpg',
+            price:3899.00,
+            sale:998.00,
+            color:'土豪金'
+        },{
+            id:'003',
+            name:'honor7',
+            imgurl:'../images/honor7.jpg',
+            price:1999.00,
+            sale:1899.00,
+            color:'黑色'
+        }];
+        //拼接
+        var html='';
+        htmlArr(arr);
+        //封装一个拼接html代码的函数
+        function htmlArr(newArr){
+            for(var a = 0;a<newArr.length;a++){
+                html += '<img'+ ' src='+newArr[a].imgurl+'></img>';
+                html += '<span>name:'+newArr[a].name+'</span>';
+                html += '<span>price:'+newArr[a].price+'</span>';
+                html += '<span>sale:'+newArr[a].sale+'</span>';
+                html += '<span>color:'+newArr[a].color+'</span>';
+            }
+            return output.innerHTML = html;
+        }
+       
+        // 商品价格由低到高
+        climao.onclick = function(){
+            for(var j = 0; j<arr.length;j++){
+                for(var i=0;i<arr.length-j-1;i++){
+                    if(arr[i].price>arr[i+1].price){
+                        //比较价格大小，调换对象
+                        var obj  = arr[i];
+                        arr[i]   = arr[i+1];
+                        arr[i+1] = obj;
+                    }
+                }
+            }
+            htmlArr(arr);
+            console.log(arr);
+            
+        }
+    </script>
+</head>
+</body>
+</html>

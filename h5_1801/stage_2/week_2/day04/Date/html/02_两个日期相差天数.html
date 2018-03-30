@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>判断两个日期相差的天数</h1>
+    <input type="date" id="start" />
+    <input type="date" id="end" />
+    <button id="btn">计算</button>
+    <div id="output"></div>
+    <script type="text/javascript">
+        //获取元素
+        var start = document.getElementById('start');
+        var end   = document.getElementById('end');
+        var btn   = document.getElementById('btn');
+        var output   = document.getElementById('output');
+
+        //给按钮绑定计算事件
+        btn.onclick = function(){
+            //获取输入的日期
+            var s = start.value;
+            var e = end.value;
+            // //创建时间对象:无参得到一个本地时间，有参得到一个指定时间
+            // s = new Date(s);
+            // e = new Date(e);
+            // //计算两个日期相差毫秒数
+            // var count = e.getTime()-s.getTime();
+            
+            //ES5新方法：Date.parse('指定的时间');==>返回一个距离1970年的毫秒数
+            var count =  Date.parse(e) - Date.parse(s); 
+            
+            // console.log(e.getTime(),s.getTime());
+            //转换为天数
+            var day = Math.ceil(count/1000/60/60/24);
+            output.innerHTML = '相差天数为：'+day+'天'; 
+        }
+    </script>
+</body>
+</html>

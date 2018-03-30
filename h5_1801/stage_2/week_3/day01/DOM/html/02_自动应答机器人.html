@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        body,ul{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        #container{
+            width:320px;
+            height:100%;
+            margin:0 auto;
+        }
+        #title,#footer{
+            height:50px;
+            background:#58bc58;
+            position:relative;
+        }
+        #title h3{
+            font-size:16px;
+            line-height:50px;
+            text-align:center;
+            color:white;
+        }
+        #main{
+            height:400px;
+            overflow-x:hidden;
+            background:#e8e8e8;
+        }
+        #main #msg li{
+            height:22px;
+            font-size:16px;
+            padding:5px 10px;
+            background:#fff;
+            color:#000;
+            float:left;
+            clear:both;
+            border-radius:5px;
+            margin:10px 4px;
+        }
+        #main #msg li.right{
+            
+            background:#58bc58;
+            color:white;
+            float:right;
+        } 
+        #footer #cont{
+            width:250px;
+            height:46px;
+            border:1px solid #ccc;
+            background:#fff;
+            outline:none;
+            padding-left:10px;
+            position:absolute;
+            left:0;
+            bottom:0;
+        } 
+        #footer #btnSend{
+            width:58px;
+            height:50px;
+            background:#58bc58;
+            outline:none;
+            border:0 none;
+            color:white;
+            position:absolute;
+            right:0;
+            bottom:0;
+        }
+        #footer .sty{
+            background:#ccc;
+            
+        }
+
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            //获取元素
+            var msg     = document.getElementById('msg');
+            var btnSend = document.getElementById('btnSend');
+            var cont    = document.getElementById('cont');
+            //问答资源
+            var qList = '你好吗？,你好,在吗,你是谁？,我不信'.split(',');
+            var aList = '你诺安好，便是晴天,嗯，你也好,在,我是主人您的小爱同学啊！,那我把我的心掏给你看！'.split(',');
+            //给发送按钮绑定事件
+            btnSend.onclick = function(){
+                //发送信息的函数
+                send();
+            } 
+            //回车键发送信息
+            document.onkeydown = function(e){
+                if(e.keyCode == 13){
+                    send();
+                }
+            }
+            //发送信息的函数
+            function send(){
+                //获取输入的值
+                var _cont = cont.value;
+                var _contT = mingan(_cont);
+                //添加到ul标签
+                msg.appendChild(render(_contT));
+                //机器人应答
+                setTimeout(function(){
+                    var idx = qList.indexOf(_cont);
+                    var li = document.createElement('li');
+                    if(idx>=0){
+                        li.innerHTML = aList[idx];
+                    }else {
+                        li.innerHTML = '风太大，听不见！'
+                    }
+                    msg.appendChild(li);
+                },1000);
+
+                //清空
+                cont.value = '';
+                cont.focus();
+            }
+            //生成界面的函数
+            function render(text){
+                //生成li标签
+                var li  = document.createElement('li');
+                li.innerHTML = text;
+                li.className = 'right';
+                return li;
+            }
+            //过滤敏感字符的函数
+            function mingan(msg){
+                var str = 'shit,cao,fuck'.split(',');
+
+                //对敏感数组进行统配
+                str.forEach(function(item){
+                    //正则,不计算大小写，多个
+                    var reg = new RegExp(item,'gi');
+                    //将等于_cont的字符reg转化为**
+                    msg = msg.replace(reg,'**');
+                });
+                return msg;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <header id="title"><h3>小爱同学</h3></header>
+        <main id="main">
+            <ul id="msg">
+            <!-- <li class="left">你好吗？你好吗？你好吗？</li>
+            <li class="right">你好吗？你好吗？你好吗？</li> -->
+            </ul>
+        </main>
+        <footer id="footer">
+            <input type="text" id="cont"/>
+            <button id="btnSend" >发送</button>
+        </footer>
+    </div>
+    
+</body>
+</html>

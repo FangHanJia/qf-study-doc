@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        .circle{
+            width:300px;
+            height:300px;
+            border-radius:50%;
+            border:5px solid #ccc;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+        }        
+        .circle .dot{
+            width:10px;
+            height:10px;
+            background:#555;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>使用Marh方法写出一个刻盘</h1>
+    <div class="circle">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+    <script type="text/javascript">
+        // 获取元素
+        var dots = document.getElementsByClassName('dot');
+
+        for(var i=0;i<dots.length;i++){
+            
+            var a ;
+            var b ;
+            var r=150;
+            var myLeft;
+            var myTop;
+            var rad;
+            var deg ;
+            deg = (360/dots.length)*i;
+            rad = deg*Math.PI/180;console.log(rad);
+            a = Math.cos(rad)*r;
+            b = Math.sin(rad)*r;
+            //点的位置
+            myLeft = a+150-5;
+            myTop = b+150-5;
+            console.log(myLeft);
+            dots[i].style.left = myLeft+'px';
+            dots[i].style.top = myTop+'px';
+        }
+    </script>
+</body>
+</html>

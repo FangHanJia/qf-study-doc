@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="output"></div> 
+    <div id="output2"></div> 
+    <script type="text/javascript">
+        var output = document.getElementById('output');
+        var output2 = document.getElementById('output2');
+        var start = new Date(); 
+        var time_start =start.getTime();
+        console.log(time_start);
+        showTime(); 
+        setInterval(showTime,1000);
+        //显示停留时间的函数
+        function showTime(){
+            //当前时间
+            var d = new Date();
+            var h =  d.getHours();
+            var m =  d.getMinutes();
+            var s =  d.getSeconds();
+            //停留时间
+            var seconds = Math.round((Date.now() - time_start)/1000)%60;//四舍五入
+            var min     = Math.round((Date.now() - time_start)/1000/60)%60;//四舍五入
+            
+            output.innerHTML = '当前时间:'+h+'小时'+m+'分'+s + '秒';
+            output2.innerHTML = '停留时间：'+min+'分'+seconds + '秒';
+        }
+       
+    </script>
+</body>
+</html>

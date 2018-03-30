@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #girl{
+            position:absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+           //获取元素
+           var  girl = document.getElementById('girl');
+           //鼠标点击并移动
+           girl.onmousedown = function(e){
+                //获取光标位置
+                var x = e.offsetX;
+                var y = e.offsetY;
+                //鼠标移动
+                document.onmousemove = function(evt){
+                    girl.style.left = evt.pageX - x +'px';
+                    girl.style.top = evt.pageY - y +'px';
+                    //阻止浏览器的默认行为
+                    evt.preventDefault();
+                }
+           }
+           //事件的清除
+           document.onmouseup = function(){
+                //清除鼠标的move事件
+                document.onmousemove = null;
+           }
+        }
+    </script>
+</head>
+<body>
+    <img src="../images/g3.jpg" height="320" width="320" alt="" id="girl"/>
+</body>
+</html>

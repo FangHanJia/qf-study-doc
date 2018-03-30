@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            body,html{
+                background-color: black;
+            }
+            .container{
+                position:relative;
+                width:500px;
+                margin:0 auto;
+                height:500px;
+            }
+            .container .imgList>li>img{
+                width: 50px;
+                height: 50px;
+                
+            }
+            .container .imgList>li{
+                list-style: none;
+                float:left;
+                margin-right:10px;
+            }
+            .container .imgList>li.active{
+                border:2px solid #58bc58;
+            }
+
+            .container .imgList>li:last-child{
+                margin-right:0;
+            }
+            .container .imgList{
+                width: 300px;
+                height: 50px;
+                position:absolute;
+                bottom:8px;
+                left:0;
+            }
+            .container .currentImg{
+                float: left;
+                height: 400px;
+                width: 300px;
+                position: relative;
+            }
+            .container .currentImg>img{
+                height: 400px;
+                width: 300px;
+            }
+            .container .currentImg .block{
+                width: 100px;
+                height: 200px;
+                background-color: rgba(255,255,255,0.3);
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .container .currentImg .currentImgOver{
+                height: 400px;
+                width: 300px;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .container .bigImg{
+                /*float: left;*/
+                height: 400px;
+                width: 300px;
+                overflow: hidden;
+                position: absolute;
+                top:0;
+                right:-150px;
+                /*display:none;*/
+            }
+            .container .bigImg>img{
+                height: 400%;
+                width: 400%;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            //获取元素
+            var imgList = document.querySelectorAll(".imgList>li>img");
+            var currentImgDiv = document.getElementsByClassName('currentImgOver')[0];
+            var currentImg = document.getElementById('currentImg');
+            var bigImg = document.getElementById('bigImg');
+            var block = document.getElementById(block);
+            console.log(imgList);
+            //遍历切换图片
+            for(var i =0;i<imgList.length;i++){
+                imgList[i].addEventListener('click',function(e){
+                    e = e || window.event;
+                    currentImg.src = e.target.src;
+                    bigImg.src = e.target.src;
+                //添加样式
+                if(this == imgList[i]){
+                    var a=i
+                }
+                imgList[a].className = 'active';
+
+                });
+
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+            <div class="currentImg">
+                <img src="../images/g1.jpg" id="currentImg"/>
+                <div class="block" id="block">
+                </div>
+                <!-- 遮罩物 -->
+                <div class="currentImgOver"></div>
+            </div>
+            <ul class="imgList">
+                <li ><img src="../images/g1.jpg" alt="" /></li>
+                <li><img src="../images/g2.jpg" alt="" /></li>
+                <li><img src="../images/g3.jpg" alt="" /></li>
+                <li><img src="../images/g4.jpg" alt="" /></li>
+                <li><img src="../images/g5.jpg" alt="" /></li>
+            </ul>
+            <div class="bigImg">
+                <img src="../images/g1.jpg" id="bigImg"/>
+            </div>
+        </div>
+</body>
+</html>

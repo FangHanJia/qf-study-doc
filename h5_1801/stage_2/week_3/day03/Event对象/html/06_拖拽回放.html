@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #box{
+            width:400px;
+            height:200px;
+            background:#e8e8e8;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        #save{
+            position:absolute;
+            right:10px;
+            top:10px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+           //拖拽
+           var box = document.getElementById('box'); 
+           var save = document.getElementById('save'); 
+           var arr = [];
+           //鼠标按下
+           document.onmousedown = function(e){
+                //获取光标位置
+                var ox = e.offsetX;
+                var oy = e.offsetY;
+                //初次存储 
+                // arr.push({x:ox,y:oy});
+                document.onmousemove = function(evt){
+                    var left  = evt.pageX - ox ;
+                    var top = evt.pageY - oy;
+                    box.style.left = left+'px';
+                    box.style.top = top+'px';
+                    //将数据保存在数组中
+                    arr.push({x:left,y:top});
+                    // console.log(arr);
+                }
+           }
+           save.onclick = function(){
+                var i = arr.length;
+                var timer = setInterval(function(){
+                    i--;
+                    box.style.left = arr[i].x+'px';
+                    box.style.top = arr[i].y+'px';
+                    if(i<=0){
+                        clearInterval(timer);
+                        arr =null;
+                    }
+
+                },50);
+           }
+           //松开移除事件
+           document.onmouseup = function(){
+                document.onmousemove = null;
+                console.log(arr);
+           }
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <button id="save">回放</button>
+    </div>
+</body>
+</html>

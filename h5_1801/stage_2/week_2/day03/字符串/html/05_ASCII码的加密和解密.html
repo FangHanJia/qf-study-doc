@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>ASCII码的加密和解密</h1>
+    <input type="text" id="text" />
+    <button id="btnAdd">加密</button>
+    <button id="btnWipe">解密</button>
+    <div id="output"></div>
+    <script type="text/javascript">
+        //获取元素
+        var text = document.getElementById('text');
+        var btnAdd = document.getElementById('btnAdd');
+        var btnWipe = document.getElementById('btnWipe');
+        var output = document.getElementById('output');
+        
+        //用于存放加密后的ASCII码的数组
+        var ascArr = [];
+        //给加密按钮绑定事件
+        btnAdd.onclick = function(){
+            //获取输入的值
+            var _text = text.value;
+            //获取输入值的ASCII码
+            
+            for(var i = 0;i<_text.length;i++){
+                var asc = _text.charCodeAt(i);
+                console.log('字符串的原ASCII码为：'+asc);
+                //对字符串的ASCII码进行加密：ASCII= ASCII+5；
+                ascArr.push(asc+5);
+            }
+            //将数据显示在界面上
+            output.innerHTML = render(ascArr);
+        }
+
+
+        //解密后的数组
+        var jiemi = [];
+        //给解密按钮绑定事件
+        btnWipe.onclick = function(){
+            //获取界面上的ASCII码
+            var wipeAsc = output.innerHTML;
+            //从界面获取到的ASCII数组
+            var newArr = wipeAsc.split(',');
+            //对ASCII码进行解密
+            newArr.forEach(function(key){
+                var kv = Number(key)-5;
+                jiemi.push(String.fromCharCode(kv));
+            });
+            //将解密好的数据显示界面上
+            output.innerHTML = render(jiemi);
+        }
+
+        //渲染在界面上的函数
+        function render(arr){
+            
+            return  arr.map(function(item){
+                    return item;
+                });
+        }
+        
+    </script>
+</body>
+</html>

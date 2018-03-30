@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            height:3000px;
+            background:black;
+            text-align:center;
+        }
+        #toTop{
+            font-size:20px;
+            padding:10px;
+            background:orange;
+            position:fixed;
+            right:20px;
+            bottom:50px;
+            display:none;
+        }
+        
+    </style>
+    <script type="text/javascript">
+    window.onload = function(){
+        //获取元素
+        var toTop = document.getElementById('toTop');
+
+       
+
+       //按钮绑定事件
+       toTop.onclick = function(){
+            timer = setInterval(function(){
+                var speed = parseInt(window.scrollY/10);
+
+                //判断当滚动距离为0时，停止滚动
+                if(speed<=0){
+                    speed=0;
+                    clearInterval(timer);
+                }
+                //设置滚动距离
+                scrollBy(0,-speed);
+            },30);
+       }
+       
+            //触发滚动条方法
+           window.onscroll = function(){
+                //按钮的隐藏显示
+                var topHeight = window.scrollY;
+                if(topHeight>=1000){
+                    toTop.style.display = 'block';
+                }else{
+                    toTop.style.display = 'none';
+
+                }
+            }
+       
+        
+    }
+    </script>
+</head>
+<body>
+    <div id="toTop">TOP</div>
+</body>
+</html>

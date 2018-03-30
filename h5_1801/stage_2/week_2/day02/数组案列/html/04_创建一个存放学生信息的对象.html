@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script type="text/javascript">
+        var output = document.getElementById('output');
+        //创建一个存放学生信息的对象
+        var student = {
+            name:'张三',
+            num:'2018',
+            id:'0018934783742984974',
+            age:18,
+            sex:'男',
+            major:'it物联网',
+            intro:function(){
+                for(var key in student){
+                    console.log(key+':'+student[key]);
+                }
+            }
+
+        }; 
+        console.log(student.intro());
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        var numList = ['万','千','百','十','个'];
+        var res = [];
+        for(var i = 0;i<5;i++){
+            res.push(parseInt(Math.random()*10));
+        }
+        var weishu = res.map(function(item,idx){
+            return numList[idx] +'位：' + item+' ';
+        });
+        console.log('随机生成的数字为：'+res.join(''),weishu.join(''));
+    </script>
+</head>
+<body>
+    <h1>随机生成一个五位以内的数，然后输出该数共有多少位，每位分别是什么</h1>
+</body>
+</html>

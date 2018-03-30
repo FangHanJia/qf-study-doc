@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    
+
+</head>
+<body>
+    <h1>封装一个统计字符串中每个字符个数的函数</h1>
+    <input type="text" id="text" />
+    <button id="btnInfo">统计</button>
+    <script type="text/javascript">
+        //获取元素
+        var text = document.getElementById('text');
+        var btnInfo = document.getElementById('btnInfo');
+        var index=0;
+        //给统计按钮绑定事件
+        btnInfo.onclick = function(){
+            //获取输入的值
+            var _text  = text.value;
+            var newArr = _text.split('');
+            var obj    = {};
+            for(var i = 0;i<newArr.length;i++){
+                if(obj[newArr[i]]===undefined){//对象的默认属性值为undefined。可以用来判断是否存在
+                    // console.log(obj[newArr[i]]);
+                    // 对对象的属性名进行赋值
+                    obj[newArr[i]]=1;
+
+                }else{
+                    obj[newArr[i]]++;
+                }
+            }
+            console.log(obj);
+            
+        }
+    </script>
+</body>
+</html>

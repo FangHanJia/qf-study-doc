@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        var arr = [23,2,33,44,555];
+        //ES5数组新增遍历
+        arr.forEach(function(item){
+            console.log(item);
+            if(item==2){
+                alert(item);
+            }
+        });
+        //map();==>内容取决于return返回的内容。
+        arr.map(function(item){
+            alert((item*1.2).toFixed(2));
+        });
+        
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

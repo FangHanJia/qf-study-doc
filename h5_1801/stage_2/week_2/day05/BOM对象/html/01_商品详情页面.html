@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>商品详情</title>
+    <style type="text/css">
+    </style>
+    <script type="text/javascript">
+    window.onload = function(){
+        //获取元素
+        //获取元素
+        var product = document.getElementById('product');
+        var url = document.getElementById('url');
+        var myName = document.getElementById('myName');
+        var myPrice = document.getElementById('myPrice');
+        
+        //接收uri信息
+        var recURI = decodeURI(location.search.slice(1));
+        console.log(recURI);
+        var recArr = recURI.split('&');
+        //用一个对象来接收
+        var obj = {};
+        recArr.forEach(function(item){
+            var arr = item.split('=');
+            obj[arr[0]] = arr[1];
+        });
+        console.log(obj);
+        //显示在界面上
+        url.src = obj.imgUrl;
+       myName.innerHTML = obj.text;
+       myPrice.innerHTML = obj.listPrice;
+        
+    }
+    </script>
+</head>
+<body>
+
+     <div href="#" id = "container">
+        <h1>商品详情</h1>
+        <img src="" alt="" id="url"/>
+        <p >名字：<span id="myName"></span></p>
+        <p >价格：<span id="myPrice"></span></p>
+    </div>
+</body>
+</html>

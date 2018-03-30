@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            //获取元素
+            var product = document.getElementById('product');
+            var url = document.getElementById('url');
+            var myName = document.getElementById('myName');
+            var myPrice = document.getElementById('myPrice');
+            //数据源
+            var obj = {id:'美女1',price:'20w',imgUrl:'../images/g1.jpg'};
+            var strURI = '';
+
+            //将对象转换为字符串(key为对象的属性名)
+            for(var key in obj){
+                //转码
+                strURI += key+'='+encodeURI(obj[key])+'&';
+            }
+            
+            //去掉多余的&
+            strURI=strURI.slice(0,-1);
+           console.log(strURI);
+            //点击时向详情页面传递url数据
+            product.onclick = function(){
+                //修改href属性值
+                product.href = '01_商品详情页面.html?'+strURI;
+            }
+
+
+            //显示在界面上
+           url.src = obj.imgUrl;
+           myName.innerHTML = obj.id;
+           myPrice.innerHTML = obj.price;
+        }
+    </script>
+</head>
+<body>
+    <a href="#" id = "product">
+        <h1>美女</h1>
+        <img src="" alt="" id="url"/>
+        <p >名字：<span id="myName"></span></p>
+        <p >价格：<span id="myPrice"></span></p>
+    </a>
+</body>
+</html>

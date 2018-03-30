@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #container{
+            width:500px;
+            margin:0 auto;
+        } 
+
+    </style>
+    <script type="text/javascript">
+    window.onload = function(){
+        //获取元素
+        var container = document.getElementById('container');
+        var h1        = document.getElementById('h1');
+        var h2        = document.getElementById('h2');
+        var m1        = document.getElementById('m1');
+        var m2        = document.getElementById('m2');
+        var s1        = document.getElementById('s1');
+        var s2        = document.getElementById('s2');
+        var week        = document.getElementById('week');
+
+        //时间一秒走动一次
+        setInterval(showTime,1000);
+        showTime();
+        //封装一个显示时间的函数
+        function showTime(){
+            //创建时间对象
+            var d = new Date();
+            //格式化时间
+            var hours = d.getHours();
+            var min   = d.getMinutes();
+            var sec   = d.getSeconds();
+            var day   = d.getDay();
+            //使用时间点为索引值替换图片
+            h1.src = '../images/'+(hours<0?hours:Math.floor(hours/10))+'.png';
+            h2.src = '../images/'+hours%10+'.png';
+            m1.src = '../images/'+(min<0?min:Math.floor(min/10))+'.png';
+            m2.src = '../images/'+min%10+'.png';
+            s1.src = '../images/'+(sec<0?sec:Math.floor(sec/10))+'.png';
+            s2.src = '../images/'+sec%10+'.png';
+            week.src = '../images/face/'+day+'.png';
+        }
+
+    }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <img src="" alt="" id="h1"/>
+        <img src="" alt="" id="h2"/>时
+        <img src="" alt="" id="m1"/>
+        <img src="" alt="" id="m2"/>分
+        <img src="" alt="" id="s1"/>
+        <img src="" alt="" id="s2"/>秒
+        <img src="" alt="" id="week"/>
+    </div>
+</body>
+</html>

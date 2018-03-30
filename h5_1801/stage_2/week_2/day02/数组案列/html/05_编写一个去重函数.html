@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        //原数组
+        var data = [3,4,2,5,2,22,2,22,22,22,6];
+        //编写一个去重元素的函数
+        function norepeat(arr){
+            var newArr = [];
+            //  去掉数组相同的元素
+           for(var i in arr){
+                //当某元素不存在时，再追加该元素进去。
+                //indexOf ==>元素存在时，返回索引值
+                //        ==>元素不存在时，则返回-1；（可用于if条件语句的判断）
+                if(newArr.indexOf(arr[i]) == -1){
+                    newArr.push(arr[i]);
+                }
+           }
+            return newArr;         
+        }
+        console.log(data);
+        console.log(norepeat(data));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

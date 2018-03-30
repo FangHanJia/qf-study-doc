@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        var url = 'https://www.baidu.com/s?name=laoxie&age=18&sex=male';
+        //以？为起始位置
+        var idx = url.indexOf('?');
+        console.log(idx);
+        //截取主要信息,并转成一个数组
+        var strMain = url.slice(idx+1).split('&');
+        console.log(strMain);
+        var obj = {};
+        strMain.forEach(function(key){
+            console.log(key);
+           var arr =  key.split('=');
+           obj[arr[0]] = arr[1];//数据插入到对象中
+
+        });
+        console.log(obj);
+    </script>
+</head>
+<body>
+    <h1>https://www.baidu.com/s?name=laoxie&age=18&sex=male, 取出name, age和sex的值，并组成对象{name:’laoxie’,age:18,sex:’male’}</h1>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #stuTable{
+            border-collapse:collapse;
+        }
+        #stuTable td{
+            padding:0 10px;
+
+        }
+    </style>
+   
+</head>
+<body>
+    <table id="stuTable" border='1'></table> 
+    <button id="btnTotal" >计算总成绩</button> 
+    <button id="btnHeight" >单科最高分及成绩单</button> 
+    <script type="text/javascript">
+        var stuTable = document.getElementById('stuTable');
+        var btnTotal = document.getElementById('btnTotal');
+        var btnHeight = document.getElementById('btnHeight');
+        // 学生数据源
+        var studentData = [{
+            nums:'学号',
+            chinese:'语文',
+            math:'数学',
+            english:'英语',
+            total:'总成绩',
+            note:'备注'
+        },{
+            nums:1,
+            chinese:105,
+            math:62,
+            english:118,
+            total:'',
+            note:''
+
+        },{
+            nums:2,
+            chinese:89,
+            math:78,
+            english:120,
+            total:'',
+            note:''
+
+        },{
+            nums:3,
+            chinese:86,
+            math:64,
+            english:80,
+            total:'',
+            note:''
+        },{
+            nums:4,
+            chinese:78,
+            math:99,
+            english:91,
+            total:'',
+            note:''
+        },{
+            nums:5,
+            chinese:107.5,
+            math:97,
+            english:70,
+            total:'',
+            note:''
+        },{
+            nums:6,
+            chinese:112,
+            math:61,
+            english:92,
+            total:'',
+            note:''
+        },{
+            nums:7,
+            chinese:101,
+            math:79,
+            english:104,
+            total:'',
+            note:''
+        },{
+            nums:8,
+            chinese:71,
+            math:72,
+            english:105,
+            total:'',
+            note:''
+        },{
+            nums:9,
+            chinese:56,
+            math:68,
+            english:61,
+            total:'',
+            note:''
+        },{
+            nums:10,
+            chinese:98,
+            math:83,
+            english:77,
+            total:'',
+            note:''
+        }];
+        //计算单科最高分及其成绩单的函数
+        btnHeight.onclick  = function(){
+            //获取每个科目的成绩
+            var chineseList = [];
+            var mathList = [];
+            var englishList = [];
+            studentData.forEach(function(item){
+                if(!isNaN(item.chinese+item.math)){
+                    chineseList.push(item.chinese);
+                    mathList.push(item.math);
+                    englishList.push(item.english);
+                }
+            }); 
+            //取出每科的最高分
+            // 假设第一个为最高分
+            var maxCH = chineseList[0];
+            chineseList.forEach(function(item){
+                if(maxCH<item){
+                    maxCH = item;
+                }
+            });
+            for(var i = 0;i<studentData.length;i++){
+                if(maxCH==studentData[i].chinese){
+                    console.log(studentData[i]);
+                    for(var key in studentData[i]){
+                        console.log(studentData[0][key]+studentData[i][key]+' ');
+
+                        document.write(key+' '+studentData[i][key]+' ');
+                    }
+                }
+            }
+            document.write('<p></p>');
+
+            var maxMA = mathList[0];
+            mathList.forEach(function(item){
+                if(maxMA<item){
+                    maxMA = item;
+                }
+            });
+            for(var i = 0;i<studentData.length;i++){
+                if(maxMA==studentData[i].math){
+                    
+                    for(var key in studentData[i]){
+                        console.log(studentData[0][key]+studentData[i][key]+' ');
+                        document.write(key+' '+studentData[i][key]+' ');
+                    }
+
+                }
+
+            }
+            document.write('<p></p>');
+            var maxEN = englishList[0];
+            englishList.forEach(function(item){
+                if(maxEN<item){
+                    maxEN = item;
+                }
+            });
+            for(var i = 0;i<studentData.length;i++){
+                if(maxEN==studentData[i].english){
+                    console.log(studentData[i]);
+                    for(var key in studentData[i]){
+                        console.log(studentData[0][key]+studentData[i][key]+' ');
+
+                        document.write(key+''+studentData[i][key]+' ');
+                    }
+                }
+            }
+        }
+        
+        //显示在界面上的函数
+        function showData(){
+            var html = studentData.map(function(item){
+                return '<tr><td>'+item.nums+'</td><td>'+item.chinese+'</td><td>'+item.math+'</td><td>'+item.english+'</td><td>'+item.total+'</td><td>'+item.note+'</td></tr>';
+            }).join('');
+            stuTable.innerHTML = html;
+        }
+        //首次渲染界面
+        showData();
+        var total = [];
+        //计算每个学生的总成绩的绑定事件
+        btnTotal.onclick = function(){
+             total = studentData.map(function(item){
+            if(!isNaN(item.chinese+item.math+item.english)){
+                return item.chinese+item.math+item.english;
+                }
+            });
+            total.shift();
+            for(var i=0;i<total.length;i++){
+                studentData[i+1].total = total[i];
+            }
+            //对数组总成绩进行排序
+            for(var i=0;i<studentData.length;i++){
+                for(var j = 0;j<studentData.length-i-1;j++){
+                    if(studentData[j].total<studentData[j+1].total){
+                        var current = studentData[j];
+                        studentData[j] = studentData[j+1];
+                       studentData[j+1] = current;
+                      
+                    } 
+                    studentData[j+1].note = '第'+(j+1)+'名';
+                }
+            }
+            showData();
+        }
+       
+        
+       
+       
+    </script>
+</body>
+</html>

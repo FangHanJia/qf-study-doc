@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            //封装一个函数afterDate(date,n)，得到日期date的n天后的日期
+            function afterDate(date,n){
+                //创建指定时间对象
+               var d = new Date(date);
+
+               //设置时间的天数,即把数据写进对象
+               d.setDate(d.getDate()+n);
+               //返回对象
+               return d;
+            }
+            alert(afterDate('2018-3-1',5));
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

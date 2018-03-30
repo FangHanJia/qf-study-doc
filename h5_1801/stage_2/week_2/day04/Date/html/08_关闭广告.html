@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #adv{
+            width:300px;
+            height:300px;
+
+            background:black;
+            margin:100px auto;
+            text-align:center;
+            color:green;
+        }
+        #adv{
+            line-height:300px;
+            color:green;
+            font-size:200px;
+        }
+    </style>
+    <script type="text/javascript">
+    window.onload = function(){
+        var adv = document.getElementById('adv');
+        var btn = document.getElementById('btn');
+        //获取5s前时间
+        var start = new Date();
+        var sec = Math.floor(start.getTime()/1000)%60;
+        
+        showTime();
+        var timer = setInterval(showTime,1000);
+        //时间函数
+        function showTime(){
+            var d = new Date();
+            var h = d.getHours();
+            var m = d.getMinutes();
+            var s = d.getSeconds();
+            console.log(h,m,s)
+            // adv.innerHTML = h+'时'+m+'分'+s+'秒'+'剩余时间：'+(sec+5-s);
+            adv.innerHTML = '<span>'+(sec+5-s)+'</span>'
+            if((sec+5-s)==0){
+                adv.style.display = 'none';
+                clearInterval(timer);
+            }
+            console.log((sec+5-s));
+        }
+
+    }
+        
+    </script>
+</head>
+<body>
+    <div id="adv"></div>
+
+</body>
+</html>

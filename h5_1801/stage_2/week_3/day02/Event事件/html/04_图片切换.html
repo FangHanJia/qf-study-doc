@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        li{
+            float:left;
+            margin:5px;
+            border:2px solid #ccc;
+        }
+        li.active{
+            border:2px solid #58bc58;
+        }
+        #show{
+            width:300px;
+            height:400px;
+            /*overflow:hidden;*/
+        }
+        #show img{
+            width:300px;
+            height:400px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            //获取元素
+            var show  = document.getElementById('show');
+            var imgBig  = show.children;
+            var img  = document.getElementById('img');
+            var imgList  = img.children;
+            //初始化
+            for(var i = 0;i<imgList.length;i++){
+                imgList[0].style.className = 'active';
+                if(i>0){
+                    imgBig[i].style.display ='none';
+                }
+                //给每一个图片绑定事件
+                var a;
+                imgList[i].onmouseover = function(){
+                    for(var i=0;i<imgList.length;i++){
+                        if(imgList[i]==this){
+                            //将对应的索引拿出来
+                            a = i;
+                        } 
+                        //循环去掉样式
+                        imgList[i].className = '';
+                        imgBig[i].style.display = 'none';
+                    }
+                    imgList[a].className = 'active';
+                    imgBig[a].style.display = 'block';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>图片切换</h1>
+    <div id="container">
+        <div id="show">
+            <img src="../images/small_1.jpg" alt="" />
+            <img src="../images/small_2.jpg" alt="" />
+            <img src="../images/small_3.jpg" alt="" />
+            <img src="../images/small_4.jpg" alt="" />
+            <img src="../images/small_5.jpg" alt="" />
+        </div>
+        <ul id="img">
+            <li ><img src="../images/small_1.jpg" alt="" /></li>
+            <li><img src="../images/small_2.jpg" alt="" /></li>
+            <li><img src="../images/small_3.jpg" alt="" /></li>
+            <li><img src="../images/small_4.jpg" alt="" /></li>
+            <li><img src="../images/small_5.jpg" alt="" /></li>
+        </ul>
+    </div>
+</body>
+</html>

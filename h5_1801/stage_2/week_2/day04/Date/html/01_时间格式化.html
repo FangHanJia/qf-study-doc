@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+   
+</head>
+<body>
+    <h1>将当前日期格式化输出为 “2018年03月1 星期四”格式</h1>
+    <div id="timer"></div> 
+    <script type="text/javascript">
+        //获取元素
+        var timer = document.getElementById('timer');
+
+        //首次刷新界面时间
+        time();
+        //自动定时器
+        setInterval(time,1000);
+
+        //封装一个时间函数
+        function time(){
+            //创建时间对象
+            var d = new Date();
+            //时间格式化
+            //获取年份
+            var year = d.getFullYear();
+            //获取月份
+            var month = d.getMonth()+1;
+            //获取号数
+            var date = d.getDate(); 
+            //获取星期
+            var day = d.getDay();
+            //获取时
+            var hours = d.getHours();
+            //获取分
+            var min = d.getMinutes();
+            //获取秒
+            var sec = d.getSeconds();
+
+            //时间格式处理
+            var week ='天一二三四五六'.split('');
+            //补灵操作
+            month = month<10?'0'+month:month;
+            date  = date<10?'0'+date:date;
+            hours = hours<10?'0'+hours:hours;
+            min   = min<10?'0'+min:min;
+            sec   = sec<10?'0'+sec:sec;
+            timer.innerHTML = '当前时间为：'+year+'年'+month+'月'+date+'号，'+'星期'+week[day]+hours+':'+min+":"+sec;
+            // document.write('当前时间为：'+year+'年'+month+'月'+date+'号，'+'星期'+week[day]+hours+':'+min+":"+sec);
+        }
+        
+    </script>
+</body>
+</html>

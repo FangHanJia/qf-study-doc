@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            background:#000;
+        }
+        #box{
+            width:200px;
+            height:100px;
+            position:absolute;
+            top:0;
+            left:0;
+            background:#58bc58;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            //获取元素
+            var box = document.getElementById('box');
+            //鼠标按下并移动
+            document.onmousedown = function(e){
+                 //兼容性
+                 e = e||window.event;
+                //获取光标的值
+                var x = e.offsetX;
+                var y = e.offsetY;
+                document.onmousemove = function(evt){
+                    //盒子的left,top
+                    box.style.left = evt.pageX-x+'px';
+                    box.style.top = evt.pageY-y+'px';
+                }
+            }
+            //松开鼠标清除DOM节点事件
+            document.onmouseup = function(e){
+                document.onmousemove = null;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

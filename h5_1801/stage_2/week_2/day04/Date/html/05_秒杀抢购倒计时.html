@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            //获取元素
+            var time   = document.getElementById('time');
+            var btnBuy = document.getElementById('btnBuy');
+
+            //设置结束时间
+            var end = '2018-3-1 17:56:30';//时间格式化写法
+            showTime();
+            var timer = setInterval(showTime,1000);
+            //封装一个倒计时函数(尽量以定时器为封装点)
+            function showTime(){
+                 //计算时间差
+                var count = Date.parse(end) - Date.now();
+                //时间差毫秒转换为秒数
+                var seconds = count/1000;
+                //时间差为0时，清除定时器
+                if(seconds<=0){
+                    seconds=0;
+                    clearInterval(timer);
+                    //隐藏定时器，显示购买按钮
+                    time.style.display = 'none';
+                    btnBuy.disabled = false;
+                    btnBuy.onclick = function(){
+                        alert('恭喜您！');
+                    }
+                }
+                //秒
+                var sec = Math.floor(seconds%60);
+                //分
+                var min = Math.floor(seconds/60%60);
+                //时
+                var hours = Math.floor(seconds/60/60%60);
+                //天
+                var day = Math.floor(seconds/60/60/24%24);
+
+                //补灵操作
+                hours = hours<10?'0'+hours:hours;
+                min   = min<10?'0'+min:min;
+                sec   = sec<10?'0'+sec:sec;
+                time.innerHTML = day+'天'+hours+'小时'+min+'分钟'+sec+'秒';
+                }
+            }
+            
+    </script>
+</head>
+<body>
+    <h1>秒杀抢购活动</h1>
+    
+    <div><img src="../images/g3.jpg" height="320" width="320" alt="" /></div> 
+    <div id="time"></div>
+    <button id="btnBuy" disabled = "true">购买</button>
+</body>
+</html>

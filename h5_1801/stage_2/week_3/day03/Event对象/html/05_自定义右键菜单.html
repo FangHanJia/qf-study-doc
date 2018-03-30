@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #box{
+            width:200px;
+            height:400px;
+            background:#58bc58;
+            display:none;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+    <script type="text/javascript">
+    window.onload = function(){
+        var box = document.getElementById('box');
+        console.log(box);
+        //右键触发效果
+        document.oncontextmenu = function(e){
+            
+
+            box.style.left = e.pageX + 'px';
+            box.style.top = e.pageY+'px';
+
+            //阻止浏览器默认行为兼容返回值为false
+            e.preventDefault?e.preventDefault():returnValue = false;
+            box.style.display = 'block';
+            console.log(e.pageX,e.pageY);
+        }
+        document.onclick = function(){
+            box.style.display = 'none';
+        }
+        box.onclick = function(e){
+            e = e || window.event;
+            //停止事件的冒泡
+            e.stopPropagation?e.stopPropagation():e.canceBubble = true;
+        }
+    }
+        
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

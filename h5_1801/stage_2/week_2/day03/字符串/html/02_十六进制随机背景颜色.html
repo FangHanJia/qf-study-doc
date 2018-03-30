@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>十六进制随机背景颜色</h1>
+    <script type="text/javascript">
+        var str = '0123456789abcdef';
+        var color = '#';
+        //封装一个获取十六进制的函数
+        function rColor(){
+            for(var i=0;i<6;i++){
+                //charAt();==>获取到索引值所在的值。
+                color = color+str.charAt(parseInt(Math.random()*str.length));
+            }
+            console.log(color);
+            return color;
+        }
+        //获取元素
+        document.body.style.background = rColor() ;
+    </script>
+</body>
+</html>

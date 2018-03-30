@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        img{
+            width:200px;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        img.right{
+            transform:rotateY(180deg);
+        }
+        img.up{
+            transform:rotateZ(45deg);
+        }
+        img.down{
+            transform:rotateZ(-45deg);
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var bird = document.getElementById('bird');
+            document.onkeydown = function(e){
+                var top = bird.offsetTop;
+                var left = bird.offsetLeft;
+                var speed = 10;
+                //设置方向键
+                switch(e.keyCode){
+                    case 37:
+                    className = ''
+                    left = left -speed;
+                    break;
+                    case 39:
+                    className = 'right'
+                    left = left +speed;
+                    break;
+                    case 38:
+                    className = 'up'
+                    top = top -speed;
+                    break;
+                    case 40:
+                    className = 'down'
+                    top = top +speed;
+                    break;
+                    
+                }
+                //判断left的
+                if(left<=window.innerWidth){
+                    left += window.innerWidth-200;
+                }else if(left > window.innerHeight){
+                    left 
+                }
+                bird.style.left = left + 'px';
+                bird.style.top = top + 'px';
+                bird.className = className;
+                console.log(left,top);
+                console.log(window.innerHeight,window.innerWidth);
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- <h1>愤怒的小鸟</h1> -->
+    <img src="../images/bird.jpg" id="bird" />
+</body>
+</html>

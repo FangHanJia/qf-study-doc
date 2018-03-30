@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #goodsList li{
+            float:left;
+            margin-right:20px;
+        }
+        #goodsList img{
+            width:200px;
+            height:150px;
+        }
+        #goodsList p{
+            color:red;
+            height:30px;
+            line-height:30px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="goodsList"></ul><button id="car">购物车</button>
+</body>
+    <script type="text/javascript">
+        (function(){
+            //获取元素
+            var goodsList = document.getElementById('goodsList');
+            var car = document.getElementById('car');
+            //数据源
+            var data = [{
+                id:0,
+                name:'美女1',
+                img:'../images/g2.jpg',
+                text:'史上最美1'
+            },{
+                id:1,
+                name:'美女2',
+                img:'../images/g3.jpg',
+                text:'史上最美2'
+            },{
+                id:2,
+                name:'美女3',
+                img:'../images/g4.jpg',
+                text:'史上最美3'
+            }];
+
+            goodsList.innerHTML = render();
+            //界面渲染
+            function render(){
+                return data.map(function(item){
+                    return '<li id="'+item.id+'"><img src="'+item.img+'"/><p>'+item.name+'</p><p>'+item.text+'</p><button>购买</button></li>';
+                }).join('');
+            }
+            var lis = document.getElementsByClassName('li');
+            //委托事件
+            goodsList.onclick = function(e){
+                var target = e.target || e.srcElement;
+                if(target.tagName.toLowerCase() == 'button'){
+                    //点击购买保存cookie
+                    var id = target.parentNode.getAttribute('id');
+                    var d =new Date();
+                    d.setDate(d.getDate()+7);
+                    for(var key in data[id]){
+                        console.log(key,data[id][key]);
+                        document.cookie = '"'+data.id+'"='+data[id]+';expires='+d.toUTCString()+';path=/';
+                    }
+                }
+            }
+            car.onclick = function(){
+                location.href = 'http://localhost:8080/第二阶段/第三周/day04/Cookie/html/04_商品详情.html';
+            }
+        })();;
+    </script>
+</html>

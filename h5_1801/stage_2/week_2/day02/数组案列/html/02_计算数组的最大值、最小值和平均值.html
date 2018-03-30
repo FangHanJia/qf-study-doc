@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript">
+        var nums = [34,4,4,444,333,33];
+        //假设第一个数为最大值
+        var maxIdx = 0;
+        var maxNum = nums[maxIdx];
+        // 假设第一个值为最小值
+        var minIdx = 0;
+        var minNum = nums[minIdx];
+        nums.forEach(function(item,idx){
+            //判断数组的最大值
+            if(maxNum < item){
+                maxNum = item;
+                maxIdx = idx;
+            }
+            //判断数组的最小值
+            if(minNum > item){
+                minNum = item;
+                minIdx = idx;
+            }
+
+        });
+        //求数组的平均值
+        var total = nums.reduce(function(prev,current){
+            return prev + current;
+        },0); 
+        var avg = total/nums.length;
+        console.log('最大值为：'+maxNum,'索引值为：'+maxIdx);
+        console.log('最小值为：'+minNum,'索引值为：'+minIdx);
+        console.log('数组的总和：'+total);
+        console.log('数组的平均值：'+avg.toFixed(2));
+    </script>
+</head>
+<body>
+    <h1>计算数组的最大值、最小值和平均值</h1>
+</body>
+</html>

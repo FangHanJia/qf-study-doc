@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>冒泡排序</title>
+    <script type="text/javascript">
+        var arr = [2,3,23,222,456];
+         //当前元素与下一个元素进行比较
+        for(var j=0;j<arr.length;j++){
+            for(var i =0;i<arr.length;i++){
+                if(arr[i]>arr[i+1]){
+                    var current = arr[i+1];
+                    arr[i+1] = arr[i];
+                    arr[i] = current;
+                }
+            } 
+        }
+        console.log(arr);
+        document.write(arr);
+         
+    </script>
+</head>
+<body>
+    <h1>冒泡排序</h1>
+</body>
+</html>

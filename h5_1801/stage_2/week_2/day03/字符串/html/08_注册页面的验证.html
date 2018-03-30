@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+       <style type="text/css">
+            #register{
+                width:500px;
+                margin:100px auto;
+            } 
+            #register label{
+                display:inline-block;
+                width:164px;
+                text-align:right;
+            }
+       </style>
+    </head>
+    <body>
+        <form action="#" id="register">
+            <label for="userName">用户名：</label><input type="text" id="userName" />
+            <label for="psw">密码：</label><input type="password" id="psw" />
+            <label for="psw2">确认密码：</label><input type="password" id="psw2" />
+            <label for="nickName">昵称：</label><input type="text" id="nickName" /> <br />
+            <label for="btn"></label><input type="submit" id="btnSub" />
+            <input type="reset" id="btnRet" />
+        </form>
+        <script type="text/javascript">
+            //获取元素
+            var userName = document.getElementById('userName');
+            var psw      = document.getElementById('psw');
+            var psw2     = document.getElementById('psw2');
+            var nickName = document.getElementById('nickName');
+            var btnSub   = document.getElementById('btnSub');
+            var btnRet   = document.getElementById('btnRet');
+            //获取所有输入框
+            var inputs   = document.getElementsByTagName('input');
+
+            btnSub.onclick = function(){
+                //获取用户名的值
+                var _userName = userName.value;
+                //获取密码
+                var _psw = psw.value;
+                var _psw2 = psw2.value;
+                //判断用户名输入是否正确
+                if(_userName.length<6 &&_userName.length>0 || _userName.length>=20){
+                    userName.value = '';
+                    userName.placeholder = '输入有误！';
+                }
+                if(_psw != _psw2){
+                    psw.value= '';
+                    psw2.value= '';
+                    psw.placeholder = '两次密码不一致';
+                }
+
+            }
+           
+        </script>
+    </body>
+</html>

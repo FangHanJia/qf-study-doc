@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #girl{
+            position:absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+    <script type="text/javascript" src="../js/common.js"></script>
+</head>
+<body>
+    <img src="../images/g3.jpg" height="320" width="320" alt="" id="girl" />
+</body>
+    <script type="text/javascript">
+        (function(){
+            //获取元素
+            var girl = document.getElementById('girl');
+            var left ;
+            var top ;
+            //鼠标按下并移动
+            girl.onmousedown = function(e){
+                //兼容
+                e = e || window.event;
+                var target = e.target || e.srcElement;
+                //获取光标位置
+                var ox = e.offsetX;
+                var oy = e.offsetY;
+                console.log(ox,oy);
+                document.onmousemove = function(evt){
+                    left = evt.pageX - ox ;
+                     top = evt.pageY - oy ;
+                    girl.style.left = left + 'px';
+                    girl.style.top = top + 'px';
+                    console.log(left,top);
+                    //阻止默认行为
+                    evt.preventDefault();
+                }
+            }
+            //鼠标放开清除事件
+            document.onmouseup = function(){
+                document.onmousemove = null;
+                //保存cookie
+                document.cookie = 'left='+left;
+                document.cookie = 'top='+top;
+            }
+            //页面加载时,获取cookie
+            var cookies = document.cookie;
+            console.log(cookies);
+            cookies = cookies.split('; ');
+            cookies.forEach(function(item){
+                var arr = item.split('=');
+                if(arr[0]=='left' || arr[0] == 'top'){
+                    girl.style[arr[0]] = arr[1] + 'px'; 
+                }
+            });
+        })();;
+    </script>
+</html>

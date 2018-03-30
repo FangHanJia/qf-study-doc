@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            background-color:black; font: normal 12px Trebuchet MS; color:#000;
+        }
+        .roundedCorners{ 
+            width:350px; padding:10px;
+            background-color:#58bc58; 
+            box-shadow: 0px 0px 10px 0px #888888;
+            border:1px solid #DDEEF6;
+            border-radius:6px;
+            margin: auto;
+        }
+        .roundedCorners-textbox{ 
+            border:1px solid #999; width:250px;
+        }
+        .checkbox {
+            margin-left: 30px;
+            border:1px solid #999; width:20px;
+        }
+        .label {
+            display: inline-block;
+            width: 50px;
+            text-align: center;
+            color:#fff;
+        }   
+        .default {
+            color: grey;
+            font-size: 12px;
+        }
+        .input {
+            color: grey;
+            font-size: 12px;            
+        }
+    </style>
+</head>
+<body>
+    <form id="myform" action="http://www.baidu.com" method="get">   
+        <div class="roundedCorners">
+            <label class="label">账号</label>
+            <input id="username" type="text" placeholder="用户名不得使用特殊字符，长度在6-20之间" class="default roundedCorners-textbox" /><br /><br />
+            <label class="label">昵称</label>
+            <input id="nickname" type="text" class="roundedCorners-textbox" /><br /><br />
+            <label class="label">电子邮件</label>
+            <input id="email" type="text" class="roundedCorners-textbox" /><br /><br />
+            <label class="label">身份证</label>
+            <input id="identity" type="text" class="roundedCorners-textbox" /><br /><br />
+            <label class="label">手机号码</label>
+            <input id="phone" type="text" class="roundedCorners-textbox" /><br /><br />
+            <label class="label">生日</label>
+            <input id="birthday" type="text" class="roundedCorners-textbox" /><br /><br />
+            <label class="label">密码</label>
+            <input id="password" type="password" class="roundedCorners-textbox" /><br /><br />  
+            <label class="label">确认密码</label>
+            <input id="confirm_pwd" type="text" class="roundedCorners-textbox" /><br /><br />   
+                <input type="checkbox" class="checkbox" />
+                <label>10天内免登陆</label>
+                <br/><br/>
+            <input type="submit" id="btnCheck" value="确定" />
+            
+            <input type="reset" value="清空" />
+        </div>
+    </form>
+</body>
+<script type="text/javascript">
+    (function(){
+        //表单的正则验证
+        //获取元素
+        var userName = document.getElementById('username');
+        var nickName = document.getElementById('nickname');
+        var email = document.getElementById('email');
+        var btnCheck = document.getElementById('btnCheck');
+        //提交按钮绑定事件
+        btnCheck.onclick = function(e){
+            location.href = 'http://www.taobao.com';
+            
+            // 点击按钮时获取输入的值
+            var _userName = userName.value;
+            var _nickName = nickname.value;
+            var _email = email.value;
+            //兼容
+            e = e||window.event;
+            //用户名的验证：用户名不得使用特殊字符，长度在6-20之间
+            var reg = /^[a-z][\w\-]{5,19}$/i;
+            if(!reg.test(_userName)){
+                alert('用户名不合法！');
+                return false;
+            }
+            // 验证电子邮箱
+            // 1690101402@qq.com
+            // 13925650272@163.com
+            var regEmail =/^[a-z0-9][\w\-\.]+@[\da-z\-]{1,63}(\.[a-z]+){1,2}$/i;
+            if(!regEmail.test(_email)){
+                alert('邮箱不合法！');
+                return false;
+            }
+        }
+    })();
+    
+   
+    
+</script>
+</html>

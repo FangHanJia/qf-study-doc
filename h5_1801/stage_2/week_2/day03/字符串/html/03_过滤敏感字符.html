@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        #cont{
+            width:500px;
+            margin:50px auto;
+        } 
+         #cont #msg{
+            padding-bottom:10px;
+         }
+        #cont #msg li{
+            padding:20px;
+            border-bottom:1px solid #ccc;
+        }
+        #cont #msgCont{
+            width:500px;
+            height:100px;
+        }
+        #cont #btnAdd{
+            width:100px;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cont">
+        <ul id="msg"></ul>
+        <textarea name="" id="msgCont" ></textarea>
+        <button id="btnAdd">确定</button>
+    </div>
+    <script type="text/javascript">
+        //获取元素
+        var msg = document.getElementById('msg');
+        var msgCont = document.getElementById('msgCont');
+        var btnAdd = document.getElementById('btnAdd');
+        var str_mingan = 'cao,tmd,fuck'.split(',');//以‘，’为分隔符，分割成一个数组
+        var data =[];//用于存储输入的信息
+        //按钮绑定事件
+        btnAdd.onclick = function(){
+            //获取输入的信息
+            var _msgCont = msgCont.value;
+            //判断输入的信息中是否与敏感数组中的字符一样
+            str_mingan.forEach(function(text){
+                //使用正则表达式，变量用构造函数
+                var reg = new RegExp(text,'gi');
+                //把转换后的信息赋值给_msgCont
+               _msgCont =  _msgCont.replace(reg,'**');
+            });
+            data.push(_msgCont);
+            msg.innerHTML = render();
+            msgCont.value = '';
+            //将过滤后的信息显示在界面上
+
+        }
+        //将信息显示在界面上
+        //render
+        function render(){
+            return data.map(function(item){
+                return '<li>'+item+'</li>';
+            }).join('');//将数组转换为字符串
+        }
+    </script>
+</body>
+</html>

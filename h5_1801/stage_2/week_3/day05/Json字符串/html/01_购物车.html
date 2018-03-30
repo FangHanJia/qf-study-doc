@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        #carList li{position:relative;padding-bottom:15px;margin-bottom:15px;border-bottom:1px solid #ddd;}
+        #carList img{display:block;width:100px;}
+        #carList li .btn-close{position:absolute;top:0;right:0;padding:0 5px;cursor:default;}
+        #carList li .btn-close:hover{background-color:#f00;color:#fff;}
+        .subPrice{padding:5px 20px;color:#f00;font-weight:bold;text-align:right;}
+        #carList .price span,.subPrice{color:#f00;}
+        .price span::before,.subPrice::before{
+            content:'￥';
+            font-size:11px;
+        }
+        #carList .price span{font-size:11px;}
+    </style>
+    <script type="text/javascript" src="../js/common.js"></script>
+</head>
+<body>
+    <h1>购物车</h1>
+    <div id="carList">
+        
+    </div>
+    <div class="subPrice"></div>
+    <a href="#" id="btnClear">清空购物车</a>
+</body>
+    <script type="text/javascript">
+        (function(){
+            //获取元素
+            var carList = document.getElementById('carList');
+            var subPrice = carList.nextElementSibling;
+            var btnClear = document.getElementById('btnClear');
+            var goodslist ;
+            //首次刷新界面
+            render();
+            //读取cookie并显示在界面上的函数
+            function render(){
+                goodslist = Cookie.get('goodslist') || [];
+                if(typeof goodslist == 'string'){//如果为JSON字符串则将JSON字符串转化为数组或对象。
+                    goodslist = JSON.parse(goodslist);
+                }
+                //json字符串转化为数组
+                // if(goodslist.length == 0){
+                //     goodslist = [];
+                // }else{
+                //     goodslist = JSON.parse(goodslist);
+                // }
+                //将数据显示在界面上
+                var ul = document.createElement('ul');
+                var total =0;//用于计算商品总价
+                ul.innerHTML = goodslist.map(function(goods){
+                    total += goods.price * goods.qty;
+                    return '<li data-guid="'+goods.guid+'">' + 
+                            '<img src="'+goods.imgurl+'">' + 
+                            '<h4>'+goods.name+'</h4>' + 
+                            '<p class="price">价格：<span>'+goods.price+'&times;'+goods.qty+'</span></p>' + 
+                            '<span class="btn-close">&times;</span>' + 
+                        '</li>'
+                }).join('');
+                // 写入前先清空
+                carList.innerHTML = '';
+                carList.appendChild(ul);
+                subPrice.innerHTML = total.toFixed(2);
+            }
+            //清空购物车
+            btnClear.onclick = function(){
+                Cookie.remove('goodslist');
+                //清空之后刷新界面
+                render();
+                return false;
+            }
+            //删除每一个商品
+            carList.onclick = function(e){
+                //兼容
+                e = e || window.event;
+                var target = e.target || e.srcElement;
+                if(target.className == 'btn-close'){
+                    //获取到当前LI
+                    var currentLi = target.parentNode;
+                    var guid = currentLi.getAttribute('data-guid');
+                    console.log(guid);
+                    for(var i =0;i<goodslist.length;i++){
+                        if(goodslist[i].guid == guid){//拿对象的guid属性进行比较。
+                            // goodslist.splice(i,1);//数组的高级删除方法
+                            //商品数量
+                            var qty = goodslist[i].qty--;
+                            if(qty<=1){
+                                goodslist.splice(i,1);
+                            }
+                            break;
+                        }
+                    }
+                    //重新写入cookie
+                    Cookie.set('goodslist',JSON.stringify(goodslist));
+                    //刷新界面
+                    render();
+                    return false;
+                }
+            }
+           
+        })();;
+    </script>
+</html>

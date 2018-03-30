@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        #box{width:0;height:0;border:20px solid #fff;border-bottom-color:#58bc58;}
+        .details{display:none;position:absolute;padding:10px;width:200px;border:1px solid #f60;background-color: #ffc;}
+        .details::before,.details::after{
+            content:'';
+            position:absolute;top:-20px;left:15px;
+            border:10px solid transparent;border-bottom-color:#f60;
+        }
+        .details::after{top:-18px;border-bottom-color:#ffc;}
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 获取元素
+            let newslist = document.querySelector('.newslist');
+            let details = document.querySelector('.details');
+            let links = newslist.querySelectorAll('a');
+            // console.log(links[0].title);
+            
+            // 鼠标移入事件
+            for(let i=0;i<links.length;i++){
+                links[i].onmouseover = function(){
+                    details.innerHTML = this.title;
+                    details.style.display = 'block';
+                    this.bak = this.title;
+                    this.removeAttribute('title');
+                }
+                links[i].onmouseout = function(){
+                    details.style.display = 'none';
+                    this.title = this.bak;
+                }
+                links[i].onmousemove = function(e){
+                    details.style.left = e.clientX -30 + 'px';
+                    details.style.top = e.clientY +30 + 'px';
+                }
+            }
+
+        });
+    </script>
+</head>
+<body>
+    <h1>新闻提示信息</h1>
+    <ul class="newslist">
+        <li><a href="#" title="小明由于调戏女老师再次被滚粗教室">教室文化</a></li>
+        <li><a href="#" title="iPhone10发布,屏幕高度亮瞎了所有小伙伴">iphone10发布会</a></li>
+        <li><a href="#" title="为了弘扬乐于助人的精神，中国人大开会决定授予老王“中国好邻居”称号">关于老王</a></li>
+    </ul>
+    <div class="details"></div>
+    <!-- <div id="box"></div> -->
+</body>
+</html>

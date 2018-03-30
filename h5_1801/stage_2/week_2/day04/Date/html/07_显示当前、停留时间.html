@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <div id="cont">
+        <p id="t1"></p>
+        <p id="t2"></p>
+    </div>
+    <script type="text/javascript">
+        //获取元素
+        var t1 = document.getElementById('t1');
+        var t2 = document.getElementById('t2');
+
+        setInterval(showTime,1000);
+            var seconds = 0;
+            var minutes = 0;
+            var hour = 0;
+            //封装一个时间函数
+            function showTime(){
+                seconds = seconds+1;
+               //  //获取当前时间
+                var d = new Date();
+               //  //年
+               //  var year = d.getFullYear();
+               //   //月
+               //  var month = d.getMonth()+1;
+               //   //日
+               //  var date = d.getDate();
+               //   //星期
+               //  var day = d.getDay();
+               //   //时
+                var hours = d.getHours();
+                 //分
+                var min = d.getMinutes();
+                 //秒
+                var sec = d.getSeconds();
+               
+               //补灵操作
+               hours = hours<10?'0'+hours:hours;
+               min   = min<10?'0'+min:min;
+               sec   = sec<10?'0'+sec:sec;
+               t1.innerHTML = '当前时间：'+hours+':'+min+':'+sec;
+
+               if(seconds==60){
+                    seconds=0;
+                    minutes+=1;
+               }
+               if(minutes==60){
+                    minutes=0;
+                    hour+=1;
+               }
+
+              
+               t2.innerHTML = '停留时间：'+hour+'时'+minutes+'分'+seconds+'秒';
+               // 显示当前时间
+               
+        }
+        
+
+    </script>
+</body>
+</html>

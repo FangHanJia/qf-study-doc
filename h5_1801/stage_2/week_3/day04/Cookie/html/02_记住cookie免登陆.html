@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+            body{
+                background-color:rgb(177, 208,224); font: normal 12px Trebuchet MS; color:#000;
+            }
+            form{ 
+                width:220px; padding:10px;
+                background-color:#58ba58; 
+                box-shadow: 0px 0px 10px 0px #888888;
+                border:1px solid #DDEEF6;
+                border-radius:6px;
+                margin: auto;
+            }
+            .roundedCorners-textbox{ 
+                border:1px solid #999; width:160px;
+            }
+            .checkbox {
+                margin-left: 30px;
+                border:1px solid #999; width:20px;
+            }
+    </style>
+    <script type="text/javascript" src="../js/common.js"></script>
+</head>
+<body>
+    <form action="http://www.baidu.com" method="get">   
+        <label>账号</label>
+        <input id="username" type="text" /><br /><br />
+        <label>密码</label>
+        <input id="password" type="text" /><br /><br /> 
+        <label><input type="checkbox" class="checkbox" />
+        7天内免登陆</label>
+        <br/><br/>
+        <input type="submit" value="确定" id="btnSubmit" />
+        <input type="reset" value="清空" />
+    </form> 
+</body>
+    <script type="text/javascript">
+        (function(){
+            //获取元素
+            var btnSubmit = document.getElementById('btnSubmit');
+            var checkbox = document.getElementsByClassName('checkbox')[0];
+            var username = document.getElementById('username');
+            var password = document.getElementById('password');
+
+            //当提交时，判断是否勾选，勾选记住cookie
+            btnSubmit.onclick = function(e){
+                e = e||window.event;
+                var target = e.target || e.srcElement;
+                //获取输入的值
+                var _userName = username.value;
+                if(_userName.length<=0){
+                    alert('用户名不能为空！');
+                    return false;
+                }
+                if(checkbox.checked){
+                    //用于存储cookie的时间周期
+                    //创建事件对象
+                    var d = new Date();
+                    d.setDate(d.getDate()+7);
+                    //记住cookie
+                    document.cookie = 'name='+_userName+';expires='+d.toUTCString();
+                }
+                location.href = 'http://www.baidu.com';
+            }
+            //页面刷新时加载cookie
+            var cookies = document.cookie;
+            cookies = cookies.split('; ');
+            for(var i =0;i<cookies.length;i++){
+                var arr =cookies[i].split('=');
+                if(arr[0] == 'name'){
+                    console.log(arr[1]);
+                    // location.href = 'http://www.baidu.com';
+                }
+            }   
+
+        })();;
+    </script>
+</html>

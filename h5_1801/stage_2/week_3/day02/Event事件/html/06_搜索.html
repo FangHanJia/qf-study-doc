@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <p class="wrap">
+        搜索：<input type="text" id="searchBox" class="search-box" />
+        <ul class="list-box">
+            <li>aac</li>
+            <li>avad</li>
+            <li>bjodf</li>
+            <li>ccc</li>
+            <li>cxz</li>
+            <li>bsad</li>
+            <li>carq</li>
+            <li>asd</li>
+        </ul>
+    </p>
+</body>
+    <script type="text/javascript">
+
+
+        /*
+        *   搜索框功能
+        *   数据是HTML里的li内容，可改从后台提取
+        *   只测试了英文，且只判断了首字母，可改进
+        *   回车的功能可替换成所需功能
+        */
+ 
+        var search = (function() { //采用自执行函数方式编写，避免造成全局污染和变量改写。
+        var doc = document, //存储document,减少全局查询次数
+        oSearchBox = doc.getElementById("searchBox"),
+        oUl = doc.getElementsByTagName("ul")[0], //IE8不支持getElementsByClassName,注意！
+        oList = oUl.getElementsByTagName("li"),
+        item = -1, //便于键盘事件的位置判断
+        oShow = [], //存储显示的li
+        oShowVal = []; //存储显示的li的innerHTML
+ 
+        oSearchBox.focus(); //在搜索框定位光标
+ 
+        var input = function(event) { //输入事件处理
+            var oVal = oSearchBox.value, //获取输入值
+                oListLen = oList.length; 
+     
+            if(oVal !== "") { //有输入时
+                var oFirst = oVal.trim().substr(0,1); //获取输入值的第一个字母
+            } else { //没有输入时，重置变量
+                item = -1;
+                oShow = [];
+                oShowVal = [];
+                for (var j = 0; j < oList.length; j++) {
+                    oList[j].className = "";
+                }
+            }
+     
+            for (var i = 0; i < oListLen; i++) {
+                if(oList[i].innerHTML.substr(0,1) === oFirst) { //判断li的内容的首字母与输入的首字母是否一致
+                    oList[i].style.cssText = "display: block;"; //让一致的li显示
+                    if(oShow.indexOf(oList[i]) == -1) { //防止多次添加
+                        oShow.push(oList[i]); //将显示的li添加进数组，方便使用
+                        oShowVal.push(oList[i].innerHTML);
+                    }
+                     
+                    EventUtil.addHandler(oList[i],"mouseover",function() {
+                        this.className = "active";
+                    });
+                    EventUtil.addHandler(oList[i],"mouseleave",function() {
+                        this.className = "";
+                    });
+                    EventUtil.addHandler(oList[i],"click",function() {
+                        oSearchBox.value = this.innerHTML;
+                        alert("Start Search!");
+                    });
+     
+                } else {
+                    oList[i].style.cssText = "display: none;"; //与输入首字母不一致的则隐藏
+                }
+            }
+     
+            var e = event || window.event,
+                key = e.which || e.keyCode,
+                oShowLen = oShow.length;
+     
+            if(key === 13 && oVal) { //有输入时按回车直接搜索
+                alert("Start Search!");
+            }
+     
+            if(oShowLen !== 0) { //只当有li显示时才触发键盘事件
+                switch(key) {
+                        case 38 :
+                            if(item === 0 || item === -1) {
+                                item = oShowLen;
+                            }
+                            for (var i = 0; i < oShowLen; i++) {
+                                if(oShow[i].className = "active") {
+                                    oShow[i].className = "";
+                                }
+                            }
+                            oSearchBox.value = oShowVal[--item]; //将显示的li的内容替换到搜索框中的内容
+                            oShow[item].className = "active";
+                            break;
+                        case 40 :
+                            if(item === oShowLen-1) {
+                                item = -1;
+                            }
+                            for (var i = 0; i < oShowLen; i++) {
+                                if(oShow[i].className = "active") {
+                                    oShow[i].className = "";
+                                }
+                            }
+                            oSearchBox.value = oShowVal[++item];
+                            oShow[item].className = "active";
+                            break;
+                        case 13 :
+                            for (var i = 0; i < oShowLen; i++) {
+                                if(oShow[i].className === "active") { //有选项时按回车就触发搜索
+                                    alert("Start Search!");
+                                }
+                            }
+                            break;
+                        }
+            }
+        }
+     
+        return{ //返回函数接口
+            input : input
+        }
+     
+    })();
+     
+    EventUtil.addHandler(window,"load",search);
+    EventUtil.addHandler(window,"keyup",search.input);
+
+
+    </script>
+</html>
+
+
+

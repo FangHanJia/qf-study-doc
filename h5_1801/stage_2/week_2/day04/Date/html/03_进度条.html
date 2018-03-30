@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            margin:0;
+        }
+        #pro{
+            width:0;
+            height:5px;
+            background:green;
+            position:relative;
+
+        }
+        #num{
+            position:absolute;
+            top:100%;
+            right:0;
+            padding:10px;
+            font-size:14px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            //获取元素
+            var pro = document.getElementById('pro');
+            var num = document.getElementById('num');
+            var width = 0;
+
+            var timer = setInterval(show,30);
+            function show(){
+
+                width +=13;
+
+                //判断进度条达到浏览器宽度时停止定时器
+                if(width>=window.innerWidth){
+                    //重置进度条的宽度
+                    width = window.innerWidth;
+                    clearInterval(timer);
+                }
+                pro.style.width = width + 'px';
+
+                //添加进度条文字
+                var count = (width/window.innerWidth*100).toFixed(1);
+                num.innerHTML = count+'%';
+            
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="pro">
+        <span id="num"></span>
+    </div>
+    
+</body>
+</html>
