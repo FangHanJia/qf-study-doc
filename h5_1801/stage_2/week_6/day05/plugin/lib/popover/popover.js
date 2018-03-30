@@ -45,7 +45,7 @@
 
      // 创建内容
      var content = document.createElement('div');
-     content.calssName = 'content';
+     content.className = 'content';
      content.innerHTML = opt.content;
      this.ele.appendChild(content);
 
