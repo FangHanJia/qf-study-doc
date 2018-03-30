@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>call和apply的使用</title>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 求数组中的最大值和最小值
+            let arr = [20,4,44,3333];
+
+            // 使用apply求最大值
+            let max =Math.max.apply(null,arr);//Math是一个对象；
+            console.log(max);
+
+            // 使用apply求最小值
+            let min = Math.min.apply(null,arr);
+            console.log(min);
+
+            let btns = document.querySelectorAll('.btn');
+            // 遍历类数组
+            let res = Array.prototype.map.call(btns,function(item){
+                return item.innerText;
+            }).join();
+            console.log(res);
+
+            // 判断数据类型
+            let obj = {};
+            let type = Object.prototype.toString.call(new Object());
+            console.log(type);
+        });
+    </script>
+</head>
+<body>
+    <button class="btn">按钮1</button>
+    <button class="btn">按钮2</button>
+    <button class="btn">按钮3</button>
+    <button class="btn">按钮4</button>
+    <button class="btn">按钮5</button>
+    <button class="btn">按钮6</button>
+    <button class="btn">按钮7</button>
+    <button class="btn">按钮8</button>
+    <button class="btn">按钮9</button>
+    <button class="btn">按钮10</button>
+</body>
+</html>
