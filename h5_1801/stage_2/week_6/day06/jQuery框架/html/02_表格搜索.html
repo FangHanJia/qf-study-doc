@@ -9,10 +9,11 @@
     			border:1px solid #ccc;
     			width:100%;
     			border-collapse: collapse;
+          cursor:pointer;
     		}
     		.datalist td,.datalist th{padding:5px 10px;border:1px solid #ccc;}
     		.datalist tr.even{background-color:#efefef;}
-    		.datalist tr.selected{background-color:#fc0;color:#fff;}
+    		.datalist tr.selected{background-color:#58bc58;color:#fff;}
 
     		/*.datalist tr:nth-child(even){background-color:#efefef;}*/
     </style>
@@ -24,7 +25,7 @@
             1、隔行变色
             2、全选/反选：高亮
             3、单选：高亮
-            4、单选满时==>全选勾选
+            4、单选勾选满时==>全选勾选
             5、搜索关键字所在行高亮
         */
         // 获取元素
@@ -34,6 +35,8 @@
         let $btnAll = $('#all');
         let $checkboxs = $table.find('input').not('#all');
         let $trs = $table.children('tbody').children('tr');
+
+
         // 1、隔行变色:保留偶数行:even(偶数)--索引值计算
         $trs.filter(':even').addClass('even');
 
@@ -62,16 +65,18 @@
           // 高亮当前行
           $(this).toggleClass('selected')
 
-          // 勾选当前行
+          // 勾选当前行：
+          // $(this).hasClass('selected')：返回值为布尔值；
           .find(':checkbox').prop('checked',$(this).hasClass('selected'));
           checkAll();
+          return false;
         });
         // 4、单选满时==>全选勾选
         function checkAll(){
           // 获取选中的复选框
           let $checkeds = $checkboxs.filter(':checked');
           // 判断勾选数量是否与checkbox的数量相等
-          $btnAll.prop('checked',$checkboxs.length === $checkeds.length)
+          $btnAll.prop('checked',$checkboxs.length === $checkeds.length);
         }
 
         // 5、搜索关键字所在行高亮
