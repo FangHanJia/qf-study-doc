@@ -1,0 +1,218 @@
+/*-----------------金秋---------------------------------------------------*/
+#main{overflow:hidden;}
+#main .cont{border:2px solid #ccc;}
+#main .main_s{position:relative; height: 77px;border-bottom:2px solid #000;}
+#main .main_s h4{width: 38px;height: 37px; background:url("../images/car.png") no-repeat;position:absolute;top:20px;left:14px;}
+
+#main .main_s ul{margin-left: 10px;}
+#main .main_s ul li{float:left;position:relative;}
+#main .main_s ul li .shuzi{padding-left:100px;font-size:30px;line-height: 77px;font-style:italic;}
+#main .main_s ul li .cc{width: 16px;height: 38px;background:url("../images/14.png") no-repeat;position:absolute;top:20px;left:312px;}
+#main .main_s ul li i{width: 16px;height: 38px;background:url("../images/14.png") no-repeat;position:absolute;top:20px;left:237px;}
+
+#main .main_s ul li:hover{color:#FF4500;}
+#main .main_m .main_c{height: 40px;background-color:#F7F7F7;border-bottom: 1px solid #D9D9D9;font-size:14px;font-weight: bold;line-height: 40px;
+
+}
+#main .main_m .main_c h2{float:left;padding-left: 10px;font-size:14px;font-weight: bold;line-height: 40px;}
+#main .main_m .main_c ul{float:right;}
+#main .main_m .main_c li{float:left;padding-right: 80px;}
+
+#main .main_p{height: 300px;background-color:pink;}
+
+
+
+
+/*-----------------汉佳------------------------------------------------*/
+#myCart .cont{
+    height:562px;
+    background:#eee;
+    border:1px solid #D9D9D9;
+    border-top:0 none;
+}
+#myCart .title{
+    height:36px;
+    background:-webkit-linear-gradient(top,#fff 0%,#FCFCFB 20%,#F1F1F0 60%);
+    border-top:2px solid #404040;
+    border-bottom:2px solid #D9D9D9;
+    text-indent:10px;
+}
+#myCart .title span{
+    font-size:14px;
+    line-height:36px;
+    color:#333;
+}
+#myCart .title .fr span{
+    margin-right:120px;
+}
+#myCart .title .fr span:first-child{
+    margin-right:40px;
+}
+#myCart .title .fr span:last-child{
+    margin-right:10px;
+}
+#myCart .title .fr span:nth-child(3){
+    margin-right:62px;
+}
+#myCart #goods{
+    height:402px;
+    /*width:982px;*/
+    /*background:#ccc;*/
+    overflow-x:hidden;
+}
+#myCart #goods::-webkit-scrollbar{
+   width:2px;
+}
+#myCart #goods li{
+    height:99px;
+    width:982px;
+    background:#fff;
+    border-bottom:1px solid #D9D9D9;
+    border-top:0 none;
+}
+#myCart #goods li .goods-cont{
+    height:99px;
+    width:518px;
+    /*background:#58bc58;*/
+}
+#myCart #goods li .goods-cont img{
+    height:98px;
+    width:106px;
+    margin-right:10px;
+    /*background:red;*/
+    float:left;
+}
+#myCart #goods li .goods-cont p{
+    font-size:14px;
+    line-height:26px;
+}
+#myCart #goods li .goods-cont .text{
+    font-weight:bold;
+    color:#0088CC;
+}
+#myCart #goods li .goods-count{
+    height:99px;
+    width:186px;
+    background:#fff;
+    position:relative;
+}
+#myCart #goods li .goods-count .qty{
+    height:20px;
+    width:54px;
+    position:absolute;
+    top:15px;
+    left:5px;
+    font-size:14px;
+    line-height:20px;
+    text-align:center;
+    border:1px solid #D9D9D9;
+}
+#myCart #goods li .goods-count .qty button{
+    height:20px;
+    width:14px;
+    background:#fff;
+    position:absolute;
+    top:0;
+
+}
+#myCart #goods li .goods-count .qty .minus{
+    left:0;
+    border-right:1px solid #D9D9D9;
+}
+#myCart #goods li .goods-count .qty .add{
+    right:0;
+    border-left:1px solid #D9D9D9;
+
+}
+#myCart #goods li .goods-count .price{
+    position:absolute;
+    top:15px;
+    left:106px;
+}
+#myCart #goods li .goods-count .price p{
+   font-size:12px;
+   line-height:18px;
+}
+#myCart #goods li .goods-count .price .oPrice{
+    color:red;
+}
+#myCart #goods li .goods-total{
+    height:84px;
+    width:200px;
+    padding-top:15px;
+    position:relative;
+}
+#myCart #goods li .goods-total p{
+    font-size:12px;
+    line-height:18px;
+}
+#myCart #goods li .goods-total p:nth-of-type(2){
+   color:#58bc58;
+}
+#myCart #goods li .goods-total .btnDel{
+    font-size:16px;
+    padding:0 4px;
+    position:absolute;
+    bottom:20px;
+    right:22px;
+}
+#myCart .checkout {
+   height:120px;
+   background:#fff;
+   padding:0 30px;
+   position:relative;
+}
+#myCart .checkout #clearAll{
+   height:30px;
+   width:100px;
+   background:#FF4500;
+   padding:2px;
+   font-size:16px;
+   line-height:30px;
+   color:#fff;
+   position:absolute;
+   top:10px;
+   left:30px;
+}
+#myCart .checkout .left{
+   font-size:14px;
+   line-height:130px;
+   cursor:pointer;
+}
+#myCart .checkout .left:hover{
+   color:#FF4500;
+}
+#myCart .checkout .cartTotal{
+    padding-top:15px;
+}
+#myCart .checkout .cartTotal p{
+   font-size:14px;
+   line-height:28px;
+}
+#myCart .checkout .cartTotal p:nth-child(2){
+   color:#58bc58;
+}
+#myCart .checkout .cartTotal p #totalPrice{
+   font-size:20px;
+   color:red;
+}
+
+
+/*--------------------------金秋-------------------------------------*/
+#wel{margin-top:30px;}
+#wel .cont{padding-bottom:20px;border-bottom:2px solid #000 ;}
+#wel .cont h2{font-size:18px;font-weight:bold;margin-bottom:5px;}
+#prev{width: 16px;height: 38px;background:url("../images/13.png") no-repeat;
+position:absolute;top:110px;left:-13px;}
+#next{width: 16px;height: 38px;background:url("../images/14.png") no-repeat;position:absolute;top:110px;right:-13px;}
+
+.cont{position:relative;}
+.cont #goodlis{height: 230px;}
+
+#goodlis li{float:left;width: 150px;padding-right: 10px;}
+#goodlis img{width: 130px;height: 140px;}
+#goodlis p{font-size:12px;}
+#goodlis .shan{font-size:12px;line-height: 30px;}
+#goodlis .price{font-size:12px;color:red;}
+#goodlis li:nth-child(1){padding-left: 20px;}
+#goodlis button{color:#fff;font-size:12px;border-radius: 5px;background-color:#f90;padding:4px;}

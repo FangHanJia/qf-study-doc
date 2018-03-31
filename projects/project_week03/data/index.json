@@ -1,0 +1,37 @@
+{
+    "brand":[
+        {"imgurl":"images/brand0.png","name":"Miu Miu","content":"This a content message."},
+        {"imgurl":"images/brand1.png","name":"Miu Miu","content":"This a content message."},
+        {"imgurl":"images/brand2.png","name":"Miu Miu","content":"This a content message."},
+        {"imgurl":"images/brand3.png","name":"Miu Miu","content":"This a content message."},
+        {"imgurl":"images/brand4.png","name":"Miu Miu","content":"This a content message."},
+        {"imgurl":"images/brand5.png","name":"Miu Miu","content":"This a content message."},
+        {"imgurl":"images/brand6.png","name":"Miu Miu","content":"This a content message."},
+        {"imgurl":"images/brand7.png","name":"Miu Miu","content":"This a content message."},
+        {"imgurl":"images/brand8.png","name":"Miu Miu","content":"This a content message."},
+        {"imgurl":"images/brand9.png","name":"Miu Miu","content":"This a content message."}
+    ],
+    "goodlist":[
+        {"imgurl":"images/new_pic1.png","content":"Up&Down&nbsp;Open&nbsp;CowhideLeather&nbsp;Casewith&nbsp;Crocodile..","listprice":219,"ourprice":189},
+        {"imgurl":"images/new_pic2.png","content":"Up&Down&nbsp;Open&nbsp;CowhideLeather&nbsp;Casewith&nbsp;Crocodile..","listprice":400,"ourprice":189},
+        {"imgurl":"images/new_pic3.png","content":"Up&Down&nbsp;Open&nbsp;CowhideLeather&nbsp;Casewith&nbsp;Crocodile..","listprice":219,"ourprice":189},
+        {"imgurl":"images/new_pic4.png","content":"Up&Down&nbsp;Open&nbsp;CowhideLeather&nbsp;Casewith&nbsp;Crocodile..","listprice":219,"ourprice":189},
+        {"imgurl":"images/new_pic5.png","content":"Up&Down&nbsp;Open&nbsp;CowhideLeather&nbsp;Casewith&nbsp;Crocodile..","listprice":219,"ourprice":189},
+        {"imgurl":"images/new_pic6.png","content":"Up&Down&nbsp;Open&nbsp;CowhideLeather&nbsp;Casewith&nbsp;Crocodile..","listprice":219,"ourprice":189},
+        {"imgurl":"images/new_pic7.png","content":"Up&Down&nbsp;Open&nbsp;CowhideLeather&nbsp;Casewith&nbsp;Crocodile..","listprice":219,"ourprice":189},
+        {"imgurl":"images/new_pic8.png","content":"Up&Down&nbsp;Open&nbsp;CowhideLeather&nbsp;Casewith&nbsp;Crocodile..","listprice":219,"ourprice":189},
+        {"imgurl":"images/new_pic8.png","content":"Up&Down&nbsp;Open&nbsp;CowhideLeather&nbsp;Casewith&nbsp;Crocodile..","listprice":219,"ourprice":189},
+        {"imgurl":"images/new_pic1.png","content":"Up&Down&nbsp;Open&nbsp;CowhideLeather&nbsp;Casewith&nbsp;Crocodile..","listprice":219,"ourprice":189},
+        {"imgurl":"images/new_pic2.png","content":"Up&Down&nbsp;Open&nbsp;CowhideLeather&nbsp;Casewith&nbsp;Crocodile..","listprice":219,"ourprice":189},
+        {"imgurl":"images/new_pic3.png","content":"Up&Down&nbsp;Open&nbsp;CowhideLeather&nbsp;Casewith&nbsp;Crocodile..","listprice":219,"ourprice":189},
+        {"imgurl":"images/new_pic4.png","content":"Up&Down&nbsp;Open&nbsp;CowhideLeather&nbsp;Casewith&nbsp;Crocodile..","listprice":219,"ourprice":189},
+        {"imgurl":"images/new_pic5.png","content":"Up&Down&nbsp;Open&nbsp;CowhideLeather&nbsp;Casewith&nbsp;Crocodile..","listprice":219,"ourprice":189}
+    ],
+    "designer":[
+        {"imgurl":"images/more_pic.png","top":"Top Designer","more":"More"},
+        {"imgurl":"images/more_pic1.png","title":"New YSL concept store into the round side，limited Muse two","content":"When wo walk into Elements,it should find Yves Saint Laurents new concept store.This addition is good news for fans of each Y,but believe in their own wish list on more than a new limited edition handbag target-Muse Two bag.To celebrate the opening of the new store,YSL special bags for this popular form shall put a military look,the first ever to show his side of eroseive typ..." },
+        {"imgurl":"images/more_pic2.png","title":"New YSL concept store into the round side，limited Muse two","content":"When wo walk into Elements,it should find Yves Saint Laurents new concept store.This addition is good news for fans of each Y,but believe in their own wish list on more than a new limited edition handbag target-Muse Two bag.To celebrate the opening of the new store,YSL special bags for this popular form shall put a military look,the first ever to show his side of eroseive typ..." },
+        {"imgurl":"images/more_pic3.png","title":"New YSL concept store into the round side，limited Muse two","content":"When wo walk into Elements,it should find Yves Saint Laurents new concept store.This addition is good news for fans of each Y,but believe in their own wish list on more than a new limited edition handbag target-Muse Two bag.To celebrate the opening of the new store,YSL special bags for this popular form shall put a military look,the first ever to show his side of eroseive typ..." },
+        {"imgurl":"images/more_pic4.png","title":"New YSL concept store into the round side，limited Muse two","content":"When wo walk into Elements,it should find Yves Saint Laurents new concept store.This addition is good news for fans of each Y,but believe in their own wish list on more than a new limited edition handbag target-Muse Two bag.To celebrate the opening of the new store,YSL special bags for this popular form shall put a military look,the first ever to show his side of eroseive typ..." }
+    ]
+}

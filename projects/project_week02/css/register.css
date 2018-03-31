@@ -1,0 +1,133 @@
+#l_register .container{
+    height: 500px;
+}
+#l_register .l_register_t{
+    height:52px;
+   line-height:52px;
+    border-bottom:2px solid #404040;
+}
+#l_register .l_register_t h2{
+    font-size:18px;
+    color:#000000;
+}
+#l_register .l_register_c{
+    margin-top:23px;
+}
+#l_register .l_register_c .art_l{
+    width:420px;
+    height: 368px;
+    border-right:1px dashed #5A5A5A;
+    padding:23px 0 0 30px;
+}
+#l_register  .art_l p{
+    font-size:14px;
+    color:#333333;
+}
+#l_register  .art_l input{
+    width: 345px;
+    height: 35px;
+    font-size:18px;
+    border:1px solid #404040;
+}
+#l_register  .art_l .password_b p{
+    margin-top:22px;
+}
+#l_register  .art_l .yzm p{
+    margin-top:22px;
+}
+#l_register  .art_l .yzm>input{
+    height: 35px;
+    width: 250px;
+    vertical-align:middle;
+}
+#l_register .art_l .code{
+    display:inline-block;
+    height: 35px;
+    width: 93px;
+    border:1px solid #404040;
+    vertical-align:middle;
+    background: #ccc;
+    font-size:18px;
+    line-height:35px;
+    text-align:center;
+}
+#l_register .art_l .btn{
+    width: 66px;
+    height: 33px;
+    background:#F88517;
+    color:#FFFFFF;
+    font-size:14px;
+    line-height:33px;
+    margin-top:20px;
+}
+#l_register .art_r{
+    width: 465px;
+    height: 361px;
+    margin-left:63px;
+}
+#l_register .art_r .art_r_t{
+    width: 345px;
+    height: 40px;
+    background:#FFFFCC;
+    border:1px dashed #FF4500;
+    padding-left:8px;
+    padding-top:7px;
+    margin-bottom:20px;
+}
+#l_register .art_r .art_r_t h3{
+    color:#FF4542;
+    font-size:12px;
+}
+#l_register .art_r p{
+    font-size:14px;
+    color:#333333;
+}
+#l_register .art_r .art_r_t>p{
+    color:#228B22;
+    font-size:12px;
+}
+#l_register .art_r .art_r_t>p>span{
+    float:right;
+}
+#l_register .art_r input{
+    width: 347px;
+    height: 32px;
+    border:1px solid #ccc;
+    font-size:18px;
+}
+#l_register .art_r h4{
+    font-size:12px;
+    color:#9F9BB7;
+}
+#l_register .art_r .possword_1 p{
+    margin-top:10px;
+}
+#l_register .art_r .possword_2 p{
+    margin-top:10px;
+}
+#l_register .art_r .r_c1{
+    width: 15px;
+    height: 15px;
+}
+#l_register .art_r .r_c2{
+    width: 15px;
+    height: 15px;
+}
+#l_register .art_r .btn_r{
+    width: 66px;
+    height: 33px;
+    background:#F88517;
+    color:#FFFFFF;
+    font-size:14px;
+    line-height:33px;
+    margin-top:15px;
+}
+#l_register .art_r .size{
+    margin-left:16px;
+    font-size:13px;
+}
+#l_register .art_r .terms{
+    margin-left:13px;
+    color:#1155CC;
+    font-size:13px;
+}

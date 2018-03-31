@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>后台管理</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />  
+    <link rel="stylesheet" type="text/css" href="../css/backtage.css" />
+    <script src="../js/common.js"></script>
+    <script src="../js/backtage.js"></script>
+</head>
+<body>
+    <div id="box">
+    <!-- 头部 -->
+        <div id="head">
+            <div class="cont">
+                <div class="head_l">
+                <!-- 头部左边 -->
+                    <div class="he_l fl">
+                        <ul>
+                            <li><a href="#">welcome,</a></li>
+                            <li><a href="register.html"><ins>Sign in</ins>  or <ins>Reginst   </ins></a></li>
+                            <li><a href="#"><span>test</span>,</a></li>
+                            <li><a href="#"><ins>Sign out</ins></a></li>
+                        </ul>
+                    </div>
+                    <!-- 头部右边 -->
+                    <div class="he_r fr">
+                        <li class="daohang" class><a href="#"><span><ins>My Arrount<i class="iconfont icon-xialajiantou"></i></ins></span> </a>
+                            <ul class="erji">
+                                <li><a href="#"><img src="../images/m1.png" alt="" />My Wallet</a></li>
+                                <li><a href="#"><img src="../images/m2.png" alt="" />My Orders</a></li>
+                                <li><a href="#"><img src="../images/m3.png" alt="" />My Profile</a></li>
+                                <li><a href="#"><img src="../images/m4.png" alt="" />My Coupons</a></li>
+                                <li><a href="#"><img src="../images/m5.png" alt="" />Wish List </a></li>
+                                <li><a href="#"><img src="../images/m6.png" alt="" />My Messages</a></li>
+                            </ul>
+                        </li>
+                       <!-- 第三周：方汉佳-顶部购物车 -->
+                        <li class="daohang"><a href="#"><span><i class="iconfont icon-gouwuche"></i><span id="topCount"></span><span style="color:#FFCC00;" id="topPrice"></span><i class="iconfont icon-xialajiantou"></i></span>
+                        </a>
+                            <!-- 顶部购物车：动态生成商品信息 -->
+                            <div class="topCart">
+                                 <div class="goodsCart">
+                                 
+                                </div>
+                                <div class="checkDiv">
+                                    <p >Subtotal: <span id="subtotal"></span></p>
+                                    <button id="btnCheckOut">Checkout</button>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 第三周：方汉佳-顶部购物车 -->
+                        <li><a href="#"><span><ins>Order Tranking</ins></span></a></li>
+                        <li><a href="#"><span><i class="iconfont icon-bangzhudisc"></i> Help</span></a></li>
+                    </div>
+                </div>
+                <!-- 头部底部 -->
+                <div class="head_b" id="search">
+                    <div class="h_bl">
+                        <img src="../images/logo.png" alt="" />
+                    </div>
+                        <div class="h_bc" >
+                            <form action="#" >
+                                <i class="iconfont icon-search2"></i>
+                                <input type="search" placeholder="Please enter the keywords" />
+                                <button >Search</button>
+                            </form>
+                                <ul>
+                                    <li><a href="#"><ins>Lv handbags</ins></a></li>
+                                    <li><a href="#"><ins>shoes</ins></a></li>
+                                    <li><a href="#"><ins>Rolex watch</ins></a></li>
+                                </ul>
+                             
+                        </div>                            
+                </div>
+            </div>
+        </div>
+
+
+<!-- 导航条部分 -->
+
+        <div id="nav">
+            <div class="cont">
+            <!-- 导航条左边 -->
+                <div class="nav_l">
+                    <span>All CATEGORIES</span><i class="icon iconfont icon-icon8"></i>
+                    <div class="na">
+                    <dl>
+                        <dt>Bags</dt><img src="../images/n2.png" alt="" />
+                        <dd>Luggage</dd>
+                        <dd>Boston</dd>
+                        <dd>Mayfair</dd>
+                        <dd>Birkin</dd>
+                        <dd>Monogram</dd>
+                        <dd>Multicolore</dd>
+                        <div class="na3">
+                        <!-- 二级导航 -->
+                            <div class="na3_l">
+                                <div class="na3_1">
+                                    <h4>NFL</h4>
+                                    <ul>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Luggage Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Luggage Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Luggage Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Luggage Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Luggage Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="href"#"">Monogram Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Monogram Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Monogram Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Monogram Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Monogram Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Monogram Rawens</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                    </ul>
+                                </div>
+                                <div class="na3_2">
+                                    <h4>NBA</h4>
+                                    <ul>
+                                        <li><a href="#">Birkin Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Birkin Rawens</a></li>
+                                    </ul>
+                                </div>
+                                <div class="na3_3">
+                                    <h4>MLB</h4>
+                                    <ul>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Birkin Rawens</a></li>
+                                       
+                                    </ul>
+                                </div>
+                                <div class="na3_4">
+                                    <h4>NHL</h4>
+                                    <ul>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="na3_r">
+                                <button>New Arrivals </button>
+                              <dl>
+                                  <dt>Final Sale</dt>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                              </dl>
+                            </div>
+
+                        </div>
+                    </dl>
+
+                    <dl class="na2 "> 
+                        <dt >Bags</dt><img src="../images/n21.png" alt="" />
+                        <dd>Luggage</dd>
+                        <dd >Boston</dd>
+                        <dd>Mayfair</dd>
+                        <dd>Birkin</dd>
+                        <dd>Monogram</dd>
+                        <dd>Multicolore</dd>
+                        <div class="na3 nax1" style="top:0px;">
+                        <!-- 二级导航 -->
+                            <div class="na3_l">
+                                <div class="na3_1">
+                                    <h4>NFL</h4>
+                                    <ul>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                        <li><a href="href"#"">Baltimore Rawens</a></li>
+                                    </ul>
+                                </div>
+                                <div class="na3_2">
+                                    <h4>NBA</h4>
+                                    <ul>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                    </ul>
+                                </div>
+                                <div class="na3_3">
+                                    <h4>MLB</h4>
+                                    <ul>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                       
+                                    </ul>
+                                </div>
+                                <div class="na3_4">
+                                    <h4>NHL</h4>
+                                    <ul>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="na3_r">
+                                <button>New Arrivals </button>
+                              <dl>
+                                  <dt>Final Sale</dt>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                              </dl>
+                            </div>
+
+                        </div>
+                   
+                    </dl>
+
+
+                    <dl class="na4">
+                        <dt>Bags</dt><img src="../images/n2.png" alt="" />
+                        <dd>Luggage</dd>
+                        <dd>Boston</dd>
+                        <dd>Mayfair</dd>
+                        <dd>Birkin</dd>
+                        <dd>Monogram</dd>
+                        <dd>Multicolore</dd>
+                        <div class="na3 nax2" style="top:0px;">
+                        <!-- 二级导航 -->
+                            <div class="na3_l">
+                                <div class="na3_1">
+                                    <h4>NFL</h4>
+                                    <ul>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                       
+                                    </ul>
+                                    <ul>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                       
+                                    </ul>
+                                    <ul>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                       
+                                    </ul>
+                                </div>
+                                <div class="na3_2">
+                                    <h4>NBA</h4>
+                                    <ul>
+                                        <li><a href="#">Boston Rawens</a></li>
+                                        <li><a href="#">Boston Rawens</a></li>
+                                        <li><a href="#">Boston Rawens</a></li>
+                                        <li><a href="#">Mayfair Rawens</a></li>
+                                        <li><a href="#">Mayfair Rawens</a></li>
+                                        <li><a href="#">Mayfair Rawens</a></li>
+                                    </ul>
+                                </div>
+                                 <div class="na3_2">
+                                    <h4>NBA</h4>
+                                    <ul>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                    </ul>
+                                </div>
+                                <div class="na3_3">
+                                    <h4>MLB</h4>
+                                    <ul>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                       
+                                    </ul>
+                                </div>
+                                <div class="na3_4">
+                                    <h4>NHL</h4>
+                                    <ul>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="na3_r">
+                                <button>New Arrivals </button>
+                              <dl>
+                                  <dt>Final Sale</dt>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                              </dl>
+                            </div>
+
+                        </div>
+                    </dl>
+
+                    <dl class="na2 na5">
+                        <dt >Bags</dt><img src="../images/n21.png" alt="" />
+                        <dd>Luggage</dd>
+                        <dd>Boston</dd>
+                        <dd>Mayfair</dd>
+                        <dd>Birkin</dd>
+                        <dd>Monogram</dd>
+                        <dd>Multicolore</dd>
+                        <div class="na3" id="nax3" style="top:0px;">
+                        <!-- 二级导航 -->
+                            <div class="na3_l">
+                                <div class="na3_1">
+                                    <h4>NFL</h4>
+                                    <ul>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                       
+                                    </ul>
+                                    <ul>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                        <li><a href="href"#"">Multicolore Rawens</a></li>
+                                       
+                                    </ul>
+                                    <ul>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                        <li><a href="href"#"">Mayfair Rawens</a></li>
+                                       
+                                    </ul>
+                                </div>
+                                <div class="na3_2">
+                                    <h4>NBA</h4>
+                                    <ul>
+                                        <li><a href="#">Boston Rawens</a></li>
+                                        <li><a href="#">Boston Rawens</a></li>
+                                        <li><a href="#">Boston Rawens</a></li>
+                                        <li><a href="#">Mayfair Rawens</a></li>
+                                        <li><a href="#">Mayfair Rawens</a></li>
+                                        <li><a href="#">Mayfair Rawens</a></li>
+                                    </ul>
+                                </div>
+                                <div class="na3_3">
+                                    <h4>MLB</h4>
+                                    <ul>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                       
+                                    </ul>
+                                </div>
+                                <div class="na3_4">
+                                    <h4>NHL</h4>
+                                    <ul>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="na3_r">
+                                <button>New Arrivals </button>
+                              <dl>
+                                  <dt>Final Sale</dt>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                              </dl>
+                            </div>
+
+                        </div>
+                    </dl>
+
+                    <dl class="na6">
+                        <dt>Bags</dt><img src="../images/n2.png" alt="" />
+                        <dd>Luggage</dd>
+                        <dd>Boston</dd>
+                        <dd>Mayfair</dd>
+                        <dd>Birkin</dd>
+                        <dd>Monogram</dd>
+                        <dd>Multicolore</dd>
+                        <div class="na3" id="nax4" style="top:0px;">
+                        <!-- 二级导航 -->
+                            <div class="na3_l">
+                                <div class="na3_2">
+                                    <h4>NBA</h4>
+                                    <ul>
+                                        <li><a href="#">Boston Rawens</a></li>
+                                        <li><a href="#">Boston Rawens</a></li>
+                                        <li><a href="#">Boston Rawens</a></li>
+                                        <li><a href="#">Mayfair Rawens</a></li>
+                                        <li><a href="#">Mayfair Rawens</a></li>
+                                        <li><a href="#">Mayfair Rawens</a></li>
+                                    </ul>
+                                </div>
+                                <div class="na3_3">
+                                    <h4>MLB</h4>
+                                    <ul>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                       
+                                    </ul>
+                                </div>
+                                <div class="na3_4">
+                                    <h4>NHL</h4>
+                                    <ul>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="na3_r">
+                                <button>New Arrivals </button>
+                              <dl>
+                                  <dt>Final Sale</dt>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                              </dl>
+                            </div>
+
+                        </div>
+                    </dl>
+
+                    <dl class="na2 na7">
+                        <dt >Bags</dt><img src="../images/n21.png" alt="" />
+                        <dd>Luggage</dd>
+                        <dd>Boston</dd>
+                        <dd>Mayfair</dd>
+                        <dd>Birkin</dd>
+                        <dd>Monogram</dd>
+                        <dd>Multicolore</dd>
+                        <div class="na3" id="nax5" style="top:0px;">
+                        <!-- 二级导航 -->
+                            <div class="na3_l">
+                                <div class="na3_2">
+                                    <h4>NBA</h4>
+                                    <ul>
+                                        <li><a href="#">Boston Rawens</a></li>
+                                        <li><a href="#">Boston Rawens</a></li>
+                                        <li><a href="#">Boston Rawens</a></li>
+                                        <li><a href="#">Mayfair Rawens</a></li>
+                                        <li><a href="#">Mayfair Rawens</a></li>
+                                        <li><a href="#">Mayfair Rawens</a></li>
+                                    </ul>
+                                </div>
+                                <div class="na3_3">
+                                    <h4>MLB</h4>
+                                    <ul>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                       
+                                    </ul>
+                                </div>
+                                <div class="na3_4">
+                                    <h4>NHL</h4>
+                                    <ul>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        <li><a href="#">Baltimore Rawens</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="na3_r">
+                                <button>New Arrivals </button>
+                              <dl>
+                                  <dt>Final Sale</dt>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                                  <dd>Baltimore Rawens</dd>
+                              </dl>
+                            </div>
+
+                        </div>
+                    </dl>
+
+                    </div>   
+                </div>
+                <!-- 导航条中间 -->
+                <div class="nav_c">
+                    <ul>
+                        <li><a href="../index.html"><span>Home</span></a></li>
+                        <li><a href="../html/libiao.html"><span>New Arrival</span></a></li>
+                        <li><a href="../html/details.html"><span>Final Sale</span></a></li>
+                        <li><a href="#"><i class=" iconfont icon-sifangge"></i><span>Brand</span></a></li>
+                        <li><a href="#"><img src="../images/n1.png" alt="" /><span style="border-right:none 0;">Albums</span></a></li>
+                    </ul>
+                </div>
+            </div>
+             
+        </div>
+    
+
+<!-- main部分  -->
+    <div id="main">
+        <div class="cont">
+            <div class="main_l fl">
+                <div class="left_t">
+                    <h2>Account</h2>
+                    <ul class="l_tab">
+                        <li>
+                            <i></i>
+                            <a href="#"><span>My Wallet</span></a>
+                        </li>
+                        <li>
+                            <i></i>
+                            <a href="#"><span>My Coupons</span></a>
+                            <i></i>
+                        </li>
+                        <li>
+                            <i></i>
+                            <a href="#"><span>Messages</span></a>
+                            <i></i>
+                        </li>
+                        <li>
+                            <i></i>
+                            <a href="#"><span>Account Management</span></a>
+                        </li>
+                        <li>
+                            <img src="../images/mtl_7.png" />
+                        </li>
+                    </ul>
+                </div>
+                <div class="left_c">
+                    <h2>My Transactions</h2>
+                    <ul class="c_tab">
+                        <li>
+                            <i></i>
+                            <a href="#"><span>My Shopping Cart</span></a>
+                        </li>
+                        <li>
+                            <i></i>
+                            <a href="#"><span>My Orders</span></a>                        
+                        </li>
+                        <li>
+                            <i></i>
+                            <a href="#"><span>My Wish List</span></a>
+                        </li>
+                        <li>
+                            <i></i>
+                            <a href="#"><span>Returns</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="left_b">
+                    <h2>Customer Service</h2>
+                    <ul class="b_tab">
+                        <li>
+                            <i></i>
+                            <a href="#"><span>Issues</span></a>
+                        </li>
+                        <li>
+                            <i></i>
+                            <a href="#"><span>Consultation</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main_c fl">
+                <div class="cont_t">
+                    <h4><span>VIP Club :</span><p> Wanna join us and sava extra 10%+$10 for every orber?</p><span>Details>></span><span>&times;</span></h4>
+                    <div class="cont_tb">
+                        <i class="fl iren"></i>
+                        <ul class="cont_tab fl">
+                            <li>
+                                <span>Test</span>
+                                <i></i>
+                                <span>Registraation Date: 2012-3-15</span>
+                            </li>
+                            <li>
+                                <span>Points: 125930</span> 
+                            </li>
+                            <li>
+                                <p>My Wallet Balance: $96100 <span>Recharge>></span></p>
+                            </li>
+                            <li>
+                                <span>My Wish List:(<h6>21</h6>)</span>
+                                <span>My Messages:(<h6>5</h6>)</span>
+                                <span>My Coupons:(<h6>3</h6>)</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>Unpaid Order: (<h6>2</h6>)</span>
+                                <i></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cont_c">
+                    <h3>
+                        <i></i>
+                        <p>My Wish List</p>
+                        <span>More></span>
+                    </h3>
+                    <div id="wish">
+                        
+                    </div>
+                </div>
+                <div class="cont_b">
+                    <h3>
+                        <p>Hot Items</p>
+                        <span>More></span>
+                    </h3>
+                    <a href="javascript:;"><i id="zuob"></i></a>
+                    <div id="hotlist">
+                        
+                    </div>
+                    <a href="javascript:;"><i id="youb"></i></a>
+                </div>
+            </div>
+
+            <div class="main_r fr">
+                <div id="banner">
+                    <ul class="btab1">
+                        <li><img src="../images/timg.jpg" /></li>
+                        <li><img src="../images/timg1.jpg" /></li>
+                        <li><img src="../images/timg2.jpg" /></li>
+                        <li><img src="../images/timg3.jpg" /></li>
+                    </ul>
+                    <ul class="btab2">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                </div>
+                <div class="banxia">
+                    <h4>My Recent History</h4>
+                    <div id="history">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+<!-- 底部 -->
+    <div id="link">
+        <div class="cont" style="border-top:2px solid #000;">
+            <div class="link-l">
+                <dl>
+                    <dt>Customer serves</dt>
+                    <dd><a href="#">Shopping Guide</a></dd>
+                    <dd><a href="#">Return Policy</a></dd>
+                    <dd><a href="#">FAQ</a></dd>
+                    <dd><a href="#">Shopping</a></dd>
+                    <dd><a href="#">Contact US</a></dd>  
+
+                </dl>
+                <dl>
+                    <dt>Company Info</dt>
+                    <dd><a href="#">About Us</a></dd>
+                    <dd><a href="#">Why Buy From Us</a></dd>
+                    <dd><a href="#">Privacy & Securiry Policy</a></dd>
+                    <dd><a href="#">Term of Use</a></dd>
+                </dl>
+                <dl>
+                    <dt>Mark Money With Us</dt>
+                    <dd><a href="#">Wholesale</a></dd>
+                    <dd><a href="#">Points & Coupon ,Gifts</a></dd>
+                    
+                </dl>
+                <dl>
+                    <dt>Join our community</dt>
+                    <dd><img src="../images/l1.png" alt="" /><a href="#" class="yan">Add us</a><span>on facebook</span></dd>
+                    <dd><img src="../images/l2.png" alt="" /><a href="#" class="yan">Follow us</a><span>on twitter</span></dd>
+                    <dd><img src="../images/l3.png" alt="" /><a href="#" class="yan">Read us</a><span>on our offical blog</span></dd>
+                   
+                </dl>
+            </div>
+
+
+            <div class="link-r">
+               <img src="../images/l4.png" alt="" class="l4" />
+               <form action="">
+                    <label for="email">Enter your email nbjbq cjubc  nbAQKB</label><br />
+                    <input type="text" placeholder="Enter your email nbjbq" id="email" />
+                    <img src="../images/l5.png" alt="" />
+                 </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="foot">
+        <div class="cont"> 
+            <div class="foot_b">
+                <ul class="link">
+                    <li><a href=""><img src="../images/links1.png" alt="" /></a></li>
+                    <li><a href=""><img src="../images/links2.png" alt="" /></a></li>
+                    <li><a href=""><img src="../images/links3.png" alt="" /></a></li>
+                    <li><a href=""><img src="../images/links4.png" alt="" /></a></li>
+                    <li><a href=""><img src="../images/links5.png" alt="" /></a></li>
+                    <li><a href=""><img src="../images/links6.png" alt="" /></a></li>
+                    <li><a href=""><img src="../images/links7.png" alt="" /></a></li>
+                    <li><a href=""><img src="../images/links8.png" alt="" /></a></li>
+                    <li><a href=""><img src="../images/links9.png" alt="" /></a></li>
+                    <li><a href=""><img src="../images/links10.png" alt="" /></a></li>
+                    <li><a href=""><img src="../images/links11.png" alt="" /></a></li>
+                </ul>
+                <p>
+                    <span>@2008-2003</span>
+                    <a href="#">Tidemalls.com</a>
+                    <span>ALL Rights Reserved</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

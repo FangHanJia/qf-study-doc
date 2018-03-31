@@ -1,0 +1,8 @@
+.lx-carousel{position:relative;width:810px;height:320px;margin:0 auto;border:10px solid #f00;overflow: hidden;}
+.lx-carousel ul{list-style:none;padding:0;margin:0;position:absolute;top:0;left:0;}
+.lx-carousel img{display: block;}
+.lx-carousel .next,.lx-carousel .prev{position:absolute;left:0;top:50%;transform: translate(0,-50%);padding:10px 5px;width:30px;height:50px;line-height:50px;background-color: rgba(0,0,0,.3);text-align:center;color:#fff;}
+.lx-carousel .next{left:auto;right:0;}
+.lx-carousel .page{position: absolute;right:15px;bottom:15px;}
+.lx-carousel .page span{display:inline-block;margin:0 5px;width:30px;height:30px;line-height:30px;text-align:center;background-color:#efefef;border-radius:50%;}
+.lx-carousel .page span.active{background-color:#f60;color:#fff;}

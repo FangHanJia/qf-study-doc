@@ -1,0 +1,144 @@
+#goods{
+    height: 1500px;
+}
+#goods .goods_l{
+    width: 200px;
+    height: 1500px;
+}
+#goods .goods_l h2{
+    font-size:14px;
+    font-weight:bold;
+    border-bottom:2px solid #CFCFCF;
+    margin-bottom:10px;
+}
+#goods .goods_l h2 span{
+    border-bottom:2px solid #404040;
+}
+#goods .goods_l .tabd1{
+    font-size:12px;
+    line-height:20px;
+    padding-left:5px;
+}
+
+#goods .goods_l .tabd1 i{
+    display:inline-block;
+    width: 10px;
+    height: 10px;
+    margin:5px 5px 0 -2px;
+    background:url('../images/jian.png') no-repeat;
+}
+#goods .goods_l .tabd1 a{
+    color:#333;
+}
+#goods .goods_l .tabd1 a:hover{
+    color:#FF4500;
+}
+    
+#tabx1,#tabx2,#tabx3{
+    display:none;
+}    
+
+.goods_l .save{
+    font-size:14px;
+    border-bottom:1px dotted #ccc;
+    padding-bottom:10px;
+}
+#goods .save img:hover{
+    transform:scale(1.1);
+}
+#goods .goods_l .save p span{
+    color:red;
+}
+#goods .goods_l .save span{
+    color:#228B22;
+}
+#goods .goods_l .save{}
+#goods .goods_l .save h3{
+    font-size:14px;
+    font-weight:bold;
+}
+
+/*--------------------分类----------------------*/
+#goods .type{width: 770px;height:337px;border:2px solid #efefef;margin-bottom: 20px;}
+#goods .type p{height:35px;background-color:#F5F5F5;line-height: 35px;font-size:14px;}
+#goods .type p span{padding-left: 10px;font-size:16px;}
+#goods .type  p i{border:2px solid red;padding:1px;margin-left: 10px;}
+#goods .type  p i b{padding:1px; background-color:#f90;color:#fff;}
+#goods .type .t1,.t3,.t4,.t5{height: 35px;border-bottom: 2px dashed #ccc;font-size:14px;}
+#goods .type .t1 span{float:left;line-height: 35px;padding: 0 15px 0 10px; font-weight: bold;}
+#goods .type .t1 li,.t2 li,.t3 li,.t4 li,.t5 li{float:left;line-height: 35px;padding-right:15px;}
+#goods .type .t2{height: 100px;border-bottom: 2px dashed #ccc;font-size:14px;}
+#goods .type .t2 span{float:left;padding:0 15px 0 30px;line-height: 35px;font-weight: bold;}
+#goods .type .t3 span,.t4 span{ float:left; line-height: 35px;padding: 0 15px 0 40px; font-weight: bold;}
+
+#goods .type .t5 span{float:left; line-height: 35px;padding: 0 15px 0 24px; font-weight: bold;}
+#goods .type .t6{ height: 35px;font-size:14px;}
+#goods .type .t6 span{float:left; line-height: 35px;padding: 10px 15px 0 35px; font-weight: bold;}
+#goods .type .t6 i{float:left; border:1px solid #E0DDE4;padding:10px;margin-right:10px ;margin-top: 14px;}
+
+
+#goods .goods_r{
+    width: 770px;
+    height: 1160px;
+    padding-left:10px;
+}
+
+/*-----------------goods_r--金秋------------------*/
+#goods .rank{
+   height:19px;
+    border-bottom: 3px solid #000;
+}
+
+#goods .rank li{float:left;padding-right: 18px;font-size:14px;position:relative;}
+#de{
+    color:red;
+}
+#de #c{padding-right: 10px;
+    width: 14px;height: 15px;background:url("../images/a1.png") no-repeat;position:absolute;top:0;left:33px;
+}
+
+#pi span{
+    width: 13px;height: 15px;background:url("../images/a2.png") no-repeat;position:absolute;top:0px;left:36px;
+}
+
+#list_box{height:1500px;}
+#list_box  li{
+    float:left;
+    width:192px; /*215px*/
+    height:260px;
+    margin-bottom:20px;
+    position:relative;
+}
+#list_box  li div{
+    width:192px;
+    height:176px;
+    text-align:center;
+    display:table-cell;
+    vertical-align: middle;
+}
+#list_box li p{
+    padding-left:10px;
+    font-size:10px;
+
+}
+/*#list_box  li .cn{
+    text-indent: 22px;
+
+}*/
+#list_box  li .save{
+   color:#58bc58;
+}
+
+#list_box  li .price span{font-size:12px;color:red;padding-left: 4px;
+
+}
+/*#list_box li:before{
+    display:block;
+    content:"";
+    width:17px;
+    height:17px;
+    background:url("../images/fang.fw.png");
+    position:absolute;
+    top:177px;
+    left:14px;
+}*/

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <script type="text/javascript">
+    window.onload = function(){
+         var goodslist = [
+                {   no:"1",
+                    img:"img/libiao1.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 189",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"2",
+                    img:"img/libiao2.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 289",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"3",
+                    img:"img/libiao3.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 180",
+                    save:"save USD 30",
+                },
+               {    
+                    no:"4",
+                    img:"img/libiao4.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 98",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"5",
+                    img:"img/libiao5.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 18",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"6",
+                    img:"img/libiao7.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 19",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"7",
+                    img:"img/libiao8.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 89",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"8",
+                    img:"img/libiao1.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 211",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"9",
+                    img:"img/libiao2.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 300",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"10",
+                    img:"img/libiao3.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 489",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"11",
+                    img:"img/libiao4.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 1189",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"12",
+                    img:"img/libiao6.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 1889",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"13",
+                    img:"img/libiao5.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 1890",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"14",
+                    img:"img/libiao7.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 1808",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"15",
+                    img:"img/libiao8.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 9",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"16",
+                    img:"img/libiao1.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 1",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"17",
+                    img:"img/libiao1.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 18",
+                    save:"save USD 30",
+                },
+                {   
+                    no:"18",
+                    img:"img/libiao6.fw.png",
+                    content:"Decent Module Case,Silicone Skin Cover for iphone",
+                    listprice:"USD 219",
+                    ourprice:"USD 19",
+                    save:"save USD 30",
+                },
+                ]
+
+
+         var datalist = document.getElementById('datalist') ;
+         var html = "<ul>";
+         for(var i=0;i<goodslist.length;i++){
+            var goods = goodslist[i];
+           html +='<li><div><img src="'+goods.img+'"></div><p>'+goods.content+'</p><p class="price"><span>'+goods.listprice+'</span>'+goods.ourprice+'</p><p class="save">'+goods.save+'</p></li>';
+            }
+
+            
+            html += '</ul>';
+
+            datalist.innerHTML = html;
+
+            //封装chuancan函数，这个函数就是我们点击商品时把商品参数传给地址栏用的
+            function chuancan(){
+                //lii是一个数组，里面的元素是我们数据生成列表的每一个li标签（<li><div><img src="'+goods.img+'"></div><p>'+goods.content+'</p><p class="price"><span>'+goods.listprice+'</span>'+goods.ourprice+'</p><p class="save">'+goods.save+'</p></li>）
+                var lii=document.getElementsByTagName("li");
+                //用for循环给每个商品li添加点击事件和索引号
+                for(var i=0;i<lii.length;i++){
+                        //我们要获取的参数是在数组goodslist里面的，但是我们点击li时无法直接获取goodslist的参数，因此得让每个li和goodslist中每个元素建立一种联系，这种联系就是每个li和goodslist中每个元素的索引号有一一对应关系，但是li是没有索引号的，因此我们给它设置一个属性name作为索引号，所以这个循环主要任务有两个，一是给每个li赋予点击事件，二是赋予每个li索引号
+                        lii[i].name = i;
+                        lii[i].onclick=function(){ 
+                                        //把参数拼接成字符串
+                                        var params = '';
+                                        //这里this是我们点击的li，this.name是这个li的索引号，而这个索引号是和数组goodslist中对应的商品元素的索引号是一致的，因此goodslist[this.name]就能获取这个商品元素（这个商品元素是个对象，因此可以对它进行遍历，获取里面的每一个属性和属性值）
+                                        for(var attr in goodslist[this.name]){
+                                            var object = goodslist[this.name];
+                                            params += attr + '=' + object[attr] + '&';
+                                        }
+                                        
+                                                            
+                                        params = params.slice(0,-1);
+                                        //如果只写 location.href="html/details.html"它只会跳转到这个页面，但在其后接上"?"+params就会跳转并把参数一并传到地址栏
+                                        location.href="html/details.html?" + params;
+                        }
+                }
+            }
+
+
+
+            //初始化赋予事件
+            chuancan();
+
+            var rank = document.getElementById("rank");
+            // 状态变量(由于升序和降序都是一个按钮实现，因此得设置一个状态变量用于判断点击按钮时，是升序还是降序，初始默认状态变量为1是为升序排序，点击按钮触发事件时进行升序排序，并把状态变量改为2，则下次点击按钮时进行降序排序，并把状态变量改为1.)
+            var change = 1;
+            
+            //排序是对数组goodslist进行排序（方法和平时一样是冒泡或者选择排序），特别的是，平时排序是直接对数值进行排序，而这次是对对象进行排序，数值与数值之间可以直接比较，但对象和对象之间不可以直接比较，所以重点在于找对象中可以比较的项，但是要分清楚比较的是什么，排序的是什么，对于平时数值排序，我们比较的是数值，排序的也是数值，但对象排序，比较的是价格，排序是对象。
+            rank.onclick = function(){
+                if(change == 1){
+                    // 从小到大排序
+                    for(j=0;j<goodslist.length;j++){
+                    
+                        
+                        for( l=0;l<goodslist.length-1;l++){
+                            
+                            
+                            //重点：我们找到了要比较的项：价格，但它是个字符串，因此得截取出其中的数字进行比较
+                            //其实我们可以发现，对象比较，和平时数值比较除了这一点不一样，其他全部一样
+                            if(Number(goodslist[l].ourprice.slice(4))>Number(goodslist[l+1].ourprice.slice(4))){
+                               //注意：这里排序的是对象不是价格
+                               var temp = goodslist[l];
+                               goodslist[l] = goodslist[l+1];
+                               goodslist[l+1] = temp;
+                               // arr.unshift(values)
+                            }
+                        }
+                    }
+
+                    //数组排序完后，再根据新数组生成列表
+                    var html = "<ul>";
+
+                    for(var i=0;i<goodslist.length;i++){
+                        var goods = goodslist[i];
+                        html +='<li><div><img src="'+goods.img+'"></div><p>'+goods.content+'</p><p class="price"><span>'+goods.listprice+'</span>'+goods.ourprice+'</p><p class="save">'+goods.save+'</p></li>';
+                    }
+
+                    html += '</ul>';
+
+
+                    datalist.innerHTML = html;
+
+                    //重新调用chuancan函数，因为重新生成列表，故要重新给li添上事件，否则，你会发现排完序后再点击无法传参
+                    chuancan();
+
+                    //改变状态变量，使下次点击按钮时是降序排序
+                    change = 2;
+                }else if(change == 2){
+                    // 从大到小排序
+                    for(j=0;j<goodslist.length;j++){
+                    
+                    
+                        for( l=0;l<goodslist.length-1;l++){
+                            
+                            
+
+                            if(Number(goodslist[l].ourprice.slice(4))<Number(goodslist[l+1].ourprice.slice(4))){
+                               var temp = goodslist[l];
+                               goodslist[l] = goodslist[l+1];
+                               goodslist[l+1] = temp;
+                               // arr.unshift(values)
+                            }
+                        }
+                    }
+
+                    var html = "<ul>";
+
+                    for(var i=0;i<goodslist.length;i++){
+                        var goods = goodslist[i];
+                        html +='<li><div><img src="'+goods.img+'"></div><p>'+goods.content+'</p><p class="price"><span>'+goods.listprice+'</span>'+goods.ourprice+'</p><p class="save">'+goods.save+'</p></li>';
+                    }
+
+                    
+                    html += '</ul>';
+
+                    datalist.innerHTML = html;
+
+                    chuancan();
+                    change = 1;
+
+                }
+                
+                
+            }
+            
+        }
+        </script>
+
+</head>
+<body>
+    <div id="rank">
+        <button>price</button>
+    </div>
+    <div id="datalist"></div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+.payment{width: 982px;margin:0 auto;overflow: hidden;}
+/*.cont{height: 1241px;}*/
+.payment .L_box{width: 712px;float: left;}
+.payment .R_box{width: 260px;float: right;margin:40px 0 0 10px;}
+/*左边2的部分*/
+.payment .L_box #U_shopping{width: 712px;height: 404px;margin-top: 10px;}
+ .payment .L_box #U_shopping h2{width: 712px;border-bottom: 3px solid #000;}
+ .payment .L_box #U_shopping h5{margin-top: 10px;margin-left: 8px;}
+ .payment .L_box #U_shopping .erer{color:#FF6600;font-weight: bold;font-size: 24px;padding-left: 4px;}
+ .payment .L_box #U_shopping .view{background-color:#5A5A5A ; width: 54px;height: 18px;color:#fff;border-radius: 2px;margin-left: 4px;font-size: 14px;}
+ .payment .L_box #U_shopping .test{margin-left: 10px;margin-top: 10px;width: 713px;height: 100px;}
+ .payment .L_box #U_shopping .enid{float: right;color:green;}
+ .payment .L_box   #U_shopping .test1{float: left;border:1px solid #ccc;margin-right: 10px;padding-left: 10px;padding-right:40px;
+    background: -webkit-linear-gradient(top, #ccc 10px, #fff 40%);font-size: 14px;padding-top: 6px;
+    /*background: linear-gradient(to bottom ,#ccc,#fff );*/}
+ .payment .L_box   #U_shopping .checkbox{border-radius: 50% 50%;}
+.payment .L_box   #U_shopping .xiao{font-size: 10px;}
+.payment .L_box   #U_shopping .gengxiao{font-size: 8px;color:#999999;margin-left: 4px;}
+ .payment .L_box   #U_shopping .shuzi{font-size: 10px;padding-left: 12px;color:green;}
+ .payment .L_box   #U_shopping .address{margin-top:16px;background-color: #F88C1A;height: 34px;width: 120px;font-weight: bold;color:#fff;line-height: 34px;font-size: 12px;text-align: center;margin-left: 6px;}
+
+    /*<!-- 浮动效果部分 -->*/
+.payment .L_box  #youhui{margin-left: 10px;margin-top: 10px;width: 713px;height: 100px;}
+.payment .L_box   #youhui1{float: left;margin-right: 10px;padding-left: 10px;padding-right:40px;}
+ .payment .L_box    .details{display: none;
+            position:absolute;padding: 10px;width: 200px;border:1px solid #f60;background-color: #ffc;
+        }
+.payment .L_box  .details::before,.details::after{
+            content:'';
+            position:absolute;top: -20px;left: 15px;border:10px solid transparent;border-bottom-color: #f60;
+        }/*transparent透明的*/
+.payment .L_box .details::after{top:-18px;border-bottom-color:#ffc;}
+
+
+.payment .L_box   #U_shopping .free{font-size: 8px;color:#000;margin-left: 4px;}
+ .payment .L_box   #U_shopping .free1{font-size: 10px;padding-left: 12px;color:green;}
+
+.payment .L_box   #U_shopping h3{margin-left: 10px;font-weight: bold;}
+.payment .L_box   #U_shopping .cc{margin-right: 4px; }
+.payment .L_box   #U_shopping .why{font-size: 12px;color:#999999;font-weight: normal;}
+
+.payment .L_box   #U_shopping .need{margin-top: 40px;margin-left: 10px;}
+.payment .L_box   #U_shopping a{color:#000;margin-left: 4px;}
+
+/*3payment部分*/
+.payment .L_box   #U_shopping .payment{margin-top: 60px;}
+.payment .L_box form{margin-left: 6px;}
+.payment .L_box .AACC{width: 712px;height: 54px;margin-top: 10px;}
+.payment .L_box .tishi{float: left;}
+.payment .L_box  .enter{font-size: 10px;}
+.payment .L_box .input{width: 180px;height: 24px;border:1px solid #ccc;}
+.payment .L_box  #apply{width: 54px;height: 24px;background-color: #FC5A07;color:#fff;}
+
+.payment .L_box #details1{
+            display: none;
+            position:absolute;padding: 10px;width: 100px;height:40px;border:1px solid #f60;background-color: #ffc;top:800px;right:670px;font-size: 12px;
+        }
+       
+.payment .L_box #details1::before,#details1::after{
+            content:'';
+            position:absolute;top:-20px;left:15px;
+            border:10px solid transparent;border-bottom-color: #f60;}/*transparent透明的*/
+.payment .L_box  #details1::after{top:-18px;/*left:15px;*/border-bottom-color:#ffc;}
+
+.payment .L_box  .choose{float: right;font-size: 10px;margin-right: 10px;}
+.payment .L_box dl{height: 340px;width: 722px;}
+.payment .L_box dl dd{font-weight: bold;margin-bottom: 30px;}
+.payment .L_box dl  dt{margin-bottom: ;margin-bottom:  30px;}
+.payment .L_box .help{margin-left: 16px;font-size: 10px;color:#DEDEDE;}
+.payment .L_box .checkout{width: 145px;height: 34px;background-color: #FC5A07;color:#fff;font-weight: bold;float: right;margin-right: 10px;}
+
+
+/*-----------------------金秋-------------------*/
+
+.fixed{  position:fixed; top:0; z-index:2;  }
+#tou{height: 100px;background-color:pink;}
+#r_box .cont{width: 252px;border:1px solid #CC0000;margin-right:100px;}
+#r_box .cont #box1{height: 197px;font-size:14px;border-bottom: 2px solid #000;background-color:#F9FAFF;}
+#box1 li{line-height: 25px;height: 25px;}
+#box1 ul li span{ font-size:14px;padding-left: 10px;}
+#box1 ul li:last-child{color:#D60000;border-top:1px dashed #000;}   
+#box1 ul li span:nth-child(2){float:right;padding-left: 66px;padding-right: 4px;}
+#Big .cont{width: 250px;border:1px solid #ccc;margin-right:100px;}
+#Big .cont #box2 li{padding-bottom: 10px;}
+#Big .cont #box2{position:relative;}
+#Big .cont #box2 h2{width: 16px;height: 27px;background:url("../images/biji.png") no-repeat;position:absolute;top:1px;left:15px;}
+#Big .cont #box2 h6{margin-top: 14px;padding-left: 40px;color:#3366CC;}
+
+#box2 #goods li img,#box3 #goodw img{float:left;}
+#box2 #goods li p,#box3 #goodw li p{font-size:14px;color:#000;text-decoration: underline;
+    padding-left: 70px;}
+#box2 #goods li span,#box3 #goodw li span{font-size:14px;padding-left: 10px;}
+
+#box2 #goods li h3,#box3 #goodw li h3{font-size:14px;padding-left: 70px;}
+#box3{background-color:#EFEFEF;}
+#box3 .bb{height: 48px;background-color:#DFDFDF;margin-top: 9px;}
+#box3 .bb h4{padding-left: 5px;font-size:14px;font-weight: bold;}
+#box3 .bb h5{padding-left: 5px;font-size:14px;}
+#box3 .bb span{color:red;}
