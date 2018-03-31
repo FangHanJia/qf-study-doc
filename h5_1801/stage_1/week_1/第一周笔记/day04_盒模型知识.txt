@@ -1,0 +1,13 @@
+一、盒模型
+    1、组成：content内容+padding内填充+border边框+margin外边距。
+    2、width、height指的是content的大小，所以一旦要保证原来的盒子模型大小不变，则添加了padding或者border后，width、height要相应的减少。
+    3、内填充padding：
+        (1)遵循顺时针的顺序：上右下左。
+        (2)背景会从padding的区域开始摆放，background-position：0 0;--位于padding的左上角。
+       （3）作用：
+            [1]、用来调整内容在容器中的位置
+            [2]、用来调整子元素在父元素的位置
+    4、外边距margin：
+        （1）margin区域不应用背景。
+        （2）margin数值可以为负数。
+

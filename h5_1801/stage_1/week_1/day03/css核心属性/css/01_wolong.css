@@ -1,0 +1,327 @@
+/* 
+* @Author: Marte
+* @Date:   2018-01-10 20:23:57
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-11 21:38:02
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border:0;
+}
+ol, ul ,li{
+    list-style: none;
+} 
+a{
+    text-decoration: none;
+}
+header{
+    width: 1000px;
+    height: 620px;
+    margin: 0 auto;
+}
+header .w_logo{
+    padding:35px 20px;
+    height:96px;
+    box-sizing: border-box;
+}
+header .w_logo .box{
+    height:28px;
+    width: 960px;
+}
+header .w_logo .box img{
+    width:246px;
+    height: 28px;
+    float:left;
+}
+header .w_logo .box .search{
+    height: 28px;
+    width: 228px;
+    float:right;
+}
+header .w_logo .box .search input{
+   outline: none;
+    border:none;   
+}
+header .w_logo .box .search #w_input{
+    width:185px;
+    height: 26px;
+    float:left;
+    padding-left: 10px;
+    border:1px solid gainsboro;
+    border-right: none;
+    color:gray;
+}
+header .w_logo .box .search #w_btn{
+    width:32px;
+    height: 28px;
+    color:gray;
+    font-size: 12px;
+    text-align: center;
+    line-height: 14px;
+    border-left:none;
+}
+header .w_logo .box .search #w_btn:active{
+   background-color: orangered;
+   color:white;
+}
+
+header nav{
+    height:60px;
+    background-color: #303030;
+    padding:0 20px;
+    box-sizing: border-box;
+}
+header nav ul{
+    font-size: 0;
+}
+header nav ul li{
+   width: 119px;
+   height: 60px;
+   float:left;
+   font-size: 14px;
+   text-align: center;
+   line-height: 60px;
+   border-right: 0.5px solid gray;
+}
+header nav ul li:nth-child(8){
+  
+   border-right:none;
+}
+header nav ul li a{
+  color:white;
+}
+header nav ul li:hover {
+  /*color:orangered;*/
+  background-color:orangered;
+}
+header .w_loop{
+    height:466px;
+    background: url(../images/bz2.jpg) no-repeat;
+    background-position: right bottom;
+    overflow: hidden;
+}
+section{
+    height:548px;
+    width:1000px;
+    margin:0 auto;
+    padding: 0 18px;
+    box-sizing: border-box;
+}
+section .w_news {
+    height:240px;
+}
+section .w_news div{
+   float: left;
+}
+section .w_news .news{
+    width:480px;
+    height:240px;
+
+}
+section .w_news .news h3,
+section .w_news .introduction h3,
+section .w_news .recruit h3{
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+section .w_news .news ul li:nth-child(1){
+    margin-top:30px;
+    
+}
+section .w_news .news ul li{
+    margin-top:10px;
+    width: 480px;
+    height: 14px;
+    /*list-style-type: disc;*/
+    /*list-style-position: inside;*/
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+section .w_news .news ul li p{
+   float:left;
+   font-size: 12px;
+   color:gray;
+}
+section .w_news .news ul li span{
+   float:right;
+   font-size: 12px;
+   color:gray;
+}
+
+section .w_news .introduction{
+    width:240px;
+    height:240px;
+    background-color: #F1F1F1;
+    padding:0 25px;
+    box-sizing: border-box;
+    position:relative;
+    z-index: -1;
+
+}
+section .w_news .introduction .p1{
+   font-size: 14px;
+   line-height: 28px;
+   margin-top: 20px;
+}
+section .w_news .introduction .p2{
+   font-size: 12px;
+   line-height: 24px;
+   margin-top: 10px;
+   color:gray;
+}
+
+section .w_news .recruit{
+    width:244px;
+    height:240px;
+    padding:0 25px;
+    box-sizing: border-box;
+}
+section .w_news .recruit .p3{
+   font-size: 14px;
+   line-height: 26px;
+   margin-top: 20px;
+}
+
+section .w_news .recruit .more{
+   width: 66px;
+   height:20px;
+   font-size: 8px;
+   line-height: 14px;
+   border:none;
+   outline:none;
+   background-color:gray;
+   color:white;
+   border-radius: 4px;
+   margin-top: 30px;
+}
+section .w_news .recruit .more:active{
+   background-color:orangered;
+}
+section .w_news .recruit img{
+    width:104px;
+    height:74px;
+    float:right;
+}
+
+section .w_market{
+    height:306px;
+    padding:20px 0;
+    box-sizing: border-box;
+}
+section .w_market h3{
+    font-size: 18px;
+    line-height: 38px;
+    font-weight: 400;
+}
+section .w_market div{
+    float:left;
+    width:239px;
+    height:238px;
+    border:1px solid ghostwhite;
+}
+section .w_market div img{
+    margin-top: 10px;
+    width:208px;
+    height:138px;
+}
+section .w_market div .w_text{
+   font-size: 14px;
+   line-height: 26px;
+}
+
+footer{
+    width:1000px;
+    height:330px;
+    margin:0 auto;
+    background-color: gainsboro;
+}
+footer .g_links{
+    height:250px;
+    background-color: #F1F1F1;
+}
+footer .g_links div{
+    float:left;
+    margin-right: 50px;
+    padding:20px 10px;
+    box-sizing: border-box;
+}
+footer .g_links div:nth-child(3){
+    margin-right: 0;
+}
+footer .g_links .productCenter{
+    height:250px;
+    width:452px;
+}
+footer .g_links .productCenter h2,
+footer .g_links .research h2,
+footer .g_links .network h2{
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+footer .g_links .productCenter ul,
+footer .g_links .research ul{
+   float:left;
+   margin-right: 55px;
+   margin-top: 20px;
+}
+footer .g_links .productCenter ul li,
+footer .g_links .research ul li{
+    list-style-image:url(../images/arror.jpg);
+    list-style-position: inside;
+    font-size: 12px;
+    line-height: 28px;
+}
+footer .g_links .research{
+    height:250px;
+    width:152px;
+}
+footer .g_links .network{
+    height:250px;
+    width:258px;
+}
+footer .g_copyright{
+    height:80px;
+    background-color: white;
+    padding:23px 47px 0 0;
+    box-sizing: border-box;
+}
+footer .g_copyright div{
+    float:left;
+}
+footer .g_copyright .about{
+    width: 440px;
+    height:12px;
+    
+}
+footer .g_copyright .about ul li{
+    float: left;
+    font-size: 12px;
+    width: 62px;
+    height:12px;
+    border-right: 1px solid gray;
+    /*padding:0 20px;*/
+    /*box-sizing: border-box;*/
+    text-align: center;
+    line-height: 12px;
+   color:gray;
+
+}
+footer .g_copyright .about ul li:nth-child(4){
+    
+    border-right: none;
+   
+}
+footer .g_copyright .copyright{
+    float:right;
+}
+footer .g_copyright .copyright .p_text{
+   font-size: 12px;
+   color:gray;
+   
+}

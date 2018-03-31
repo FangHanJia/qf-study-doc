@@ -1,0 +1,201 @@
+/* 
+* @Author: Marte
+* @Date:   2018-01-12 19:30:28
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-15 09:43:05
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border:0;
+}
+ol, ul ,li{
+    list-style: none;
+} 
+a{
+    text-decoration: none;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
+#box{
+    width:100%;
+}
+/*提取相同的属性-版心内容*/
+.container{
+    width: 1000px;
+    margin:0 auto;
+}
+#qf_header{
+    width: 100%;
+    height: 62px;
+    background-color: black;
+}
+#qf_header h1{
+    float:left;
+    width: 170px;
+    height: 62px;
+    background:url(../images/qf_logo.png)no-repeat ;
+}
+#qf_header .container{
+    height: 62px;
+}
+
+#qf_header ul{
+    float: right;
+    width:726px;
+    height: 62px;
+}
+#qf_header ul>li{
+    float: left;
+    
+}
+#qf_header ul li:nth-child(9) a{
+    border-right: 0 none;    
+}
+#qf_header ul li:hover a{
+    background-color: #F15A23;
+}
+#qf_header ul>li>a{
+    display: block;
+    height: 62px;
+    color:white;
+    padding:0px 15px 0 12px;
+    font-size: 14px;
+    line-height: 62px;
+    border-right: 1px solid gainsboro;
+}
+#qf_banner {
+    height: 270px;
+    width: 100%;
+    background-color: white;
+    background:url(../images/aboutBanner.jpg) no-repeat  center;
+}
+#qf_introduction .container{
+    height: 45px;
+    background-color: white;
+    font-size: 14px;
+    line-height: 45px;
+    padding-left:  30px;
+}
+#qf_main{
+    border-top: 1px solid gainsboro;
+}
+#qf_main .container{
+    height: 688px;
+}
+#qf_main .main1{
+    width: 220px;
+    height:604px;
+    float:left;
+    text-align: center;
+    padding:10px 0;
+    background-color: gainsboro;
+}
+#qf_main .main1 ul{
+    margin-top: 30px;
+}
+#qf_main .main1 ul li{
+    font-size:14px;
+    line-height: 44px;
+    border-top: 1px solid gray;
+    padding:8px 0;
+}
+#qf_main .main1 ul li:nth-child(3){
+    
+    border-bottom:  1px solid gray;
+}
+#qf_main .main1 ul li:hover{
+    background-color: #F15A23;
+}
+#qf_main .main1 h2,#qf_main .main1 h2,#qf_main .main1 ul li h3,{
+    font-weight: 400;
+}
+#qf_main .main1 h2{
+    font-size:22px;
+    line-height: 42px;
+}
+#qf_main .main1 h4{
+    font-size:12px;
+    line-height: 14px;
+}
+#qf_main .main2{
+    width: 738px;
+    height:604px;
+    float:right;
+}
+#qf_main .main2 h3{
+    font-size: 20px;
+    line-height: 44px;
+    font-weight: 400;
+    /*text-decoration: underline;*/
+    padding:1px 0;
+    border-bottom: 2px solid #F15A23;
+}
+#qf_main .main2 p{
+    text-indent: 2em;
+    font-size: 14px;
+    line-height: 30px;
+    margin-bottom: 38px;
+}
+#qf_main .main2 .p3 span{
+    color:#F15A23;
+}
+ #box #q_links{
+    width:100%;
+    background-color: #222222;
+
+}
+#box #q_links .container{
+    height: 214px;
+}
+#box #q_links .container div{
+    float:left;
+}
+#box #q_links .container .about{
+    height: 134px;
+    width:464px;
+    padding:40px 10px;
+
+}
+#box #q_links .container .about dl{
+    float:left;
+    font-size: 12px;
+    margin-right: 40px;
+    text-align: center;
+    color:white;
+}
+#box #q_links .container .about dt{
+    line-height: 36px;
+}
+#box #q_links .container .about dd{
+    line-height: 26px;
+    color:gray;
+}
+#box #q_links .container .map{
+    width:310px;
+    height:214px;
+    margin-right: 10px;
+    background:url(../images/trainService_main_pic1.png) no-repeat;
+}
+#box #q_links .container .code{
+    width:188px;
+    height:214px;
+    background:url(../images/qf_code.jpg) no-repeat 0 center;
+}
+#box #q_copyright{
+    width:100%;
+    background-color: black;
+}
+#box #q_copyright .container{
+    height: 44px;
+}
+#box #q_copyright .container p{
+    font-size: 14px;
+    line-height: 44px;
+    text-align: center;
+    color:gray;
+}

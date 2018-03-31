@@ -1,0 +1,83 @@
+/* 
+* @Author: Marte
+* @Date:   2018-01-10 20:23:57
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-10 20:54:51
+*/
+header{
+    width: 1000px;
+    height: 620px;
+    background-color:darkcyan ;
+    margin: 0 auto;
+}
+header .w_logo{
+    height:96px;
+    background-color: gainsboro;
+}
+header nav{
+    height:60px;
+    background-color: dimgray;
+}
+header .w_loop{
+    height:466px;
+    background: url(../images/bz5.jpg) no-repeat;
+    background-position: center;
+}
+section{
+    height:548px;
+    width:1000px;
+    margin:0 auto;
+    background-color: darkblue;
+    padding: 0 18px;
+    box-sizing: border-box;
+}
+section .w_news {
+    height:240px;
+    background-color: darkgray;
+}
+section .w_news div{
+   float: left;
+}
+section .w_news .news{
+    width:480px;
+    height:240px;
+    background-color: pink;
+
+}
+section .w_news .introduction{
+    width:240px;
+    height:240px;
+    background-color: red;
+
+}
+section .w_news .recruit{
+    width:244px;
+    height:240px;
+    background-color: purple;
+
+}
+section .w_market{
+    height:306px;
+    background-color: darkcyan;
+}
+section .w_market div{
+    float:left;
+    width:239px;
+    height:306px;
+    border:1px solid ghostwhite;
+}
+
+footer{
+    width:1000px;
+    height:330px;
+    margin:0 auto;
+    background-color: gainsboro;
+}
+footer .g_links{
+    height:250px;
+    background-color: dimgrey;
+}
+footer .g_copyright{
+    height:80px;
+    background-color: gainsboro;
+}

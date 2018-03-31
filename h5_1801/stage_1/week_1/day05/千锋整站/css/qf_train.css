@@ -1,0 +1,263 @@
+/* 
+* @Author: Marte
+* @Date:   2018-01-13 15:28:57
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-14 22:15:24
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border:0;
+}
+ol, ul ,li{
+    list-style: none;
+} 
+a{
+    text-decoration: none;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
+#box{
+    width: 100%;
+}
+.container{
+    width: 1000px;
+    margin:0 auto;
+}
+#qf_header {
+    width:100%;
+    height:62px;
+    background-color: black;
+}
+#qf_header h1 {
+    width:200px;
+    height:62px;
+    background:url(../images/qf_logo.png) no-repeat;
+    float: left;
+}
+#qf_header ul {
+   width:726px;
+   height: 62px;
+   float:right;
+}
+#qf_header ul li{
+   float:left;
+}
+#qf_header ul li:hover a{
+   background-color: #F15A23;
+}
+#qf_header ul li a{
+   display: block;
+   height:62px;
+   padding:0 15px 0 12px;
+   color:white;
+   font-size: 14px;
+   line-height: 62px;
+   border-right: 1px solid gainsboro;
+}
+#qf_header ul li:nth-child(9) a{
+   
+   border-right: 0 none;
+}
+#qf_banner {
+    height:266px;
+    background-color: white;
+    background:url(../images/trainService_banner_pic1.png) no-repeat center;
+}
+#qf_introduction{
+    border-bottom:1px solid gainsboro ;
+    background-color: white;
+
+}
+#qf_introduction .container{
+    height:44px;
+}
+#qf_introduction .container img{
+    height:44px;
+    float:left;
+}
+#qf_introduction .container h3{
+    line-height:44px;
+    font-size: 14px;
+    font-weight: 400;
+}
+#qf_main .container{
+    height: 1432px;
+    background-color: white;
+}
+#qf_main .cont{
+    height: 1390px;
+}
+#qf_main .cont .main_left{
+    width: 224px;
+    height: 1374px;
+    float:left;
+    background-color: gainsboro;
+    padding-top: 16px;
+    text-align: center;
+}
+#qf_main .cont .main_left h2{
+    font-size:24px ;
+    line-height: 30px;
+    font-weight: 400;
+}
+#qf_main .cont .main_left h4{
+    font-size:12px ;
+    line-height: 18px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+#qf_main .cont .main_left ul li{
+    font-size:16px ;
+    line-height: 52px;
+    font-weight: 400;
+    border-top: 1px solid #D4D4D4;
+}
+
+#qf_main .cont .main_left ul li:nth-child(2){
+    
+    border-bottom: 1px solid #D4D4D4;
+}
+#qf_main .cont .main_left ul li:hover{
+   background-color: #F15A23;
+}
+#qf_main .cont .main_right{
+    width: 738px;
+    height: 1382px;
+    float:right;
+    padding-top: 8px;
+}
+#qf_main .cont .main_right .main_right_1{
+    width: 735px;
+    height: 192px;
+}
+#qf_main .cont .main_right .main_right_1 img{
+    float:left;
+}
+#qf_main .cont .main_right .main_right_1 h3{
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+#qf_main .cont .main_right .main_right_1 .underline_ul li{
+    float:left;
+    width:108px;
+    border-bottom: 2px solid #F15A23;
+}
+#qf_main .cont .main_right .main_right_1 .underline_ul li:nth-child(2){
+   width:628px;
+   float:right;
+   border-bottom: 1px  dashed gainsboro;
+}
+#qf_main .cont .main_right .main_right_1 .imgs_ul li{
+   float:left;
+   /*padding:15px 10px;*/
+   height: 114px;
+   width: 137px;
+   padding:20px 10px 0 0;
+   text-align: center;
+}
+#qf_main .cont .main_right .main_right_1 .imgs_ul li span{
+   font-size: 14px;
+   line-height: 34px;
+}
+#qf_main .cont .main_right .main_right_1 .imgs_ul li img{
+   width: 128px;
+   height: 94px;
+}
+#qf_main .cont .main_right .main_right_2{
+    width: 738px;
+    height: 454px;
+    border-bottom: 1px solid gainsboro;
+}
+#qf_main .cont .main_right .main_right_2 .text_ul li{
+    font-size: 14px;
+    line-height: 42px;
+    height:42px;
+    width:738px;
+    border-bottom: 1px dashed gainsboro;
+    
+}
+#qf_main .cont .main_right .main_right_2 .text_ul li p{
+    float:left;
+}
+#qf_main .cont .main_right .main_right_2 .text_ul li span{
+    float:right;
+
+}
+#qf_main .cont .main_right .main_right_3{
+    width: 738px;
+    height: 594px;
+    background:url(../images/trainService_main_pic1.png) no-repeat;
+}
+#qf_main .cont .main_right .main_right_4{
+    width: 738px;
+    height: 144px;
+    background:url(../images/trainService_main_pic2.png) no-repeat;
+}
+#links{
+    width:100%;
+    height:212px;
+    background-color: #222222;
+}
+#links .container{
+    height: 212px;
+}
+#links .container div{
+    float:left;
+}
+#links .link1{
+    height: 214px;
+    width: 490px;
+    text-align: center;
+}
+#links .link1 dl{
+   float:left;
+   font-size: 12px;
+   line-height: 36px;
+   padding:30px 31px 30px 10px;
+
+}
+#links .link1 dl dt{
+   color:white;
+}
+#links .link1  dd{
+   color:dimgray;
+}
+#links .link2{
+    height: 214px;
+    width: 290px;
+    background:url(../images/trainService_links_pic1.png) no-repeat;
+}
+#links .link3{
+    height: 174px;
+    width: 172px;
+    padding:20px;
+    text-align: center;
+}
+#links .link3 img{
+    height: 146px;
+    
+}
+#links .link3 p{
+    font-size: 12px;
+    line-height: 18px;
+    color:dimgray;
+}
+#copyright{
+    width: 100%;
+    background-color: black;
+}
+#copyright .container{
+    height: 44px;
+}
+#copyright .container p{
+    font-size: 12px;
+    line-height: 42px;
+    text-align: center;
+    color:white;
+}

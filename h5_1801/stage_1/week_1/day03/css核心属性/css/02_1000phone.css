@@ -1,0 +1,89 @@
+/* 
+* @Author: Marte
+* @Date:   2018-01-11 22:09:55
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-01-12 10:50:06
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border:0;
+}
+ol, ul ,li{
+    list-style: none;
+} 
+a{
+    text-decoration: none;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
+header{
+    height: 330px;
+    width: 100%;
+}
+header nav{
+    height: 60px;
+    background-color:#232323;
+}
+header nav .nav_div{
+    width:1000px;
+    margin:0 auto;
+
+}
+header nav .nav_div>a{
+    float: left;
+}
+header nav .nav_div a img{
+    height: 60px;
+    width: 160px;
+}
+header nav .nav_div ul{
+    width: 630px;
+    height:60px;
+    float:right;
+}
+header nav .nav_div ul li{
+    float:left;   
+    width:70px;
+    height: 60px;
+    line-height:60px;
+}
+header nav .nav_div ul li:hover{
+    background-color: orangered;
+}
+
+header nav .nav_div ul li a{
+    padding:0 20px;
+    height: 14px;
+    border-right: 1px solid gray;
+    box-sizing: border-box;
+    color:white;
+    font-size: 14px;
+}
+header nav .nav_div ul li a:visited {
+    background-color: #F15A23;
+}
+header nav .nav_div ul li:nth-child(9) a{
+    border-right:none;
+}
+
+
+header .loop{
+    height: 268px;
+    width: 1806px;
+    background-color:white;
+}
+section{
+    height: 1476px;
+    width: 100%;
+    background-color:darkcyan;
+}
+footer{
+    height: 258px;
+    width: 100%;
+    background-color:#222222;
+}
