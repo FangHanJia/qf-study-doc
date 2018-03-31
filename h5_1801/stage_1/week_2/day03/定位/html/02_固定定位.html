@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            height: 3000px;
+        }
+        .box{
+            margin: 0 auto;
+            width: 400px;
+            height: 400px;
+            background-color: #ccc;
+            border:1px solid red;
+            position: fixed;
+            top: 50%;
+            left:50%;
+            margin-left: -200px;
+            margin-top: -200px;
+        }
+        .box .p1{
+            height: 40px;
+            width: 400px;
+            background-color: orangered;
+            position:absolute;
+            top:180px;
+            left:0;
+            transition:all 1s;
+        }
+        .box .p1:hover{
+            position:absolute;
+            left:360px;
+            width:40px;
+        }
+        .box .p1 span{
+            display: block;
+            height: 40px;
+            width: 40px;
+            background-color: purple;
+            position:absolute;
+            top: 0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p class="p1"><span></span></p>
+    </div>
+</body>
+</html>

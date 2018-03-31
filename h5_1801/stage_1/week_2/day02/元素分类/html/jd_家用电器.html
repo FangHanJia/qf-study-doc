@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    img{
+        border:0;
+    }
+    ol, ul ,li{list-style: none;} 
+        .ele_header{
+            width: 1210px;
+            height: 35px;
+            margin: 0 auto;
+            border-bottom: 1px solid #C81622;
+        }
+        .ele_header h1{
+            float: left;
+            height: 35px;
+            width: 130px;
+            background:url(../images/jd_r1_c1.jpg) no-repeat  left center;
+        } 
+        .ele_header ul{
+            float: right;
+            height: 34px;
+            /*width: 716px;*/
+            background-color: #FFFFFF;
+            border:1px solid gainsboro;
+            border-bottom: 0 none;
+        } 
+        .ele_header ul li{
+            float: left;
+        }
+        /*加上相应的border得相应的减去margin：
+         
+        */
+        .ele_header ul li:hover a{
+           border-right: 1px solid orangered;
+           /*margin-right:-1px;*/
+           border-left:  1px solid orangered;
+           margin-left: -1px;
+           border-top:  3px solid orangered;
+           margin-top: -1px ;
+           padding-top: 8px;
+           border-bottom: 1px solid white;
+           color:#C81622;
+        }
+         .ele_header ul .last:hover a{
+            margin-right: -1px;
+
+        }
+        .ele_header ul li:hover span{
+           border-right: 0 none;
+            
+        }
+        /*导航条的分割线以span的左右padding来撑开，
+          导航条的高度以a的高度padding-top来撑开
+        */
+        .ele_header ul li a{
+            display: block;
+            height: 24px;
+            padding-top: 10px;
+            text-decoration: none;
+            color:dimgrey;
+        }
+       
+        .ele_header ul li a span{
+            display:block;
+            height: 14px;
+           padding:0 17px;
+           font-size: 12px;
+           line-height: 14px;
+           border-right: 1px solid gainsboro;
+        }
+        
+        
+       
+       
+    </style>
+</head>
+<body>
+    <div class="ele_header">
+        <h1></h1>
+        <ul>
+            <li>
+                
+                <a href="#"><span>家用</span>
+                </a></li>
+            <li>
+                <a href="#"><span>家用电器</span></a></li>
+            <li><a href="#"><span>家用电器</span></a></li>
+            <li><a href="#"><span>家用电器</span></a></li>
+            <li><a href="#"><span>家用电器</span></a></li>
+            <li><a href="#"><span>家用电器</span></a></li>
+            <li><a href="#"><span>家用/电器</span></a></li>
+            <li><a href="#"><span>家用电</span></a></li>
+            <li class="last"><a href="#"><span style="border-right:0">家用电器</span></a></li>
+        </ul>
+
+    </div>
+   
+</body>
+
+</html>

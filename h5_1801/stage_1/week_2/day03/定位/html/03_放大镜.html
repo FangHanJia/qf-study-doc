@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        .pics{
+            width: 200px;
+            height: 600px;
+            margin:0 auto;
+            position:relative;
+        }
+        img{
+            width: 200px;
+            height: 400px;
+        }
+        .pics:hover img{
+            position:absolute;
+            margin-left: -50px;
+            margin-top: -50px;
+            width: 300px;
+            height: 500px;
+        }
+        .cover{
+            width:200px;
+            height: 200px;
+            position: fixed;
+            top: 50%;
+            left:50%;
+            margin-top:-100px;
+            margin-left:-100px;
+            background-color: green;
+            opacity: 0.3;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="pics"><img src="../images/bz5.jpg"/></div>
+    <div class="pics"><img src="../images/bz5.jpg"/></div>
+    <div class="pics"><img src="../images/bz5.jpg"/></div>
+    <div class="pics"><img src="../images/bz5.jpg"/></div>
+    <div class="cover"></div>
+</body>
+</html>

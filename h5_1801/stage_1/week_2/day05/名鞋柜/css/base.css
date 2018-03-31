@@ -1,0 +1,421 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img,input{ margin:0; padding:0; }
+fieldset, img,input,button { border:0 none; padding:0;margin:0;outline-style:none; }   /*去掉input等聚焦时的蓝色边框*/
+ul, ol { list-style:none; }
+/*input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}*/
+select, input { vertical-align:middle;}
+/*select, input, textarea { font-size:12px; margin:0; }*/
+textarea { resize:none; } /*防止拖动*/
+img {border:0; vertical-align:middle; }  
+/*  去掉图片低测默认的3像素空白缝隙，或者用display：block也可以*/
+table { border-collapse:collapse; }
+
+
+/*添加公共样式*/
+/*body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#666;
+    background:#fff
+}*/
+/*.clearfix:before,.clearfix:after {  /*清楚浮动*/
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+*/
+
+/*a {color:#666; text-decoration:none; }
+a:hover{color:#C81623;}*/
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:1em;}  /*设置h标签的大小，设置跟父亲一样大的字体font-size:100%;*/
+s,i,em{font-style:normal;text-decoration:none;}
+
+a{
+    text-decoration: none;
+}
+/*公共类*/
+.container {  /*版心 提取 */
+    width: 1190px;
+    margin:0 auto;
+}
+.fl {
+    float:left;
+}
+.fr {
+    float:right;
+}
+.al {
+    text-align:left;
+}
+.ac {
+    text-align:center;
+}
+.ar {
+    text-align:right;
+}
+.hide {
+    display:none;
+}
+.clearfix:after{
+    content:"";
+    height:0;
+    clear:both;
+    overflow:hidden;
+    visibility: hidden;
+    zoom: 1; 
+    display:block;
+}
+
+.font12{ font-size: 12px;}
+.font14{ font-size: 14px;}
+.font16{ font-size: 16px;}
+
+/*公共部分*/
+/*头部导航开始*/
+#famosshoes{
+    /*width: 100%;*/
+    /*height: 3000px;*/
+    min-width: 1190px;
+}
+#f_header{
+    /*width:100%;*/
+    background: #EEEEEE;
+    border-bottom:1px solid #EEEEEE;
+
+}
+#f_header .container{
+    height:25px;
+}
+#f_header ul{
+    /*height:25px;*/
+    float:right;
+}
+#f_header ul li{
+    float:left;
+    position: relative;
+}
+#f_header ul li a{
+    float:left;
+    height:25px;
+    font-size: 14px;
+    line-height: 25px;
+    color: dimgray;
+}
+#f_header ul>.li1>a{
+    color: #FF6501;
+}
+#f_header ul>.li6>a{
+    font-weight: 600;
+    color: #B6101A;
+}
+#f_header ul li a span{
+   padding:0 16px 0 15px;
+   border-right: 1px solid #D5D5D5;
+}
+/*先撑大放图片的位置，左右位置以span撑开*/
+#f_header ul .icon_left span{
+   padding-left: 35px;
+  /*放左边的背景图片*/
+}
+#f_header ul .icon_right span{
+   padding-right: 26px;
+  /*放右边的背景图片*/
+}
+#f_header ul .icon_right .icon_delta{
+    display:block;
+    /*给右边的背景图片设置宽高*/
+    width:9px;
+    height: 6px;
+    background:url("../images/sprits.png") 0 0 ;
+    position:absolute;
+    top: 50%;
+    right:9px;
+    margin-top: -3px;
+
+}
+/*给左边的背景图片设置宽高*/
+#f_header ul .icon_left .icon0{
+    display:block;
+    width:22px;
+    height: 17px;
+    background:url("../images/sprits.png") -30px 0 ;
+    position:absolute;
+    top: 50%;
+    left:7px;
+    margin-top: -9px;
+
+}
+#f_header ul .icon_left .icon_qq{
+    background-position: -60px 0;
+
+}
+#f_header ul .icon_left .icon_tel{
+    background-position: -90px 0;
+
+}
+#f_logo {
+    height:77px;
+    /*width: 100%;*/
+    background-color: white;
+}
+#f_logo .logo_l{
+    width:422px;
+    /*height:77px;*/
+}
+#f_logo .logo_l h1{
+    height:58px;
+    width: 142px;
+    background:url(../images/f_logo.jpg) no-repeat left top  ;
+    padding-left:280px ;
+    font-size: 16px;
+    line-height: 58px;
+    padding-top: 19px;
+}
+
+#f_logo .logo_c{
+    width:329px;
+    /*height:61px;*/
+    padding:16px 0 0 118px;
+}
+#f_logo .logo_c .txt{
+    width:253px;
+    height:26px;
+    border:1px solid gainsboro;
+    border-right: 0 none;
+    padding-left: 10px;
+    line-height: 26px;
+}
+#f_logo .logo_c .btn{
+    width:65px;
+    height:28px;
+    
+}
+#f_logo .logo_c p a{
+   margin-left: 10px;
+    
+}
+
+#f_logo .logo_r{
+    width:83px;
+    height:34px;
+    margin:20px 0   20px 0;
+    padding-left: 45px;
+    position:relative;
+    border:1px solid dimgray;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+    font-size: 12px;
+}
+#f_logo .logo_r i{
+    display:block;
+    width:25px;
+    height:22px;
+    background:url(../images/buycar.jpg) 0 0;
+    position:absolute;
+    top: 50%;
+    left:10px;
+    margin-top: -11px;
+}
+#f_logo .logo_r span{
+    font-size: 12px;
+    line-height: 34px;
+    color:#A21F25;
+    margin:0 3px;
+}
+#f_nav {
+    /*width: 100%;*/
+    /*height: 35px;*/
+    background-color: #A21F25;
+}
+#f_nav .container{
+    /*height: 35px;*/
+}
+#f_nav .tab_l{
+    float:left;
+    /*height: 35px;*/
+    width: 190px;
+    background-color: #B9363C;
+    position:relative;
+}
+#f_nav .tab_l>a{
+    display:block;
+    color:white;
+    height: 35px;
+    font-size: 15px;
+    line-height: 35px;
+    text-align: center;
+}
+#f_nav .tab_l .tab2_l{
+    display:none;
+    width: 190px;
+    height: 384px;
+    background-color: #1F1909;
+    position:absolute;
+    top: 35px;
+}
+#f_nav .tab_l .tab2_l>li{
+    position:relative;
+}
+#f_nav .tab_l:hover .tab2_l{
+    display:block;
+   
+}
+/*需要改进*/
+#f_nav .tab_l:hover .tab2_l>li:hover i{
+    background:url(../images/t_delta.png) no-repeat 0 0;
+    
+}
+#f_nav .tab_l .tab2_l>li>a{
+    transition: all 0.8s;
+    
+}
+#f_nav .tab_l .tab2_l>li:hover>a{
+    /*width:140px;*/
+    transform: translateX(20px);
+    
+}
+#f_nav .tab_l:hover .tab2_l>li:hover{
+    background-color:black;
+}
+#f_nav .tab_l:hover .tab2_l>li>a:hover{
+    color:white;
+    text-decoration: underline;
+}
+#f_nav .tab_l .tab2_l>li>a{
+    display:block;
+    font-size: 12px;
+    line-height: 42px;
+    color:white;
+    width:150px;
+    padding: 0 0px 0 40px;
+    height:42px;
+    background:url(../images/f_sprits_nav2.jpg) no-repeat 0 15px;
+}
+/*#f_nav .tab_l .tab2_l>li:nth-child(2)>a{
+   background-position: 0 -40px;
+}
+#f_nav .tab_l .tab2_l>li:nth-child(3)>a{
+   background-position: 0 -84px;
+}*/
+
+#f_nav .tab_l .tab2_l>li>i{
+    display:block;
+    width:10px;
+    height: 10px;
+    position:absolute;
+    top: 50%;
+    right:10px;
+    margin-top: -5px;
+}
+#f_nav .tab_l>.tab2_l>li>.tab3_l{
+    display:none;
+    width:700px;
+    height: 120px;
+    background-color: #1F1909;
+    position:absolute;
+    top: 0;
+    left:190px;
+}
+#f_nav .tab_l>.tab2_l>li:hover>.tab3_l{
+    display:block;
+    
+}
+
+
+#f_nav .tab_c>li{
+    float:left;
+    position:relative;
+}
+#f_nav .tab_c>li:hover{
+    background-color: #444444;
+
+}
+#f_nav .tab_c>li:hover>a{
+    border-right: 1px solid #A21F25;
+    border-left: 1px solid #A21F25;
+    margin-left: -1px;
+}
+
+#f_nav .tab_c>li:nth-child(2):hover>a{
+    border-left: 1px solid #A21F25;
+    margin-left: -1px;
+}
+#f_nav .tab_c>li:nth-child(1):hover>a{
+    
+    margin-right: -1px;
+}
+#f_nav .tab_c>li:nth-child(1)>a>span{
+    border-right: 0 none;
+    border-left: 0 none;
+}
+
+#f_nav .tab_c>li:hover>a>span{
+    border-right: 0 none;
+}
+#f_nav .tab_c>li>a{
+    float:left;
+    height: 35px;
+    font-size: 15px;
+    line-height: 35px;
+    color:white;
+}
+#f_nav .tab_c>li:nth-child(1)>a{
+    background-color: #444444;
+}
+
+#f_nav .tab_c>li>a>span{
+    /*span不变换-让span自适应*/
+    padding:0 17px 0 21px;
+    border-right: 1px dotted #D7A4A0;
+}
+#f_nav .tab_c>li .tab2_c{
+    width:500px;
+    height: 200px;
+    background-color:#1F1909;
+    position:absolute;
+    top: 35px;
+    left:0;
+    display:none;
+}
+#f_nav .tab_c>li:hover .tab2_c{
+    
+    display:block;
+}
+#f_nav .tab_r>li{
+    float:left;
+}
+#f_nav .tab_r{
+    width: 258px;
+    height: 35px;
+}
+#f_nav .tab_r>li>a{
+    float:left;
+    height:35px;
+    font-size: 15px;
+    line-height: 35px;
+    color:white;
+}
+#f_nav .tab_r>li:nth-child(3)>a{
+   
+    color:#FDCE02;
+}
+#f_nav .tab_r>li>a>span{
+    padding:0 15px;
+    border-right: 1px solid #D09091;
+}
+#f_banner{
+    /*width:100%;*/
+    height:550px;
+    background:url(../images/f_banner_pic1.jpg) no-repeat center;
+}
+
+
+/*尾部部导航开始*/
+#f_copy{
+  width:100%;
+  height: 226px;
+  background:url("../images/f_ocpy.jpg");
+}

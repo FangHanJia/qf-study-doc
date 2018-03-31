@@ -1,0 +1,215 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img,input{ margin:0; padding:0; }
+fieldset, img,input,button { border:0 none; padding:0;margin:0;outline-style:none; }   /*去掉input等聚焦时的蓝色边框*/
+ul, ol { list-style:none; }
+/*input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}*/
+select, input { vertical-align:middle;}
+/*select, input, textarea { font-size:12px; margin:0; }*/
+textarea { resize:none; } /*防止拖动*/
+img {border:0; vertical-align:middle; }  
+/*  去掉图片低测默认的3像素空白缝隙，或者用display：block也可以*/
+table { border-collapse:collapse; }
+
+
+/*添加公共样式*/
+/*body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#666;
+    background:#fff
+}*/
+.clearfix:before,.clearfix:after {  /*清楚浮动*/
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+/*a {color:#666; text-decoration:none; }
+a:hover{color:#C81623;}*/
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:1em;}  /*设置h标签的大小，设置跟父亲一样大的字体font-size:100%;*/
+s,i,em{font-style:normal;text-decoration:none;}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+a{
+ text-decoration: none;   
+}
+/*公共类*/
+.container {  /*版心 提取 */
+    width: 1122px;
+    margin:0 auto;
+}
+.fl {
+    float:left;
+}
+.fr {
+    float:right;
+}
+.al {
+    text-align:left;
+}
+.ac {
+    text-align:center;
+}
+.ar {
+    text-align:right;
+}
+.hide {
+    display:none;
+}
+
+.font12{ font-size: 12px;}
+.font14{ font-size: 14px;}
+.font16{ font-size: 16px;}
+.clearfix::after{
+    content:"";
+    display:block;
+    height: 0;
+    clear:both;
+    overflow: hidden;
+    visibility: hidden;
+    zoom: 1; 
+}
+/*公共部分*/
+/*头部导航开始*/
+#jingcheng{
+    min-width: 1122px;
+}
+#j_header{
+    height:100px;
+    width: 100%;
+    background-color: white;
+     position:fixed;
+    left:0;
+    top: 0;
+    /*margin-left: -595px;*/
+    z-index: 2;
+    box-shadow: 5px 1px 2px gainsboro;
+}
+
+#j_header .container{
+    /*height:100px;*/
+   
+
+}
+#j_header h1{
+    text-indent: -2000px;
+    height: 100px;
+    width:202px;
+    background:url(../images/j_logo.png);
+}
+#j_header .nav_ul>li{
+    float:left;
+}
+#j_header .nav_ul>li>a{
+    display:block;
+    height: 67px;
+    /*width: 34px;*/
+    padding:0 38px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    padding-top: 33px;
+    color:black;
+    margin-right: 1px;
+}
+#j_header .nav_ul>li>a>span{
+    display:block;
+    font-size: 12px;
+    color:gray;
+}
+/*#j_header .nav_ul>li:nth-child(1)>a{
+   background:#EB6514;
+   color:white;
+}
+#j_header .nav_ul>li:nth-child(1)>a>span{
+   color:white;
+}*/
+/*兼容ie8*/
+#j_header .nav_ul>.li1>a{
+    background:#EB6514;
+    color:white;
+}
+#j_header .nav_ul>.li1>a>span{
+   
+    color:white;
+} 
+/*兼容ie8*/
+#j_header .nav_ul>li:hover>a{
+   background:#EB6514;
+   color:white;
+}
+#j_header .nav_ul>li:hover span{
+   color:white;
+}
+#j_banner{
+    height: 530px;
+    width: 100%;
+    background:url(../images/b1.jpg) no-repeat center;
+    margin-top: 100px;
+}
+#j_banner .container{
+    height: 530px;
+    position: relative;
+    overflow:hidden;
+}
+
+#j_banner .banner_l{
+    width:550px;
+    height: 392px;
+    position: absolute;
+    left:0;
+    top: 68px;
+    transform:translateY(-900px);
+    transition:all 0.8s;
+
+    background:url(../images/mac.png) no-repeat;
+}
+#j_banner .banner_r{
+    width:506px;
+    height: 270px;
+    position: absolute;
+    right:0;
+    top: 106px;
+    transform:translateX(1000px);
+    transition:all 0.5s;
+
+}
+/*增加*/
+#j_banner:hover .banner_l{
+    transform:translateY(0px);
+}
+#j_banner:hover .banner_r{
+    transform:translateX(0px);
+}
+/*增加*/
+#j_banner .banner_r h2{
+    font-size: 58px;
+    line-height: 78px;
+    font-weight: bold;
+    color:white;
+}
+#j_banner .banner_r p{
+    font-size: 16px;
+    line-height: 30px;
+    color:white;
+}
+#j_banner .banner_r .p1{
+    margin-bottom: 18px;
+}
+
+#j_footer{
+    height:85px;
+    background-color: black;
+    text-align: center;
+    padding-top: 40px;
+}
+#j_footer p{
+    font-size: 14px;
+    line-height: 30px;
+    color:gray;
+}
+/*尾部部导航开始*/

@@ -1,0 +1,138 @@
+#t_live{
+    background-color: white;
+
+}
+#t_live .container{
+    height:37px;
+    position:relative;
+}
+#t_live h3{
+    font-size: 14px;
+    line-height: 37px;
+    background:url(../images/t_horn.png)no-repeat left;
+    padding-left: 50px;
+}
+#t_live #img2{
+   width: 40px;
+   height: 39px;
+   position:absolute;
+   bottom: 0;
+   left:50%;
+   margin-left:20px;
+}
+#t_special{
+    background-color: #F1F1F1;
+}
+#t_special>.container{
+    height:383px;
+    width: 1026px;
+    padding: 10px 20px 0 20px;
+    background:white;
+    position:relative;
+}
+#t_special .container .code{
+    height:165px;
+    width:124px;
+    position:absolute;
+    left:100%;
+    top: 0;
+    margin-left: 10px;
+}
+#t_special>h3{
+    font-size: 20px;
+    line-height: 30px;
+    background:url(../images/t_video.png)no-repeat 22px center;
+    padding-left: 50px;
+}
+#t_special  .container .cont{
+
+    height:349px;
+    background-color: white;
+    margin-top: 5px;
+}
+#t_special .cont .special_box{
+    width: 300px;
+    height:348px;
+    margin-right: 60px;
+}
+#t_special .cont .special_box h3{
+    width: 270px;
+    background-color: #CCC;
+    font-size: 18px;
+    line-height: 34px;
+    background:url(../images/t_icon.png)no-repeat left center;
+    padding-left: 30px;
+    border-bottom: 2px solid dimgray;
+}
+#t_special .cont .special_box h3 span{
+   float:right;
+   font-size: 14px;
+   color:dimgray;
+}
+#t_special .cont .special_box>img{
+   width: 300px;
+   margin-top: 20px;
+   margin-bottom: 10px;
+}
+#t_special .cont .special_box>span{
+   font-size: 14px;
+   line-height: 28px;
+   text-align: center;
+   display:block;
+}
+#t_train .container{
+    height:444px;
+    padding-top: 20px;
+}
+#t_train .container .cont_2{
+    height:424px;
+}
+#t_train .container .cont_2 .box_left{
+    height:424px;
+    width: 780px;
+    background-color: white;
+}
+#t_train .container .cont_2 .box_left h3{
+    height:58px;
+    width: 730px;
+    background-color: green;
+    font-size: 18px;
+    line-height: 58px;
+    padding:0 10px 0 40px;
+    background:url(../images/t_star.png)no-repeat left center;
+}
+#t_train .container .cont_2 .box_left h3 span{
+    float:right;
+    font-size: 14px;
+    color:dimgray;
+    padding-left: 20px;
+}
+#t_train .container .cont_2 .box_left p{
+    line-height: 32px;
+    font-size: 16px;
+    color:dimgray;
+    padding-left: 20px;
+    
+}
+#t_train .container .cont_2 .box_right{
+    height:384px;
+    width: 245px;
+    background-color: white;
+    padding:20px 10px;
+}
+#t_train .container .cont_2 .box_right span{
+    font-size: 18px;
+    line-height: 42px;
+}
+#t_train .container .cont_2 .box_right p{
+    font-size: 14px;
+    line-height: 30px;
+}
+#t_links{
+    width:100%;
+    background-color: #F6F6F6;
+}
+#t_links .container{
+    height:350px;
+    background:url(../images/t_links.png) no-repeat center;
+}

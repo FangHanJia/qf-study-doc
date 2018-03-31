@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        #big_box{
+            margin:0 auto;
+            width:500px;
+            height: 500px;
+            border:1px solid red;
+            position:relative;
+            
+
+        }
+        #big_box .img_box{
+            width:496px;
+            height: 496px;
+            border:2px solid red;
+            overflow-y:scroll;
+        } 
+        #big_box .img_box img{
+            width:490px;
+            height: 490px;
+
+        } 
+        #big_box .btn_box{
+            width:200px;
+            height: 20px;
+            border:1px solid red;
+            position:absolute;
+            bottom:0;
+            right:0;
+        }  
+        #big_box .btn_box a{
+           display:block;
+           color:black;
+           float:left;
+           padding:0 15px;
+           background-color: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="big_box">
+        <div class="img_box">
+            <img src="../images/bz1.jpg"  id="img1"/>
+            <img src="../images/bz2.jpg"  id="img2"/>
+            <img src="../images/bz3.jpg"  id="img3"/>
+            <img src="../images/bz4.jpg"  id="img4"/>
+            <img src="../images/bz5.jpg"  id="img5"/>
+            
+        </div>
+        <div class="btn_box">
+            <a href="#img1">1</a>
+            <a href="#img2">2</a>
+            <a href="#img3">3</a>
+            <a href="#img4">4</a>
+            <a href="#img5">5</a>
+        </div>
+    </div>
+</body>
+</html>

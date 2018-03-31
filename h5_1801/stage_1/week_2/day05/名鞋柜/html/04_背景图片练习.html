@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>名鞋库</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        a{
+            text-decoration: none;
+        }
+        #f_header{
+            width:100%;
+            height: 35px;
+            background-color: #EEEEEE;
+        } 
+        #f_header .container{
+            margin:0 auto;
+            width:1200px;
+            height: 35px;
+        }
+        #f_header .f_nav{
+            float:right;
+            height: 35px;
+        }
+        #f_header .f_nav li{
+            float:left;
+            position:relative;
+        } 
+        #f_header .f_nav li a{
+            float:left;
+            height: 35px;
+            font-size: 14px;
+            line-height: 35px;
+            color:black;
+        }
+        #f_header .f_nav li a span{
+           padding:0 15px;
+           border-right: 1px solid black;
+        }
+        #f_header .f_nav .icon_l span{
+          padding-left: 35px;
+        }
+        #f_header .f_nav .icon_r span{
+          padding-right: 26px;
+        }
+        #f_header .f_nav .icon_r .icon_delta{
+            display:block;
+              width:9px;
+              height:6px;
+              background:url(../images/sprits.png) 0 0;
+              position:absolute;
+              top: 50%;
+              right:10px;
+              margin-top: -3px;
+        }
+         #f_header .f_nav .icon_l .icon0 {
+            display:block;
+              width:22px;
+              height:17px;
+              background:url(../images/sprits.png) -30px 0;
+             position:absolute;
+             top: 50%;
+             left:5px;
+             margin-top: -9px;
+        } 
+         #f_header .f_nav .icon_l .icon_qq{
+            background-position: -60px 0;
+        } 
+         #f_header .f_nav .icon_l .icon_tel{
+                    background-position: -90px 0;
+        } 
+
+
+    </style>
+</head>
+<body>
+    <div id="f_header">
+        <div class="container">
+            <ul class="f_nav">
+                <li><a href="#">欢迎登陆名鞋库</a></li>
+                <li class=" icon_l"><a href="#"><span>免费注册</span></a></li>
+                <li class=" icon_r"><a href="#"><span>我的名鞋库</span></a><i class="icon_delta"></i></li>
+                <li class=" icon_l icon_r"> <i class="icon0 icon_phone"></i><a href="#"><span>手机名鞋库</span></a><i class="icon_delta"></i> </li>
+                <li><a href="#"><span>收藏名鞋库</span></a></li>
+                <li class=" icon_l"> <i class="icon0 icon_qq"></i><a href="#"><span>名鞋库客服</span></a></li>
+                <li class=" icon_l"><i class="icon0 icon_tel"></i><a href="#"><span>400-888-88</span></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

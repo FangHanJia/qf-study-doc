@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    img{
+        border:0;
+    }
+    ol, ul ,li{list-style: none;} 
+        .link_ul {
+            width: 400px;
+            height: 40px;
+            border:1px solid red;
+            margin:0 auto;
+        }
+        .link_ul li{
+           float:left;
+        }
+        .link_ul li a{
+            text-decoration: none;
+          display:block;
+          height:40px;
+          /*width: 130px;*/
+         font-size: 14px;
+         line-height: 40px;
+        }
+        div{
+          height:500px;
+          width: 400px;
+         position:absolute;
+         top: 41px;
+         left:50%;
+         transform: translateX(-50%);
+         background-color: red;
+        }  
+        .dis_div1{
+         
+         background-color: #ccc;
+        } 
+        .dis_div2{
+         
+         background-color: darkcyan;
+        } 
+        .dis_div3{
+         
+         background-color: pink;
+        } 
+       
+        
+        
+    </style>
+</head>
+<body>
+    <ul class="link_ul">
+         <li><a href="#"><span>显示</span></a></li>
+         <li><a href="#"><span>显示</span></a></li>
+         <li><a href="#"><span>显示</span></a></li>
+    </ul>   
+     <div class="dis_div1" style="display:block;">1</div>         
+     <div class="dis_div2" style="display:none;">2</div>         
+     <div class="dis_div3" style="display:none;">3</div>         
+</body>
+    <script type="text/javascript">
+        var  lis=document.querySelectorAll(".link_ul>li");
+        var  dis_div=document.querySelectorAll("div");
+        if(lis.length==dis_div.length){
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].id=i;
+                lis[i].onmouseenter = function(){
+                    // alert(this.id);
+                    // 清除面板的显示
+                    for(var j=0;j<dis_div.length;j++){
+                            dis_div[j].style.display="none";
+                    }
+                    dis_div[this.id].style.display="block";
+
+                }
+            };
+        }
+        
+    </script>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    img{
+        border:0;
+    }
+    a{
+        color:black;
+    }
+    ol, ul ,li{list-style: none;} 
+        .tab1{
+            width: 500px;
+            height: 40px;
+            background-color: #CCC;
+            margin:100px auto;
+            border:1px solid white;
+        }
+        .tab1>li{
+            float: left;
+            position: relative;
+        }
+        .tab1>li>a{
+            display:block;
+            height:40px;
+            padding: 0 34px;
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+        }
+        .tab2{
+            position:absolute;
+            top: 40px;
+            left:10px;
+            width:80px;
+            display:none;
+            background-color: dimgray;
+        }
+        .tab1 .tab2>li>a{
+            text-decoration: none;
+            text-align: center;
+            display:block;
+        } 
+        .tab1>li:hover .tab2{
+            display:block;
+        }
+        .tab1>li:hover{
+            background-color: darkcyan;
+        } 
+        .tab1>li:hover>a{
+            color: white;
+        } 
+        .tab2>li:hover{
+            background-color: orangered;
+        } 
+        .tab2>li:hover>a{
+            color: yellow;
+        }
+       
+    </style>
+</head>
+<body>
+    <ul class="tab1">
+        <li><a href="#">动漫</a><ul class="tab2">
+            <li><a href="#">东京</a></li>
+            <li><a href="#">喜羊羊</a></li>
+            <li><a href="#"></a></li>
+        </ul></li>
+        <li><a href="#">音乐</a><ul class="tab2">
+            <li><a href="#">东京</a></li>
+            <li><a href="#">喜羊羊</a></li>
+            <li><a href="#"></a></li>
+        </ul></li>
+        <li><a href="#">动漫</a><ul class="tab2">
+            <li><a href="#">东京</a></li>
+            <li><a href="#">喜羊羊</a></li>
+            <li><a href="#"></a></li>
+        </ul></li>
+        <li><a href="#">动漫</a><ul class="tab2">
+            <li><a href="#">东京</a></li>
+            <li><a href="#">喜羊羊</a></li>
+            <li><a href="#"></a></li>
+        </ul></li>
+        <li><a href="#">动漫</a><ul class="tab2">
+            <li><a href="#">东京</a></li>
+            <li><a href="#">喜羊羊</a></li>
+            <li><a href="#"></a></li>
+        </ul></li>
+    </ul>
+</body>
+</html>

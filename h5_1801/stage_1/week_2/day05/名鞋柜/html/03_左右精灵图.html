@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        a{
+            text-decoration: none;
+        }
+        .tab3{
+            height:22px;
+            /*width: 520px;*/
+            width: 162px;
+            margin:100px auto;
+        }
+        .tab3 li{
+           /* float:left;
+            margin-right: 10px;*/
+            margin-top:    10px;
+        }
+         .tab3 li a{
+            display:inline-block;
+            /*display:block;*/
+            height:22px;
+            font-size: 14px;
+            line-height: 22px;
+            padding-left: 25px;
+            background:url(../images/sprites_left.png)no-repeat;
+        }
+         .tab3 li a span{
+            display:inline-block;
+            /*display:block;*/
+            height:22px;
+            padding-right: 25px;
+            background:url(../images/sprites_right_copy.png)no-repeat top right;
+        } 
+
+        .tab3 .li2 a{
+            
+            background-position: -25px 0;
+        }
+        .tab3 .li3 a{
+            
+            background-position: -52px 0;
+        }
+        .tab3 .li4 a{
+            
+            background-position: -77px 0;
+        }
+        .tab3 li:hover a{
+            color:white;
+            background-position: 0px -22px;
+        }
+
+        .tab3 .li2:hover a{
+            background-position: -25px -22px;
+        }
+        .tab3 .li3:hover a{
+            background-position: -52px -22px;
+        }
+        .tab3 .li4:hover a{
+            background-position: -77px -22px;
+        }
+        .tab3 li:hover  span{
+            background-position: right -22px ;
+        }
+        /*.tab3 .li2:hover a span{
+            background-position: -25px -22px;
+        }
+        .tab3 .li3:hover a span{
+            background-position: -52px -22px;
+        }
+        .tab3 .li4:hover a span{
+            background-position: -77px -22px;
+        }*/
+        .tab3 li a span{
+            display:block;
+            height:22px;
+            padding-right: 25px;
+            background:url(../images/sprites_right_copy.jpg)no-repeat top right;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="tab3">
+        <li><a href="#"><span>精灵</span></a></li>
+        <li class="li2"><a href="#"><span>精灵精灵</span></a></li>
+        <li class="li3"><a href="#"><span>精灵精灵精灵</span></a></li>
+        <li class="li4"><a href="#"><span>精灵精灵精灵精灵</span></a></li>
+    </ul>
+</body>
+</html>

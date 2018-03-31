@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        a{
+            text-decoration: none;
+        }
+        .tab1{
+            width:62px;
+            border:1px solid pink;
+            height:92px;
+            margin:100px auto;
+        }
+        .tab1 li{
+            margin-top: 1px;
+        }
+        .tab1 li a{
+            display:block;
+            width:42px;
+            height: 22px;
+            padding-left: 20px;
+            background:url(../images/bg.gif) no-repeat 0 0;
+            font-size: 14px;
+            line-height: 22px;
+            color:darkcyan;
+        } 
+        .tab1 .li2 a{
+          
+            background-position: -62px 0;
+        }
+        .tab1 .li3 a{
+            background-position: -124px 0;
+          
+        }
+        .tab1 .li4 a{
+            background-position: -186px 0;
+          
+        }
+          .tab1 li:hover a{
+            color:red;
+            background-position: 0 -22px;
+        }  
+         .tab1 .li2:hover a{
+            background-position: -62px -22px;
+            
+        }   .tab1 .li3:hover a{
+            background-position: -124px -22px;
+          
+        }   .tab1 .li4:hover a{
+            background-position: -186px -22px;
+          
+        }
+    </style>
+</head>
+<body>
+    <ul class="tab1">
+        <li><a href="#">精灵1</a></li>
+        <li class="li2"><a href="#">精灵2</a></li>
+        <li class="li3"><a href="#">精灵3</a></li>
+        <li class="li4"><a href="#">精灵4</a></li>
+    </ul>
+</body>
+</html>

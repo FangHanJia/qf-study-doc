@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    img{
+        border:0;
+    }
+    ol, ul ,li{list-style: none;} 
+        .tab2 {
+            width: 916px;
+            height: 20px;
+            border-bottom: 8px solid #DA4D17;
+        }
+        .tab2 li{
+            float:left;
+            margin-right: 1px ;
+        }
+        .tab2 li a{
+            text-decoration: none;
+           display:block;
+           width: 80px;
+           height: 20px;
+           background-color: gainsboro;
+           text-align: center;
+           font-size: 12px;
+           line-height: 20px;
+           color:white;
+        }
+        .tab2 li a .two{
+           display:none;
+           
+        }
+        /*一个隐藏，第二个显示*/
+         .tab2 li a:hover .one{
+           display:none;
+        }
+        .tab2 li a:hover .two{
+           display:block;
+           background-color:#E04A18;
+           
+        }
+    </style>
+</head>
+<body>
+    <ul class="tab2">
+        <li><a href="#"><span class="one">Home</span><span class="two">首页</span></a></li>
+        <li><a href="#"><span class="one">Home</span><span class="two">首页</span></a></li>
+        <li><a href="#"><span class="one">Home</span><span class="two">首页</span></a></li>
+        <li><a href="#"><span class="one">Home</span><span class="two">首页</span></a></li>
+        <li><a href="#"><span class="one">Home</span><span class="two">首页</span></a></li>
+    </ul>
+</body>
+</html>

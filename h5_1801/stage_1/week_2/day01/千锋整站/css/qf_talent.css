@@ -1,0 +1,217 @@
+
+#qf_banner{
+    width: 100%;
+    height: 268px;
+    background:url(../images/talent_banner_pic1.png)no-repeat center;
+}
+#qf_introduction{
+    background-color: white;
+    height: 44px;
+    border-bottom: 1px solid gainsboro;
+}
+
+#qf_introduction .container ul li{
+   float:left;
+   font-size: 14px;
+   line-height: 44px;
+   color: gray;
+}
+#qf_introduction .container ul li:nth-child(1){
+   width: 24px;
+   height: 44px;
+}
+#qf_main .container{
+    height:934px;
+}
+#qf_main .cont{
+    height: 894px;
+    width:1000px;
+}
+#qf_main .cont .main1{
+    height: 894px;
+    width:224px;
+    float:left;
+    background-color: gainsboro;
+    text-align: center;
+}
+#qf_main .cont .main1 h2{
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 400;   
+    margin-top: 20px; 
+}
+#qf_main .cont .main1 h4{
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400; 
+    margin-bottom: 15px;   
+}
+#qf_main .cont .main1 ul li{
+    font-size: 16px;
+    line-height: 56px;
+     border-top: 1px solid gray;
+}
+#qf_main .cont .main1 ul li:hover{
+    background-color: #F15A23;
+}
+#qf_main .cont .main1 ul li:nth-child(2){
+    
+     border-bottom: 1px solid gray;
+}
+#qf_main .cont .main2{
+    height: 894px;
+    width:734px;
+    float:right;
+    background-color: white;
+}
+#qf_main .cont .main2 img{
+    height: 30px;
+    width:24px;
+    vertical-align: middle;
+
+}
+#qf_main .cont .main2 h3{
+    font-size: 16px;
+    line-height: 36px;
+    margin-top: 8px;
+    font-weight: 400;
+    vertical-align: middle;
+    
+}
+#qf_main .cont .main2>ul>li{
+    float:left;
+}
+#qf_main .cont .main2>ul>li:nth-child(1){
+    width:110px;
+    border-bottom: 2px solid #F15A23 ;
+
+}
+#qf_main .cont .main2>ul>li:nth-child(2){
+    width:620px;
+     border-bottom: 1px solid gainsboro ;
+    border-bottom-style:dashed ;
+
+   
+}
+#qf_main .cont .main3{
+    margin-top: 20px;
+    width: 738px;
+    height: 234px;
+    background-color: white;
+    background:url(../images/talent_pic_1.png) no-repeat;
+}
+#qf_main .cont .main4{
+    /*background:url(../images/talent_pic_2.png)no-repeat top left;*/
+    width: 738px;
+    height: 384px;
+    border:1px solid gainsboro;
+    border-top: 0 none;
+    
+}
+#qf_main .cont .main4 .left{
+    border-right: 1px solid gainsboro;
+    width: 322px;
+    height: 384px;
+    float:left;
+    
+}
+#qf_main .cont .main4 .left img{
+    
+    height: 64px;
+    width:322px;
+    
+}
+#qf_main .cont .main4 .left .text1{
+    
+    height: 128px;
+    width:208px;
+    margin:0 auto;
+}
+#qf_main .cont .main4 .left .text1 p{
+    
+    font-size: 16px;
+    line-height: 36px;
+    color:dimgray;
+}
+#qf_main .cont .main4 .left .text2{
+    
+    height: 176px;
+    width:208px;
+    margin:0 auto;
+}
+#qf_main .cont .main4 .left .text2 img{
+    width:208px;
+}
+#qf_main .cont .main4 .left .text2 h4{
+   font-size: 16px;
+   line-height: 56px;
+   font-weight: 400;
+}
+#qf_main .cont .main4 .left .text2 h4 span{
+   font-size: 12px;
+   color:#F15A23;
+   
+}
+#qf_main .cont .main4 .right{
+    
+    width: 368px;
+    height: 384px;
+    float:right;
+    padding:45px 0;
+    
+}
+#qf_main .cont .main4 .right .table{
+    
+    width: 328px;
+    height: 384px;
+    
+}
+#qf_main .cont .main4 .right .table>ul>li{
+    width:328px;
+    height:34px;
+    margin-bottom: 16px;
+}
+#qf_main .cont .main4 .right .table>ul>li:nth-child(2),#qf_main .cont .main4 .right .table>ul>li:nth-child(3),#qf_main .cont .main4 .right .table>ul>li:nth-child(4){
+   padding-left: 20px;
+   width:308px;
+}
+#qf_main .cont .main4 .right .table>ul>li:nth-child(5){
+     padding-left: 10px;
+   width:318px;
+}
+
+#qf_main .cont .main4 .right .table>ul>li>span{
+    float:left;
+    font-size: 12px;
+    line-height: 44px;
+}
+#qf_main .cont .main4 .right .table>ul>li>input{
+    width: 256px;
+    height: 32px;
+    float:right;
+    background:url(../images/talent_pic_6.png)no-repeat right;
+    border:none;
+    border:1px solid gainsboro;
+}
+#qf_main .cont .main4 .right .table>ul>li:nth-child(6)>input{
+     background-image: none;
+     background-color: #FF7821;
+     color:white;
+     font-size: 18px;
+     font-weight: 500;
+     border-radius: 5px;
+     border:none;
+     outline: none;
+}
+#qf_main .cont .main_bottom{
+    height:140px;
+    width: 738px;
+    background:url(../images/talent_pic_4.png) no-repeat;
+    margin-top: 65px;
+}
+
+
+
+
+
+

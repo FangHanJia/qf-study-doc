@@ -1,0 +1,137 @@
+
+#qf_banner {
+    height:266px;
+    background-color: white;
+    background:url(../images/trainService_banner_pic1.png) no-repeat center;
+}
+#qf_introduction{
+    border-bottom:1px solid gainsboro ;
+    background-color: white;
+
+}
+#qf_introduction .container{
+    height:44px;
+}
+#qf_introduction .container img{
+    height:44px;
+    float:left;
+}
+#qf_introduction .container h3{
+    line-height:44px;
+    font-size: 14px;
+    font-weight: 400;
+}
+#qf_main .container{
+    height: 1432px;
+    background-color: white;
+}
+#qf_main .cont{
+    height: 1390px;
+}
+#qf_main .cont .main_left{
+    width: 224px;
+    height: 1374px;
+    float:left;
+    background-color: gainsboro;
+    padding-top: 16px;
+    text-align: center;
+}
+#qf_main .cont .main_left h2{
+    font-size:24px ;
+    line-height: 30px;
+    font-weight: 400;
+}
+#qf_main .cont .main_left h4{
+    font-size:12px ;
+    line-height: 18px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+#qf_main .cont .main_left ul li{
+    font-size:16px ;
+    line-height: 52px;
+    font-weight: 400;
+    border-top: 1px solid #D4D4D4;
+}
+
+#qf_main .cont .main_left ul li:nth-child(2){
+    
+    border-bottom: 1px solid #D4D4D4;
+}
+#qf_main .cont .main_left ul li:hover{
+   background-color: #F15A23;
+}
+#qf_main .cont .main_right{
+    width: 738px;
+    height: 1382px;
+    float:right;
+    padding-top: 8px;
+}
+#qf_main .cont .main_right .main_right_1{
+    width: 735px;
+    height: 192px;
+}
+#qf_main .cont .main_right .main_right_1 img{
+    float:left;
+}
+#qf_main .cont .main_right .main_right_1 h3{
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
+#qf_main .cont .main_right .main_right_1 .underline_ul li{
+    float:left;
+    width:108px;
+    border-bottom: 2px solid #F15A23;
+}
+#qf_main .cont .main_right .main_right_1 .underline_ul li:nth-child(2){
+   width:628px;
+   float:right;
+   border-bottom: 1px  dashed gainsboro;
+}
+#qf_main .cont .main_right .main_right_1 .imgs_ul li{
+   float:left;
+   /*padding:15px 10px;*/
+   height: 114px;
+   width: 137px;
+   padding:20px 10px 0 0;
+   text-align: center;
+}
+#qf_main .cont .main_right .main_right_1 .imgs_ul li span{
+   font-size: 14px;
+   line-height: 34px;
+}
+#qf_main .cont .main_right .main_right_1 .imgs_ul li img{
+   width: 128px;
+   height: 94px;
+}
+#qf_main .cont .main_right .main_right_2{
+    width: 738px;
+    height: 454px;
+    border-bottom: 1px solid gainsboro;
+}
+#qf_main .cont .main_right .main_right_2 .text_ul li{
+    font-size: 14px;
+    line-height: 42px;
+    height:42px;
+    width:738px;
+    border-bottom: 1px dashed gainsboro;
+    
+}
+#qf_main .cont .main_right .main_right_2 .text_ul li p{
+    float:left;
+}
+#qf_main .cont .main_right .main_right_2 .text_ul li span{
+    float:right;
+
+}
+#qf_main .cont .main_right .main_right_3{
+    width: 738px;
+    height: 594px;
+    background:url(../images/trainService_main_pic1.png) no-repeat;
+}
+#qf_main .cont .main_right .main_right_4{
+    width: 738px;
+    height: 144px;
+    background:url(../images/trainService_main_pic2.png) no-repeat;
+}

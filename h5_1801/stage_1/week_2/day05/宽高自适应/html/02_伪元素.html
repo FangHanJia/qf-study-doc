@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        /*在父元素中插入第一个子元素*/
+        div::before{
+            content:"我喜欢的文学家";
+        }
+        /*在父元素中插入最后一个子元素*/
+        div::after{
+            content:"by 林徽因";
+            color: darkcyan;
+        }
+        /*获取到E元素内容的第一个字，E元素必须是块级元素(父元素必须是块级元素)。*/
+
+        div::first-letter{
+            color:black;
+        }
+        /*获取到E元素内容的第一个行，E元素必须是块级元素（父元素必须是块级元素）。*/
+        div::first-line{
+            color:pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 伪元素:模仿元素插入内容，不占位置 -->
+    <div>
+
+        <!-- <p>你是人间最美的四月天</p> -->
+        <span>你是人间最美的四月天</span>
+        <!-- <p>by 林徽因</p> -->
+    </div>
+</body>
+</html>

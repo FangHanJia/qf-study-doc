@@ -1,0 +1,433 @@
+#j_online{
+    width: 154px;
+    height: 62px;
+    background:#EB6514 url(../images/online.png) no-repeat left;
+    position: fixed;
+    top: 302px;
+    right: 0;
+    z-index: 4;
+}
+#j_online a {
+    display:block;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+    padding-right: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    color:white;
+}
+#j_online a span{
+   display:block;
+   font-size: 14px;
+}
+#banner_tel a{
+    display:block;
+    width: 176px;
+    height: 30px;
+    position: absolute;;
+    top:0;
+    right:0;
+    background:url("../images/tel.png") no-repeat;
+}
+#j_service {
+    width:100%;
+    height: 182px;
+    background-color: white;
+}
+/*我的作品类型*/
+#j_service .title,#j_works .title,#j_about .title,
+#j_news .title,#j_contact .title{
+    height:152px;
+    text-align: center;
+    padding-top: 32px;
+}
+
+#j_service h3,#j_works h3,#j_about h3,
+#j_news h3,#j_contact h3{
+    font-size: 38px;
+    line-height: 74px;
+    color:black;
+}
+#j_service span,#j_works span,#j_about span,
+#j_news span,#j_contact span{
+    margin:0 auto;
+    display:block;
+    width: 330px;
+    height: 18px;
+    background:url("../images/line.png") no-repeat;
+}
+#j_service p,#j_works p ,
+#j_news p,#j_contact p{
+    font-size: 16px;
+    line-height: 36px;
+}
+/*我的作品类型*/
+
+#j_service_ani .container{
+    height: 444px;
+   
+}
+#j_service_ani .circle_ul{
+    height: 130px;
+    width:970px;
+    margin:0 auto;
+    padding-top: 50px;
+}
+#j_service_ani .circle_ul .circle_box,
+#j_form .circle_box{
+    float:left;
+    height: 130px;
+    width:130px;
+    position:relative;
+    margin-right: 150px;
+}
+#j_service_ani .circle_ul .circle_box li,
+#j_form .circle_box li{
+    float:left;
+    height: 90px;
+    width:90px;
+    border-radius: 45px;
+    border:2px solid gray;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -45px;
+    margin-left: -45px;
+    transition: all 0.5s;
+    behavior:url("../js/ie-border.htc");
+}
+#j_service_ani .circle_ul .circle_box li a,
+#j_form .circle_box li a{
+    height: 36px;
+    width:36px;
+    background:url("../images/ani_pic1.png") no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -18px;
+    margin-left: -18px;
+}
+#j_service_ani .circle_ul .circle_box li:hover,
+#j_form .circle_box li:hover {
+    height: 120px;
+    width:120px;
+    border-radius: 60px;
+    border:2px solid orangered;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -60px;
+    margin-left: -60px;
+}
+#j_service_ani .circle_text{
+    height: 150px;
+    width: 970px;
+    background-color: white;
+    margin:0 auto;
+}
+#j_service_ani .circle_text .text_ul{
+    height: 150px;
+    width: 130px;
+    text-align: center;
+    float:left;
+    margin-right: 150px;
+}
+#j_service_ani .circle_text .text_ul>li>a{
+    display:block;
+    font-size: 12px;
+    line-height: 26px;
+    color:black;
+}
+#j_service_ani .circle_text .text_ul>li:hover>a{
+    
+    color:orangered;
+}
+#j_service_ani .circle_text .text_ul>li:nth-child(1)>a{
+   
+    font-size: 22px;
+    line-height: 50px;
+    color:black;
+    font-weight: bold;
+}
+#j_works .container{
+    height: 650px;
+    padding-bottom: 168px;
+}
+#j_works .works_ul{
+    height: 176px;
+    padding-bottom: 20px;
+
+}
+#j_works .works_ul li{
+    position: relative;
+    float:left;
+    margin-right: 20px;
+    overflow:hidden;
+    perspective: 600px;
+
+}
+#j_works .works_ul li .box{
+    width:265px;
+    height:176px;
+    font-size: 36px;
+    line-height: 176px;
+    text-align: center;
+    font-style: italic;
+    position: absolute;
+    top: 176px;
+    left: 0;
+    transition:all 0.6s;
+    
+}
+#j_works .works_ul li a{
+    display:block;
+    height:176px;
+    width:265px;
+    background: #ccc url("../images/works_pic2.png") no-repeat;
+    transition:all 0.6s;
+}
+#j_works .works_top{
+    /*开启3D效果*/
+    transform-style: preserve-3d;
+}
+#j_works .works_top li:hover a{
+    transform:translateY(-80px) rotateX(90deg) ;
+}
+#j_works .works_top li:hover .box{
+    transform: translateY(-176px);
+    background-color: pink;
+}
+#j_works .works_bottom li:hover a{
+    transform: scale(3);
+}
+#j_works .works_bottom li:hover .box{
+    transform: translateY(-176px);
+    background-color: #ccc;
+    /*opacity: 0.4;*/
+}
+/*伪元素*/
+/*#j_works .works_bottom li：：after{
+    content:"";
+    display:block;
+    width:265px;
+    height: 176px;
+    background-color: black;
+}*/
+#j_works .more{
+    width: 174px;
+    height: 44px;
+    border:2px solid black;
+    margin: 50px auto;
+    text-align:center;
+    transition:all 0.5s;
+
+}
+#j_works .more a{
+    font-size: 14px;
+    line-height: 44px;
+    color:#666666;
+}
+#j_works .more:hover {
+   width:204px;
+   height: 44px;
+   border-color: #EB6514;
+}
+#j_works .more:hover a{
+   color:black;
+}
+#j_about .container{
+    height: 450px;
+    width: 918px;
+    padding:0 102px;
+    text-align: center;
+}
+#j_about .container>h3{
+    font-size: 18px;
+    line-height: 50px;
+    color:#C11E2B;
+}
+#j_about .container>p{
+    text-align: left;
+    font-size: 12px;
+    line-height: 34px;
+    color:gray;
+    text-indent: 2em;
+}
+#j_news .container{
+    height: 740px;
+}
+#j_news .new_ul li{
+    float:left;
+    width:317px;
+    height: 205px;
+    margin-right: 55px;
+    padding:0 10px;
+}
+/*#j_news .new_ul li:nth-child(3),
+#j_news .new_ul li:nth-child(6){
+    
+    margin-right: 0;
+}*/
+#j_news .new_ul .li3,
+#j_news .new_ul .li6{
+    margin-right: 0;
+
+}
+#j_news .new_ul>li>h3{
+    font-size: 18px;
+    line-height: 48px;
+}
+#j_news .new_ul>li>.new{
+    font-size: 12px;
+    line-height: 20px;
+    color:gray;
+}
+#j_news .new_ul>li>a{
+    display:block;
+    width: 80px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    line-height: 30px;
+    color:gray;
+    text-align: center;
+    border:1px solid gray;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+#j_news .new_ul>li>a:hover{
+   
+    color: #000;
+    
+    border:1px solid #C11E2B;
+    
+}
+/*需改进*/
+#j_news .more_new{
+    width: 174px;
+    height: 44px;
+    border:2px solid black;
+    margin: 50px auto;
+    text-align:center;
+    transition:all 0.5s;
+
+}
+#j_news .more_new a{
+    font-size: 14px;
+    line-height: 44px;
+    color:#666666;
+}
+#j_news .more_new:hover {
+   width:204px;
+   height: 44px;
+   border-color: #EB6514;
+}
+#j_news .more_new:hover a{
+   color:black;
+}
+/*需改进*/
+#j_client {
+    background:url("../images/adbg3.jpg") no-repeat;
+}
+#j_client .container{
+    height: 364px;
+    text-align: center;
+    position: relative;
+}
+#j_client h2{
+    font-size: 58px;
+    line-height: 208px;
+    color:white;
+}
+#j_client a{
+
+    display:block;
+    height: 38px;
+    width: 154px;
+    border:3px solid gainsboro;
+    font-size: 14px;
+    line-height: 38px;
+    color:white;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-left: -77px;
+    /*margin-top: -19px;*/
+}
+#j_client a:hover{
+
+    border-color:#EB6514;
+    
+    /*margin-top: -19px;*/
+}
+#j_contact{
+    height: 728px;
+    width: 100%;
+    background:url(../images/contact_bg2.png) no-repeat center bottom;
+}
+#j_contact .container{
+    height: 728px;
+    /*background-color: #ccc;*/
+}
+#j_form .container{
+    height: 196px;
+    padding:76px 0;
+}
+
+#j_form .form_c{
+    padding-left: 30px;
+    height: 186px;
+    width: 300px;
+    /*background-color: green;*/
+}
+#j_form .form_c h3{
+    font-size: 18px;
+    line-height: 36px;
+}
+#j_form .form_c .form_ul>li{
+    font-size: 14px;
+    line-height: 20px;
+}
+#j_form .form_c .form_ul>li:nth-child(1){
+    font-size: 16px;
+    line-height: 38px;
+}
+
+
+#j_form .form_r{
+    height: 186px;
+    width: 672px;
+    /*background-color: red;*/
+}
+#j_form .form_r .inputs{
+    height: 186px;
+    width: 282px;
+    background-color: white;
+    float: left;
+}
+#j_form .form_r .inputs input{
+    height: 32px;
+    width: 246px;
+    border:1px solid gainsboro ;
+    line-height: 32px;
+    margin-bottom: 16px;
+    padding-left: 10px;
+}
+#j_form .form_r  textarea{
+    height: 134px;
+    width: 384px;
+    border:1px solid gainsboro ;
+}
+#j_form .form_r .btn{
+    height: 32px;
+    width: 90px;
+   background-color: #C11E2B;
+   margin-top: 14px;
+   color:white;
+}
+#j_form .form_r .form_text{
+   padding: 30px 30px 0 0px;
+   font-size: 14px;
+   line-height: 16px;
+}

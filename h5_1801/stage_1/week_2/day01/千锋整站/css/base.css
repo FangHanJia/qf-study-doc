@@ -1,0 +1,121 @@
+/*公共头部css*/
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    border:0;
+}
+ol, ul ,li{
+    list-style: none;
+} 
+a{
+    text-decoration: none;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
+#box{
+    width:100%;
+}
+/*提取相同的属性-版心内容*/
+.container{
+    width: 1000px;
+    margin:0 auto;
+}
+#qf_header{
+    width: 100%;
+    height: 62px;
+    background-color: black;
+}
+#qf_header h1{
+    float:left;
+    width: 170px;
+    height: 62px;
+    background:url(../images/qf_logo.png)no-repeat ;
+}
+#qf_header .container{
+    height: 62px;
+}
+
+#qf_header ul{
+    float: right;
+    width:726px;
+    height: 62px;
+}
+#qf_header ul>li{
+    float: left;
+    
+}
+#qf_header ul li:nth-child(9) a{
+    border-right: 0 none;    
+}
+#qf_header ul li:hover a{
+    background-color: #F15A23;
+}
+#qf_header ul>li>a{
+    display: block;
+    height: 62px;
+    color:white;
+    padding:0px 15px 0 12px;
+    font-size: 14px;
+    line-height: 62px;
+    border-right: 1px solid gainsboro;
+}
+/*公共头部css*/
+ #box #q_links{
+    width:100%;
+    background-color: #222222;
+
+}
+#box #q_links .container{
+    height: 214px;
+}
+#box #q_links .container div{
+    float:left;
+}
+#box #q_links .container .about{
+    height: 134px;
+    width:464px;
+    padding:40px 10px;
+
+}
+#box #q_links .container .about dl{
+    float:left;
+    font-size: 12px;
+    margin-right: 40px;
+    text-align: center;
+    color:white;
+}
+#box #q_links .container .about dt{
+    line-height: 36px;
+}
+#box #q_links .container .about dd{
+    line-height: 26px;
+    color:gray;
+}
+#box #q_links .container .map{
+    width:310px;
+    height:214px;
+    margin-right: 10px;
+    background:url(../images/trainService_links_pic1.png) no-repeat;
+}
+#box #q_links .container .code{
+    width:188px;
+    height:214px;
+    background:url(../images/qf_code.jpg) no-repeat 0 center;
+}
+#box #q_copyright{
+    width:100%;
+    background-color: black;
+}
+#box #q_copyright .container{
+    height: 44px;
+}
+#box #q_copyright .container p{
+    font-size: 12px;
+    line-height: 44px;
+    text-align: center;
+    color:gray;
+}

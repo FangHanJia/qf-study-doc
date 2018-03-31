@@ -1,0 +1,215 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img,input{ margin:0; padding:0; }
+fieldset, img,input,button { border:0 none; padding:0;margin:0;outline-style:none; }   /*去掉input等聚焦时的蓝色边框*/
+ul, ol { list-style:none; }
+/*input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}*/
+select, input { vertical-align:middle;}
+/*select, input, textarea { font-size:12px; margin:0; }*/
+textarea { resize:none; } /*防止拖动*/
+img {border:0; vertical-align:middle; }  
+/*  去掉图片低测默认的3像素空白缝隙，或者用display：block也可以*/
+table { border-collapse:collapse; }
+
+
+/*添加公共样式*/
+/*body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#666;
+    background:#fff
+}*/
+.clearfix:before,.clearfix:after {  /*清楚浮动*/
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+/*a {color:#666; text-decoration:none; }
+a:hover{color:#C81623;}*/
+h1,h2,h3,h4,h5,h6 {text-decoration:none;font-weight:normal;font-size:1em;}  /*设置h标签的大小，设置跟父亲一样大的字体font-size:100%;*/
+s,i,em,a{font-style:normal;text-decoration:none;}
+
+
+/*公共类*/
+.container {  /*版心 提取 */
+    width: 1000px;
+    margin:0 auto;
+}
+.fl {
+    float:left;
+}
+.fr {
+    float:right;
+}
+.al {
+    text-align:left;
+}
+.ac {
+    text-align:center;
+}
+.ar {
+    text-align:right;
+}
+.hide {
+    display:none;
+}
+.font12{ font-size: 12px;}
+.font14{ font-size: 14px;}
+.font16{ font-size: 16px;}
+
+/*公共部分*/
+#wolong{
+    width: 100%;
+}
+#wl_header .container{
+    height: 100px;
+    background-color: white;
+}
+#wl_header .container h1{
+    width: 268px;
+    height: 100px;
+    background:url(../images/wolong_logo.jpg) no-repeat ;
+    text-indent: -2000px;
+}
+#wl_header .container form{
+     padding-top: 40px;
+     width: 226px;
+     height: 60px;
+}
+#wl_header .container form input{
+    width: 216px;
+    height: 26px;
+    padding-left: 10px;
+    background:#F1F1F1 url(../images/wolong_find.jpg) no-repeat right;
+    color:#A4A4A4;
+}
+#wl_nav{
+    width:100%;
+    background-color: black;
+}
+#wl_nav .container{
+    height: 58px;
+}
+#wl_nav .container ul {
+    width: 960px;
+    margin:0 auto;
+}
+#wl_nav .container ul li{
+    float:left;
+}
+#wl_nav .container ul li:hover a{
+    float:left;
+    background-color: #C21D19;
+
+}
+#wl_nav .container ul li a{
+    display:block;
+    width: 119px;
+    height: 58px;
+    font-size: 14px;
+    line-height: 58px;
+    border-right:1px solid #4A4A4A;
+    text-align: center;
+    color:white;
+}
+
+#wl_nav .container ul li:nth-child(8) a{
+    border-right: 0 none;
+}
+
+#wl_banner{
+    width:100%;
+    height: 462px;
+    background-color: white;
+    background:url(../images/wolong_banner_pic1.jpg) no-repeat center;
+}
+
+#wl_links{
+    width:100%;
+    background-color: #E5E5E5;
+
+}
+#wl_links .container{
+    height: 232px;
+    padding-top: 18px;
+
+}
+#wl_links  .link_left{
+   width: 472px;
+    height: 232px;
+   padding:0  40px 0 10px;
+}
+#wl_links  .link_h3 h3{
+  font-size: 16px;
+  line-height: 38px;
+  border-bottom: 1px solid gainsboro;
+  padding-left: 10px;
+}
+#wl_links  .link_left ul {
+ padding:15px  70px 0 0;
+ float:left;
+}
+#wl_links  .link_left ul li a {
+    display:block;
+     font-size: 14px;
+     line-height: 26px;
+     padding-left: 18px;
+     background:url(../images/wolong_jiantou.jpg) no-repeat left center;
+     color:dimgray;
+}
+#wl_links  .link_center{
+   width: 154px;
+    height: 232px;
+}
+#wl_links  .link_center ul {
+ padding-top: 15px;
+}
+#wl_links  .link_center ul li a {
+    display:block;
+     font-size: 14px;
+     line-height: 26px;
+     padding-left: 26px;
+     background:url(../images/wolong_jiantou.jpg) no-repeat 8px center;
+     color:dimgray;
+
+}
+#wl_links .link_right{
+   width: 266px;
+    height: 232px;
+   background:red;
+   padding-right: 10px;
+   background:url(../images/wolong_map.jpg) no-repeat bottom;
+}
+#wl_copyright{
+     height: 82px;
+    width:100%;
+    background-color: white;
+}
+#wl_copyright .container{
+    height:82px;
+
+}
+#wl_copyright ul {
+    padding-left: 14px;
+    padding-top: 20px;
+}
+#wl_copyright ul li{
+   float:left;
+}
+#wl_copyright ul li a{
+   display:block;
+   font-size: 12px;
+   padding:0 10px 0 10px;
+   height: 14px;
+   color:dimgray;
+}
+#wl_copyright .fr li {
+  float:left;
+}
+
+/*头部导航开始*/
+
+
+/*尾部部导航开始*/
