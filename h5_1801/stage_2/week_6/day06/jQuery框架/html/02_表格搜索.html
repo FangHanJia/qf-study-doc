@@ -19,9 +19,77 @@
     <script src="../lib/jquery-3.2.1.js" charset="utf-8"></script>
     <script type="text/javascript">
       jQuery(function($){
+        /*
+          要求：
+            1、隔行变色
+            2、全选/反选：高亮
+            3、单选：高亮
+            4、单选满时==>全选勾选
+            5、搜索关键字所在行高亮
+        */
         // 获取元素
+        let $btnFx = $('#btnFx');
+        let $keyword = $('#keyword');
+        let $table = $('.datalist');
         let $btnAll = $('#all');
-        let $btnFx  = $('#btnFx');
+        let $checkboxs = $table.find('input').not('#all');
+        let $trs = $table.children('tbody').children('tr');
+        // 1、隔行变色:保留偶数行:even(偶数)--索引值计算
+        $trs.filter(':even').addClass('even');
+
+        // 2、全选/反选：高亮
+        $btnAll.on('click',function(){
+          // 混合使用
+          $checkboxs.prop('checked',this.checked);
+          // 三元判断:高亮当前行
+          $trs[this.checked ? 'addClass':'removeClass']('selected');
+
+          checkAll();
+        });
+        $btnFx.on('click',function(){
+          // 数组遍历
+        $checkboxs.each(function(idx,ele){
+            ele.checked = !ele.checked;//取反
+            $(this).closest('tr')[this.checked ? 'addClass':'removeClass']
+            ('selected');
+            // $btnAll.prop('checked',this.checked);
+            checkAll();
+          });
+        });
+
+        // 3、单选：高亮：使用事件委托
+        $table.on('click','tbody tr',function(){
+          // 高亮当前行
+          $(this).toggleClass('selected')
+
+          // 勾选当前行
+          .find(':checkbox').prop('checked',$(this).hasClass('selected'));
+          checkAll();
+        });
+        // 4、单选满时==>全选勾选
+        function checkAll(){
+          // 获取选中的复选框
+          let $checkeds = $checkboxs.filter(':checked');
+          // 判断勾选数量是否与checkbox的数量相等
+          $btnAll.prop('checked',$checkboxs.length === $checkeds.length)
+        }
+
+        // 5、搜索关键字所在行高亮
+        $keyword.next().on('click',function(){
+          // 获取输入值
+          let key = $keyword.val().trim();
+
+          if(key ===''){
+            alert('请输入关键字');
+            return;
+          }
+          // 排他
+          $trs.removeClass().find(':checkbox').prop('checked',false);
+          // 搜索当前行
+          let $currentTr = $trs.filter(`:contains(${key})`);
+          $currentTr.addClass('selected').find(':checkbox').prop('checked',true)
+        });
+
       });
     </script>
   </head>
