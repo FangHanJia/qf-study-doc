@@ -3,8 +3,102 @@
   <head>
     <meta charset="utf-8">
     <title>jQuery的使用</title>
+    <style media="screen">
+    </style>
+    <script src="../lib/jquery-3.2.1.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      // 1、jQuery加载：
+      jQuery($=>{
+        // 2、获取元素
+        let $box = $('div');
+        let $btn = $('#run');
+        // 3、插入内容方法
+        $box.text('我是一个盒子');
+        $btn.html('跑');
+        // 4、样式方法
+        $box.css({
+          width:300,
+          height:200,
+          border:'1px solid red',
+          textAlign:'center',
+          fontSize:'32px',
+          lineHeight:'200px',
+          cursor:'pointer',
+          background:'green',
+          position:'absolute',
+          // display:'none'
+        });
+        // 5、添加显示或隐方法
+        // $box.on('click',function(){
+        //   $(this).hide();
+        // })
+
+        //6、淡入淡出方法
+        // $btn.on('click',function(){
+        //   $box.fadeToggle('slow',function(){
+        //     $box.animate({
+        //       width:400
+        //     },1000);
+        //   })
+        // })
+        // 7、滑动方法
+        // $btn.click(function(){
+        //   // slidDown(speed,fn)向下滑动
+        //   $box.slideDown('slow',function(){
+        //     $box.animate({
+        //       width:500
+        //     },1000);
+        //   });
+        // });
+        // $btn.dblclick(function(){
+        //   $box.animate({
+        //     width:300
+        //   },1000);
+        //   // slideUp(speed,fn):向上滑动
+        //   $box.slideUp('slow',function(){
+        //     $box.css({
+        //       width:300
+        //     });
+        //   });
+        // })
+
+
+
+        // 8、动画函数
+        // animate(parms,speed,fn)
+        // $btn.on('click',function(){
+        //   $box.animate({
+        //     left:'400px',
+        //     fontSize:'50px',
+        //   },1000);
+        //   $box.css({background:'red'});
+        // });
+        // $btn.on('dblclick',function(){
+        //   $box.animate({
+        //     top:400,
+        //     opacity:'toggle'
+        //   },1000);
+        // });
+        // 9、停止动画：包括淡入，滑动，动画
+        let $stop = $('#stop');
+        $stop.text('停止');
+        // 停止
+        $stop.on('click',function(){
+          $box.stop();
+        });
+        // 跑
+        $btn.on('click',function(){
+          $box.animate({
+            top:900
+          },3000);
+        });
+      });
+    </script>
   </head>
   <body>
-
+    <h1>jQuery的使用</h1>
+    <button type="button" name="button" id="run"></button>
+    <button type="button" name="button" id="stop"></button>
+    <div></div>
   </body>
 </html>
