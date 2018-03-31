@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>跨域访问百度API</title>
+    <!-- 引入bootstrap文件  -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 获取页面元素
+            let keyword = document.querySelector('#keyword');
+            let btnSearch = document.querySelector('.btnSearch');
+            let suggest = document.querySelector(' #suggest');
+
+            // 定义一个全局函数
+            window.getData = function(data){
+                console.log(data);
+                suggest.innerHTML = data.s.map(item=>{
+                    return `<li class="list-group-item">${item}</li>`;
+                }).join('');
+                suggest.style.display = 'block';
+            }
+            let timer;
+            let script;
+            // 创建script标签
+            keyword.oninput = function(){
+                // 获取输入的值
+                let _keyword = keyword.value;
+                clearTimeout(timer);
+                timer = setTimeout(()=>{
+                    // jsonp跨域
+                    script = document.createElement('script');
+                    script.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?json=1&cb=getData&wd='+_keyword;
+                    // 添加到界面
+                    document.body.appendChild(script);
+                },500);
+
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>百度搜索</h1>
+        <div class="form-group has-success has-feedback">
+          <div class="input-group">
+            <input type="text" class="form-control" id="keyword" list="suggest">
+            <span class="input-group-addon btn btn-success btnSearch">搜索</span>
+          </div>
+        </div>
+        <datalist id="suggest" class="list-group">
+        </datalist>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>用户登陆</title>
+    <style type="text/css">
+        h1{color:red;}
+        label{
+            display:inline-block;
+            width:100px;
+            text-align:right;
+            margin-bottom:20px;
+        }
+        .loginSuccess{font-size:60px;color:green;}
+        span{
+            padding:4px;
+            color:green;
+        }
+        .show_user.error{
+            color:red;
+            display:inline-block;
+        } 
+        .show_user.ok{
+            color:green;
+            display:inline-block;
+        }
+    </style>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 获取元素
+            let user = document.querySelector('#user');
+            let psw = document.querySelector('#psw');
+            let btnLogin = document.querySelector('#btnLogin');
+
+            // 登陆事件
+            btnLogin.onclick = function(){console.log(55);
+                // 获取输入的值
+                let _user = user.value;
+                let _psw = psw.value;console.log(_user,_psw);
+                
+                // 发起请求
+                ajax({
+                    url:'../api/login.php',
+                    data:{
+                        name:_user,
+                        password:_psw
+                    },
+                    success:function(res){
+                        console.log(res);
+                        if(res=='success'){
+                            let span = document.createElement('span');
+                            span.innerText = '登陆成功!';
+                            span.className = 'loginSuccess';
+                            document.body.appendChild(span);
+                        }else{
+                            alert('登陆失败');
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>用户登陆</h1>
+    <label for="user">用户名：</label> <input type="text" id="user" /><span class="show_user"></span><br />
+    <label for="psw">密码：</label> <input type="password" id="psw" /><span class="show_psw"></span><br />
+    <label for="btnLogin"></label><button id="btnLogin">登陆</button><br />
+</body>
+</html>

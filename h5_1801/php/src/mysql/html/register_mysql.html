@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>用户注册</title>
+    <style type="text/css">
+        label{
+            display:inline-block;
+            width:100px;
+            text-align:right;
+            margin-bottom:20px;
+        }
+        span{
+            padding:4px;
+            /*color:green;*/
+        }
+        .show_user.error{
+            color:red;
+            display:inline-block;
+        } 
+        .show_user.ok{
+            color:green;
+            display:inline-block;
+        }
+    </style>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 用户名的验证
+            // 获取元素
+            let user = document.querySelector('#user');
+            let psw = document.querySelector('#psw');
+            let btnReg = document.querySelector('#btnReg');
+            let show_user = document.querySelector('.show_user');
+            let show_psw = document.querySelector('.show_psw');
+            let status = [200,304];
+            
+            // 失去焦点事件
+            user.onblur = ()=>{
+                // 获取输入的值
+                let _user = user.value;console.log(_user=='');
+
+                // 正则
+                let reg = /^[a-z][\w\-]{3,15}$/;
+                if(!reg.test(_user)){
+                    alert('输入错误!');
+                }else{
+                    // 发送Ajax请求
+                    ajax({
+                        url:'../api/register.php',
+                        data:{
+                            name:_user
+                        },
+                        // 回调函数
+                        success:function(res){
+                            // console.log(res);
+                            if(res =='fail'){
+                                show_user.innerText = _user+'太受欢迎了';
+                                show_user.classList.remove('ok');
+                                show_user.classList.add('error');
+                            }else{
+                                show_user.innerText = '很好';
+                                show_user.classList.add('error');
+                                show_user.classList.add('ok');
+                            }
+                        }
+                    });
+                }
+            }
+
+            // 注册事件
+            btnReg.onclick = function(){
+                // 获取值
+                let _user = user.value;
+                let _psw = psw.value;
+                if(_user=='' || _psw ==''){
+                    return;
+                }
+                // 调用框架
+                ajax({
+                    url:'../api/register.php',
+                    data:{
+                        name:_user,
+                        password:_psw,
+                        type:'reg'
+                    },
+                    // 回调函数
+                    success:function(res_reg){
+                        console.log(res_reg);
+                        if(res_reg =='success'){
+                            alert('注册成功！');
+                            location.href = 'login_mysql.html';
+                        }
+                    }
+                });
+                
+
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>用户注册</h1>
+    <label for="user">用户名：</label> <input type="text" id="user" /><span class="show_user"></span><br />
+    <label for="psw">密码：</label> <input type="password" id="psw" /><span class="show_psw"></span><br />
+    <label for="btnReg"></label><button id="btnReg">注册</button><br />
+
+</body>
+</html>

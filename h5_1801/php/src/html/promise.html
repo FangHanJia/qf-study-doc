@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>promise解决层层嵌套</title>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            let status = [200,304];
+
+            let pro_ip = new Promise((resolve,reject)=>{
+                let xhr_ip = new XMLHttpRequest();
+
+                // 处理响应报文
+                xhr_ip.onload = ()=>{
+                    if(status.includes(xhr_ip.status)){
+                        let ip = xhr_ip.responseText;
+                        resolve(ip);
+                    }
+                }
+                xhr_ip.open('get','../api/ip.php',true);
+                xhr_ip.send();
+            });
+            // 处理ip
+            pro_ip.then(ip=>{
+                // 成功执行的代码
+                console.log('resolved：'+ip);
+                return new Promise((resolve,reject)=>{
+                    let xhr_city = new XMLHttpRequest();
+
+                    // 处理响应报文
+                    xhr_city.onload = ()=>{
+                        if(status.includes(xhr_city.status)){
+                            let city = xhr_city.responseText;
+                            resolve(city);
+                        }
+                    }
+                    xhr_city.open('get','../api/get_city.php?'+ip,true);
+                    xhr_city.send();
+                });
+            },()=>{})
+            // 处理city
+            .then(city=>{
+                console.log('city'+city);
+                return new Promise((resolve,reject)=>{
+                    let xhr_weather = new XMLHttpRequest();
+
+                    // 处理响应报文
+                    xhr_weather.onload = ()=>{
+                        if(status.includes(xhr_weather.status)){
+                            let weather = JSON.parse(xhr_weather.responseText);
+                            resolve(weather);
+                        }else {
+                            reject();
+                        }
+                    }
+                    xhr_weather.open('get','http://wthrcdn.etouch.cn/weather_mini?city='+city,true);
+                    xhr_weather.send();
+                });
+            },()=>{})
+            // 处理weather
+            .then(weather=>{
+                console.log(weather);
+            },()=>{});
+
+
+
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

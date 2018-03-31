@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>城市列表展示</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        #box{
+            width:520px;
+            margin:0 auto;
+        } 
+        #box #cityName{
+            width:400px;
+            height:40px;
+        } 
+        #box #btnSearch{
+            width:50px;
+            height:44px;
+            border-radius:4px;
+        }
+        #box .letterBox span,#box .hotCity span{
+            display:inline-block;
+            padding:4px 10px;
+            margin:10px 10px 10px 0;
+            background:#58bc58;
+            color:#fff;
+            font-size:14px;
+            cursor:pointer;
+        }
+        #box .letterBox span:hover,#box .hotCity span:hover{
+           background:black;
+           color:#fff;
+        }
+        ul{list-style:none;}
+        ul li{font-size:14px;float:left;width:160px;padding:5px 10px;margin:10px;border:1px dotted #ddd;background:#ccc;}
+        ul li.active{background:#58bc58;color:#fff;}
+
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 获取元素
+            let cityName = document.querySelector('#cityName');
+            let btnSearch = document.querySelector('#btnSearch');
+            let letterBox = document.querySelector('.letterBox');
+            let hotCity = document.querySelector('.hotCity');
+            let cityList = document.querySelector('.cityList');
+            let cityWeather = document.querySelector('.cityWeather');
+
+            // 初始化：字母检索
+            let letterNumber ='A,B,C,D,E,F,G,H,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z'.split(',');
+            // 生成到界面
+            letterBox.innerHTML  = letterNumber.map(item=>{
+                return `<span>${item}</span>`;
+            }).join('');
+
+            // 获取数据
+            let status = [200,304];
+            let pro_data = new Promise((resolve,reject)=>{
+
+                let xhr = new XMLHttpRequest();
+                // 处理响应报文
+                xhr.onload = ()=>{
+                    if(status.includes(xhr.status)){
+                        let res = JSON.parse(xhr.responseText);
+                        resolve(res);
+                    }
+                }
+                xhr.open('get','../api/get_cityList.php');
+                xhr.send();
+            });
+            // 处理热门城市
+            pro_data.then(res=>{
+                res.regions.map(item=>{
+                   if( 'hot' in item ){
+                        // console.log(item.name);
+                        hotCity.innerHTML += `<span>${item.name}</span>`;
+                   }else {
+                        console.log(item.regions);
+                   }
+                   
+                });
+
+                let _city;
+                let hot_spans = document.querySelectorAll('.hotCity span');
+                for(let i=0;i<hot_spans.length;i++){
+                    hot_spans[i].onclick = function(e){
+                        e = e || window.event;
+                        let target = e.target || e.srcElement;
+                        
+                        if(target.tagName.toLowerCase() =='span'){
+                            _city = target.innerText;
+                            // 发起天气请求
+                            let pro_weather =  new Promise((resolve,reject)=>{
+                                let xhr_weather = new XMLHttpRequest();
+                                xhr_weather.onload = ()=>{
+                                    if(status.includes(xhr_weather.status)){
+                                        let res_weather = JSON.parse(xhr_weather.responseText);
+                                        // console.log(res);
+                                        resolve(res_weather);
+                                    }
+                                }
+
+                                xhr_weather.open('get','http://wthrcdn.etouch.cn/weather_mini?city='+_city,true);
+                                xhr_weather.send();
+                            });
+
+                            // 处理天气
+                            pro_weather.then(res=>{
+                                console.log(res);
+                                if(res == undefined){
+                                    return ;
+                                }else{
+                                    // 天气图片
+                                    let weatherData = [];
+                                    for(let i = 0;i<24;i++){
+                                        let path = 'images/tianqi/'+(i+1)+'.png';
+                                        weatherData.push(path); 
+                                    }
+                                    // 创建ul
+                                    let ul = document.createElement('ul');
+                                    let h2 = document.createElement('h2');
+                                    let tips = document.createElement('p');
+
+                                    h2.innerHTML = res.data.city+'天气预报';
+                                    tips.innerHTML ='温馨提示：'+ res.data.ganmao;
+                                    // 添加到界面
+                                    ul.innerHTML = res.data.forecast.map(item=>{
+                                        let imgurl;
+                                        // if(item.type == '晴'){
+                                        //     imgurl = weatherData[0];
+                                        // }else if(item.type == '多云'){
+                                        //     imgurl = weatherData[4];
+                                        // }
+                                        switch(item.type){
+                                            case '晴':
+                                            imgurl = weatherData[0];
+                                            break; 
+                                            case '多云':
+                                            imgurl = weatherData[4];
+                                            break;
+                                             case '阵雨':
+                                            imgurl = weatherData[10];
+                                            break;
+                                            case '阴':
+                                            imgurl = weatherData[1];
+                                            break;
+                                        }
+                                        return `
+                                            <li><p>${item.date}</p><p>${item.type}</p><img src=${imgurl}> <p>${item.high}/${item.low}</p><p>风向：${item.fengxiang}</p></li>
+                                        `;
+                                    }).join('');
+                                    cityWeather.innerHTML = '';
+                                    cityWeather.appendChild(h2);
+                                    cityWeather.appendChild(tips);
+                                    cityWeather.appendChild(ul);
+                                    let lis = document.querySelectorAll('li');
+                                    console.log(lis);
+                                }
+                            },()=>{});
+                        }
+
+                    }
+                }
+
+            },()=>{})
+            
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" id="cityName"/><button id="btnSearch">查询</button>
+        <div class="letterBox"></div>
+        <div class="hotCity"></div>
+        <div class="cityList"></div>
+    </div>
+    <div class="cityWeather"></div>
+    
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>分页刷新</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        .datalist{
+            width:980px;
+            margin:0 auto;
+            border:1px solid green;
+            height:500px;
+            overflow-x:hidden;
+        } 
+        .datalist::-webkit-scrollbar{
+            width:2px;
+        } 
+        .datalist ul {
+        }
+        .datalist ul li{
+            border-bottom:1px dotted #333;
+            padding:20px;
+        }
+        .datalist ul li p{
+            font-size:20px;
+            color:green;
+            text-indent:2em;
+        }
+        .page {
+            width:980px;
+            margin:10px auto;
+        }
+        .page span{
+            padding:10px;
+            color:#fff;
+            background:black;
+            margin:10px;
+            cursor:pointer;
+        }
+        .page span.active{
+            color:#000;
+            background:#58bc58;
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 获取元素
+            let datalist = document.querySelector('.datalist');
+            let page = document.querySelector('.page');
+
+            // 发起请求
+            let xhr = new XMLHttpRequest();
+            let status = [200,304];
+            let qty = 6;
+            // 处理响应报文
+            xhr.onload = function(){
+                if(status.includes(xhr.status)){
+                    let res = JSON.parse(xhr.responseText);console.log(res);
+
+                    // 创建一个ul
+                    let ul = document.createElement('ul');
+                    ul.innerHTML = res.data.map(item=>{
+                        return `<li>
+                                    <h4>${item.name}</h4>
+                                    <p>${item.content}</p>
+                                `;
+                    }).join(''); 
+                    datalist.innerHTML = '';
+                    datalist.appendChild(ul); 
+
+                    // 创建分页:用总数除以数量
+                    let pageLen = Math.ceil(res.total/res.qty);
+                    page.innerHTML = '';
+                    for(let i = 0;i<pageLen;i++){
+                        let span = document.createElement('span');
+                        span.innerHTML = i+1;
+                        if(i === res.page-1){
+                           span.className = 'active';
+                        }
+                        page.appendChild(span);
+                   }
+                }
+            }
+            xhr.open('get','../api/page.php?qty='+qty,true);
+            xhr.send();
+
+            // 分页切换
+            page.onclick = function(e){
+                e = e || window.event;
+                if(e.target.tagName.toLowerCase() == 'span'){
+                    let pageNo = e.target.innerText;
+                    xhr.open('get','../api/page.php?page='+pageNo+'&qty='+qty,true);
+                    xhr.send();
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="datalist"></div>
+    <div class="page"></div>
+</body>
+</html>

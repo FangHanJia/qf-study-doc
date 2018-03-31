@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>自动定位</title>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 获取ip->定位城市
+            let xhr = new XMLHttpRequest();
+            let status = [200,304];
+            xhr.onload = function(){
+                if(status.includes(xhr.status)){
+                    // ip
+                    let ip = xhr.responseText;
+                    // console.log(ip);   
+                    // 根据IP获取城市:利用服务器代理获取城市
+                    let xhr_city = new XMLHttpRequest();
+                    // 处理响应报文
+                    xhr_city.onload = function(){
+                        if(status.includes(xhr_city.status)){
+                            let city = xhr_city.responseText;
+                            let xhr_weather = new XMLHttpRequest();
+                            // 处理响应报文
+                            xhr_weather.onload = function(){
+                                if(status.includes(xhr_weather.status)){
+                                    console.log(JSON.parse(xhr_weather.responseText));
+                                }
+                            }
+                            xhr_weather.open('get','http://wthrcdn.etouch.cn/weather_mini?city='+city,true);
+                            xhr_weather.send();
+                        }
+                    }
+                    xhr_city.open('get','../api/get_city.php?ip='+ip,true);
+                    xhr_city.send();                
+
+                }
+            }
+            xhr.open('get','../api/ip.php',true);
+            xhr.send();
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>显示城市天气信息</title>
+    <style type="text/css">
+        body,ul{margin:0;padding:0;}
+        #box{padding:20px;}
+        ul{list-style:none;}
+        ul li{font-size:14px;float:left;width:160px;padding:5px 10px;margin:10px;border:1px dotted #ddd;background:#ccc;}
+        ul li.active{background:#58bc58;color:#fff;}
+        #myMap{width:600px;height:200px;}
+    </style>
+    <!-- 引入百度地图 api -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=A9iwbUbEm8ndX6gDfQHBYp2pFOT22WNq"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 使用cors服务器设置响应头，
+            // header:Access_Control_Allow_Origin:*;
+            let city = document.querySelector('#city');
+            let btnSearch = document.querySelector('#btnSearch');
+            let container = document.querySelector('.container');
+            let myMap = document.querySelector('#myMap');
+
+            let xhr = new XMLHttpRequest();
+            let status = [200,304];
+            // 处理响应报文
+            xhr.onload = function(){
+                if(status.includes(xhr.status)){
+                    // console.log(xhr.responseText);
+                    let res = JSON.parse(xhr.responseText);
+                    // 图片数据
+                    let weatherData = [];
+                    for(let i = 0;i<24;i++){
+                        let path = 'images/tianqi/'+(i+1)+'.png';
+                        weatherData.push(path); 
+                    }
+                    console.log(weatherData);
+                    console.log(res);
+                    // 创建ul
+                    let ul = document.createElement('ul');
+                    let h2 = document.createElement('h2');
+                    let tips = document.createElement('p');
+
+                    h2.innerHTML = res.data.city+'天气预报';
+                    tips.innerHTML ='温馨提示：'+ res.data.ganmao;
+                    // 添加到界面
+                    ul.innerHTML = res.data.forecast.map(item=>{
+                        let imgurl;
+                        // if(item.type == '晴'){
+                        //     imgurl = weatherData[0];
+                        // }else if(item.type == '多云'){
+                        //     imgurl = weatherData[4];
+                        // }
+                        switch(item.type){
+                            case '晴':
+                            imgurl = weatherData[0];
+                            break; 
+                            case '多云':
+                            imgurl = weatherData[4];
+                            break;
+                             case '阵雨':
+                            imgurl = weatherData[10];
+                            break;
+                            case '阴':
+                            imgurl = weatherData[1];
+                            break;
+                        }
+                        return `
+                            <li><p>${item.date}</p><p>${item.type}</p><img src=${imgurl}> <p>${item.high}/${item.low}</p><p>风向：${item.fengxiang}</p></li>
+                        `;
+                    }).join('');
+                    container.innerHTML = '';
+                    container.appendChild(h2);
+                    container.appendChild(tips);
+                    container.appendChild(ul);
+                    let lis = document.querySelectorAll('li');
+                    console.log(lis);
+                    lis[0].className = 'active';
+                }
+            }
+            let _city = '北京';
+            // 查询按钮事件
+            btnSearch.onclick = function(){
+                // 获取输入的值
+                _city = city.value.trim();
+                if(_city.length===0){
+                    return;
+                }
+                xhr.open('get','http://wthrcdn.etouch.cn/weather_mini?city='+_city,true);
+                xhr.send();
+                map.centerAndZoom(_city,19);
+                map.setCurrentCity(_city);
+            }
+
+            xhr.open('get','http://wthrcdn.etouch.cn/weather_mini?city=北京',true);
+            xhr.send();
+
+            // 百度地图API功能
+            let map = new BMap.Map("myMap");
+            map.centerAndZoom(_city,19);
+            map.setCurrentCity(_city);
+            map.enableScrollWheelZoom(true);//滚轮缩放
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" id="city" /><button id="btnSearch">查询</button>
+        <div class="container"></div>
+        <div id="myMap"></div>
+    </div>
+</body>
+</html>

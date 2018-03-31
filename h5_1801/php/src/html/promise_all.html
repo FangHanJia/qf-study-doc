@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>promise_all</title>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // promose.all();==>把一推promise对象包装为一个promise对象，使其同时执行
+            let status = [200,304];
+            let pro_ip = new Promise((resolve,reject)=>{
+                // 获取ip
+                let xhr_ip = new XMLHttpRequest();
+
+                // 处理响应报文
+                xhr_ip.onload = ()=>{
+                    if(status.includes(xhr_ip.status)){
+                        let ip = xhr_ip.responseText;
+                        resolve(ip);
+                    }
+                }
+                xhr_ip.open('get','../api/ip.php',true);
+                xhr_ip.send();
+
+            });
+            // 处理ip
+            pro_ip.then(ip=>{
+                console.,log(ip);
+            },()=>{});
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

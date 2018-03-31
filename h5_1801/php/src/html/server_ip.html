@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>服务器爬虫</title>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 发起请求
+        let xhr = new XMLHttpRequest();
+        let status = [200,304];
+        xhr.onload = function(){
+            if(status.includes(xhr.status)){
+                console.log(xhr.responseText);
+            }
+        }
+        xhr.open('get','../api/ip.php',true);
+        xhr.send();
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

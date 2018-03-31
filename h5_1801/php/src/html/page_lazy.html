@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>懒加载模式</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        .datalist{
+            width:980px;
+            margin:0 auto;
+            /*border:1px solid green;*/
+            /*height:500px;*/
+            /*overflow-x:hidden;*/
+        } 
+        .datalist::-webkit-scrollbar{
+            width:2px;
+        } 
+        .datalist ul {
+        }
+        .datalist ul li{
+            border-bottom:1px dotted #333;
+            padding:20px;
+            height:60px;
+        }
+        .datalist ul li p{
+            font-size:20px;
+            color:green;
+            text-indent:2em;
+        }
+        .page {
+            width:980px;
+            margin:10px auto;
+        }
+        .page span{
+            padding:10px;
+            color:#fff;
+            background:black;
+            margin:10px;
+            cursor:pointer;
+        }
+        .page span.active{
+            color:#000;
+            background:#58bc58;
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 懒加载模式
+            // 获取元素
+            var datalist = document.querySelector('.datalist');
+            var xhr = new XMLHttpRequest();
+            var status = [200,304];
+            var ul ;
+            // 处理响应报文
+            xhr.onload = function(){
+                if(status.includes(xhr.status)){
+                    var res = JSON.parse(xhr.responseText);
+                    ul = document.createElement('ul');
+                    ul.innerHTML = res.map(item=>{
+                        return `<li>
+                                    <h4>${item.name}</h4>
+                                    <p>${item.content}</p>
+                                </li>`;
+                    }).join('');
+                    datalist.appendChild(ul);
+                    // 懒加载模式
+                    window.onscroll = function() {
+                        if (getClient().height + getScrollTop() >= ul.offsetHeight) {
+                            // alert(666);
+                           var qty =6;
+                            xhr.onload = function(){
+                                if(status.includes(xhr.status)){
+                                    var res = JSON.parse(xhr.responseText);
+                                    var ul = document.createElement('ul');
+                                    ul.innerHTML = res.data.map(item=>{
+                                            return `<li>
+                                                        <h4>${item.name}</h4>
+                                                        <p>${item.content}</p>
+                                                    </li>`;
+                                    }).join('');
+                                    datalist.appendChild(ul);
+                                }
+                            }
+                            xhr.open('get','../api/page.php?qty='+qty,true);
+                            xhr.send();
+                        }
+
+                    };
+                }
+            }
+            xhr.open('get','../data/page.json',true);
+            xhr.send();
+            
+           
+           
+            // clientWidth 处理兼容性
+            function getClient() {
+                return {
+                    width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+                    height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+                }
+            }
+            // scrollTop兼容性处理
+            function getScrollTop() {
+                return window.pageYOffset || document.documentElement.scrollTop;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="datalist"></div>
+</body>
+</html>

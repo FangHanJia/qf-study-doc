@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>qq音乐</title>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            window.getData = function(data){
+                console.log(JSON.parse(data));
+            }
+            let btn = document.querySelector('#btn');
+            btn.onclick = function(){
+                let script = document.createElement('script');
+                script.src = 'https://c.y.qq.com/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg';
+                document.body.appendChild(script);
+            }
+
+        });
+    </script>
+</head>
+<body>
+    <button id="btn">搜索</button>
+</body>
+</html>

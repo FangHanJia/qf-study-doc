@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>接收后端数据</title>
+    <style type="text/css">
+        .xiaomi li{
+            position:relative;
+        }
+        .btnCount{
+            position:absolute;
+            right:20px;
+            top:20px;
+        }
+        
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 获取元素
+            
+            let xiaomi = document.querySelector('.xiaomi');
+            // 模拟数据
+            let requrl = '../data/xiaomi.json';
+            // 创建异步请求对象
+            let xhr = new XMLHttpRequest();
+            let restext;
+            // 处理后端响应数据的函数
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState === 4 && xhr.status === 200){
+                    // 将响应报文转为数组/对象
+                    console.log(xhr.responseText);
+                    restext = JSON.parse(xhr.responseText);
+                    console.log(typeof restext);
+                    //将数据写入到界面
+                    let ul = document.createElement('ul');
+                    let li;
+                    for(let i=0;i<restext.length;i++){
+                        li = document.createElement('li');
+                        let img = document.createElement('img');
+                        let h4 = document.createElement('h4');
+                        let p = document.createElement('p');
+                        let btn = document.createElement('button');
+
+                        li.id = restext[i].id;
+                        img.src = restext[i].imgurl;
+                        h4.innerHTML = restext[i].name;
+                        p.innerHTML = restext[i].price;
+                        btn.innerHTML = restext[i].count;
+                        btn.className = 'btnCount'
+
+                        li.appendChild(img);
+                        li.appendChild(h4);
+                        li.appendChild(p);
+                        li.appendChild(btn);
+                        ul.appendChild(li);
+                    }
+                    
+                    xiaomi.appendChild(ul);
+
+                }
+            }
+            // 开始请求
+            xhr.open('get',requrl,true);
+            // 发送请求
+            xhr.send();
+            // 点赞按钮的事件:委托事件
+            xiaomi.onclick = function(e){
+                // 兼容
+                e = e || window.event;
+                let target = e.target || e.srcElement;
+                if(target.className == 'btnCount'){
+                    // 获取id
+                    let currentLi = target.parentNode;
+                    let data = currentLi.getAttribute('id');
+                    console.log(data);
+                    // 再次发起请求
+                    let xhr = new XMLHttpRequest();
+                    let status = [200,304];
+                    xhr.onreadystatechange = function(){
+                        if(xhr.readyState === 4 && status.indexOf(xhr.status)>=0){
+                            console.log(xhr.responseText);
+                            // 响应报文
+                            let res = JSON.parse(xhr.responseText);
+                            console.log(res);
+                            e.target.innerHTML = res.count;
+                        }
+                    }
+                    xhr.open('get','../api/xiaomi.php?id='+data,true);
+                    xhr.send();
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>商品列表</h1>
+    <div class="xiaomi">
+        <!-- ul>li -->
+    </div>
+</body>
+</html>

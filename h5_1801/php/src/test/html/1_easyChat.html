@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>简单了聊天室</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        #container{
+            width:520px;
+            margin: 0 auto;
+
+        }
+        #container .content{
+            width:520px;
+            height:400px;
+            background:#333;
+            overflow-x:hidden;
+        }
+        #container .content::-webkit-scrollbar{
+            width:2px;
+           
+        }
+        .box #msg{
+            width:300px;
+            height:50px;
+        }
+        .box #btnSend{
+            width:52px;
+            height:54px;
+        }
+        .content  p{
+            padding:10px;
+            font-size:18px;
+            color:#fff;
+        }
+        .content p.left{
+            text-align:left;
+        }
+        .content p.right{
+            text-align:right;
+        }
+        
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 获取元素
+            let content = document.querySelector('.content');
+            let msg = document.querySelector('#msg');
+            let btnSend = document.querySelector('#btnSend');
+
+            // 发送按钮绑定事件
+            btnSend.onclick = function(e){
+                // 获取输入的值
+                let _msg = msg.value;
+                // 将消息显示与界面
+                let p = document.createElement('p');
+                p.innerHTML = _msg;
+                p.className = 'right';
+                content.appendChild(p);
+                msg.value = '';
+                // 创建请求对象
+                let xhr =new XMLHttpRequest();
+                let status = [200,304];
+                // 处理响应报文
+                xhr.onload = function(){
+                    if(status.includes(xhr.status)){
+                        // console.log(xhr.responseText);
+                        let res = xhr.responseText;
+                        let p = document.createElement('p');
+                        p.innerHTML = res;
+                        p.className = 'left';
+                        content.appendChild(p);
+
+                    }
+                }
+                xhr.open('post','../api/4_easyChat.php',true);
+                xhr.setRequestHeader('Content-Type','application/x-www-from-urlencoded;charset=UTF-8')
+                xhr.send("message="+_msg);
+            }   
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div class="content"></div>
+        <div class="box">
+            <input type="text" id="msg" />
+            <button id="btnSend">发送</button>
+        </div>
+    </div>
+    
+</body>
+</html>

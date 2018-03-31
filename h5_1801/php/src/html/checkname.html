@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border:0;
+        }
+        ol, ul ,li{list-style: none;} 
+        #box{
+            width:400px;
+            height:300px;
+            margin:0 auto;
+            background:#ccc;
+            padding:10px;
+        }
+        #box h4{
+            line-height:40px;
+        }
+        #box #num{
+            width:200px;
+            height:30px;
+            display:inline-block;
+        } 
+        #box .tips{display:inline-block;}
+        #box .tips.active{
+            color:red;
+        } 
+        #box .tips.green{
+            color:green;
+        } 
+        #box #btnReg{
+            width:40px;
+            height:20px;
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded',()=>{
+            // 获取元素
+            let username = document.querySelector('#num'); 
+            let btnReg = document.querySelector('#btnReg'); 
+            
+            // 创建请求对象
+            let xhr = new XMLHttpRequest();
+            let status = [200,304];
+            let tips = document.querySelector('.tips');
+
+            // 按钮绑定事件
+            username.onblur = function(){
+                // 获取用户名
+                let _username = username.value;
+                xhr.onload = function(){
+                    if(status.includes(xhr.status)){
+                        let res = xhr.responseText;
+                        console.log(res);
+                        if(res == 'fail'){
+                            tips.innerText = `${_username} 太受欢迎了！`;
+                            tips.classList.remove('green');
+                            tips.classList.add('active');
+                        }else{
+                            tips.classList.remove('active');
+                            tips.classList.add('green');
+                            tips.innerText = `${_username} 欢迎！`;
+                        }
+                    }
+                }
+                xhr.open('get','../api/checkname.php?username='+_username,true);
+                xhr.send();
+            }
+
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        <h4>用户注册</h4>
+        <input type="text" id="num"/>
+        <p class="tips"></p><br/>
+        <button id="btnReg">注册</button>
+    </div>
+</body>
+</html>
