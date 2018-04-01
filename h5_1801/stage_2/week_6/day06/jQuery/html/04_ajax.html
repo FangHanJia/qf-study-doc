@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Ajax使用</title>
+    <script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+      jQuery($=>{
+        let $btn = $('#btn');
+        $btn.text('发送');
+        $btn.on('click',function(){
+          $.ajax({
+            url:'../api/ajax_test.php',
+            data:{id:2},
+            success:function(data){
+              console.log(data);
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button type="button" name="button" id="btn"></button>
+  </body>
+</html>
