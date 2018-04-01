@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ajax加载外部文件</title>
+    <style media="screen">
+      p{color:red;}
+    </style>
+    <script src="../lib/jquery-3.2.1.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      jQuery($=>{
+        // 通过Ajax获取指定的url处的文件,并添加到选择上；
+        let $box = $('.box');
+        $box.load('load_test.txt');
+      });
+
+    </script>
+  </head>
+  <body>
+    <div class="box">
+
+    </div>
+  </body>
+</html>
