@@ -9,6 +9,7 @@
         let $btn = $('#btn');
         $btn.text('发送');
         $btn.on('click',function(){
+          // 从后端获取商品数据
           $.ajax({
             url:'../api/ajax_test.php',
             data:{id:2},
