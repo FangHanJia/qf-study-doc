@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>jQueryUI的使用</title>
+    <link rel="stylesheet" href="../lib/jquery-ui-1.12.1/jquery-ui.css">
+    <style media="screen">
+      .drag{border:5px solid red;width:500px;height:200px;}
+      .drag h3{border:1px solid red;height:32px;}
+    </style>
+    <script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../lib/jquery-ui-1.12.1/jquery-ui.js">
+    </script>
+    </script>
+    <script type="text/javascript">
+      jQuery($=>{
+        // 元素的拖拽和缩放方法
+        $('.drag').draggable();
+        $('.drag').resizable();
+        // 常用的方法：
+        //  1、accordion()：手风琴(直接在容器上调用)
+        //  2、autoComplete()：自动匹配
+        //  3、Datepicker():日期
+        //  4、tabs():选项卡切换
+        $('#cont').datepicker();
+      });
+    </script>
+  </head>
+  <body>
+    <h1>jQueryUI的使用</h1>
+    <div class="drag">
+      <h3>标题：<input type="text" id="cont"/> </h3>
+    </div>
+  </body>
+</html>
