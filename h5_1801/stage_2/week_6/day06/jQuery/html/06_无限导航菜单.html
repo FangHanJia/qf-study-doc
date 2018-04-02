@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>无限导航菜单</title>
+    <style>
+      	a{color:#333;text-decoration: none;}
+      	a:hover{color:#f00;}
+      	ul ul{display:none;}
+      	.nav{width:200px;}
+      	.nav ul{padding:0;margin:0;line-height:2;list-style: none;}
+      	.nav li{position:relative;}
+      	.nav li > span{position:absolute;right:10px;top:50%;margin-top:-16px;color:#999;}
+      	.nav li:hover > span{color:#f00;}
+      	.nav > ul > li{border:1px solid #fff;}
+      	.nav > ul > li > a{display:block;padding:5px;background-color:#efefef;}
+
+      	/*子菜单*/
+      	.nav > ul ul{position: absolute;left:200px;top:0;width:200px;border:1px solid #ddd;background-color: #fff;}
+      	.nav > ul ul li{border-bottom:1px solid #ddd;}
+      	.nav > ul ul li:hover{background-color:#efefef;}
+      	.arrow{width:0;height:0;border:12px solid transparent; border-left-color:#666;border-top-width:5px;border-bottom-width:5px;}
+      	.nav li .arrow{position:absolute;top:75%;right:0;}
+  	</style>
+    <script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+      jQuery($=>{
+        let $nav = $('.nav');
+        // 找到有导航页的li添加箭头
+        $nav.find('li').has('ul').addClass('has-menu')
+        .append('<span class="arrow"></span>');
+        // 给有箭头图标的li添加事件
+        // 鼠标移入事件
+        $nav.on('mouseover','.has-menu',function(){
+          clearTimeout(this.timer);
+          $(this).children('ul').show('slow');
+        })
+        // 鼠标移除事件
+        .on('mouseleave','.has-menu',function(){
+          this.timer = setTimeout(()=>{
+            $(this).children('ul').hide('slow');
+          },500);
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <div class="nav">
+    		<ul>
+    			<li><a href="#">导航1</a></li>
+    			<li><a href="#">导航2</a></li>
+    			<li><a href="#">导航3</a>
+    				<ul>
+    					<li><a href="#">导航31</a></li>
+    					<li><a href="#">导航32</a></li>
+    					<li><a href="#">导航33</a></li>
+    					<li><a href="#">导航34</a>
+    						<ul>
+    							<li><a href="#">导航351</a></li>
+    							<li><a href="#">导航352</a></li>
+    							<li><a href="#">导航353</a></li>
+    							<li><a href="#">导航354</a></li>
+    							<li><a href="#">导航355</a></li>
+    						</ul>
+    					</li>
+    					<li><a href="#">导航35</a>
+    						<ul>
+    							<li><a href="#">导航351</a></li>
+    							<li><a href="#">导航352</a></li>
+    							<li><a href="#">导航353</a></li>
+    							<li><a href="#">导航354</a></li>
+    							<li><a href="#">导航355</a>
+    								<ul>
+    									<li><a href="#">导航3551</a></li>
+    									<li><a href="#">导航3552</a></li>
+    									<li><a href="#">导航3553</a></li>
+    									<li><a href="#">导航3554</a></li>
+    									<li><a href="#">导航3555</a></li>
+    									<li><a href="#">导航3556</a>
+    										<ul>
+    											<li><a href="#">导航35561</a></li>
+    											<li><a href="#">导航35562</a></li>
+    											<li><a href="#">导航35563</a></li>
+    											<li><a href="#">导航35564</a></li>
+    											<li><a href="#">导航35565</a></li>
+    											<li><a href="#">导航35566</a></li>
+    										</ul>
+    									</li>
+    								</ul>
+    							</li>
+    							<li><a href="#">导航356</a></li>
+    						</ul>
+    					</li>
+    					<li><a href="#">导航36</a></li>
+    				</ul>
+    			</li>
+    			<li><a href="#">导航4</a>
+    				<ul>
+    					<li><a href="#">导航41</a></li>
+    					<li><a href="#">导航42</a></li>
+    					<li><a href="#">导航43</a></li>
+    					<li><a href="#">导航44</a></li>
+    					<li><a href="#">导航45</a></li>
+    					<li><a href="#">导航46</a></li>
+    				</ul>
+    			</li>
+    			<li><a href="#">导航5</a></li>
+    			<li><a href="#">导航6</a>
+    				<ul>
+    					<li><a href="#">导航61</a>
+    						<ul>
+    							<li><a href="#">导航611</a></li>
+    							<li><a href="#">导航612</a></li>
+    							<li><a href="#">导航613</a></li>
+    							<li><a href="#">导航614</a></li>
+    							<li><a href="#">导航615</a></li>
+    							<li><a href="#">导航616</a></li>
+    						</ul>
+    					</li>
+    					<li><a href="#">导航62</a></li>
+    					<li><a href="#">导航63</a></li>
+    					<li><a href="#">导航64</a></li>
+    					<li><a href="#">导航65</a></li>
+    					<li><a href="#">导航66</a></li>
+    				</ul>
+    			</li>
+    		</ul>
+    	</div>
+  </body>
+</html>
