@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>事件命名空间的移除</title>
+    <script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+      jQuery($=>{
+        let $phone = $('.phone');
+        // 事件常规命名
+        $phone.on('click',function(){
+          console.log('我是click');
+        });
+        // 事件常规移除
+        // $phone.off('click');
+
+        // 自定义命名事件--命名空间
+        $phone.on('click.fhj',function(){
+          console.log('我是方汉佳');
+        });
+        // 命名空间清除
+        $phone.off('.fhj');
+      });
+    </script>
+  </head>
+  <body>
+    <h1>事件命名空间的移除</h1>
+    <img src="../img/01.jpg" class="phone">
+  </body>
+</html>

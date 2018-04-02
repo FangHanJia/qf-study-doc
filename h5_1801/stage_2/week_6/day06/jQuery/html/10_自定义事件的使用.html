@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>自定义事件的使用</title>
+    <script src="../lib/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+      jQuery($=>{
+        // 自定义事件的使用
+        $('h1').on('myclick',function(){
+          console.log('h1');
+        });
+        // $('h1').trigger('myclick');
+        $('h1').triggerHandler('myclick');
+      });
+    </script>
+  </head>
+  <body>
+    <h1>自定义事件的使用</h1>
+  </body>
+</html>
