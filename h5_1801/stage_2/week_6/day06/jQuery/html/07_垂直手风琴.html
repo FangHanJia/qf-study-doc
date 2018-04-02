@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>垂直手风琴</title>
+    <style media="screen">
+      .accordion{width:520px;border:1px solid #ddd;}
+      h4{background:green;color:#fff;font-size:20px;}
+      .content{display:none;height:200px;background:#ccc;}
+    </style>
+    <script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+      jQuery($=>{
+        let $accordion = $('.accordion');
+        // 事件委托
+        $accordion.on('mouseover','h4',function(){
+          $(this).next('.content').show('slow')
+          .siblings('.content').hide('slow');
+        });
+
+      });
+    </script>
+  </head>
+  <body>
+    <div class="accordion">
+      <h4>这是标题</h4>
+      <div class="content">这是内容</div>
+      <h4>这是标题</h4>
+      <div class="content">这是内容</div>
+      <h4>这是标题</h4>
+      <div class="content">这是内容</div>
+      <h4>这是标题</h4>
+      <div class="content">这是内容</div>
+    </div>
+  </body>
+</html>
