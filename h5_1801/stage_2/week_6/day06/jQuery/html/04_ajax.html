@@ -3,25 +3,102 @@
   <head>
     <meta charset="utf-8">
     <title>jQuery Ajax使用</title>
+    <style media="screen">
+      #goodsbox{width:80%;border-right:1px dotted black;}
+      li{position:relative;border-bottom:1px solid #ccc;padding:5px;}
+      li .btnClose{position:absolute;top:20px;right:20px;}
+    </style>
     <script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
     <script type="text/javascript">
+
       jQuery($=>{
-        let $btn = $('#btn');
-        $btn.text('发送');
-        $btn.on('click',function(){
-          // 从后端获取商品数据
+        // 获取元素
+        let $goodsbox = $('#goodsbox');
+
+        // 从后端获取商品数据：初始化
           $.ajax({
             url:'../api/ajax_test.php',
-            data:{id:2},
             success:function(data){
-              console.log(data);
+              let res = JSON.parse(data);
+              gender(res);
+            }
+         });
+
+         // 封一个生成结构函数
+         function gender(res){
+           let ul = $('<ul></ul>');
+           res.map(item=>{
+             let li = $('<li></li>');
+             li.prop('id',item.id);
+             let btnClose = $('<button></button>');
+             btnClose.html('&times;');
+             btnClose.addClass('btnClose');
+             let btnAdd = $('<button></button>');
+             btnAdd.html('添加');
+             btnAdd.addClass('btnAdd');
+             let img = $(`<img src="${item.imgurl}"/>`);
+             let name = $(`<p>商品：${item.name}</p>`);
+             let price = $(`<p>价格：${item.price}</p>`);
+             let content = $(`<p>简介：${item.content}</p>`);
+
+             img.css({
+               position:'absulte',
+               top:0,
+               left:0
+             });
+
+             li.append(btnClose);
+             li.append(img);
+             li.append(name);
+             li.append(price);
+             li.append(content);
+             li.append(btnAdd);
+             ul.append(li);
+           });
+           $goodsbox.html('');
+           $goodsbox.append(ul);
+         }
+
+        // 商品操作
+        // 删除商品
+        $goodsbox.on('click','.btnClose',function(){
+          let id = $(this).closest('li').prop('id');
+          $.ajax({
+            url:'../api/ajax_test.php',
+            data:{id:id},
+            success:function(data){
+              let res = JSON.parse(data);
+              gender(res);
             }
           });
         });
+
+        // 添加商品到购物车
+        $goodsbox.on('click','.btnAdd',function(){
+          let currentImg = $('<img/>');
+          let imgurl = $(this).prevAll('img').prop('src');
+          currentImg.prop('src',imgurl);
+          console.log(currentImg);
+          currentImg.css({
+            position:'absolute',
+            top:0,
+            left:0,
+            zIndex:999
+          });
+          $(this).closest('li').append(currentImg);
+          currentImg.animate({
+            left:window.innerWidth - currentImg.width(),
+            width:'100px',
+            height:'100px'
+          },1000);
+        })
+
       });
     </script>
   </head>
   <body>
-    <button type="button" name="button" id="btn"></button>
+    <!-- 商品 -->
+    <div id="goodsbox"></div>
+    </div>
   </body>
 </html>
