@@ -1,0 +1,8 @@
+.fzoom-small{position:relative;overflow:hidden;}
+.fzoom-small img{display:block;}
+.fzoom-small .zoom{display:none;position: absolute;width:30px;height:30px;
+  border:1px solid #fc0;background:#ff0;background-color:rgba(255,255,0,.3);
+  filter:alpha(Opacity=30);}
+.fzoom-big{display:none;position: absolute;width:400px;height:300px;
+  overflow:hidden;}
+.fzoom-big img{position: absolute;left:0;right:0;}
