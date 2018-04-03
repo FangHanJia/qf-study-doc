@@ -18,10 +18,15 @@
         // 从后端获取商品数据：初始化
           $.ajax({
             url:'../api/ajax_test.php',
-            success:function(data){
-              let res = JSON.parse(data);
-              gender(res);
-            }
+            // success:function(data){
+            //   let res = JSON.parse(data);
+            //   gender(res);
+            // }
+            // 使用promise
+         }).then(function(data){
+           console.log(data);
+           let res = JSON.parse(data);
+           gender(res);
          });
 
          // 封一个生成结构函数
