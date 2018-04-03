@@ -1,4 +1,5 @@
-.fcarousel{position:relative;width:810px;height:320px;overflow:hidden;}
+.fcarousel{position:relative;width:810px;height:320px;overflow:hidden;
+  cursor:pointer;}
 .fcarousel img{display: block;}
 .fcarousel ul{position:absolute;overflow:hidden;list-style: none;
   padding:0;margin:0;}
@@ -10,3 +11,9 @@
   text-align:center;color:#fff;border-radius: 50%;
   box-shadow:0 0 10px rgba(0,0,0,.5);}
 .fcarousel .page span.active{background-color: rgba(255,0,0,.8)}
+/* 左右箭头 */
+.fcarousel .arrow{display:block;width:50px;height:50px;position:absolute;
+  top:50%;transform:translateY(-50%);font-size:40px;color:#eee;
+  text-decoration:none;text-align:center;line-height:50px;}
+.fcarousel .fprev{left:0;}
+.fcarousel .fnext{right:0;}

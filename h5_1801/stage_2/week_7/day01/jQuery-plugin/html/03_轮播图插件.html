@@ -3,8 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>轮播图插件的编写</title>
-    <script type="text/javascript" src="../lib/jquery-fcarousel
-    /jquery.fCarousel.js"></script>
+    <link rel="stylesheet" type="text/css" href="../lib/jquery-fcarousel/jquery.fCarousel.css" />
+    <script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../lib/jquery-fcarousel/jquery.fCarousel.js"></script>
+    <script type="text/javascript">
+      jQuery($=>{
+        $('.banner').fCarousel({
+          width:400,
+          height:260,
+          imgs:['../img/1.jpg','../img/2.jpg','../img/3.jpg','../img/4.jpg'],
+          type:'fade',
+          duration:2000
+          // page:false
+        });
+      });
+    </script>
   </head>
   <body>
     <h1>轮播图插件的编写</h1>
