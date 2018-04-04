@@ -6,3 +6,6 @@
 .fzoom-big{display:none;position: absolute;width:400px;height:300px;
   overflow:hidden;}
 .fzoom-big img{position: absolute;left:0;right:0;}
+.fzoom-imglist ul{position:relative;list-style:none;border:0;margin:0;}
+.fzoom-imglist ul li{float:left;padding:5px;}
+.fzoom-imglist ul li img{width:50px;height:50px;}
