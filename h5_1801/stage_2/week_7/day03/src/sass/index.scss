@@ -1,0 +1,15 @@
+.nav{
+  height:40px;background:rgba(0,0,0,0.4);border-radius:5px;
+  ul{
+    list-style:none;padding:0 5px;
+    li{
+      float:left;padding:0 20px;
+      a{
+        display:inline-block;color:#333;font-size:20px;height:40px;
+        text-decoration:none;line-height:40px;
+      }
+      a:hover{color:#fc0;}
+    }
+    li:last-child{float:right;}
+  }
+}

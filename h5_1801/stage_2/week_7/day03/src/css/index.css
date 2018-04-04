@@ -1,0 +1,32 @@
+.nav {
+  height: 40px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0 5px;
+}
+
+.nav ul li {
+  float: left;
+  padding: 0 20px;
+}
+
+.nav ul li a {
+  display: inline-block;
+  color: #333;
+  font-size: 20px;
+  height: 40px;
+  text-decoration: none;
+  line-height: 40px;
+}
+
+.nav ul li a:hover {
+  color: #fc0;
+}
+
+.nav ul li:last-child {
+  float: right;
+}
