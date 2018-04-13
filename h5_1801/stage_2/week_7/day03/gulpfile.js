@@ -16,10 +16,11 @@ gulp.task('watch',function(){
 // es6转化为es5
 let babel = require('gulp-babel');
 
-gulp.task('default',function(){
-  return gulp.src('./src/js/test.js')
+ 
+gulp.task('default', function () {
+  return gulp.src('./src/js/*.js')
     .pipe(babel())
-    .pipe(gulp.dest('.dist/js/'));
+    .pipe(gulp.dest('./src/js/a/'));
 });
 // js压缩任务
 let uglify = require('gulp-uglify');
