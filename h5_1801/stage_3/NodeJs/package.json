@@ -1,0 +1,17 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "FunA":"node ./day01-base/js/01_custom_b",
+    "start":"npm run FunA"
+  },
+  "keywords": [
+    "nodejs",
+    "js"
+  ],
+  "author": "'FHJ'",
+  "license": "MIT"
+}
