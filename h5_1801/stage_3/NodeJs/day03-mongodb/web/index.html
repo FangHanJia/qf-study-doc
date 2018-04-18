@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>主页</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <script type="text/javascript" src="lib/jquery-3.2.1.js"></script>
+    <style type="text/css">
+        h1{width:500px;margin:100px auto;}
+        span{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <h1>你好！<span class="nickname"></span></h1>
+    <script type="text/javascript">
+        jQuery($=>{
+            // 获取登陆界面的昵称
+            let url = location.search;
+            let show_name = url.slice(url.indexOf('=')+1);console.log(show_name);
+            let $nickname = $('.nickname');
+            $nickname.text(decodeURI(show_name));
+        });
+    </script>
+</body>
+</html>

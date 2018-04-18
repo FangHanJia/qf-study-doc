@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>用户登陆界面</title>
+    <script type="text/javascript" src="lib/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <style type="text/css">
+        .form{width:500px;margin:100px auto;}
+    </style>
+</head>
+<body>
+    <div class="form" >
+        <h1>用户注册</h1>
+        <div class="form-group">
+            <label for="username">用户名：</label>
+            <input type="text" class="form-control" id="username" name="username">
+        </div>
+        <div class="form-group">
+            <label for="password">密码：</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <div class="form-group">
+            <label for="nickname">昵称：</label>
+            <input type="text" class="form-control" id="nickname" name="nickname">
+        </div>
+        <button type="submit" class="btn btn-default">注册</button>
+    </div>
+    <script type="text/javascript">
+        jQuery($=>{
+            // 获取元素
+            let $btn = $('.btn');
+            let $username = $('#username');
+            let $password = $('#password');
+            let $nickname = $('#nickname');
+            $btn.on('click',function(){
+                // 获取数据
+                let _username = $username.val();
+                let _password = $password.val();
+                let _nickname = $nickname.val();
+                console.log(_username,_password,_nickname);
+                if(_username == '' || _password == '' || _nickname == ''){
+                    return ;
+                }
+                // ajax请求
+                $.ajax({
+                    type:'post',
+                    url:'http://localhost:88/register',
+                    data:{
+                        username:_username,
+                        password:_password,
+                        nickname:_nickname
+                    }
+                })
+                .then((data)=>{
+                    if(data.status){
+                        alert('注册成功！');
+                        location.href = 'login.html';
+                    }
+                });
+            })
+        });
+    </script>
+</body>
+</html>
