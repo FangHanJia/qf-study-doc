@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./libs/httpclient.js"></script>
+    <style type="text/css">
+        .form{width:500px;margin:100px auto;}
+    </style>
+</head>
+<body>
+   <div class="form" >
+        <h1>用户注册</h1>
+        <div class="form-group">
+            <label for="username">用户名：</label>
+            <input type="text" class="form-control" id="username" name="username">
+        </div>
+        <div class="form-group">
+            <label for="password">密码：</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <div class="form-group">
+            <label for="nickname">昵称：</label>
+            <input type="text" class="form-control" id="nickname" name="nickname">
+        </div>
+        <button type="submit" class="btn btn-default" id="btn_reg">注册</button>
+    </div>
+
+    <script>
+        $(function(){
+            $('#btn_reg').click(function(){
+                http.post({
+                    url: 'register', 
+                    data: {username: $('#username').val(), password: $('#password').val(), nickname: $('#nickname').val()}, 
+                    cb: function(res){
+                        if(res.status){
+                            window.location.href = 'login.html';
+                        } else {
+                            window.alert('register fail');
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>
