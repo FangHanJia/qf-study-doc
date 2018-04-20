@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Client</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>你好！</h1>
+    <div id="login">
+        
+        <input type="text" id="nickname"/>
+        <input type="button" value="登陆" id="btn_login"/>
+    </div>
+    <div id="send" style="display:none">
+        <input type="text" id="msg" />
+        <input type="button" value="发送" id="btn_send"/>
+    </div>
+    <div id="show_msg"></div>
+    <script type="text/javascript">
+        jQuery($=>{ 
+            let wss ;
+            // 连接服务端事件
+            $('#btn_login').on('click',()=>{
+                // 连接服务端
+                wss = new WebSocket('ws://10.3.133.238:88');
+                // 打开连接
+                wss.onopen = ()=>{
+                    alert('连接成功！');
+                    $('#login').hide();
+                    $('#send').show();
+                }
+                // 关闭连接
+                wss.onclose = ()=>{
+                    $('#send').hide();
+                    $('#login').show();
+                }
+                // 接收消息
+                wss.onmessage = (_msg)=>{
+                    let msgObj = JSON.parse(_msg.data);
+                    console.log(_msg);
+                    $(`<p>${msgObj.nickname}-${msgObj.time}- ${msgObj.cont}</p>`).appendTo('#show_msg');
+                }
+            });
+
+            // 发送消息事件
+            $('#btn_send').on('click',()=>{
+                // 获取用户名
+                let nickname = $('#nickname').val();
+                // 创建时间
+                let d = new Date();
+                let h = d.getHours();
+                let m = d.getMinutes();
+                // 封一个对象
+                let msgObj = {
+                    nickname:nickname,
+                    time:`${h}-${m}`,
+                    cont:$('#msg').val()
+                }
+                // wss发送事件
+                wss.send(JSON.stringify(msgObj));
+            });
+        });
+    </script>
+</body>
+</html>

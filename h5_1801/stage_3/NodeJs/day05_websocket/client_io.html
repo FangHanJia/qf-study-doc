@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <script type="text/javascript" src="socket.io.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <style type="text/css">
+        .myform{width:500px;margin:50px auto;}
+        #map_content{
+            width:100%;height:600px;margin:0 auto;background:#000;opacity:1;
+            position:relative;overflow:hidden;display:none;
+        }
+        .person{
+            width:50px;height:50px;border-radius:50%;overflow:hidden;background:#2fef0f;color:#fff;
+            position:absolute;top:0;left:0;text-align:center;line-height:50px;transition:all 0.5s;
+            box-shadow:0px 0px 42px 10px #fbff09;
+        }
+    </style>
+</head>
+<body>
+    <div class="myform" id="login_content">
+        <div class="form-group" >
+            <label for="nickname">你的昵称：</label>
+            <input type="text" class="form-control" id="nickname" placeholder="请输入您的昵称">
+            <button type="submit" class="btn btn-default" id="btn_login">登陆</button>
+        </div>
+    </div>
+    <div id="map_content"></div>
+    <script type="text/javascript">
+        jQuery($=>{
+            let socket;
+            let id;
+            // 初始化人物：登陆和创建人物
+            $('#btn_login').on('click',function(){
+                // 连接服务器
+                socket = io.connect('ws://10.3.133.238:88');
+
+                // 获取对象：
+                let _nickname = $('#nickname').val();
+                id = parseInt(Math.random() * 10000);
+                let person = {id:id,nickname:_nickname};
+
+                // 调用服务器方法：
+                socket.emit('slogin',JSON.stringify(person));
+                console.log(JSON.stringify(person));
+
+                // 封一个创建人物的事件
+                $('#map_content').html('');
+                socket.on('createPerson',function(_onlinePerson){
+                    for(let key in _onlinePerson){
+                        let person = _onlinePerson[key];
+                        if(!$('#'+person.id)[0]){
+                            let $personDiv = $('<div class="person"></div>');
+                            $personDiv.text(person.nickname).attr('id',person.id).appendTo('#map_content');
+                        }
+                    }
+                });
+                $('#map_content').show();
+                $('#login_content').hide();
+                // 创建则显示地图，隐藏登陆面板
+                
+
+                // 封一个修改位置后人物的事件：接收位置
+                socket.on('move',function(_person){
+                    // 对应的id修改位置
+                    let person = JSON.parse(_person);
+                    $('#'+person.id).css({
+                        left:person.x-25,
+                        top:person.y-25
+                    });
+                });
+
+            });
+
+            // 移动对应的人物
+            $('#map_content').on('click',function(e){
+                // 获取点击的位置
+                let x = e.pageX;
+                let y = e.pageY;
+                console.log(x,y);
+                // 获取对应的人物id
+                $('#'+id).css({
+                    left:x,
+                    top:y
+                });
+                // 传递位置
+                socket.emit('position',JSON.stringify({id:id,x:x,y:y}));
+            });
+
+           
+
+
+        });
+
+    </script>
+</body>
+</html>
