@@ -1,3 +1,4 @@
+// 用于启动服务器和引入功能路由模块
 const path = require('path')
 const bp = require('body-parser');
 const express = require('express');
@@ -6,6 +7,7 @@ const session = require('express-session');
 
 const app = express();
 
+// 配置session
 app.use(cp());
 app.use(session({
     secret: '12345',//用来对session数据进行加密的字符串.这个属性值为必须指定的属性

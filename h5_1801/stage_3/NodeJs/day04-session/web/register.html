@@ -33,6 +33,7 @@
     <script>
         $(function(){
             $('#btn_reg').click(function(){
+                // 使用Ajax的二次封装
                 http.post({
                     url: 'register', 
                     data: {username: $('#username').val(), password: $('#password').val(), nickname: $('#nickname').val()}, 

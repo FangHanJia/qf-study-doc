@@ -1,3 +1,4 @@
+// 引入数据库模块
 const db = require('../utils/db')
 const path = require('path');
 const multer = require('multer')
@@ -31,7 +32,7 @@ let filter = (req, res, next) => {
         res.send(apiResult(false, null, 'unauth'))
     }
 }
-
+// 暴露上传文件的功能路由模块
 module.exports = {
     register(app){
         app.post('/addproduct', filter, upload.single('proimg'), async (req, res) => {

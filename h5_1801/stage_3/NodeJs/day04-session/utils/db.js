@@ -7,7 +7,7 @@ var db = null;
 mc.connect('mongodb://localhost:27017', (error, client) => {
     db = client.db('1801');
 })
-
+// 暴露操作数据库的模块
 module.exports = {
     async select(_collection, _condition = {}){
         try{
