@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./libs/httpclient.js"></script>
+    <style type="text/css">
+        .form{width:500px;margin:100px auto;}
+        h1{color:#58bc58;}
+        a{float:right;}
+    </style>
+</head>
+<body>
+     <div class="form" >
+        <h1>用户登陆</h1>
+        <div class="form-group">
+            <label for="username">用户名：</label>
+            <input type="text" class="form-control" id="username" name="username">
+        </div>
+        <div class="form-group">
+            <label for="password">密码：</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+        
+        <button type="submit" class="btn btn-default" id="btn_login">登陆</button>
+        <a href="register.html">免费注册</a>
+    </div>
+
+    <script>
+        $(function(){
+            $('#btn_login').click(function(){
+                http.post({
+                    url:'login', 
+                    data: {username: $('#username').val(), password: $('#password').val()}, 
+                    cb: function(res){
+                        if(res.status){
+                            let nickname = res.data[0].username;
+                            nk = encodeURI(nickname);
+                            window.location.href = 'index.html?nickname='+nk;
+                        } else {
+                            window.alert('login fail');
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>

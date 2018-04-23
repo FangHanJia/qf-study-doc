@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./libs/httpclient.js"></script>
+    <script type="text/javascript" src="libs/socket.io.js"></script>
+    <style type="text/css">
+        body{margin:0;padding:0;}
+        .account{
+            height:40px;background:#000;opacity:0.8;position:relative;color:#fff;
+            padding:0 50px;
+        }
+        .account p{float:right;line-height:40px;}
+        .account span{color:#58bc58;}
+        .account .nickname a{color:#58bc58;}
+        .btn_start{
+            width:120px;height:40px;text-align:center;line-height:40px;border:0 none;outline:none;
+            background:#58bc58;color:#fff;
+            margin:20px auto;
+        }
+        .map_content{
+            width:70%;height:500px;background:#000;position:relative;
+        }
+        .chat{
+            width:20%;height:300px;background:#EEE;position:fixed;top:50px;right:40px;
+        }
+        .chat .msg_content{
+            height:272px;background:#f3eded;margin-bottom:10px;position:relative;
+            list-style:none;margin:0;padding:0;overflow-x:hidden;
+        } 
+        .msg_content::-webkit-scrollbar{width:2px;}
+        .chat li{
+            line-height:20px;background:#58bc58;color:#fff;padding:4px 10px;
+            margin-top:5px;border-radius:6px;clear:both;
+        }
+        .right{float:right;}
+        .left {float:left;}
+        .chat input{
+            height:25px;width:200px;margin-right:10px;
+        }
+        .person{
+            width:50px;height:50px;border-radius:50%;overflow:hidden;background:#2fef0f;color:#fff;
+            position:absolute;top:0;left:0;text-align:center;line-height:50px;transition:all 0.5s;
+            box-shadow:0px 0px 42px 10px #fbff09;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <nav class="account" >
+        <p>你好！<span class="nickname">请<a href="login.html">登陆</a></span></p>
+    </nav>
+    <div class="chat">
+        <ul class="msg_content" id="msg_content"></ul>
+        <input type="text" id="message"/><button id="btn_send">发送</button>
+    </div>
+    <section class="map_content" id="map_content">
+    </section>
+    <div class="btn_start" id="btn_start">开始游戏</div>
+    <script>
+        jQuery($=>{
+            
+            // 获取用户昵称
+            let nk = location.search;
+            _nickname = decodeURI(nk.slice(nk.indexOf('=')+1));
+            let $nickname = $('.nickname');
+            if(_nickname){
+                $nickname.text(_nickname);
+            }
+            let $msg_content = $('#msg_content');
+            // 游戏操作：连接服务器
+            let socket = io.connect('ws://10.3.133.238:8080');
+            let id;
+            // 初始化人物：登陆和创建人物
+            $('#btn_start').on('click',function(){
+                
+
+                // 获取对象：
+                id = parseInt(Math.random() * 10000);
+                let person = {id:id,nickname:_nickname};
+
+                // 调用服务器方法：
+                socket.emit('slogin',JSON.stringify(person));
+
+                // 封一个创建人物的事件
+                $('#map_content').html('');
+                socket.on('createPerson',function(_onlinePerson){
+                    console.log(_onlinePerson);
+                    for(let key in _onlinePerson){
+                        let person = _onlinePerson[key];
+                        if(!$('#'+person.id)[0]){
+                            let $personDiv = $('<div class="person"></div>');
+                            $personDiv.text(person.nickname).attr('id',person.id).appendTo('#map_content');
+                        }
+                    }
+                });
+                // 创建则显示地图，隐藏登陆面板
+                $('#map_content').show();
+                $('#btn_start').hide();
+                
+
+                // 封一个修改位置后人物的事件：接收位置
+                socket.on('move',function(_person){
+                    // 对应的id修改位置
+                    let person = JSON.parse(_person);
+                    $('#'+person.id).css({
+                        left:person.x-25,
+                        top:person.y-25
+                    });
+                });
+
+            });
+
+            // 移动对应的人物
+            $('#map_content').on('click',function(e){
+                // 获取点击的位置
+                let x = e.pageX;
+                let y = e.pageY;
+                // 获取对应的人物id
+                $('#'+id).css({
+                    left:x,
+                    top:y
+                });
+                // 传递位置
+                socket.emit('position',JSON.stringify({id:id,x:x,y:y}));
+            });
+
+            // 发送消息
+            let $btn_send = $('#btn_send');
+            $btn_send.on('click',function(){
+                let $msg = $('#message').val();
+                
+                let d = new Date();
+                let h = d.getHours();
+                let m = d.getMinutes();
+                let msgObj = {nickname:_nickname,time:`${h}:${m},`,cont:$msg};
+                $('<li></li>').text(msgObj.cont).appendTo($msg_content).addClass('right');
+                socket.emit('sendMsg',JSON.stringify(msgObj));
+                $msg_content[0].scrollTop = $msg_content[0].scrollHeight;
+
+            });
+
+            // 接收消息
+            socket.on('acceptMsg',function(_msg){
+                let msgObj = JSON.parse(_msg);
+                let $li = $('<li></li>');
+                if(msgObj.nickname == _nickname ){
+                    return;
+                }
+                $li.text(msgObj.cont).appendTo($msg_content).addClass('left');
+                // 将盒子的滚动条高度赋值给盒子的顶部偏移量；
+                $msg_content[0].scrollTop = $msg_content[0].scrollHeight;
+            });
+
+        });
+    </script>
+</body>
+</html>
