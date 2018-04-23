@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.css" />
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style type="text/css">
+        .app{width:500px;height:500px;margin:0 auto;}
+        .app label{width:100px;text-align:right;}
+        fieldset{border:1px solid #ccc;padding:20px 10px;}
+        fieldset legend{width:40px;font-size:12px;}
+    </style>
+</head>
+<body>
+    <div id="app" class="app">
+        <fieldset>
+            <legend>Create</legend>  
+            <div class="form-group">
+                <label for="name">name: </label><input type="text" id="name"/>
+            </div>
+            <div class="form-group">
+                <label for="name">age:  </label><input type="text" id="age"/>
+            </div>
+            <div class="form-group">
+                <label>sex:</label>
+                <select class="list">
+                  <option>0</option>
+                  <option>1</option>
+                </select><br />
+            </div>
+            <label for="name"></label>
+            <button type="button" class="btn btn-success" v-on:click="createTr">Great</button>
+        </fieldset>
+        <table class="table  table-bordered table-striped" >
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody class="table-striped" v-for="(value,idx) in user">
+                <tr  >
+                    <td>{{value.name}}</td>
+                    <td>{{value.age}}</td>
+                    <td>{{value.sex}}</td>
+                    <td><button type="button" class="btn btn-success btn-sm" v-on:click="del">delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript">
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                user:[{name:'李白',age:18,sex:1},{name:'韩信',age:20,sex:1,},{name:'赵云',age:19,sex:1}]
+            },
+            methods:{
+                del(){
+                    $('tbody').on('click','.btn',function(){
+                        $(this).closest('tr').remove();
+                    });
+                },
+                createTr(){
+                    let obj = {name:$('#name').val(),age:$('#age').val(),sex:$('.list').val()};
+                    this.user.push(obj);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

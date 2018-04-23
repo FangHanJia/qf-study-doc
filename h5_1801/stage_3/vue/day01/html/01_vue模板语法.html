@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <!-- 1、插值 -->
+        <h1>{{name}}</h1>
+    </div>
+    <script type="text/javascript">
+        let  vm = new Vue({
+            el:'#app',
+            data:{
+                name:'tom'
+            }
+        });
+    </script>
+</body>
+</html>

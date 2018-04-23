@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.css" />
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style type="text/css">
+        .myform{width:500px;margin:100px auto;}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="form-group myform">
+            <p>您的名字为：{{myname}}</p>
+            <input type="text" class="form-control" id="username" v-model="iputvalue">
+            <button type="button" class="btn btn-success" @click="handle">保存</button>
+        </div>
+        
+    </div>
+    <script type="text/javascript">
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                name:''
+            },
+            computed:{
+                myname:{
+                    get:function(){
+                        return this.name;
+                    },
+                    set:function(newvalue){
+                        this.name = newvalue;
+                    }
+                }
+            },
+            methods:{
+                handle(){
+                    // 获取输入框的值
+                    this.myname = this.iputvalue;
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>

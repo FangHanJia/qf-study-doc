@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.css" />
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>title</th>
+                    <th>visit</th>
+                    <th>reply</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(obj,idx) in dataset">
+                    <td>{{obj.title}}</td>
+                    <td>{{obj.visit_count}}</td>
+                    <td>{{obj.reply_count}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript">
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                dataset:[]
+            }
+        });
+      $.get('https://cnodejs.org/api/v1/topics',{page:1,limit:10},function(res){
+            // console.log(res);
+            vm.dataset = res.data;
+      });
+    </script>
+</body>
+</html>
