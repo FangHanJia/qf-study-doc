@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>vue列表动画</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style type="text/css">
+        li{width:300px;height:40px;background:#58bc58;color:#fff;text-align:center;margin-top:20px;}
+        .list-enter{opacity:0;transform: translateX(300px);}
+        .list-enter-active{transition:all .5s;}
+        .list-leave-active{opacity:0;transition:all .5s;transform: translateX(-300px);}
+    </style>
+</head>
+<body>
+    <div id="app">
+       <p>
+        <input type="button" value="AddItem" @click="addItem">
+        <input type="button" value="RemoveItem" @click="removeItem">
+        </p>
+        <transition-group tag="ul" name="list">
+            <li v-for="(item, index) in items" :key="item">Item {{index}}</li>
+        </transition-group>
+    </div>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                items: [1,2,3]
+            },
+            methods: {
+                randomIndex: function(){
+                    return  parseInt(this.items.length * Math.random());
+                },
+                addItem: function(){
+                    this.items.splice(this.randomIndex(), 0, this.items.length + 1);
+                },
+                removeItem: function(){
+                    this.items.splice(this.randomIndex(), 1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

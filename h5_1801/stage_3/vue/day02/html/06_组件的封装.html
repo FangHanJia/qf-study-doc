@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>组件模板的封装</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.css" />
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="../js/datagrid.js"></script>
+</head>
+<body>
+    <div id="app">
+        <datagrid api="https://cnodejs.org/api/v1/topics"></datagrid>
+    </div>
+    <script type="text/javascript">
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                page:1,
+                limit:10
+            }
+        });
+    </script>
+</body>
+</html>

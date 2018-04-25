@@ -13,32 +13,33 @@
 <body>
     <div id="app">
         <div class="form-group myform">
-            <p>您的名字为：{{myname}}</p>
-            <input type="text" class="form-control" id="username" v-model="iputvalue">
+            <p>您的名字为：{{showName}}</p>
+            <input type="text" class="form-control" id="username" v-model="myname"/>
             <button type="button" class="btn btn-success" @click="handle">保存</button>
         </div>
         
     </div>
     <script type="text/javascript">
+        // vue 计算属性
         let vm = new Vue({
             el:'#app',
             data:{
-                name:''
+                showName:'fhj',
+                myname:''
             },
             computed:{
-                myname:{
+                textName:{
                     get:function(){
-                        return this.name;
+                        return this.showName;
                     },
-                    set:function(newvalue){
-                        this.name = newvalue;
+                    set:function(_value){
+                        this.showName = _value;
                     }
                 }
             },
             methods:{
-                handle(){
-                    // 获取输入框的值
-                    this.myname = this.iputvalue;
+                handle:function(){
+                    this.textName = this.myname;
                 }
             }
 

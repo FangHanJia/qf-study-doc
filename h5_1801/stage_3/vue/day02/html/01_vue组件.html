@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>vue组件</title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 全局属性 -->
+        <p>{{count}}</p>
+        <component1 v-on:count="increment" name="组件属性"></component1>
+    </div>
+    <script type="text/javascript">
+        // 定义局部组件
+        let vm = new Vue({
+            el:'#app',
+            data:{count:10},
+            methods:{
+                increment:function(){
+                    this.count += 1;
+                }
+            },
+            components:{
+                'component1':{
+                    template:'<button v-on:click="increment" >{{count}}{{name}}</button>',
+                    data:function(){
+                        return {count:0}
+                    },
+                    props:['name'],
+                    methods:{
+                        increment:function(){
+                            this.count +=1;
+                            this.$emit('count');
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

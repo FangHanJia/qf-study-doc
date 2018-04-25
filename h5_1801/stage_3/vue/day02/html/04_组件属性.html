@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>组件属性</title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 使用组件,并设置属性 -->
+        <component1 :text="title" title="我自己的属性"></component1>   
+    </div>
+    <script type="text/javascript">
+        let vm = new Vue({
+            el:'#app',
+            data:{title:'李白'},
+            components:{
+                'component1':{
+                    template:'<h1>组件属性:{{text+title}}</h1>',
+                    // 获取属性
+                    props:['text','title']
+                }
+            }
+        });
+    </script>
+</body>
+</html>

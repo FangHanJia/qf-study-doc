@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>样式绑定</title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style type="text/css">
+        .red{color:red;}
+        .green{color:green;}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="button" @click="change" value="变色"/>
+        <div :class="{green:status,red:!status}">样式绑定:对象</div>
+        <!-- 数组语法 -->
+        <div :class="['red']">样式绑定:数组</div>
+    </div>
+    <script type="text/javascript">
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                classObj:{
+                    red:true,
+                    green:false
+                },
+                status:false
+            },
+            methods:{
+                change:function(){
+                    this.status = this.status == false ? true :false;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

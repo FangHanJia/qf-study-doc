@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>特殊结构使用is</title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 使用组件 -->
+        <component1></component1>
+    </div>
+    <script type="text/javascript">
+        let vm = new Vue({
+            el:'#app',
+            components:{
+                'component1':{
+                    template:'<select> <option :value="obj.value" v-for="obj in geder">{{obj.text}}</option> </select>',
+                    data:function(){
+                        return {
+                            geder:[{text:'女',value:0},{text:'男',value:1}]
+                        }
+                    }
+                }
+            }
+        }); 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>vue过渡效果</title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style type="text/css">
+        .box{width:300px;height:300px;background:#58bc58;color:#fff;}
+        .box1{width:300px;height:300px;background:#333;color:#fff;}
+        .fade-enter{opacity:0;}
+        .fade-enter-active{transition:all .5s;}
+        .fade-leave-active{opacity:0;transition:all .5s;}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="button" :value="show ? 'hide' :'show'" @click="handle"/>
+        <transition name="fade" mode="out-in" appear appear-class appear-active-class>
+            <!-- out-in:先隐藏再显示 -->
+            <div class="box" v-if="show" key="box">过渡效果</div>
+            <div class="box1" v-else key="box1">我是第二个盒子</div>
+        </transition>
+    </div>
+    <script type="text/javascript">
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                show:true
+            },
+            methods:{
+                handle:function(){
+                    this.show = !this.show
+                }
+            }
+        });
+    </script>
+</body>
+</html>

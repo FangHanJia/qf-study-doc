@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>动态使用组件:is</title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 控制组件 -->
+        <input type="button" v-on:click="handle" :value="color"/>
+        <!-- 使用动态局部组件 -->
+        <div :is="color"></div>
+    </div>
+    <script type="text/javascript">
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                color:'red'
+            },
+            methods:{
+                handle(){
+                    this.color = this.color == 'red' ? 'green' : 'red';
+                }
+            },
+            components:{
+                red:{
+                    template:'<h1>red</h1>'
+                },
+                green:{
+                    template:'<h1>green</h1>'
+                }
+            }
+        });
+    </script>
+</body>
+</html>
