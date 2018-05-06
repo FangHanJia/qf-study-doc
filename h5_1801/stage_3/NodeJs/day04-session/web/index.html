@@ -42,6 +42,7 @@
                 myform.append('proname', $('#proname').val())
                 myform.append('price', $('#price').val())
                 myform.append('proimg', $('#proimg')[0].files[0]);
+                console.log(myform)
                 http.upload({
                     url: 'addproduct', 
                     data: myform, 
