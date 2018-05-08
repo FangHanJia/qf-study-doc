@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>jsx语法</title>
+    <script type="text/javascript" src="../../lib/react.js"></script>
+    <script type="text/javascript" src="../../lib/react-dom.js"></script>
+    <script type="text/javascript" src="../../lib/browser.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <!-- 定义script类型 -->
+    <script type="text/babel">
+        // 定义模板
+        var html = <h1>fhj</h1>;
+        
+        // 渲染
+        ReactDOM.render(html,document.getElementById('app'));
+
+        // js混写
+        var _style = {fontSize:'24px',color:'green'};
+        // render是默认覆盖渲染的
+        // ReactDOM.render(<h1 style={_style}>fhj</h1>,document.getElementById('app'))
+        
+        // 数组
+        var arr = [<h1>san</h1>,<h1>tom</h1>]
+        ReactDOM.render(<div>{arr}</div>,document.getElementById('app'))
+    </script>
+</body>
+</html>
