@@ -40,32 +40,34 @@ class DataGrid extends React.Component{
     // 组件的渲染
     render(){
         return (
-            <table >
-                <thead>
-                    <tr>
+            // <div className="table-responsive ">
+                <table className="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            {
+                                this.getKeys(this.state.data[0]).map(item=>{
+                                    return <th key={item}>{item}</th>
+                                })
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
                         {
-                            this.getKeys(this.state.data[0]).map(item=>{
-                                return <th key={item}>{item}</th>
+                            this.state.data.map(obj=>{
+                                return (
+                                    <tr key={obj.id}>
+                                        {
+                                            this.getKeys(obj).map((key,idx)=>{
+                                                return <td key={idx}>{obj[key]}</td>
+                                            })
+                                        }
+                                    </tr>
+                                )
                             })
                         }
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        this.state.data.map(obj=>{
-                            return (
-                                <tr key={obj.id}>
-                                    {
-                                        this.getKeys(obj).map((key,idx)=>{
-                                            return <td key={idx}>{obj[key]}</td>
-                                        })
-                                    }
-                                </tr>
-                            )
-                        })
-                    }
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            // </div>
         )
     }
     componentDidMount(){
