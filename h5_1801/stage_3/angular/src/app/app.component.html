@@ -1,24 +1,38 @@
-<h1 [class]="bg_green">angular</h1>
-<input type="button" (click)="btn_show($event)" value="打印"/>
-<!-- 循环数组 -->
-<ul *ngFor = "let obj of data;trackBy:key">
-    <li [class]="bg_green">{{obj.name}}</li>
-</ul>
-<!-- 循环对象 -->
-<ul *ngFor="let obj of data;let idx = index">
-    <li *ngFor="let key of getKeys(obj)" [class]="bg_green">
-        {{key}}
-        <span>{{'我是idx'+idx}}</span>
-    </li>    
-</ul>
-<!-- switch判断 -->
-<input type="button" value="change" (click)="changeEle()"/>
-<div [ngSwitch]="num">
-    <span *ngSwitchCase="'0'">张三</span>
-    <span *ngSwitchCase="'1'">李四</span>
-    <span *ngSwitchCase="'2'">王五</span>
-    <span *ngSwitchCase="'3'">赵六</span>
-    <span *ngSwitchDefault>龙大</span>
+<div *ngIf="show">
+    <h1 [class]="bg_green">angular</h1>
+    <input type="button" (click)="btn_show($event)" value="打印"/>
+    <!-- 循环数组 -->
+    <ul *ngFor = "let obj of data;trackBy:key">
+        <li [class]="bg_green">{{obj.name}}</li>
+    </ul>
+    <!-- 循环对象 -->
+    <ul *ngFor="let obj of data;let idx = index">
+        <li *ngFor="let key of getKeys(obj)" [class]="bg_green">
+            {{key}}
+            <span>{{'我是idx'+idx}}</span>
+        </li>    
+    </ul>
+    <!-- switch判断 -->
+    <input type="button" value="change" (click)="changeEle()"/>
+    <div [ngSwitch]="num">
+        <span *ngSwitchCase="'0'">张三</span>
+        <span *ngSwitchCase="'1'">李四</span>
+        <span *ngSwitchCase="'2'">王五</span>
+        <span *ngSwitchCase="'3'">赵六</span>
+        <span *ngSwitchDefault>龙大</span>
+    </div>
+    <!-- 使用自定义指令 -->
+    <h1 hl>======父组件向子组件传参=======</h1>
+    <ul >
+        <li *ngFor="let obj of dataset" (click)="getItem(obj.name)">{{obj.name}}</li>
+    </ul>
+
+    <cp1 [currItem]="currItem"  (parentAttr)="parentEvent($event)"></cp1>
 </div>
-<!-- 使用自定义指令 -->
-<h1 hl>哈哈</h1>
+<!-- <datagrid [config]="config"></datagrid> -->
+<select name="" id="" [(ngModel)]="lanType">
+    <option value="en">en</option>    
+    <option value="cn">cn</option>    
+</select>
+<datagrid config="cnode.txt" [lanType]="lanType"></datagrid>
+

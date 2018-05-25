@@ -1,0 +1,18 @@
+{
+    "en":{
+        "title":"Title",
+        "reply_count":"reply_count",
+        "visit_count":"visit_count",
+        "create_at":"create_at",
+        "loginname":"loginname",
+        "avatar_url":"avatar_url"
+    },
+    "cn":{
+        "title":"标题",
+        "reply_count":"回复量",
+        "visit_count":"浏览量",
+        "create_at":"创建时间",
+        "loginname":"用户名",
+        "avatar_url":"头像"
+    }
+}

@@ -1,0 +1,48 @@
+<div *ngIf="dataset">
+    <input type="button" (click)="btn_switch()" [value]="lanType" />
+    <table class="table ">
+        <thead>
+            <tr>
+                <th *ngIf="configObj['mutiple']" (click)="checkId()">
+                    <input type="checkbox" name="all" *ngIf="checkArr.length == dataset.length" checked/>
+                    <input type="checkbox" name="all" *ngIf="checkArr.length < dataset.length" />
+                </th>
+                <ng-template ngFor let-key [ngForOf]="columns">
+                    <!-- <th *ngIf="columns.indexOf(key) > -1">{{key}}</th> -->
+                    <th>{{ dictionary[lanType] && dictionary[lanType][key]? dictionary[lanType][key]: key}}</th>
+                </ng-template>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let obj of dataset" (click)="checkId(obj)" [class.active]="checkArr.indexOf(obj.id) > -1">   
+                <td *ngIf="configObj['mutiple']">
+                    <input type="checkbox" name="all" *ngIf="checkArr.indexOf(obj.id) < 0"/>
+                    <input type="checkbox" name="all" *ngIf="checkArr.indexOf(obj.id) > -1" checked/>
+                </td>
+                <ng-template ngFor let-key [ngForOf]="columns">
+                    <!-- <td *ngIf="columns.indexOf(key) > -1">{{obj[key]}}</td> -->
+                   <!--  <td *ngIf="columns.indexOf(key) < columns.length -1 ">
+                        {{dataFilter(key,obj)}}
+                    </td>
+                    <td *ngIf="columns.indexOf(key) == columns.length -1 ">
+                        <img [src]="dataFilter(key,obj)" />
+                    </td> -->
+                    <!-- <td [innerHTML]="dataFilter(key,obj)"></td> -->
+                    <td *ngIf="configObj.colAttributes[key] && configObj.colAttributes[key].type == 'pipe' && configObj.colAttributes[key].name == 'date'">
+                        {{obj[key] | date: configObj.colAttributes[key].format}}
+                    </td>
+                    <td *ngIf="configObj.colAttributes[key] && configObj.colAttributes[key].type == 'pipe' && configObj.colAttributes[key].name == 'time'">
+                        {{obj[key] | number: configObj.colAttributes[key].format}}
+                    </td>
+                    <td *ngIf="configObj.colAttributes[key] && configObj.colAttributes[key].type == 'mapping'">
+                        {{obj[configObj.colAttributes[key].datasource][configObj.colAttributes[key].value]}}
+                    </td>
+                    <td *ngIf="!configObj.colAttributes[key]|| configObj.colAttributes[key].type != 'pipe'">
+                        {{obj[key]}}
+                    </td>
+                    
+                </ng-template>
+            </tr>
+        </tbody>
+    </table>
+</div>

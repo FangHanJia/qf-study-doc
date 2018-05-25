@@ -1,0 +1,17 @@
+tr.active{
+    background:#59bc58;
+    color:#fff;
+}
+td>img{
+    width:50px;
+    height:50px;
+}
+tr input{
+    display:block;
+    width:20px;
+    height:20px;
+    margin-top:20px;
+}
+:host ::ng-deep img { 
+  width:50px;
+}

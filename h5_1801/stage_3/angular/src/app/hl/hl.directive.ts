@@ -16,14 +16,14 @@ export class HlDirective {
     // @HostListener('click',['$event']) onclick(event){
     //     console.log(event)
     // }
-    // 封一个点击事件
-    onClick(event){
-        console.log(event.target,this.fhj);
-    }
 
     // 添加自定义属性
     @HostBinding('attr.fhj') fhj = 'admin';
     // 获取自定义属性
-    @Input() fhj:string;
+    @Input() f : string ;
+    // 封一个点击事件
+    onClick(event){
+        console.log(event.target,this.fhj);
+    }
 
 }
